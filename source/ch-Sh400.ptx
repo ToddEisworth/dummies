@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-Sh400" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Commentary on [Sh:400]</title>
+
+  <introduction>
+    <p>  </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-first-lambda.ptx" />
+
+</chapter>

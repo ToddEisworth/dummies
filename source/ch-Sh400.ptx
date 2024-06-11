@@ -9,5 +9,5 @@
 
   <!-- include sections -->
   <xi:include href="sec-first-lambda.ptx" />
-
+  <xi:include href="sec-the-argument.ptx" />
 </chapter>

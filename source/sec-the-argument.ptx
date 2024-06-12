@@ -3,51 +3,36 @@
 <section xml:id="sec-the-argument" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title><em>THE</em> argument</title>
 
-  <p> Our goal in this section is to lay out some variants of the key argument that ties characteristic functions of models to their contents.</p>
+  <p> Our goal in this section is to lay out some variants of the key
+     argument that ties characteristic functions of models to their contents.</p>
 
 
+<subsection xml:id="subsec-folklore">
+
+
+
+  <title>The basic result</title>
+  
 
   <p>
-    Our usual assumption is that <m>\lambda</m> is a singular cardinal, and <m>\chi </m> is a regular cardinal must larger than <m>\lambda</m>.  We let <m>\mathfrak{A}</m> denote
+    Our usual assumption is that <m>\lambda</m> is a cardinal (singular in many of our applications), and <m>\chi </m> is a regular cardinal must larger than <m>\lambda</m>.  We let <m>\mathfrak{A}</m> denote
     the structure <m>\langle H(\chi), \in, \lt_\chi\rangle</m> where as usual <m>H(\chi)</m> denotes the sets hereditarily of cardinality less than <m>\chi </m> and <m>\lt_\chi</m> is some 
     fixed well-ordering of <m>H(\chi)</m> which is included to ensure that we have definable Skolem functions in the structure <m>\mathfrak{A}</m>.
   </p>
 
 
-  <theorem xml:id="thm-">
+  <theorem xml:id="thm-the-argument">
     <statement>
       <p>
-        Assume <m>\mu\lt\lambda</m> and <m>M</m> and <m>N</m> are elementary submodels of <m>\mathfrak{A}</m> such that 
-        <ol>
-          <li>
-            <p>
-              <m>\lambda\in M\cap N</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>N\cap\mu\subseteq M\cap\mu</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>N\cap\mu</m> is a (possibly improper) initial segment of <m>\mu</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>M\cap\theta</m> contains a cofinal subset of <m>N\cap\theta</m> for each regular cardinal <m>\theta</m> in <m>M\cap N\cap (\mu,\lambda]</m>
-            </p>
-          </li>
-        </ol>
-        Then <m>N\cap\lambda\subseteq M</m>
+       Suppose <m>M</m> and <m>N</m> are elementary submodels of <m>\mathfrak{A}</m> containing <m>\lambda </m> such that <m>M\cap\theta</m> contains a cofinal subset of
+        <m>N\cap\theta</m> for every regular cardinal <m>\theta\leq\lambda</m> in <m>M\cap N</m>.  Then <m>N\cap\lambda\subseteq M</m>.
       </p>
     </statement>
   </theorem>
   <proof>
     <p>
-     Given such models note that the hypotheses are still satisfied if we replace <m>M</m> with the smaller model <m>M\cap N</m>, so without loss of generality we can assume
-     <m>M\subseteq N</m>.  Now assume by way of contradiction that <m>N\cap\lambda\setminus M</m> is non-empty, and define
+     We can replace <m>M</m> by the smaller model <m>M\cap N</m> and the hypotheses will still hold, so we may as well assume that <m>M\subseteq N</m>.
+      Assume by way of contradiction that <m>N\cap\lambda\setminus M</m> is non-empty, and define
       <me>
         \alpha :=\min(N\cap\lambda\setminus M)
       </me>
@@ -57,23 +42,30 @@
       </me>
     </p>
     <p>
-    Since <m>\alpha\lt\beta</m>  and <m>M\cap [\alpha,\beta)=\emptyset</m> we know that <m>\beta</m> must be a limit ordinal, and since in addition <m>\alpha\in N\cap\theta</m> our assumptions imply 
-    that <m>\beta</m> cannot be a regular cardinal.  The ordinal <m>\beta</m> is in <m>M</m>, so we will have available in that model the cardinal <m>\cf(\beta)</m> as well as a strictly increasing
-    function <m>f</m> from <m>\cf(\beta)</m> onto a cofinal subset of <m>\beta</m>.
+    Note that <m>\alpha\lt\beta\leq\lambda</m>, and furthermore
+    <men xml:id="eqn-1">
+      M\cap [\alpha,\beta)=\emptyset.
+    </men>
+    Since <m>M</m> is closed under the predecessor function, it follows that <m>\beta</m> is a limit ordinal. Since <m>\alpha\in N\cap\theta</m> it follows from <xref ref="eqn-1"/>
+     that <m>M</m> does not contain a cofinal subset of <m>N\cap\beta</m>. Thus, our assumptions imply <m>\beta</m> cannot be a regular cardinal and therefore <m>\cf(\beta)\lt\beta</m>.  From another application
+     of <xref ref="eqn-1"/> we conclude <m>\cf(\beta)\lt\alpha</m> and therefore
+     <men xml:id="eqn-2">
+      M\cap\cf(\beta)= N\cap\cf(\beta).
+     </men>
     </p>
     <p>
-    Because <m>M\cap [\alpha,\beta)=\emptyset</m> we know that <m>\cf(\beta)\lt \alpha</m>, and so by our choice of <m>\alpha</m> we are guaranteed that 
-    <me>
-      M\cap\cf(\beta)=N\cap\cf(\beta)
-    </me>
-    The ordinal <m>\alpha</m> is available in <m>N</m> along with <m>f</m>, and so <m>N</m> will contain an ordinal <m>\gamma\lt\cf(\beta)</m> with
-    <me>
-    \alpha\lt f(\gamma)\lt\beta.
-    </me>
-    Since <m>M\cap\cf(\beta)=N\cap\cf(\beta)</m> it follows that <m>\gamma</m> and <m>f(\gamma)</m> are also both in <m>M</m>, and this contradicts...
-   
-    
+    In the model <m>M</m> fix a strictly increasing function <m>f</m> mapping <m>\cf(\beta)</m> onto a cofinal subset of <m>\beta</m>.  Since <m>M\subseteq N</m> and <m>\alpha\lt\beta</m>
+    there is a <m>\gamma\in N\cap\cf(\beta)</m> such that <m>\alpha\leq f(\gamma)\lt\beta</m>.  This ordinal <m>\gamma</m> must be in <m>M</m> by way of <xref ref="eqn-2"/>, and so <m>f(\gamma)</m>
+    must be in <m>M</m> as well, contradicting <xref ref="eqn-1"/>.
     </p>
   </proof>
-
+  
+</subsection>
+<subsection xml:id="subsec-blah">
+  <title>Applications</title>
+  
+<p>
+  blah blah blah
+</p>
+</subsection>
 </section>

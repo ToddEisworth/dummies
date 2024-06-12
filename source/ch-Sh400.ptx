@@ -4,10 +4,11 @@
   <title>Commentary on [Sh:400]</title>
 
   <introduction>
-    <p>  </p>
+    <p> How does the introductory text compile? </p>
   </introduction>
 
   <!-- include sections -->
   <xi:include href="sec-first-lambda.ptx" />
   <xi:include href="sec-the-argument.ptx" />
+  <xi:include href="sec-cofinality.ptx" />
 </chapter>

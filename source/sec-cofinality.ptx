@@ -24,7 +24,12 @@
             0 &amp; \text{otherwise.}
             \end{cases}
           </me>
-        Now given any function <m>g\in\prod\lambda\cap\reg</m> and any <m>A\subseteq \lambda\cap\reg</m> with <m>|A|\lt\theta</m>, choose <m>X\in\mathcal{X}</m> with <m>\ran(g)\subseteq X</m>
+        Given any function <m>g\in\prod\lambda\cap\reg</m> and any 
+        <m>A\subseteq \lambda\cap\reg</m> with <m>|A|\lt\theta</m>, choose
+         <m>X\in\mathcal{X}</m> with <m>\ran(g)\subseteq X</m> and it is clear that <m>f_X(\theta)</m>
+         is greater than <m>g(\theta)</m> for any <m>\theta\in A</m>.
+
+         
     </p>
   </proof>
 

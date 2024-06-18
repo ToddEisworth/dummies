@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-Sh400" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sets and Functions</title>
+
+  <introduction>
+    <p> This chapter lays out some of the basic ways in which
+      pcf theory is used to pass information between the structures <m>[\lambda]^{\lt\lambda}</m>
+    and <m>\prod (\lambda\cap\reg)</m> for a singular cardinal <m>\lambda</m>.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+    <xi:include href="sec-from-sets-to-functions.ptx"/>
+    <xi:include href="sec-vocabulary.ptx" />
+    <xi:include href="sec-the-argument.ptx" />
+    <xi:include href="sec-cofinality.ptx" />
+</chapter>

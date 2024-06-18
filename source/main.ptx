@@ -9,7 +9,7 @@
   
 
     <!-- Include chapters -->
-    <xi:include href="./ch-Sh400.ptx" />
+    <xi:include href="./ch-sets-and-functions.ptx" />
 
 
     <!-- Include backmatter -->

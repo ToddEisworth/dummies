@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-from-sets-to-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Moving from sets to functions</title>
+<objectives>
+<ul>
+  <li>
+    <p>
+      Sets in <m>\lambda^{\lt\lambda}</m> induce functions in the product <m>\prod(\lambda\cap\reg)</m>. 
+    </p>
+  </li>
+  <li>
+    <p>
+      Large (in some sense) subsets of <m>\lambda^{\lt\lambda}</m> give rise to large (in a related sense) subsets of <m>\prod(\lambda\cap\reg)</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      The correspondence produces inequalities among cardinal characteristics associated to these structures.
+    </p>
+  </li>
+</ul>  
+</objectives>
+
+<p>
+  Suppose we have a singular cardinal <m>\lambda</m>.  Given a non-empty subset <m>X</m> of <m>\lambda</m> with <m>|X|\lt\lambda</m>, we can define a function <m>f_X</m> in the product 
+<m>\prod(\lambda\cap\reg)</m> by setting
+  <me>
+    f_X(\theta)=\begin{cases}
+    \sup(X\cap\theta)+1 &amp; \text{if }|X|\lt\theta\text{,}\\
+    0 &amp; \text{otherwise.}
+    \end{cases}
+  </me>
+</p>
+<p>
+  Since <m>|X|\lt\lambda</m> it is clear that <m>f_X</m> will be non-zero for all sufficiently large regular cardinals below <m>\lambda</m>, and furthermore if <m>X\subseteq Y</m>
+  in <m>[\lambda]^{\lt\lambda}</m> then <m>f_X(\theta)\leq f_Y(\theta)</m> for all regular <m>\theta\lt\lambda</m>.
+</p>
+
+<p>
+  Suppose now that we have a collection <m>\mathcal{X}</m> that is cofinal in <m>([\lambda]^{\lt\lambda},\subseteq)</m>.  Given a function <m>g\in\prod(\lambda\cap\reg)</m> and a 
+  set of regular cardinals <m>A</m> in <m>[\lambda\cap\reg]^{\lt\lambda}</m>, we can choose <m>X\in\mathcal{X}</m> such that 
+  <me>
+    \ran(g\restr A)\subseteq X.
+  </me>
+  If <m>A</m> is unbounded in <m>\lambda</m> then <m>g(\theta)\lt f_X(\theta)</m> for all sufficiently large <m>\theta\in A</m>.  Thus, for any subset <m>A</m> of <m>\lambda\cap\reg</m>
+  of cardinality less than <m>\lambda</m>, the set of restrictions <m>f_X\restr A</m> for <m>X\in\mathcal{X}</m> is cofinal in the structure <m>\prod A</m> modulo the ideal
+  <m>J^{\bd}_\lambda</m> of bounded subsets of <m>\lambda</m>. (Note this will hold automatically for trivial reasons if <m>A</m> is a bounded subset of <m>\lambda</m>).
+</p>
+</section>

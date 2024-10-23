@@ -7,7 +7,7 @@
      argument that ties characteristic functions of models to their contents.</p>
 
 
-<subsection xml:id="subsec-folklore">
+
 
 
 
@@ -60,12 +60,5 @@
     </p>
   </proof>
   
-</subsection>
-<subsection xml:id="subsec-blah">
-  <title>Applications</title>
-  
-<p>
-  blah blah blah
-</p>
-</subsection>
+
 </section>

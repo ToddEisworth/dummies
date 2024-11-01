@@ -1,0 +1,244 @@
+
+
+	<section xml:id="exactsequences">
+		<title>Global Structure of Exact Sequences</title>
+
+		<p>
+			Now that we can claim to understand the structure of flat families of functions, we move now to the more general problem of characterizing when a <m>&lt;_I</m>-increasing sequence of functions <m>\ov{f}</m> has an exact upper bound <m>f</m> that need not be flat.
+		</p>
+
+<!-- div attr= class="definition"-->
+		<p>
+			A <m>&lt;_I</m>-increasing sequence <m>\ov f=\langle f_\alpha\mid \alpha&lt;\delta\rangle</m> in <m>\On^A</m> is called <em>exact of cofinality <m>\lambda</m></em> if the sequence <m>\ov{f}</m> has an exact upper bound and <m>\cf(\delta)=\lambda</m>.
+		</p><!--</div attr= class="definition">-->
+
+		<p>
+			Any <m>&lt;_I</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\delta\rangle</m> Notice that any <m>&lt;_I</m>-increasing sequence of limit length is equivalent to a sequence indexed by a regular cardinal, so there , as every <m>&lt;_I</m>-increasing sequence of limit length is equivalent to such a sequence modulo <m>I</m>. If we need further generality, we will follow the practice established in the last section and say that a <m>&lt;_I</m>-increasing sequence of length some limit ordinal <m>\delta</m> is exact if it has an exact upper bound, and then the original sequence will be equivalent modulo <m>I</m> to an exact sequence of length <m>\cf(\delta)</m>.
+		</p>
+
+		<p>
+			As far as eubs go, there are some things we can say about their structure without knowing much about the sequence <m>\ov{f}</m> at all. For example, the following relies only on the fact that <m>\lambda</m> is an infinite cardinal.
+		</p>
+
+<!-- div attr= class="proposition"-->
+		<p>
+			Suppose <m>\ov f</m> is an exact sequence of length <m>\lambda</m>, and let <m>g</m> be an exact upper bound. Then <m>g(a)</m> is an infinite limit ordinal for <m>I</m>-almost all <m>a\in A</m>.
+		</p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> It is obvious that <m>g</m> cannot equal 0 on an <m>I</m>-positive set: just the fact that <m>f_0&lt;_I f_1</m> is enough to guarantee that <m>f_1(a)</m> must be greater than <m>0</m> for almost all <m>a\in A</m>, and hence the same must hold for <m>g</m>.
+		</p>
+
+		<p>
+			Next, suppose by way of contradiction that there is an <m>I</m>-positive set <m>X</m> of coordinates <m>a</m> for which <m>g(a)</m> is a successor ordinal. Define a function <m>h</m> with domain <m>A</m> by <me>h(a)=
+\begin{cases}
+    g(a)-1   &amp;\text{if $a\in X$, and}\\
+    0        &amp;\text{otherwise}.
+\end{cases}</me> Since <m>h&lt;_I g</m>, we can choose <m>\alpha&lt;\lambda</m> with <m>h&lt;_I f_\alpha</m>. If <m>a</m> is in <m>X</m> and <m>h(a)&lt;f_\alpha(a)</m>, then it must be the case that <m>g(a)</m> is less than or equal to <m>f_\alpha(a)</m>. Thus, there is an <m>I</m>-positive set of <m>a</m> for which <m>g(a)\leq f_\alpha(a)</m>. But this is absurd as we know <m>f_\alpha&lt;_I g</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			The preceding proposition allows us to invoke Theorem I.<xref ref="thm:equivtoproduct" /> when discussing exact sequences and assume without loss of generality that the exact upper bounds have the form <m>\ov{\lambda}=\langle\lambda(a):a\in A\rangle</m>, where each <m>\lambda(a)</m> is a regular cardinal. Moreover, if we know that <m>\lambda(a)</m> is greater than <m>|A|</m> for <m>I</m>-almost every coordinate <m>a</m>, then the know that <m>\ov{f}</m> is equivalent modulo <m>I</m> to an isomorphic copy of the product <m>\prod\{\lambda(a):a\in A\}</m>
+		</p>
+
+<!-- div attr= class="theorem"-->
+		<p>
+			Suppose <m>\ov{f}</m> is a <m>&lt;_I</m>-exact sequence of length <m>\lambda</m> with exact upper bound <m>\ov{\lambda}</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						If the sequence <m>\ov{\lambda}</m> is constant with some value <m>\theta</m> on an <m>I</m>-positive set, then either <m>\theta=\lambda</m> or <m>\theta\leq|A|</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\lambda(a)\leq \lambda</m> for <m>I</m>-almost all <m>a\in A</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="theorem">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> It suffices to show that if <m>\theta</m> is a regular cardinal with <m>|A|&lt;\theta</m> and <m>\theta\neq\lambda</m>, then <m>\{a\in A: \lambda(a)=\theta\}\in I</m>. To do this, assume <m>\theta</m> is a regular cardinal greater than <m>|A|</m> and there is an <m>I</m>-positive set <m>X</m> on which <m>\lambda(a)=\cf(g(a))</m> is constant with value <m>\theta</m>. If we let <m>J</m> be the ideal <m>I\restr X</m>, then <m>\ov{f}</m> is will be (modulo <m>J</m>) flat of cofinality <m>\theta</m>. Since <m>J</m> extends <m>I</m> and <m>\ov{f}</m> is exact of length <m>\lambda</m> modulo <m>I</m>, we conclude that <m>\theta</m> must equal <m>\lambda</m>.
+		</p>
+
+		<p>
+			For the second part of the theorem, assume by way of contradiction that there is an <m>I</m>-positive set <m>X\subseteq A</m> such that <m>\lambda&lt;\lambda(a)</m> for all <m>a\in X</m>. Since each <m>\lambda(a)</m> is a regular cardinal, we know that for <m>a</m> in <m>X</m>, the set <m>\{f_\alpha(a):\alpha&lt;\lambda\}</m> is bounded below <m>\lambda</m>. Thus, we can define a function <m>h\in\prod\lambda(a)</m> by setting <m>h</m> to be <m>0</m> outside of <m>X</m>, while for all <m>\alpha&lt;\lambda</m> and <m>a\in X</m>, <m>f_\alpha(a)</m> is less than <m>h(a)</m> We get a contradiction, as there must be a <m>\beta&lt;\lambda</m> for which <m>h&lt;_I f_\beta</m>, but <m>f_\beta(a)&lt;h(a)</m> for an <m>I</m>-positive set of <m>a\in A</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			The preceding theorem foreshadows a connection between the structure of an exact sequence <m>\ov{f}</m> and the nature of its exact upper bound <m>\ov{\lambda}</m>. To see how, let us first focus on the situation where the regular cardinals in the upper bound are (almost) all greater than the cardinality of <m>A</m>. In this situation, we know that <m>\lambda</m> must be greater than <m>|A|</m> as well, and if our sequence <m>\ov\lambda</m> is constant with value <m>\theta</m> on an <m>I</m>-positive set, then the only possibility is for <m>\theta</m> to be <m>\lambda</m>, the length of <m>\ov{f}</m>. Let <m>X</m> be the set of <m>a\in A</m> for which <m>\lambda(a)=\lambda</m> and set <m>Y = A\setminus X</m>. It is certainly possible for either of these sets to be empty, but we know that since they partition <m>A</m> into finitely many pieces, at least one of them must be <m>I</m>-positive. If <m>Y</m> is in the ideal <m>I</m>, then our sequence <m>\ov{f}</m> is flat of cofinality <m>\lambda</m>. If <m>X</m> is in the ideal <m>I</m>, then for any <m>I</m>-positive set <m>Z</m> the sequence <m>\ov{f}</m> is not flat modulo <m>I\restr Z</m>. Even if both <m>X</m> and <m>Y</m> are in <m>I^+</m>, we still have shown that assuming that <m>|A|&lt;\lambda(a)</m> for all <m>a</m>, our index set <m>A</m> will into two pieces: on one of which <m>\ov{f}</m> looks flat of cofinality <m>\lambda</m> modulo <m>I</m>, and on the other where <m>\ov{f}</m> is <q>nowhere flat</q> modulo <m>I</m>.
+		</p>
+
+		<p>
+			What happens we don’t assume that <m>\lambda(a)</m> is always greater than <m>|A|</m>? First, note that since <m>I</m> need not be maximal, there is nothing preventing the situation where the sequence <m>\ov{\lambda}</m> is constant with different values on disjoint <m>I</m>-positive sets. So for example, we could have an <m>I</m>-positive set on which our sequence looks flat of cofinality <m>\lambda</m>, and there could be another <m>I</m>-positive set where <m>\ov{\lambda}</m> is constant with some value <m>\theta\neq\lambda</m>. What we do know is that if the latter situation occurs, then <m>\theta\leq |A|</m>, so there is an <m>I</m>-positive set on which <m>\ov{f}</m> lives in a <q>small product</q>. Here, in contrast to the flat situation, things can be very sensitive to the underlying set theory, even in the simplest situation where both <m>A</m> and <m>\theta</m> are <m>\omega</m>.
+		</p>
+
+<!-- div attr= class="example"-->
+		<p>
+			 Suppose <m>\lambda&gt;\aleph_0</m> is an arbitrary uncountable regular cardinal. Let <m>V</m> be a model of <m>\zfc</m> in which <m>2^{\aleph_0}=\lambda</m> and <m>\ma</m> holds. Let <m>F=\omega^\omega</m>, the Baire space of all functions from <m>\omega</m> to <m>\omega</m>, and let <m>I</m> be the ideal of finite subsets of <m>\omega</m>. Martin’s Axiom implies that the cardinals <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> are equal to the continuum, and so <m>(F, &lt;_I)</m> will have true cofinality <m>\lambda</m>. Any sequence <m>\ov{f}</m> witnessing this will have the function that is constant with value <m>\omega</m> as exact upper bound. Thus, the exact upper bound does not seem to be connected with the sequence <m>\ov{f}</m> in this situation.
+		</p><!--</div attr= class="example">-->
+
+		<p>
+			If we do not insist on our examples involving <m>\Fin(\omega)</m> and instead allow larger ideals, then we can have (at least consistently) even worse behavior as the following example shows.
+		</p>
+
+<!-- div attr= class="example"-->
+		<p>
+			It is consistent that <m>2^{\aleph_0}</m> is arbitrarily large, and for any uncountable regular <m>\kappa\leq 2^{\aleph_0}</m> there is an ideal <m>I(\kappa)</m> on <m>\omega</m> such that <m>\omega^\omega</m> has true cofinality <m>\kappa</m> modulo <m>I(\kappa)</m>. Again, the exact upper bound is exactly the same across all relevant <m>\kappa</m> — <m>\ov{\lambda}</m> is always the function with domain <m>\omega</m> that is constant with value <m>\omega</m> — but the lengths of the exact sequences in <m>F</m> realize all possibilities by varying the ideals involved.
+		</p><!--</div attr= class="example">-->
+
+		<p>
+			As interesting as products of small sets are, they are not particularly useful for us because imposes few restrictions on how they behave, and we officially adopt the attitude that products of sets of size at most <m>|A|</m> are intractable. If our exact sequence <m>\ov{f}</m> has an exact upper bound <m>g</m> such that <m>\cf(g(a))\leq|A|</m> on an <m>I</m>-positive set, then we will not be able to say much about the structure <m>(\prod g, &lt;_I)</m> without adopting additional set-theoretic axioms because it hides a copy of a product of small sets within. Thus, the following definition is quite natural.
+		</p>
+
+<!-- div attr= class="definition"-->
+		<p>
+			 Suppose <m>\ov{\lambda}=\langle \lambda(a):a\in A\rangle</m> is a sequence of regular cardinals. We define <m>\liminf_I\ov{\lambda}</m> to be the least cardinal <m>\mu</m> such that there is an <m>I</m>-positive set of <m>a\in A</m> with <m>\lambda(a)\leq\mu</m>.
+		</p><!--</div attr= class="definition">-->
+
+		<p>
+			The preceding definition is made without assuming anything about the product <m>\prod \ov{\lambda}</m> having true cofinality modulo <m>I</m>, and so it makes sense for any sequence <m>\ov{\lambda}</m> of regular cardinals. It gives us some handy language as well: if <m>\liminf_I(\ov{\lambda})</m> is not greater than <m>|A|</m>, then we know there is an <m>I</m>-positive set of coordinates on which our product looks like a product of small sets, and we have declared such things to be taboo. Thus, we will want to focus our attention on products <m>\prod\ov{\lambda}</m> for which <m>\liminf_I\ov{\lambda}</m> is greater than <m>A</m>. Our intent is to look at this cardinal in the context of general products of regular cardinals <m>\prod\ov{\lambda}</m>, and then return to questions related to exact sequences a little later.
+		</p>
+
+		<p>
+			We will start with some elementary observations, so let us assume <m>\ov{\lambda}</m> is an <m>A</m>-indexed sequence of regular cardinals. First, Definition <xref ref="def:liminfdef" /> will always make sense because <m>I</m> is a proper ideal, and <me>\min\{\lambda(a):a\in A\}\leq\liminf{}_I\ov\lambda \leq\sup\{\lambda(a):a\in A\}.</me> This shows us that the easiest way to guarantee that <m>\liminf_I\ov{\lambda}</m> is greater than <m>|A|</m> is to insist that each <m>\lambda(a)</m> is greater than <m>|A|</m>, and we will see this hypothesis come to the forefront as we move deeper into pcf theory.
+		</p>
+
+		<p>
+			Second, it is elementary to prove that <m>\liminf_I\ov{\lambda}</m> must be in the closure of the set <m>\{\lambda(a):a\in A\}</m>. This is quite useful, because it implies that if each <m>\lambda(a)</m> is greater than <m>|A|</m> and <m>\ov\lambda</m> does not stabilize on an <m>I</m>-positive set, then <m>\liminf_I\ov\lambda</m> must be singular of cofinality at most <m>|A|</m> (see Exercise <xref ref="exer:singular" />).
+		</p>
+
+		<p>
+			Finally, Definition <xref ref="def:liminfdef" /> extracts a cardinal characteristic from the sequence <m>\ov{\lambda}</m>, without looking at the associated product <m>\prod\ov{\lambda}</m>. This is a shortcoming, as it would be useful to know that this particular cardinal could be recovered from the product itself as that would give us a means of looking at a collection of functions and determining if it is hiding an intractable product of small sets. Luckily, it happens that it is tightly connected to the cardinal <m>\sigma_I(\prod\ov{\lambda})</m>, which <em>is</em> defined from the product.
+		</p>
+
+<!-- div attr= class="proposition"-->
+		<p>
+			 Suppose <m>\ov{\lambda}=\langle \lambda(a):a\in A\rangle</m> is a sequence of regular cardinals. Then
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						<m>\liminf{}_I\ov{\lambda}\le \sigma_I(\prod\ov{\lambda})</m>, and
+					</p>
+			</li>
+
+			<li>
+					<p>
+						if <m>|A|\leq\liminf_I\ov{\lambda}</m> then <m>\sigma_I(\prod\ov{\lambda})=\liminf\hphantom{}_I \ov\lambda</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> Let <m>\mu=\liminf_I\ov{\lambda}</m>, and suppose <m>F</m> is a subset of <m>\prod\ov{\lambda}</m> of some cardinality <m>\theta&lt;\mu</m>. Since the product is closed downward under <m>&lt;_I</m>, we need to show that the function <m>h:=\sup(F)</m> is in the product modulo <m>I</m>. Clearly <m>h(a)\leq\lambda(a)</m> for all <m>a\in A</m>, and <m>h(a)&lt;\lambda(a)</m> whenever <m>\theta&lt;\lambda(a)</m> because each <m>\lambda(a)</m> is regular. The choice of <m>\theta</m> means that this holds for almost all <m>a\in A</m>, so <m>\sup(F)</m> is equal (modulo <m>I</m>) to some function in our product.
+		</p>
+
+		<p>
+			Now suppose <m>|A|\leq\mu</m>. We need to produce a subset <m>F</m> of our product of cardinality <m>\mu</m> whose supremum is not in <m>\prod\ov{\lambda}</m>. But this is easy: For each <m>a\in A</m> with <m>\lambda(a)\leq\mu</m> and <m>\alpha&lt;\lambda(a)</m> we add a function to <m>F</m> that has value <m>\alpha</m> on coordinate <m>a</m> and is identically <m>0</m> elsewhere. The cardinality of <m>F</m> is at most <m>\mu\times|A|=\mu</m>, and <m>\sup(F)(a)=\lambda(a)</m> for all <m>a\in A</m> with <m>\lambda(a)\leq\mu</m>. But this is an <m>I</m>-positive set, so <m>\sup(F)</m> is not in our product. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			As a corollary, we end up with the desired characterization of <m>\liminf_I\ov{\lambda}</m> using the functions in the product <m>\prod\ov{\lambda}</m>, at least for the situation in which we will operate most of the time.
+		</p>
+
+<!-- div attr= class="corollary"-->
+		<p>
+			 If <m>\ov{\lambda}</m> is a sequence of regular cardinals each greater than <m>|A|</m>, then <me>\sigma_I\bigl(\prod\ov{\lambda}\bigr)=\liminf{}_I\ov{\lambda}.</me>
+		</p><!--</div attr= class="corollary">-->
+
+		<p>
+			We can take the above observation and use it to obtain a nice counterpart to our characterization of flatness <xref ref="eq:flatness" /> as the relation <m>\sigma_I(F)=\mathfrak{d}_I(F)</m>.
+		</p>
+
+<!-- div attr= class="proposition"-->
+		<p>
+			 Suppose <m>\ov{\lambda}</m> is an <m>A</m>-indexed sequence of regular cardinals each greater than <m>|A|</m> and let <m>F</m> be the product <m>\prod\ov{\lambda}</m>. Then the following statements are equivalent:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						<m>\liminf_I(\ov{\lambda})</m> is regular.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						There is an <m>a\in A</m> for which <m>\lambda(a)=\liminf_I(\ov\lambda)</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\sigma_I(F)=\mathfrak{b}_I(F)</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> Let <m>\mu</m> denote <m>\liminf_I(\ov\lambda)</m>. We know <m>\mu</m> is in the closure of the set of regular cardinals <m>\{\lambda(a):a\in A\}</m>, and our assumption implies that <m>|A|</m> is less than <m>\mu</m>. If <m>\mu</m> is regular, it cannot be a limit point of the range of <m>\ov{\lambda}</m>, and therefore must be an element of this set and so (2) holds.
+		</p>
+
+		<p>
+			Now assume (2). The inequality <m>\sigma_I(F)\leq\mathfrak{b}_I(F)</m> holds automatically and <m>\mu=\sigma_I(F)</m> by Corollary <xref ref="cor:liminfsigma" />, so it suffices to produce an unbounded subset of <m>F</m> with cardinality <m>\sigma_I(F)</m>. For each <m>\alpha&lt;\mu</m>, define a function <m>f_\alpha</m> by <me>f_\alpha(a)=
+\begin{cases}
+\alpha  &amp;\text{if $\lambda(a)=\sigma_I(F)$, and}\\
+0       &amp;\text{otherwise.}
+\end{cases}</me> The definition of <m>\liminf_I(\ov\lambda)</m> tells us that (2) implies <m>\lambda(a)=\mu</m> for an <m>I</m>-positive set of coordinates <m>a</m>, and so <m>f_\alpha</m> will have the value <m>\alpha</m> on an <m>I</m>-positive set <m>X</m>. Since <m>\sigma_I(F)=\liminf_I\ov{\lambda}</m>, (2) also implies that <m>\sigma_I(F)</m> is a regular cardinal greater than the cardinality of <m>A</m>. Thus, the sequence <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m> is flat of cofinality <m>\sigma_I(F)</m> modulo the (proper) ideal <m>I\restr X</m>, and furthermore the pointwise supremum <m>f</m> of the sequence will be an exact upper bound. By construction, the supremum <m>f</m> is equal to <m>\lambda(a)</m> on <m>X</m>, so any function <m>h\in F</m> is below <m>f</m> modulo <m>I\restr X</m>. This means that there will be an <m>\alpha&lt;\mu</m> such that <m>h(a)&lt;f_\alpha(a)</m> for <m>I</m>-almost all <m>a\in X</m>, and we conclude that set of functions <m>f_\alpha</m> is unbounded in <m>F</m> modulo <m>I</m>.
+		</p>
+
+		<p>
+			The final implication from (3) to (1) is easy given our prior work: we know <m>\liminf_I\ov{\lambda}</m> will equal <m>\sigma_I(F)</m>, and we finish by way of Proposition I.<xref ref="prop:firstb" />, which tells us that <m>\mathfrak{b}_I(F)</m> is a regular cardinal. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			We now come to an important corollary that tells us that singular cardinals are always hiding just around the corner in our work.
+		</p>
+
+<!-- div attr= class="corollary"-->
+		<p>
+			Suppose <m>\ov{\lambda}</m> is an <m>A</m>-indexed sequence of regular cardinals greater than <m>|A|</m> and let <m>F</m> denote the product <m>\prod\ov{\lambda}</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						If <m>\sigma_I(F)=\mathfrak{b}_I(F)</m>, then there is an <m>I</m>-positive set <m>X</m> on which <m>F</m> is flat of cofinality <m>\sigma_I(F)</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						If <m>\ov{\lambda}</m> does not stabilize on an <m>I</m>-positive set, then <me>\cf(\sigma_I(F))\leq|A|&lt;\sigma_I(F)&lt;\mathfrak{b}_I(F)\leq\mathfrak{d}_I(F)\leq |F|.</me>
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="corollary">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> The first follows from the equivalence of (2) and (3) in our theorem, and the second from the equivalence of (1) and (2) combined with earlier observations. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			The above corollary tells us where to look if we are interested in finding exact sequences that are <q>nowhere</q> flat but do not live in an intractable product of small sets: we are going to need to find products <m>F</m> of regular cardinals satisfying <m>\mathfrak{b}_I(F)=\mathfrak{d}_I(F)</m> (so there will be a true cofinality modulo <m>I</m>) for which the cardinal <m>\sigma_I(F)</m> is singular and strictly less than <m>\mathfrak{b}_I(F)</m> (which must happen if we are to avoid an <m>I</m>-positive set on which <m>F</m> looks flat modulo <m>I</m>). The following gives us our first example of such an exact sequence, but it has the defect of making some cardinal arithmetic assumptions, a defect that will be removed later in this chapter when we show that such sequences are quite common.
+		</p>
+
+<!-- div attr= class="example"-->
+		<p>
+			 Assume <m>\gch</m> holds, and let <m>F</m> be the product <m>\prod\ov{\lambda}</m>, where <m>\lambda(n)=\aleph_{n+1}</m>. If we let <m>I</m> be the ideal <m>\Fin(\omega)</m> of finite subsets of <m>\omega</m>, then <m>F</m> is <m>&lt;_I</m>-directed, and so <me>\sigma_I(F)\le\mathfrak b_I(F)\le \mathfrak
+  d_I(F)\le |F|=\aleph_{\omega+1}.</me> We see that <m>\liminf_I(\ov{\lambda})</m> is <m>\aleph_\omega</m>, and therefore <m>\sigma_I(F)=\aleph_\omega</m> as well by Corollary <xref ref="cor:liminfsigma" />. Since <m>\mathfrak{b}_I(F)</m> is regular and at least of cardinality <m>\sigma_I(F)</m>, we conclude that both <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> are <m>\aleph_{\omega+1}</m> and therefore <m>F</m> has true cofinality <m>\aleph_{\omega+1}</m> modulo <m>I</m>.
+		</p><!--</div attr= class="example">-->
+	</section>

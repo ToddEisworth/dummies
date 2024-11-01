@@ -14,4 +14,7 @@
   </introduction>
   
 <xi:include href="sec-2-1-types-upper-bounds.ptx" />
+<xi:include href="sec-2-2-flat-sequences.ptx" />
+<xi:include href="sec-2-3-structure-exact-sequences.ptx" />
+<xi:include href="sec-2-4-trichotomy.ptx" />
 </chapter>

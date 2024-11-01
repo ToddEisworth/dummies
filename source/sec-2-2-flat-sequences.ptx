@@ -1,0 +1,172 @@
+
+	<section xml:id="flat-products-and-sequences">
+		<title>Flat Products and Sequences</title>
+
+		<p>
+			This section begins with an expansion of Example <xref ref="ex:importanteub" />, as the existence of an exact upper bound in that situation is a general phenomenon that crops up in many places.
+		</p>
+
+<!-- div attr= class="example"-->
+		<p>
+			 Suppose <m>A</m> is an infinite set and <m>\lambda</m> is a regular cardinal with <m>|A|&lt;\lambda</m>. If <m>\ov f=\langle f_\alpha:\alpha&lt;\lambda\rangle</m> is a <m>&lt;</m>-increasing sequence in <m>\On^A</m>, then the pointwise supremum of the functions <m>f_\alpha</m> is an exact upper bound for <m>\ov f</m> modulo any proper ideal <m>I</m> on <m>A</m>. To see this, let <m>g</m> be the corresponding supremum, that is, <m>g(a)=\sup\{f_\alpha(a):\alpha&lt;\lambda\}</m>. Let <m>h</m> be any function in <m>\prod g</m>. For each <m>a\in A</m>, we define <m>\alpha_a</m> to be least <m>\alpha&lt;\lambda</m> for which <m>h(a)\leq f_\alpha(a)</m>. Clearly <m>\alpha_a</m> will exist, as the sequence <m>\langle f_\alpha(a):\alpha&lt;\lambda\rangle</m> is strictly increasing with supremum <m>g(a)</m>. Since <m>|A|&lt;\lambda</m>, we know the supremum of the ordinals <m>\alpha_a</m> (for <m>a\in A</m>) is some ordinal <m>\alpha</m> strictly less than <m>\lambda</m>, and therefore <m>h(a)</m> will be less than <m>f_\alpha(a)</m> for all <m>a\in A</m>. Since <m>h</m> is bounded everywhere by <m>f_\alpha</m>, it is clear that <m>h&lt;_I f_\alpha</m> for any proper ideal <m>I</m> on <m>A</m>, and therefore <m>g</m> is an exact upper bound for <m>\ov f</m> mod <m>I</m>. <m>\blacksquare</m>
+		</p><!--</div attr= class="example">-->
+
+		<p>
+			The point is that the pointwise supremum of a sufficiently long (that is, of length strictly greater than the cardinality of <m>A</m>) <m>&lt;</m>-increasing sequence will be an exact upper bound of the sequence for reasons of elementary cardinal arithmetic. Turning this around, it is easy to characterize when a function <m>g\in\On^A</m> will be an exact upper bound for such a <m>&lt;</m>-increasing sequence.
+		</p>
+
+<!-- div attr= class="proposition"-->
+		<p>
+			 Suppose <m>A</m> is an infinite set and <m>\lambda</m> is a regular cardinal greater than <m>|A|</m>. If <m>f\in\On^A</m> and <m>\cf(f(a))=\lambda</m> for all <m>a\in A</m>, then <m>(\prod f, &lt;)</m> will have true cofinality <m>\lambda</m>.
+		</p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> For each <m>a\in A</m> let <m>c_a:\lambda\rightarrow g(a)</m> be the increasing enumeration of a cofinal subset of <m>f(a)</m>. Then for each <m>\alpha&lt;\lambda</m>, we can define <me>f_\alpha(a):= c_a(\alpha),</me> and the sequence <m>\ov{f}=\langle f_\alpha:\alpha&lt;\lambda\rangle</m> is <m>&lt;</m>-increasing. Since <m>f</m> is the pointwise supremum of this sequence, we are in the situation of Example <xref ref="ex:longexact" />. Thus, <m>f</m> is an exact upper bound for <m>\ov{f}</m> and <m>(\prod f, &lt;)</m> has true cofinality <m>\lambda</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			Of course, it is sufficient to demand only that the cofinality of <m>f(a)</m> should be <m>\lambda</m> for <m>I</m>-almost all <m>a\in A</m>, as such a function is equal modulo <m>I</m> to one that has the required cofinality everywhere. The following proposition wraps Proposition <xref ref="prop:flatfunction" /> and Example <xref ref="ex:longexact" /> together, along with a couple of other easy equivalences.
+		</p>
+
+<!-- div attr= class="proposition"-->
+		<p>
+			 Suppose <m>\lambda</m> is a regular cardinal with <m>|A|&lt;\lambda</m>. Then the following are equivalent for a function <m>f:A\rightarrow\On</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						<m>\cf(f(a))=\lambda</m> for all <m>a\in A</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\prod f</m> contains a <m>&lt;</m>-increasing sequence <m>F=\{ f_\alpha:\alpha&lt;\lambda\}</m> and <m>f=\sup(F)</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\tcf(\prod f, &lt;)=\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\tcf(\prod f, \leq_I)=\lambda</m> for every (proper) ideal <m>I</m> on <m>A</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> The implication from (1) to (2) holds using , and does not require <m>\lambda</m> to be greater than <m>|A|</m>. Moving from (2) to (3) is done as in Example <xref ref="ex:longexact" />, and (4) follows from (3) by definition. If (1) fails, then it fails for some specific <m>a\in A</m>, and if we let <m>I</m> be the principle ideal <m>\{a\}</m> then <m>\tcf(\prod f, &lt;_I)</m> will be <m>\cf(f(a))\neq\theta</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			If start with an ideal <m>J</m> and weaken condition (1) to require only that <m>f(a)</m> has cofinality <m>\lambda</m> for <m>J</m>-almost all <m>a\in A</m>, then we lose (2) and (3) in the above equivalence, but (4) remains equivalent if we require that the condition holds for all proper ideals <m>I</m> on <m>A</m> that extend <m>J</m>. Of course, every such <m>f</m> is equal (modulo <m>J</m>) to a function that attains cofinality <m>\lambda</m> in every coordinate. This configuration arises enough that it makes sense to assign some terminology.
+		</p>
+
+<!-- div attr= class="definition"-->
+		<p>
+			Let <m>A</m> be a set and let <m>\lambda</m> be a regular cardinal.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						A function <m>f\in\On^A</m> is said to be <em>flat</em> of cofinality <m>\lambda</m> if <m>\cf(f(a))=\lambda</m> for <m>I</m>-almost all <m>a\in A</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						The product <m>\prod f</m> associated with such a function is called a <em>flat product</em> with cofinality <m>\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						A set <m>F</m> of functions in <m>\On^A</m> is <em>flat of cofinality <m>\lambda</m> modulo <m>I</m></em> if <m>F</m> has an exact upper bound <m>f</m> that is flat of cofinality <m>\lambda</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="definition">-->
+
+		<p>
+			Our aim is to give an internal characterization of flat sets of functions, at least in the case where <m>\lambda&gt;|A|</m>. We do this in Theorem <xref ref="flatEquivs" /> below, but before stating and proving the theorem we will engage in a bit of exploration. Suppose that <m>F</m> is flat of cofinality <m>\lambda</m> modulo <m>I</m> with <m>\lambda&gt;|A|</m>, and let <m>f</m> be a corresponding flat exact upper bound for <m>F</m>. We may assume that <m>\cf(f(a))=\lambda</m> for all <m>a\in A</m>, so we can also fix for each <m>a\in A</m> and unbounded <m>S(a)\subseteq f(a)</m> of order-type <m>\lambda</m>. The work we did in Example <xref ref="ex:longexact" /> and Proposition <xref ref="prop:flatfunction" /> shows us that <m>F</m> is equivalent modulo <m>I</m> to the product <m>\prod_{a\in A}S(a)</m>, and also equivalent modulo <m>I</m> to a <m>&lt;</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m>. This turns out to be a powerful assumption, as it implies the pointwise supremum of fewer than <m>\lambda</m> functions in <m>F</m> is bounded modulo <m>I</m> in <m>F</m>: Given <m>F_0\subseteq F</m> with <m>|F_0|&lt;\lambda</m>, we choose for each <m>g\in F_0</m> a corresponding ordinal <m>\alpha(g)&lt;\lambda</m> with <m>g&lt;f_{\alpha(g)}</m>. Since <m>\lambda</m> is regular, we know that the supremum over all <m>g\in F_0</m> of the ordinals <m>\alpha(g)</m> will be less than <m>\lambda</m>, and hence <m>\sup(F_0)</m> is everywhere bounded by <m>f_\alpha</m> for some <m>\alpha&lt;\lambda</m>. Now we can choose <m>g\in F</m> for which <m>g_\alpha\leq_I g</m>. Looking back to notation established in the last chapter, we have shown that <m>\sigma_I(F)</m> is at least <m>\lambda</m>. This observation is one of the important ingredients in our internal characterization of flatness.
+		</p>
+
+<!-- div attr= class="theorem"-->
+		<p>
+			 Suppose <m>|A|&lt;\lambda</m> with <m>\lambda</m> regular. Then the following statements are equivalent for a family of functions <m>F\subseteq\On^A</m> and ideal <m>I</m> on <m>A</m>:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						<m>F</m> is flat of cofinality <m>\lambda</m> modulo <m>I</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\sigma_I(F)=\mathfrak{b}_I(F)=\mathfrak{d}_I(F)=\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>(F, &lt;_I)</m> has a cofinal subset <m>\{f_\alpha:\alpha&lt;\lambda\}</m> of cardinality <m>\lambda</m> such that <me>\sup\{f_\beta:\beta&lt;\alpha\}&lt;_I f_\alpha</me> for all <m>\alpha&lt;\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>F</m> is <m>&lt;_I</m>-directed and equivalent modulo <m>I</m> to a <m>\leq</m>-increasing sequence of length <m>\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>F</m> is equivalent modulo <m>I</m> to a <m>&lt;</m>-increasing sequence of length <m>\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>F</m> is equivalent modulo <m>I</m> to a product <m>\prod_{a\in A}S(\alpha)</m> where <m>S(a)</m> has order-type <m>\lambda</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="theorem">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> If <m>F</m> is flat of cofinality <m>\lambda</m>, then by our discussion above we know <m>\sigma_I(F)</m> is at least <m>\lambda</m>. Since <m>F</m> has true cofinality <m>\lambda</m>, we can invoke Theorem I.<xref ref="thm:tcfchar" /> and conclude <me>\lambda\leq\sigma_I(F)\leq\mathfrak{b}_I(F)=\mathfrak{d}_I(F)=\lambda.</me> If we assume (2), then (3) follows from the proof of Theorem I.<xref ref="thm:tcfchar" />. Since <m>\mathfrak{d}_I(F)=\lambda</m> we fix a cofinal family <m>\{g_\alpha:\alpha&lt;\lambda\}</m> in <m>F</m> and build <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m> by induction, making sure at stage <m>\alpha</m> to select <m>f_\alpha</m> so that <me>\max\{\sup\{f_\beta:\beta&lt;\alpha\}, g_\alpha\}&lt;_I f_\alpha.</me>
+		</p>
+
+		<p>
+			Clearly (3) implies that <m>F</m> is <m>&lt;_I</m>-directed. If we define <me>h_\alpha:=\sup\{f_\beta:\beta&lt;\alpha\}</me> then <m>\langle h_\alpha:\alpha&lt;\lambda\rangle</m> is <m>\leq</m>-increasing and equivalent to <m>F</m>.
+		</p>
+
+		<p>
+			How would we establish (4) from the existence of such a sequence <m>\ov h</m>? Given <m>a\in A</m>, look at the sequence <m>\langle h_\alpha(a):\alpha&lt;\lambda\rangle</m>. This is non-decreasing by our assumption on <m>\ov{h}</m> and nothing in our assumptions prevents the sequence from stabilizing. However, our assumptions DO imply that this cannot happen very often: the set of <m>a</m> for which the sequence of values <m>h_\alpha(a)</m> eventually stabilizes must be in <m>I</m>.
+		</p>
+
+		<p>
+			To see this, suppose it fails and the set <m>X</m> of <m>a\in A</m> for which the corresponding sequence stabilizes is <m>I</m>-positive. Since <m>|A|&lt;\lambda</m> and <m>\lambda</m> is regular, there will be a <m>\delta&lt;\lambda</m> with the property all of these sequences will have stabilized before stage <m>\delta</m>. Thus, if <m>a\in X</m> and <m>\delta\leq\epsilon&lt;\lambda</m> we know <m>h_\delta(a)=h_\epsilon(a)</m> and hence <m>f_\epsilon(a)\leq h(\delta(a))</m>. But now we have a problem: since <m>F</m> is <m>&lt;_I</m>-directed and equivalent to <m>\ov{h}</m> so we can find an <m>\alpha</m> greater than <m>\delta</m> such that <m>h_\delta(a)&lt;f_\alpha(a)</m> for <m>I</m>-almost all <m>a</m> in <m>A</m>. Thus, the set <m>X</m> must be in <m>I</m>.
+		</p>
+
+		<p>
+			Given <m>\alpha&lt;\lambda</m>, if <m>a</m> is not in <m>X</m> then there will be some ordinal <m>\beta(a)</m> greater than <m>\alpha</m> for which <m>h_\alpha(a)&lt;h_{\beta(a)}(a)</m>. We can use the fact that <m>|A|&lt;\lambda</m> once more to conclude <me>(\forall \alpha&lt;\lambda)(\exists\beta&lt;\lambda)(\forall a\in A\setminus X)\left[h_\alpha(a)&lt;h_\beta(a)\right]</me> and now (5) follows easily. The implications from (5) to (6) and from (6) to (1) have been established earlier in this section. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			We end this section by pointing out how the preceding theorem clarifies the relationship between simply having true cofinality <m>\lambda</m> modulo <m>I</m> and being flat of cofinality <m>\lambda</m> modulo <m>I</m>. Given a directed structure <m>(F, &lt;_I)</m> we know <me>\sigma_I(F)\leq\mathfrak{b}_I(F)\leq\mathfrak{d}_I(F)</me> in all cases, while the structure has true cofinality <m>\lambda</m> if and only if <me>\mathfrak{b}_I(F)=\mathfrak{d}_I(F)=\lambda.</me> The structure <m>(F, &lt;_I)</m> will be flat of cofinality <m>\lambda</m> if and only if we have the stronger condition <me>\label{eq:flatness}
+\sigma_I(F)=\mathfrak{d}_I(F)=\lambda.</me> Thus, flatness of a set of functions can be characterized solely in terms of cardinal characteristics
+		</p>
+	</section>

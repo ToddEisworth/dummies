@@ -1,0 +1,136 @@
+
+	<section xml:id="the-trichotomy-theorem">
+		<title>The Trichotomy Theorem</title>
+
+		<p>
+			So far we have not been able to produce a example of a non-flat exact sequence. We take a big step towards this goal in this section, as we prove Shelah’s Trichotomy Theorem which shows that any <m>&lt;_I</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\delta\rangle</m> in <m>\On^A</m> whose length satisfies <m>\cf(\delta)&gt;|A|^+</m> must fall into one of three categories. We will then show that ANY <m>&lt;_I</m>-increasing sequence with length of cofinality greater than <m>2^{|A|}</m> will be exact. But first, we state the Trichotomy Theorem as it is found in the literature, and then spend a little time discussion the alternatives before presenting the proof.
+		</p>
+
+<!-- div attr= class="theorem"-->
+		<p>
+			<!-- linebreak --> Suppose <m>I</m> is an ideal on the set <m>A</m>, and <m>\lambda</m> is a regular cardinal greater than <m>|A|^+</m>. If <m>\ov f=\lng f_\alpha:\alpha&lt;\lambda\rng</m> is an <m>&lt;_I</m>-increasing sequence of ordinal functions in <m>\On^A</m>, then <m>\ov f</m> satisfies one of the following conditions:
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+						() <m>\ov f</m> has an eub <m>f</m> with <m>\cf(f(a))&gt;|A|</m> for all <m>a\in A</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						() There are sets <m>S(a)</m> for <m>a\in A</m> satisfying <m>|S(a)|\le |A|</m> and an ultrafilter <m>D</m> over <m>A</m> extending the dual of <m>I</m> so that for all <m>\alpha&lt;\lambda</m> there exists <m>h_\alpha\in\prod S(a)</m> and <m>\beta&lt;\lambda</m> such that <m>f_\alpha &lt;_D h_\alpha &lt;_D f_\beta</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						() There is a function <m>g:A\to \On</m> such that the <m>\subseteq_I</m>-increasing sequence <m>\ov t=\lng t_\alpha:\alpha&lt;\lambda\rng</m> does not stabilize modulo <m>I</m>, where <m>t_\alpha</m> is defined to be <m>\{a\in A:
+			    f_\alpha(a)&gt;g(a)\}</m>.
+					</p>
+			</li>
+
+		</ul></p><!--</div attr= class="theorem">-->
+
+		<p>
+			We have invested a great deal of time in discussing . As far as goes, we should recognize this as related to behavior we took great pains to avoid in the previous section: tells us that we can embed <m>\ov{f}</m> into a product of small sets modulo an ideal that extends <m>I</m>, and we know products of small sets can exhibit all sorts of behavior. If happens, the sequence may or may not have an exact upper bound: products of small sets are intractable from our point of view.
+		</p>
+
+		<p>
+			It is really that appears to be to the new ingredient here, but we have actually seen this condition earlier. Looking back at part (2) of Proposition <xref ref="prop:eubfromlub" />, we see that is precisely the condition that arises if we find a <m>&lt;_I</m>-increasing sequence with an lub modulo <m>I</m> that fails to be exact. Said another way, if fails for a sequence <m>\ov{f}</m> modulo <m>I</m> then any least upper bound for <m>\ov{f}</m> will be exact. We will use this observation as one ingredient in our proof of the Trichotomy, but the assumption that fails provides much deeper information about the way in which <m>\ov{f}</m> sits inside of <m>\On^A</m>. We will expand on this before proving the Trichotomy Theorem, because it makes the argument clearer and removes some of sense of <em>deus ex machina</em> from Shelah’s original proof.
+		</p>
+
+		<p>
+			Suppose now that <m>\ov{f}</m> is a <m>&lt;_I</m>-increasing sequence in <m>\On^A</m> and fails. This means that given a function <m>g</m>, the corresponding <m>\subseteq_I</m>-increasing sequence of sets <m>t_\alpha</m> stabilizes modulo <m>I</m>. Thus, we can fix a subset <m>L</m> of <m>A</m> such that <m>t_\alpha =_I L</m> for all sufficiently large <m>\alpha&lt;\lambda</m>. If <m>L</m> is in <m>I</m>, then <m>t_\alpha</m> is in <m>I</m> for all <m>\alpha</m> and <m>g</m> is an upper bound for <m>\ov{f}</m> modulo <m>I</m>. If, on the other hand, <m>L</m> is equal to <m>A</m> modulo <m>I</m>, then <m>g\leq_I f_\alpha</m> for all sufficiently large <m>\alpha&lt;\lambda</m> and <m>g</m> is bounded by <m>\ov{f}</m> modulo <m>I</m>. If both <m>L</m> and its complement <m>U=A\setminus L</m> are <m>I</m>-positive, then the sets capture the way in which <m>g</m> interacts with the sequence <m>\ov{f}</m>. On the set <m>L</m>, <m>g</m> is bounded modulo <m>I</m> by some <m>f_\alpha</m>, while on the set <m>U</m> the function <m>g</m> is an upper bound for <m>\ov{f}</m> modulo <m>I</m>. Thus, <m>g</m> is bounded by <m>\ov{f}</m> modulo the ideal <m>I\restr L</m> and bounds <m>\ov{f}</m> modulo the ideal <m>I\restr U</m>. The point is that the interaction between <m>g</m> and <m>\ov{f}</m> is captured by the partition of <m>A</m> into the sets <m>L</m> and <m>U</m>, and situations where this fails to happen are .
+		</p>
+
+		<p>
+			We will round out this discussion of and its negation by re-proving the second part of Proposition <xref ref="prop:eubfromlub" /> and showing that the failure of means least upper bounds are exact. Suppose then that <m>f</m> is a least upper bound for the <m>&lt;_I</m>-increasing sequence <m>\ov{f}</m> and fails. Given a function <m>g</m> in <m>\prod f</m> we need to show that there is an <m>\alpha&lt;\lambda</m> with <m>g\leq_I f_\alpha</m>. Since our sequence is not ugly, we can accomplish this by showing that the set <m>L</m> (the eventual value of <m>t_\alpha</m>) is equal to <m>A</m> modulo <m>I</m>, or equivalently, showing that the set <m>U = A\setminus L</m> is in <m>I</m>. Let us define a function <m>h</m> by putting <m>h\restr L</m> equal to <m>f</m> and <m>h\restr U</m> equal to <m>g</m>. This function <m>h</m> is an upper bound for <m>\ov{f}</m> modulo <m>I</m>, and since <m>f</m> is a least upper bound we know <m>f\leq_I h</m>. Since <m>h(a)=g(a)&lt;f(a)</m> for <m>a\in U</m>, we conclude that <m>U</m> is in <m>I</m> and so <m>g</m> is bounded by <m>\ov{f}</m> as required.
+		</p>
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof of the Trichotomy Theorem.</em> Let <m>\ov{f}=\langle f_\alpha:\alpha&lt;\lambda\rangle</m> be a <m>&lt;_I</m>-increasing sequence whose length <m>\lambda</m> is a regular cardinal greater than <m>|A|^+</m>. It suffices to prove that the failure of implies that either <m>\ov{f}</m> is or <m>\ov{f}</m> has a least upper bound <m>f</m> modulo <m>I</m>. If we manage to produce such a least upper bound, then the failure of implies it is exact, and if <m>\cf(f(a))</m> were less than or equal to <m>|A|</m> on a <m>I</m>-positive set, then any ultrafilter on <m>A</m> containing this set and disjoint to <m>I</m> would serve to establish .
+		</p>
+
+		<p>
+			By induction on <m>\zeta&lt;|A|^+</m> we will attempt define a <m>\lneqq_I</m>-decreasing sequence <m>\langle g_\zeta:\zeta&lt;|A|^+\rangle</m> of upper bounds for <m>\ov{f}</m>. We will start with letting <m>g_0(a)</m> equal <m>\sup\{f_\alpha(a)+1:\alpha&lt;\lambda\}</m>. Successor stages are also straightforward: Given <m>g_\zeta</m> we will ask if it is a least upper bound for <m>\ov{f}</m>. If the answer is yes, then we are finished. If the answer is <q>no</q>, then <m>g_{\zeta+1}</m> will be an upper bound for <m>\ov{f}</m> that satisfies <m>g_{\zeta+1}\lneqq_I g_\zeta</m>, so <m>g_{\zeta+1}(a)</m> is strictly less than <m>g_\zeta(a)</m> on an <m>I</m>-positive set of coordinates.
+		</p>
+
+		<p>
+			How do we proceed at limit ordinals? Suppose we have successfully defined the sequence <m>\langle g_\xi:\xi&lt;\zeta\rangle</m> through some limit stage <m>\zeta&lt;|A|^+</m>. Our goal is to show that either a suitable <m>g_\zeta</m> can be found, or we can show that <m>\ov{f}</m> is . How might we do this? If we want to show that our sequence is , then we will need some sort of product of small sets to aim for. Our work so far provides a natural candidate: for each <m>a\in A</m> we can define <m>S_\zeta(a)</m> to be the set <m>\{g_\xi(a):\xi&lt;\zeta\}</m>. Since <m>\zeta&lt;|A|^+</m>, the sets <m>S(a)</m> are of cardinality at most <m>|A|</m>. For each <m>\alpha&lt;\lambda</m> we let <m>h_\alpha^\zeta</m> be the upward projection of <m>f_\alpha</m> up into the product <m>\prod S_\zeta(a)</m>, defined by setting <me>\label{eq:upwardproj}
+h_\alpha^\zeta(a):=\min(S_\zeta(a)\setminus f_\alpha(a)).</me> The sequence <m>\langle h^\zeta_\alpha:\alpha&lt;\lambda\rangle</m> is <m>\leq_I</m>-increasing in the product <m>\prod S_\zeta(a)</m>. Note as well that the definition <xref ref="eq:upwardproj" /> implies <m>h_\alpha^\zeta\leq_I g_\xi</m> for any <m>\alpha&lt;\lambda</m> and <m>\xi&lt;\zeta</m>. This is because <m>g_\xi</m> bounds <m>\ov{f}</m> modulo <m>I</m> and <m>g_\xi(a)\in S(a)</m> for each <m>a\in A</m>. Thus, if there is an <m>\alpha&lt;\lambda</m> for which <m>h_\alpha^\zeta</m> is an upper bound for <m>\ov{f}</m> our construction can continue by selecting this function as <m>g_\zeta</m>.
+		</p>
+
+		<p>
+			Since fails by assumption, we know that for each <m>\alpha&lt;\lambda</m> that there is a set <m>L^\zeta(\alpha)\subseteq A</m> such that for all sufficiently large <m>\beta&lt;\lambda</m>, <me>\label{eq:stable}
+L^\zeta(\alpha) =_I \{a\in A: h^\zeta_\alpha(a)&lt;f_\beta(a)\},</me> and so we can choose <m>\beta^\zeta(\alpha)&lt;\lambda</m> such that <xref ref="eq:stable" /> holds whenever <m>\beta^\zeta(\alpha)\leq \beta&lt;\lambda</m>.
+		</p>
+
+		<p>
+			We come now to a very important point: the sequence <m>\langle L^\zeta(\alpha):\alpha&lt;\lambda\rangle</m> is <m>\subseteq_I</m>-decreasing. This is easy to see: given <m>\alpha&lt;\gamma&lt;\lambda</m> we choose <m>\beta</m> greater than <m>\max(\beta^\zeta(\alpha),\beta^\zeta(\gamma))</m>, and the result follows from the definition <xref ref="eq:stable" /> because <m>f_\alpha&lt;_I f_\gamma</m>. The behavior of this <m>\subseteq_I</m>-decreasing sequence is how we determine if our construction continues, or if we stall at stage <m>\zeta</m> because <m>\ov{f}</m> is .
+		</p>
+
+		<p>
+			There is an <m>\alpha</m> such that <m>L^\zeta(\alpha)</m> is in <m>I</m>.
+		</p>
+
+		<p>
+			Looking back at the definition of <m>L^\zeta(\alpha)</m>, our case assumption implies that <m>f_\beta\leq_I h^\zeta_\alpha</m> for all sufficiently large <m>\beta&lt;\lambda</m>. Since <m>\ov{f}</m> is <m>&lt;_I</m>-increasing, it follows that <m>h^\zeta_\alpha</m> is an upper bound for <m>\ov{f}</m> modulo <m>I</m>, and as we have observed previously we can continue by setting <m>g_\zeta = h^\zeta_\alpha</m>.
+		</p>
+
+		<p>
+			Actually, though, we can say something stronger in this situation. If <m>\alpha&lt;\gamma</m> we know <m>h^\zeta_\alpha\leq h^\zeta_\gamma</m> automatically. However, because in addition <m>h^\zeta_\alpha</m> bounds <m>f_\gamma</m> modulo <m>I</m>, it follows that for almost every <m>a\in A</m> we have <me>h^\zeta_\gamma(a)=\min(S(a)\setminus f_\gamma(a)) \leq h^\zeta_\alpha(a),</me> and so <m>h^\zeta_\gamma\leq_I h^\zeta_\alpha</m> as well. As soon as we hit an <m>\alpha</m> for which <m>L^\zeta(\alpha)</m> is in <m>I</m>, the upward projections stabilize and we have <m>h^\zeta_\gamma =_I g_\zeta</m> for all sufficiently large <m>\gamma&lt;\lambda</m>.
+		</p>
+
+		<p>
+			<m>L^\zeta(\alpha)</m> is <m>I</m>-positive for all <m>\alpha&lt;\lambda</m>.
+		</p>
+
+		<p>
+			In this situation, we have a <m>\subseteq_I</m>-decreasing sequence of <m>I</m>-positive sets and so there is an ultrafilter <m>D</m> on <m>A</m> disjoint to <m>I</m> that contains each of the sets <m>L^\zeta(\alpha)</m>. Given <m>\alpha&lt;\lambda</m> we know <m>f_\alpha\leq h^\zeta_\alpha</m> by construction, and for all sufficiently large <m>\beta&lt;\lambda</m> we can use <xref ref="eq:stable" /> to conclude that <m>h^\zeta_\alpha&lt;_D f_\beta</m>. Thus the sequence <m>\langle h^\zeta_\alpha:\alpha&lt;\lambda\rangle</m> of functions in <m>\prod S(a)</m> together with the ultrafilter <m>D</m> witness that <m>\ov{f}</m> is and our construction halts.
+		</p>
+
+		<p>
+			To finish the proof, it suffices to show that our construction must halt at some stage prior to <m>|A|^+</m>. We stop in one of two ways: either we come across a stage <m>\zeta</m> for which <m>g_\zeta</m> is a least upper bound for <m>\ov{f}</m>, or we are able to establish that our sequence is through our work at some limit ordinal <m>\zeta</m>. Let us assume by way of contradiction that neither of these events occurs. If this is the case, then for each limit ordinal <m>\zeta&lt;|A|^+</m> our construction lands in Case 1, and so there is an ordinal <m>\alpha(\zeta)&lt;\lambda</m> such that the associated set <m>L^\zeta(\alpha(\zeta))</m> is in <m>I</m>, and more importantly, such that <m>g_\zeta =_I h^\zeta_\gamma</m> for all <m>\gamma\geq\alpha(\zeta)</m>.
+		</p>
+
+		<p>
+			Now at last we use our assumption that <m>\lambda</m> is greater than <m>|A|^+</m>, as this allows us to find an <m>\alpha(*)&lt;\lambda</m> such that <m>\alpha(\zeta)&lt;\alpha(*)</m> for an unbounded set <m>X</m> of limit ordinals <m>\zeta&lt;|A|^+</m>. As we have noted, this means <me>\label{eq:gzeta}
+\zeta\in X\Longrightarrow g_\zeta =_I h^\zeta_{\alpha(*)}.</me> For each <m>a\in A</m>, our definitions imply that the sequence <m>\langle S_\zeta(a):\zeta\in X\rangle</m> is <m>\subseteq</m>-increasing, and therefore the corresponding sequence of upward projections <m>\langle h^\zeta_{\alpha(*)}:\zeta\in X\rangle</m> is <m>\leq</m>-decreasing. Since any <m>\leq</m>-decreasing sequence of ordinals is eventually constant and <m>|A|&lt;\lambda=|X|</m>, our sequence of functions <m>h^\zeta_{\alpha(*)}</m> is forced to stabilize at some point as well. Thus, there is a <m>\zeta(*)\in X</m> such that <me>\label{eq:hzeta}
+\zeta\in X\setminus\zeta(*)\Longrightarrow h^\zeta_{\alpha(*)}= h^{\zeta(*)}_{\alpha(*)}.</me> Now we have a problem, as the conjunction of <xref ref="eq:gzeta" /> and <xref ref="eq:hzeta" /> tell us that that <m>\langle g_\zeta:\zeta\in X\rangle</m> stabilizes modulo <m>I</m> but this is absurd as our construction guarantees that the sequence is <m>\lneqq_I</m>-decreasing. Thus, our construction must end at some stage prior to <m>|A|^+</m>, and therefore <m>\ov{f}</m> is either (if we stopped at a limit ordinal) or has a least upper bound (if we stopped at a successor ordinal). As we noted at the start of the proof, this is sufficient to establish the theorem. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			We close this section with a few remarks on the Trichotomy Theorem, the details of which are relegated to a few exercises. We start with a useful corollary of the Trichotomy Theorem that shows that any <m>&lt;_I</m>-increasing sequence whose length has sufficiently high cofinality will be exact.
+		</p>
+
+<!-- div attr= class="corollary"-->
+		<p>
+			 A <m>&lt;_I</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\delta\rangle</m> with <m>\cf(\delta)&gt;2^{|A|}</m> is exact.
+		</p><!--</div attr= class="corollary">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> See Exercise <xref ref="exer:longisexact" /> ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			This tells us that exact sequences are easy to find, and also provides us with examples of exact sequences that are far from being flat. We sketch such an example below, and leave the details to the exercises.
+		</p>
+
+<!-- div attr= class="example"-->
+		<p>
+			 Let <m>\mu</m> is a singular cardinal of countable cofinality with <m>2^{\aleph_0}&lt;\mu</m>, and let <m>\langle\mu_n:n&lt;\omega\rangle</m> be an increasing sequence of regular cardinals cofinal in <m>\mu</m> with <m>2^{\aleph_0}&lt;\mu_0</m>. Set <m>A=\omega</m> and let <m>I</m> be the ideal of finite subsets of <m>\omega</m>. If we let <m>F=\prod_{n\in\omega}\mu_n</m>, then <m>\mathfrak{b}_I(F)</m> is at least <m>\mu^+</m>, and so <m>F</m> contains <m>&lt;_I</m>-increasing sequences of length <m>\mu^+</m>. Such a sequence is exact by Corollary <xref ref="cor:longisexact" />, and there is no <m>I</m>-positive set on which it looks flat.
+		</p><!--</div attr= class="example">-->
+
+<!-- div attr= class="example"-->
+		<p>
+			If <m>\ov{f}</m> is , then there is a family of <m>\lambda</m> <m>I</m>-positives sets whose pairwise intersections are in <m>I</m>, that is, <m>I</m> is not <em><m>\lambda</m>-saturated</em>. This situation is impossible if <m>I</m> is a maximal ideal, as <m>I</m>-positive sets are just elements of the dual ultrafilter and ultrafilters are closed under finite intersections. This tells us that when <m>I</m> is a maximal ideal on <m>A</m>, the possibility in the Trichotomy cannot occur, and any <m>&lt;_I</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\delta\rangle</m> with <m>\cf(\delta)&gt;|A|^+</m> must either be or .
+		</p><!--</div attr= class="example">-->
+
+		<p>
+			Finally, the assumption <m>\lambda&gt;|A|^+</m> is necessary and cannot be replaced by <m>\lambda&gt;|A|</m>. This, however, is not that important for pcf theory, because we will typically be working with situations in which <m>|A|^{+\omega}&lt;\lambda</m>.
+		</p>
+	</section>

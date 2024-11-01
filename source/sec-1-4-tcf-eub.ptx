@@ -1,0 +1,209 @@
+
+
+	<section xml:id="true-cofinality-and-exact-upper-bounds">
+		<title>True cofinality and exact upper bounds</title>
+
+
+		<subsection xml:id="true-cofinality">
+			<title>True cofinality</title>
+
+			<p>
+				We now return to the issue discussed at the beginning of the previous section and ask the natural question of whether we can identify when a subset <m>F</m> of <m>\On^A</m> is equivalent to a set of functions linearly-ordered by <m>&lt;_I</m>. This is crucial for us, and the following definition is fundamental for pcf theory.
+			</p>
+<definition xml:id="def-tcf">
+	<statement>
+		<p>
+			Let <m>I</m> be an ideal on the set <m>A</m>. 
+			A set of functions <m>F\subseteq\On^A</m> is said to have <em>true cofinality</em> modulo <m>I</m> if <m>F</m> is equivalent modulo <m>I</m> to a set <m>G\subseteq\On^A</m> that is linearly-ordered by <m>&lt;_I</m>.
+		</p>
+	</statement>
+</definition>
+
+			<p>
+				We will take some time to probe this definition. First, suppose that <m>F</m> has true cofinality modulo <m>I</m>, witnessed by the subset <m>G</m> of <m>\On^A</m>. Since we can without loss of generality replace <m>G</m> by a cofinal subset, we may assume that the order type of <m>G</m> is either <m>1</m> or an infinite regular cardinal.
+			</p>
+
+			<p>
+				The case where <m>G</m> is a singleton <m>\{g\}</m> is not very interesting, as this happens if and only if <m>(F, \leq_I)</m> has a maximum. Why? If <m>F\equiv_I\{g\}</m>, then there is an <m>f</m> in <m>F</m> such that <m>g\leq_I f</m>, and it follows easily that <m>F</m> has <m>f</m> as a maximum. On the other hand, if <m>F</m> has a maximum function <m>g</m> modulo <m>I</m>, then <m>F\equiv_I\{g\}</m>, and so <m>F</m> will have true cofinality in this degenerate sense.
+			</p>
+
+			<p>
+				The interesting situation occurs when <m>F</m> is <m>\equiv_I</m>-equivalent to some <m>&lt;_I</m>-increasing subset of <m>\On^A</m> whose length <m>\lambda</m> is an (infinite) regular cardinal. The following theorem characterizes when this occurs.
+			</p>
+
+
+<theorem xml:id="thm-tcf-equiv">
+	<statement>
+		<p>
+			Suppose <m>F</m> is <m>&lt;_I</m>-directed and <m>\lambda</m> is an infinite regular cardinal. Then the following statements are equivalent.
+	   </p>
+
+	   <p><ol>
+		   <li>
+					   <p>
+						   <m>F</m> has true cofinality <m>\lambda</m> modulo <m>I</m>.
+					   </p>
+		   </li>
+
+		   <li>
+					   <p>
+						   <m>\mathfrak{b}_I(F)=\mathfrak{d}_I(F)=\lambda</m>.
+					   </p>
+		   </li>
+
+		   <li>
+					   <p>
+						   <m>F</m> contains a <m>&lt;_I</m>-increasing and cofinal subset of order-type <m>\lambda</m>.
+					   </p>
+		   </li>
+
+	   </ol></p>
+	</statement>
+</theorem>
+<proof>
+	<p>
+		Assume (1), and let <m>\langle g_\alpha:\alpha&lt;\lambda\rangle</m> be a <m>&lt;_I</m>-increasing sequence in <m>\On^A</m> equivalent to <m>F</m>. We first see that <m>\lambda\leq\mathfrak{b}_I(F)</m>. To see this, we need to see that any subset of <m>F</m> of cardinality less than <m>\lambda</m> is bounded, so assume <m>\kappa&lt;\lambda</m> and <m>f_\alpha\in F</m> for each <m>\alpha&lt;\kappa</m>. For each <m>\alpha&lt;\kappa</m>, we can find <m>\beta(\alpha)&lt;\lambda</m> such that <me>f_\alpha\leq_I g_{h(\alpha)}.</me> Since <m>\lambda</m> is regular and <m>\kappa&lt;\lambda</m>, we know <me>\delta:=\sup\{\beta(\alpha):\alpha&lt;\kappa\}&lt;\lambda.</me> The assumption that <m>F\equiv_I G</m> provides us with a function <m>f\in F</m> with <m>g_\delta\leq_I f</m>, and therefore for any <m>\alpha&lt;\kappa</m> we have <me>f_\alpha\leq_I g_{h(\alpha)}&lt;_I g_\delta\leq_I f.</me> Thus, any subset of <m>F</m> of cardinality less than <m>\lambda</m> is bounded and <me>\lambda\leq \mathfrak{b}_I(F).</me> Next, we prove <m>\mathfrak{d}_I(F)\leq\lambda</m>. For each <m>\alpha&lt;\lambda</m> we can find a function <m>f_\alpha\in F</m> such that <m>g_\alpha\leq_I f_\alpha</m>, and we claim that the set <m>\{f_\alpha:\alpha&lt;\lambda\}</m> is cofinal in <m>(F,\leq_I)</m>. Given <m>f\in F</m>, we can choose <m>\alpha&lt;\lambda</m> with <m>f\leq_I g_\alpha</m>, and hence <m>f\leq_I f_\alpha</m> as well. Thus <me>\lambda \leq\mathfrak{b}_I(F)\leq\mathfrak{d}_I(F)\leq\lambda</me> and (2) is established.
+	</p>
+	<p>
+		Condition (3) follows from (2) by an easy inductive construction. To see that (3) implies (1), note that <m>F</m> is equivalent to any of its cofinal subsets. ◻
+	</p>
+</proof>
+
+
+
+<p>
+	As a corollary of the above, note that if <m>F</m> has true cofinality <m>\lambda</m> modulo <m>I</m>, then this <m>\lambda</m> is necessarily unique. This brings us to the following definition, a definition central to our work.
+</p>
+
+<definition xml:id="def-tcfdefn">
+	<statement>
+	<p>
+		Suppose <m>F</m> is <m>&lt;_I</m>-directed. We say <m>\lambda</m> is the true cofinality of <m>F</m> modulo <m>I</m>, written <m>\lambda=\tcf_I(F)</m>, if <me>\mathfrak{b}_I(F)=\mathfrak{d}_I(F)=\lambda.</me>
+	</p>
+	</statement>
+</definition>
+
+			<p>
+				Notice that we are justified in using the modifier <q>the</q> because if <m>F</m> has a true cofinality modulo <m>I</m>, then this true cofinality is uniquely determined as being the common value of <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m>. Moreover, if <m>F</m> and <m>G</m> are equivalent families of functions modulo <m>I</m>, then one of them has a true cofinality if and only if the other does, and the values of these true cofinalities are the same.
+			</p>
+
+		</subsection>
+
+		<subsection xml:id="exact-upper-bounds">
+			<title>Exact Upper Bounds</title>
+
+			<p>
+				Having now characterized when a set of functions <m>F\subseteq\On^A</m> is equivalent (modulo an ideal <m>I</m>) to a <m>&lt;_I</m>-increasing sequence of functions, we take a look at when <m>F</m> is equivalent to a product. We have already used the notion of product in our brief treatment of proper classes in the previous section, but we pause to give the official definition.
+			</p>
+<definition xml:id="def-product-g">
+	<statement>
+		<p>
+			Suppose <m>g</m> is a function in <m>\On^A</m>. We define the product of <m>g</m>, <m>\prod g</m>, by <me>\prod g:= \prod_{a\in A} g(a) = \{f\in\On^A: (\forall a\in A)\left[f(a)&lt;g(a)\right]\}.</me>
+		</p>
+	</statement>
+</definition>
+
+
+<p>
+Clearly <m>\prod g</m> is non-empty if and only if <m>g(a)</m> is non-zero for all <m>a\in A</m>, so 
+<em>we will implicitly assume this is the case whenever we use the notation <m>\prod g</m></em>. Given such a function <m>g</m>, we
+ address several natural questions about the structure of <m>\prod g</m>. First, note that it is easy to characterize when a product is directed under <m>&lt;_I</m>:
+</p>
+
+<proposition xml:id="prop-directed-characterization">
+	<statement>
+		<p>
+			If <m>I</m> is an ideal on the set <m>A</m>, then <m>\prod g</m> is <m>&lt;_I</m>-directed if and only if <m>g(a)</m> is a (non-zero) limit ordinal for almost all <m>a</m> in <m>A</m>.
+		</p>
+	</statement>
+</proposition>
+
+
+<proof>
+	<p>
+		<em>Proof.</em> Suppose <m>g(a)</m> is a limit ordinal for almost all <m>a\in A</m>, and let <m>F</m> be a finite subset of <m>\prod g</m>. If we define <me>h(a) = \max\{f(a):f\in F\} + 1</me> then <m>h</m> is equal modulo <m>I</m> to a function in <m>\prod g</m>, and clearly <m>f&lt;_I h</m> for all <m>f\in F</m>.
+	</p>
+
+	<p>
+		For the other direction, let <m>X = \{a\in A: g(a)\text{ is a successor}\}</m> and define a function <m>f\in\prod g</m> by <me>f(a)=
+\begin{cases}
+g(a)-1 &amp;\text{if $a\in X$, and}\\
+0 &amp;\text{otherwise.}
+\end{cases}</me> If <m>X\notin I</m>, then there is no function <m>h\in\prod g</m> such that <m>f&lt;_I h</m>, and so <m>\prod g</m> fails to be <m>&lt;_I</m>-directed. ◻
+	</p>
+</proof>
+
+<p>
+The question about when a product has true cofinality modulo an ideal turns out to have depths that we will plumb shortly. For now, we provide the following shallow answer that follows immediately from our earlier work.
+</p>
+
+<!-- div attr= class="proposition"-->
+			<p>
+				Suppose <m>I</m> is an ideal on the set <m>A</m>, and <m>g\in\On^A</m> is such that <m>\prod g</m> is <m>&lt;_I</m>-directed. Then the following are equivalent:
+			</p>
+
+			<p><ol>
+				<li>
+							<p>
+								<m>\tcf_I(\prod g)</m> exists and is equal to <m>\lambda</m>.
+							</p>
+				</li>
+
+				<li>
+							<p>
+								<m>\lambda</m> is a regular cardinal and there is a <m>&lt;_I</m>-increasing and cofinal sequence of length <m>\lambda</m> in <m>\prod g</m>.
+							</p>
+				</li>
+
+			</ol></p><!--</div attr= class="proposition">-->
+
+			<p>
+				So in the above situation, <m>g</m> is an upper bound for the sequence <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m> (as each <m>f_\alpha</m> is in <m>\prod g</m>), but <m>g</m> also has the property that any <m>h&lt;_I g</m> must lie below some <m>f_\alpha</m> modulo <m>I</m>. This latter property says that <m>g</m> is a <q>smallest</q> upper bound for <m>F</m> in a strong sense, and this turns out to be a fundamental idea that we capture in the following definition.
+			</p>
+
+<!-- div attr= class="definition"-->
+			<p>
+				 Let <m>I</m> be an ideal on <m>A</m>, and suppose <m>F\subseteq\prod g</m> for some function <m>g\in\On^A</m>. We say <m>g</m> is an <em>exact upper bound</em> of <m>F</m> modulo <m>I</m> if for all <m>h:A\to \On</m>, if <m>h&lt;_I g</m> then there exists some <m>f\in F</m> such that <m>h\le_I f</m>.
+			</p><!--</div attr= class="definition">-->
+
+			<p>
+				Exact upper bounds arise in several places when one considers products. For an easy example, note that if <m>g\in\On^A</m> is never zero, then <m>g</m> is an exact upper bound for <m>\prod g</m> modulo the smallest ideal <m>\{\emptyset\}</m>, and hence modulo any ideal <m>I</m> on <m>A</m>. This follows immediately, as a function <m>f</m> is in <m>\prod g</m> if and only if <m>f&lt;_{\{\emptyset\}} g</m>. Just as easy, we have the following characterization of exact upper bounds in terms of equivalence.
+			</p>
+
+<!-- div attr= class="proposition"-->
+			<p>
+				 Let <m>I</m> be an ideal on the set <m>A</m>. The following statements are equivalent for a non-empty <m>F\subseteq\prod g</m>:
+			</p>
+
+			<p><ol>
+				<li>
+							<p>
+								<m>g</m> is an exact upper bound for <m>F</m> modulo <m>I</m>.
+							</p>
+				</li>
+
+				<li>
+							<p>
+								<m>F</m> is cofinal in <m>\prod g</m>.
+							</p>
+				</li>
+
+				<li>
+							<p>
+								<m>F\equiv_I\prod g</m>.
+							</p>
+				</li>
+
+			</ol></p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+			<p>
+				<em>Proof.</em> See Exercise <xref ref="exer:easyeub" />. ◻
+			</p><!--</div attr= class="proof">-->
+
+			<p>
+				The next chapter in the book examines exact upper bounds in detail, as understanding when and where they exist will anchor our development of pcf theory.
+			</p>
+		</subsection>
+
+	</section>

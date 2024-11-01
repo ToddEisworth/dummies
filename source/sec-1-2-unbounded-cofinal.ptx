@@ -1,0 +1,265 @@
+<section xml:id="unbounded-sets-and-cofinal-sets">
+  <title>Unbounded sets and cofinal sets</title>
+
+
+  <subsection xml:id="cofinal-vs.-unbounded">
+    <title>Cofinal and unbounded</title>
+
+    <p>
+      We will begin this section in a more abstract setting than we ended the previous one, working with an arbitrary quasi-ordered set instead of just ordinal-valued functions.
+    </p>
+
+<definition xml:id="def-">
+  <statement>
+    <p>
+        Let <m>P</m> be a set (or occasionally a proper class), while <m>\leq_P</m> is a quasi-order on <m>P</m>.
+     </p>
+ 
+     <p><ol>
+       <li>
+             <p>
+               A subset <m>Q</m> of <m>P</m> is <em><m>\leq_P</m>-cofinal</em> (or just <em>cofinal</em> if the context is clear) in <m>P</m> if <me>(\forall p\in P)(\exists q\in Q)\left[p\leq_P q\right].</me>
+             </p>
+       </li>
+ 
+       <li>
+             <p>
+               We say that a subset <m>Q</m> of <m>P</m> is <em><m>\leq_P</m>-bounded</em> (or just <em>bounded</em>) in <m>P</m> if <me>(\exists p\in P)(\forall q\in Q)\left[q\leq_P p\right],</me> and <m>Q</m> is said to be <m>\leq_P</m>-unbounded (or just <em>unbounded</em>) if it is not bounded.
+             </p>
+       </li>
+ 
+       <li>
+             <p>
+               <m>P</m> is <em><m>\leq_P</m>-directed</em> if every finite subset of <m>P</m> is <m>\leq_P</m>-bounded in <m>P</m>.
+             </p>
+       </li>
+ 
+       <li>
+             <p>
+               <m>q</m> is a <m>\leq_P</m>-maximum element of <m>P</m> if <me>(\forall p\in P)\left[p\leq_P q\right]</me>
+             </p>
+       </li>
+ 
+       <li>
+             <p>
+               The above concepts also make sense if we replace the quasi-order <m>\leq_P</m> with a strict partial order <m>&lt;_P</m> on <m>P</m>.
+             </p>
+       </li>
+ 
+     </ol></p>
+  </statement>
+</definition>
+<!-- div attr= class="definition"-->
+<!--</div attr= class="definition">-->
+
+<example>
+  <p>
+    Suppose <m>(P, \leq_P)</m> has a <m>\leq_P</m>-maximum element <m>q</m>. Then <m>P</m> is <m>\leq_P</m>-bounded in <m>(P,\leq_P)</m>, while the singleton <m>\{q\}</m> is cofinal in <m>(P,\leq_P)</m>. In this situation, <m>P</m> has no unbounded subsets, while <m>P</m> is <m>\leq_P</m>-directed for trivial reasons.
+  </p>  
+</example>
+<!-- div attr= class="example"-->
+<!--</div attr= class="example">-->
+
+    <p>
+      Notice that the preceding example gives us an example where <m>P</m> contains a <m>\leq_P</m>-bounded <m>\leq_P</m>-cofinal subset. In fact, this sort of example is essentially unique: it not hard to show that <m>(P, \leq_P)</m> has a maximum element if and only if it has a bounded cofinal subset. We will be working primarily with structures where this will not happen. Our next examples are typical, and takes us back to the context of the preceding section.
+    </p>
+
+    <example>
+      <p>
+        Let <m>A=\omega</m>, and let <m>I=\{\emptyset\}</m> be the smallest ideal on <m>\omega</m>. We will take <m>F</m> to be the set of functions from <m>\omega</m> to <m>\omega</m> (often referred to as the <em>Baire space</em> in the sequel), and let <m>X</m> be the subset of <m>F</m> consisting of constant functions. The set <m>X</m> is unbounded in <m>(F,\leq_I)</m>: given any <m>f\in F</m>, if we define the function <m>g\in X</m> to be constant with value <m>f(0)+1</m>, then <m>\neg(g\leq_I f)</m>. On the other hand, <m>X</m> is not cofinal in <m>(F, \leq_I)</m> because the identity function is not bounded modulo <m>I</m> by any function in <m>X</m>. If we replace <m>I</m> by the larger ideal <m>J=\Fin(\omega)</m> of all finite subsets of <m>\omega</m>, then the identity function witnesses that <m>X</m> is bounded in <m>(F, \leq_J)</m>.
+      </p>      
+    </example>
+<!-- div attr= class="example"-->
+<!--</div attr= class="example">-->
+
+  </subsection>
+
+  <subsection xml:id="cardinal-characteristics">
+    <title>Cardinal Characteristics</title>
+
+    <p>
+      Our next definition introduces some major players in our discussion, defining two cardinal characteristics of makes sense in the general context of Definition <xref ref="def:orderstuff" />, but we will formulate them in terms of our basic context because that is the only situation where we will use them. With that in mind, throughout the rest of this section we assume that <m>I</m> is a (proper) ideal on a non-empty set <m>A</m>.
+    </p>
+
+<!-- div attr= class="definition"-->
+    <p>
+       Let <m>(P, \leq_P)</m> be a quasi-order without a maximum element.
+    </p>
+
+    <p><ol>
+      <li>
+            <p>
+              The cardinal <m>\mathfrak b(P)</m> is defined to be the least cardinality of an unbounded subset of <m>(P, \leq_P)</m>.
+            </p>
+      </li>
+
+      <li>
+            <p>
+              The cardinal <m>\mathfrak d(P)</m> is defined to be the least cardinality of a cofinal subset of <m>(P,\leq_P)</m>.
+            </p>
+      </li>
+
+      <li>
+            <p>
+              If <m>(P,\leq_P)</m> is a structure of the form <m>(F,\leq_I)</m> where <m>F\subseteq\On^A</m> for some set <m>A</m> and <m>I</m> is an ideal on <m>A</m>, then we will use the notation <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> for the cardinals <m>\mathfrak{b}(P)</m> and <m>\mathfrak{d}(P)</m>.
+            </p>
+      </li>
+
+    </ol></p><!--</div attr= class="definition">-->
+
+    <p>
+      There are a couple of minor technical issues that arise when discussing unbounded sets. If <m>P</m> has a <m>\leq_P</m>-maximum element, then <m>P</m> will have no unbounded subsets at all and the definition of <m>\mathfrak{b}(P)</m> is problematic. If we find ourselves in such a situation, we will just define <m>\mathfrak{b}(P)</m> to be <m>\infty</m>, a formal symbol that is considered to be larger than any cardinal. Notice that it is possible for <m>\mathfrak{b}(P)</m> to be finite: this happens if and only if <m>P</m> is <em>NOT</em> <m>\leq_P</m>-directed. We will almost always work in directed structures without a maximum element, and this situation happens if and only the corresponding cardinal <m>\mathfrak{b}(P)</m> is infinite.
+    </p>
+
+    <p>
+      These sorts of problems do not arise with <m>\mathfrak{d}(P)</m> as <m>P</m> is always cofinal in itself and so <m>\mathfrak{d}_I(F)\leq |F|</m> will hold automatically. It is possible for <m>\mathfrak{d}(P)</m> to be finite as well, and <m>\mathfrak{d}(P)=1</m> if and only if <m>P</m> has a maximum element. If <m>P</m> is <m>\leq_P</m>-directed, then <m>\mathfrak{d}(P)</m> is finite if and only if <m>\mathfrak{d}(P)=1</m>.
+    </p>
+
+    <p>
+      If we move now to structures of the form <m>(F, \leq_I)</m> then the following related definitions make sense:
+    </p>
+
+<!-- div attr= class="definition"-->
+    <p>
+      Assume <m>I</m> is an ideal on the set <m>A</m>, and <m>F\subseteq\On^A</m>.
+    </p>
+
+    <p><ol>
+      <li>
+            <p>
+              The <em>pointwise supremum</em> of <m>F</m>, denoted <m>\sup(F)</m>, is the function defined by <me>\sup(F)(a):=\sup\{f(a):f\in F\}.</me>
+            </p>
+      </li>
+
+      <li>
+            <p>
+              We say <m>X\subseteq F</m> is <em>supremum-bounded</em> in <m>F</m> if there exists <m>g\in F</m> such that <m>\sup(X)\le_I g</m>.
+            </p>
+      </li>
+
+      <li>
+            <p>
+              We define <m>\sigma(F,I)</m> to be the least cardinality of a subset of <m>F</m> which is not supremum bounded in <m>F</m>. If <m>F</m> (and therefore every subset of <m>F</m>) is supremum bounded in <m>F</m> we let <m>\sigma(F,I)=\infty</m>.
+            </p>
+      </li>
+
+    </ol></p><!--</div attr= class="definition">-->
+
+    <p>
+      Whereas the cardinals <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> depend only on the order-theoretic structure the <m>=_I</m>-equivalence classes of <m>F</m>, we have a different situation with the definition of <m>\sigma(F, I)</m>: taking the supremum of a set of functions requires us to work with actual functions instead of just equivalence classes. The following example illustrates the problem.
+    </p>
+
+<!-- div attr= class="example"-->
+    <p>
+       Let <m>A</m> be <m>\omega</m> and let <m>I</m> be the ideal <m>\Fin(\omega)</m>. We will define two sets of functions <m>F</m> and <m>G</m> as follows. First, for any countable limit ordinal <m>\alpha</m> we let <m>g_\alpha</m> be the function on <m>A</m> that is constant with value <m>\alpha</m>, and let <m>G=\{g_\alpha:\alpha&lt;\omega_1\}</m>. Next, we let <m>f_\alpha = g_\alpha</m> whenever <m>\alpha</m> is an <em>infinite</em> countable ordinal, and for <m>\alpha = n&lt;\omega</m> we define <m>f_n</m> by <me>\label{examplesup} f_\alpha(k) =
+\begin{cases}
+ \omega_1 &amp;\text{if $k = n$, and}\\
+ n &amp;\text{otherwise,}
+\end{cases}</me> and then define <m>F=\{f_\alpha:\alpha&lt;\omega_1\}</m>.
+    </p><!--</div attr= class="example">-->
+
+    <p>
+      The structures <m>(F, \leq_I)</m> and <m>(G,\leq_I)</m> are essentially the same modulo <m>I</m> as the functions <m>g_\alpha</m> and <m>f_\alpha</m> agree almost everywhere for each <m>\alpha</m>. The cardinal characteristics defined in Definition <xref ref="def:bandd" /> will be exactly the same in each structure, as these cardinals are defined based on order-theoretic relations that depend only on the <m>=_I</m>-equivalence classes of functions. However, the set <m>\{g_n:n&lt;\omega\}</m> is supremum bounded in <m>G</m>, while <m>\{f_n:n&lt;\omega\}</m> is <em>NOT</em> supremum bounded in <m>F</m>, even though <m>f_n =_I g_n</m> for each <m>n&lt;\omega</m>. This phenomenon does not occur with the other pieces of Definition <xref ref="def:bandd" />.
+    </p>
+
+<!-- div attr= class="example"-->
+    <p>
+       We mentioned earlier that the cardinal characteristics of the continuum <m>\mathfrak{b}</m> and <m>\mathfrak{d}</m> are special cases of the above definition, for if we take <m>A</m> to be <m>\omega</m>, <m>I</m> to be <m>\Fin(\omega)</m>, and <m>F</m> to be the Baire Space of functions mapping <m>\omega</m> to <m>\omega</m>, then <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> are just the bounding number <m>\mathfrak{b}</m> and the dominating number <m>\mathfrak{d}</m>.
+    </p><!--</div attr= class="example">-->
+
+  </subsection>
+
+  <subsection xml:id="directedness">
+    <title>Directedness</title>
+
+    <p>
+      Many things become clearer if we strengthen our assumptions to require <m>F</m> to be <m>&lt;_I</m>-directed. In this case, a subset <m>X</m> of <m>F</m> is <m>&lt;_I</m>-cofinal in <m>F</m> if and only if it is <m>\leq_I</m>-cofinal, and this just requires the observation that in a <m>&lt;_I</m>-directed <m>F</m>, for any <m>f\in F</m> there is a <m>g\in F</m> with <m>f&lt;_I g</m>. Thus, if <m>F</m> is <m>&lt;_I</m>-directed, we can just say <q><m>X</m> is cofinal in <m>F</m></q> without needing to specify which of the structures <m>(F, \leq_I)</m> and <m>(F, &lt;_I)</m> we mean.
+    </p>
+
+    <p>
+      The notions of <m>&lt;_I</m>-directedness and <m>\leq_I</m>-directedness are closely related as well, and they coincide under under the additional assumption that for any <m>f\in F</m> there is a <m>g\in F</m> such that <m>f&lt;_I g</m>. Some assumption like this is necessary, as the following example illustrates.
+    </p>
+
+<!-- div attr= class="example"-->
+    <p>
+      Let <m>A=\omega</m> and <m>I=\Fin(\omega)</m>. Partition <m>A</m> into countably many disjoint infinite sets <m>A_n</m> for <m>n&lt;\omega</m>, and let <m>f_n</m> be the characteristic function of <m>\bigcup_{i\leq n} A_i</m>, that is, <me>f_n(k)=
+\begin{cases}
+1   &amp;\text{if $k\in A_i$ for some $i\leq n$, and}\\
+0   &amp;\text{if not.}
+\end{cases}</me> The collection <m>F= \{f_n:n&lt;\omega\}</m> is <m>\leq_I</m>-directed; in fact, the sequence <m>\langle f_n:n&lt;\omega\rangle</m> is <m>\lneqq_I</m>-increasing. However, <m>F</m> is not <m>&lt;_I</m>-directed, as no two elements of <m>F</m> are <m>&lt;_I</m>-comparable.
+    </p><!--</div attr= class="example">-->
+
+    <p>
+      What can we say about the relationship between the cardinal <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m>? If we know that every cofinal subset of <m>(F,\leq_I)</m> is unbounded, then it is clear that <m>\mathfrak{b}_I(F)</m> is at most <m>\mathfrak{d}_I(F)</m>. The only way this might fail is in the situation where <m>F</m> has a maximum element, as then <m>F</m> will have no unbounded subsets at all (and hence <m>\mathfrak{b}_I(F)</m> is set to <m>\infty</m> by convention) while <m>\mathfrak{d}_I(F)</m> will be equal to <m>1</m>. The following proposition records the situation in a more typical setting.
+    </p>
+
+<!-- div attr= class="proposition"-->
+    <p>
+      If <m>F</m> is <m>\leq_I</m>-directed without a maximum element then <me>\aleph_0\leq\mathfrak{b}_I(F)\leq\mathfrak{d}_I(F)\leq |F|.</me>
+    </p><!--</div attr= class="proposition">-->
+
+    <p>
+      Looking at the situation where we compare two ideals, we have the following natural result as well.
+    </p>
+
+<!-- div attr= class="proposition"-->
+    <p>
+       If <m>I\su J</m> are ideals over <m>A</m> and <m>F\in \On^A</m>, then
+    </p>
+
+    <p><ol>
+      <li>
+            <p>
+              <m>\mathfrak b_I(F)\le \mathfrak b_J(F)</m>, and
+            </p>
+      </li>
+
+      <li>
+            <p>
+              <m>\mathfrak d_I(F)\ge \mathfrak d_J(F)</m>.
+            </p>
+      </li>
+
+    </ol></p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+    <p>
+      <em>Proof.</em> If <m>(F,\leq_J)</m> does not have an unbounded subset, then the result follows because of our convention that <m>\mathfrak{b}_J(F)</m> will be set to <m>\infty</m>. Thus, it suffices to note that any unbounded subset of <m>(F,\leq_J)</m> is unbounded in <m>(F,\leq_I)</m> as well. But this is equivalent to showing that bounded subsets of <m>(F, \leq_I)</m> are bounded in <m>(F,\leq_J)</m>, and this follows immediately from Proposition <xref ref="upwithI" />. A similar argument shows that if a set <m>X\su F</m> is cofinal in <m>(F,\le_I)</m>, then it is cofinal in the structure <m>(F,\le_J)</m> as well. This immediately implies <m>\mathfrak{d}_I(F)\leq\mathfrak{d}_J(F)</m>. ◻
+    </p><!--</div attr= class="proof">-->
+
+<!-- div attr= class="proposition"-->
+    <p>
+       If <m>(F,\leq_I)</m> is directed without a maximum element, then <m>\mathfrak{b}_I(F)</m> is an infinite regular cardinal.
+    </p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+    <p>
+      <em>Proof.</em> Let <m>\lambda=\mathfrak{b}_I(F)</m>. Our assumptions imply that <m>\lambda</m> is an infinite cardinal, so we need only worry about proving <m>\lambda</m> is regular. It suffices to prove that a union of fewer than <m>\lambda</m> subsets of <m>F</m> each of cardinality less than <m>\lambda</m> must be bounded. So suppose <m>\kappa&lt;\lambda</m> and for each <m>\alpha&lt;\kappa</m> let <m>G_\alpha</m> be a subset of <m>F</m> of cardinality less than <m>\lambda</m>. Since each <m>G_\alpha</m> is bounded, we can find a function <m>g_\alpha</m> in <m>F</m> witnessing this. The collection <m>\{g_\alpha:\alpha&lt;\kappa\}</m> is also bounded in <m>F</m>, and any function <m>f\in F</m> that <m>\leq_I</m>-bounds <m>\{g_\alpha:\alpha&lt;\kappa\}</m> will bound <m>\bigcup_{\alpha&lt;\kappa}G_\alpha</m>. ◻
+    </p><!--</div attr= class="proof">-->
+
+    <p>
+      If we strengthen the assumption of Proposition <xref ref="prop:firstb" /> and require <m>&lt;_I</m>-directness, then we can find unbounded subsets of <m>F</m> that can be enumerated as a <m>&lt;_I</m>-increasing sequences of length <m>\mathfrak{b}_I(F)</m>. In fact, though, the following proposition actually shows us something slightly stronger.
+    </p>
+
+<!-- div attr= class="proposition"-->
+    <p>
+      If <m>F</m> is <m>&lt;_I</m>-directed then for any cofinal subset <m>X</m> of <m>F</m> there is a <m>&lt;_I</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\mathfrak{b}_I(F)\rangle</m> of elements of <m>X</m> that is unbounded in <m>F</m>.
+    </p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+    <p>
+      <em>Proof.</em> Our hypothesis implies that <m>F</m> is <m>\leq_I</m>-directed without a maximum element, so <m>\lambda=\mathfrak{b}_I(F)</m> is an infinite regular cardinal by Proposition <xref ref="prop:firstb" />. Let <m>\{g_\alpha:\alpha&lt;\lambda\}</m> be an unbounded subset of <m>F</m>, and let <m>X</m> be cofinal in <m>F</m>. We will define functions <m>f_\alpha\in X</m> by induction on <m>\alpha&lt;\lambda</m>, making sure to arrange both <m>g_\alpha&lt;_I f_\alpha</m> and that <m>f_\beta&lt;_I f_\alpha</m> for <m>\beta&lt;\alpha</m>. This is straightforward to do: at a stage <m>\alpha</m> we will have the set <m>\{f_\beta:\beta&lt;\alpha\}\cup\{g_\alpha\}</m> at our disposal, and this set is bounded modulo <m>I</m> by some function <m>h\in F</m> because it is of cardinality less than <m>\lambda</m>. Since <m>F</m> is <m>&lt;_I</m>-directed and <m>X</m> is cofinal in <m>F</m>, we can find <m>f_\alpha\in X</m> with <m>h&lt;_I f_\alpha</m>. Now the sequence <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m> is a <m>&lt;_I</m>-increasing sequence of functions from <m>X</m>, and it is unbounded in <m>F</m> because <m>Y</m> was. ◻
+    </p><!--</div attr= class="proof">-->
+
+<!-- div attr= class="example"-->
+    <p>
+       Let <m>A</m> be <m>\omega</m>, and let <m>\{X_n:n&lt;\omega\}</m> enumerate the finite subsets of <m>\omega</m>. Given <m>n&lt;\omega</m>, we let <m>f_n\in\On^A</m> be the function that is constant with value <m>n</m>, and define another function <m>h_n\in\On^A</m> by <me>h_n(k) =
+\begin{cases}
+n &amp;\text{if $k\notin X_n$, and}\\
+\omega &amp;\text{if $k\in X_n$.}
+\end{cases}</me> Thus, the functions <m>f_n</m> and <m>h_n</m> agree and have value <m>n</m> outside of <m>X_n</m>, while on the set <m>X_n</m> the function <m>h_n</m> takes value <m>\omega</m>. Let <m>F</m> and <m>H</m> be the corresponding sets of functions. If we let <m>I = \{\emptyset\}</m>, then <m>F</m> is <m>&lt;_I</m>-increasing and hence <m>&lt;_I</m>-directed. On the other hand, <m>H</m> is <em>not</em> <m>&lt;_I</m>-directed: if <m>X_n\neq\emptyset</m> then there is no <m>g\in H</m> with <m>f_n&lt;_I g</m>.
+    </p><!--</div attr= class="example">-->
+  </subsection>
+
+</section>
+

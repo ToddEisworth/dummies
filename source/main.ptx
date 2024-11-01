@@ -4,12 +4,12 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
+  <book xml:id="pcf-notes">
     <title>Notes on PCF Theory</title>
   
 
     <!-- Include chapters -->
-    <xi:include href="./ch-sets-and-functions.ptx" />
+    <xi:include href="./ch-1-sets-and-functions.ptx" />
 
 
     <!-- Include backmatter -->

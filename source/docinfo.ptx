@@ -22,6 +22,8 @@
   <macros> \newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
     \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
     \newcommand{\bd}{\mathrm{bd}}
+    \newcommand{\tcf}{\mathrm{tcf}}
+    \newcommand{\Fin}{\mathsf{Fin}}\newcommand{\On}{\mathsf{On}}\newcommand{\dom}{\mathrm{dom}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

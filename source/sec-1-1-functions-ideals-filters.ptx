@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-vocabulary"  xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Functions, ideals, and filters</title>
+
+<subsection xml:id="ideals-filters">
+	<title>Ideals and Filters</title>
+	<p>
+		Suppose <m>A</m> is a non-empty set, and let <m>\On^A</m> be the class of ordinal-valued functions with domain <m>A</m>. This structure can be partially-ordered by comparing functions pointwise, setting <m>f\leq g</m> if and only if <m>f(a)\leq g(a)</m> for all <m>a\in A</m>. This is certainly a natural way to impose some organization on <m>\On^A</m>, but it is a bit intractable because such functions can intertwine in complicated ways and arbitrary functions in <m>\On^A</m> are unlikely to be comparable under the pointwise order.
+	</p>
+
+
+
+
+<definition xml:id="def-1">
+	<statement>
+		<p>
+			Suppose <m>A</m> is a non-empty set.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						A collection <m>I</m> of subsets of <m>A</m> is an <em>ideal on <m>A</m></em> if it satisfies
+					</p>
+			
+					<p><ol>
+						<li>
+								<p>
+									<m>A\notin I</m> and <m>\emptyset\in I</m>,
+								</p>
+						</li>
+			
+						<li>
+								<p>
+									if <m>X\in I</m> and <m>Y\in I</m> then <m>X\cup Y\in I</m>, and
+								</p>
+						</li>
+			
+						<li>
+								<p>
+									if <m>X\in I</m> and <m>Y\subseteq X</m> then <m>Y\in I</m>.
+								</p>
+						</li>
+			
+					</ol></p>
+			</li>
+
+			<li>
+					<p>
+						A collection <m>F</m> of subsets of <m>A</m> is a <em>filter on <m>A</m></em> if it satisfies
+					</p>
+			
+					<p><ol>
+						<li>
+								<p>
+									<m>A\in F</m> and <m>\emptyset\notin F</m>,
+								</p>
+						</li>
+			
+						<li>
+								<p>
+									if <m>X\in F</m> and <m>Y\in F</m> then <m>X\cap Y\in F</m>, and
+								</p>
+						</li>
+			
+						<li>
+								<p>
+									if <m>X\in F</m> and <m>X\subseteq Y</m> then <m>Y\in F</m>.
+								</p>
+						</li>
+			
+					</ol></p>
+			</li>
+
+		</ol></p>
+	</statement>
+</definition>
+
+
+		<p>
+			An ideal on <m>A</m> should be thought of as a collection of <q>negligible</q> or <q>small</q> subsets of <m>A</m>, while filters on <m>A</m> capture the dual notion of being <q>substantial</q> or <q>large</q>. This basic intuition motivates much of the way we think about these objects. In both definitions, the first requirement imposes a non-triviality condition: we ask that the collections are non-empty without containing every subset of <m>A</m>. On a few occasions, we may relax this condition and talk about the <em>improper ideal</em>, which corresponds to the degenerate case <m>I=\mathcal{P}(A)</m>, but we will warn the reader ahead of time. We will also formulate most of our discussion in terms of ideals, but keep in mind that almost everything can be stated in terms of filters as well.
+		</p>
+
+		<p>
+			We turn now to some basic vocabulary:
+		</p>
+
+<definition xml:id="def-2">
+	<statement>
+		<p>
+			Suppose <m>I</m> is an ideal on <m>A</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						The <em>domain of <m>I</m></em>, <m>\dom(I)</m>, is defined to be the set <m>\bigcup I</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						We define <m>I^+</m>, the collection of <m>I</m>-positive subsets of <m>A</m> (or the <em>co-ideal determined by <m>I</m></em>), by <m>I^+=\mathcal{P}(A)\setminus I</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						The filter dual to <m>I</m>, denoted <m>I^*</m>, is defined as <m>I^*=\{X\subseteq A: A\setminus X\in I\}</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						If <m>X</m> is an <m>I</m>-positive subset of <m>A</m>, then we define <m>I\restr X</m>, the restriction of <m>I</m> to <m>X</m>, by <me>I\restr X = \{Y\subseteq A: X\cap Y\in I\}.</me>
+					</p>
+			</li>
+
+			<li>
+					<p>
+						If <m>X</m> is a subset of <m>A</m> with <m>A\setminus X\in I^+</m>, then we define <m>I+X</m>, the extension of <m>I</m> by <m>X</m>, to be <me>I+X = I\restr (A\setminus X) = \{Y\subseteq A: X\setminus Y\in I\}</me>
+					</p>
+			</li>
+
+		</ol>
+		</p>
+	</statement>
+</definition>
+		<p>
+			We pause for a moment to examine how the preceding definition plays out in the context of some standard examples.
+		</p>
+
+		<example>
+			<title>The Ideal <m>\Fin(\omega)</m>$</title>
+			
+			
+			<p>
+				Our first example is a familar one: start with the set of natural numbers <m>\omega</m>, and take <m>I</m> to be the <em>Frechet ideal</em> <m>\Fin(\omega)</m> on <m>\omega</m> consisting of all finite sets of natural numbers. This satisfies the requirements for being an ideal with <m>\dom(I)=\omega</m>, and a subset of <m>\omega</m> is <m>I</m>-positive if and only if it is infinite. The corresponding dual filter <m>I^*</m> (also known as the <em>Frechet filter</em>) consists of all of the co-finite subsets of <m>\omega</m>.
+			</p>	
+		</example>
+
+		<example>
+			<p>
+				If we take <m>X</m> to be the set of even numbers, then both <m>X</m> and its complement are <m>I</m>-positive so both <m>I\restr X</m> and <m>I+X</m> are also ideals on <m>\omega</m>. Note that a set is in <m>I\restr X</m> if and only if it contains only finitely many even numbers, and a set is in <m>I+X</m> if and only if contains only finitely many odd numbers.
+			</p>
+		</example>
+
+<example>
+	<p>
+		We could just as easily consider <m>I</m> to be an ideal on any set <m>A</m> containing <m>\omega</m>: <m>I</m> will still be a subset of <m>\mathcal{P}(A)</m> satisfying the definition of an ideal. If <m>\omega</m> is a proper subset of <m>A</m>, then <m>I</m> will be a proper subset of <m>\Fin(A)</m>, the ideal of finite subsets of <m>A</m>. This is where the notion of domain is helpful: the domain of <m>\Fin(\omega)</m> will remain <m>\omega</m>, even if we decide for some reason to view it as an ideal on a larger set.
+	</p>
+</example>
+
+<example>
+	<p>
+		Suppose <m>A</m> is a non-empty set and <m>\mathbb{I}</m> is the collection of ideals on <m>A</m> ordered by inclusion. Since the increasing union of a sequence of ideals is again an ideal on <m>A</m>, we know there are ideals on <m>A</m> that are maximal, in the sense that they are not properly contained in any other ideal. Such maximal ideals are called <em>prime ideals</em>, and their dual filters (which are also maximal elements of a suitable partial order) are called <em>ultrafilters</em>. If <m>I</m> is a prime ideal then <m>I^+</m> and <m>I^*</m> coincide, so a set is in <m>I</m> if and only if its complement is not. This means that for <m>X\in I^+=I^*</m> we have <m>I\restr X = I</m>, and if <m>A\setminus X</m> is in <m>I</m> then <m>I+X=I</m> as well.
+   </p>
+</example>	
+
+
+</subsection>
+<subsection xml:id="almost-everywhere">
+	<title>Almost Everywhere</title>
+
+	<p>
+		As soon as we fix an ideal <m>I</m> on <m>A</m>, we get a natural way to speak about a property holding almost everywhere: we can interpret this as meaning that the set of <m>a\in A</m> which fail to have the property is in <m>I</m>. This is in accord with our intuition that sets in the ideal are negligible, and of course it is also equivalent to stating that the set of <m>a\in A</m> that <em>do</em> have the property is in the filter dual to <m>I</m>. The following definition captures this idea using some tailor-made quantifiers.
+	</p>
+
+	<definition xml:id="def-blah">
+		<statement>
+				<p>
+					Let <m>I</m> be an ideal on the set <m>A</m>.
+				</p>
+			
+				<p><ol>
+					<li>
+							<p>
+								If <m>\varphi(x)</m> is a formula with one free variable, then <m>(\forall^I a\in A)[\varphi(a)]</m> will mean <q>the set of <m>a\in A</m> for which <m>\varphi(a)</m> fails is in <m>I</m></q>, or, more informally, <m>\varphi(a)</m> holds for <m>I</m>-almost every <m>a</m> in <m>A</m>.
+							</p>
+					</li>
+			
+					<li>
+							<p>
+								Similarly, we define <m>(\exists^I a\in A)[\varphi(a)]</m> to mean that there <m>\varphi(a)</m> is true for an <m>I</m>-positive set of <m>a\in A</m>.
+							</p>
+					</li>
+			
+				</ol></p>
+		</statement>
+	</definition>
+
+
+	<p>
+		The following easy proposition lays out some of the basic properties of these quantifiers. We leave the proof as an exercise.
+	</p>
+
+	<proposition xml:id="prop-">
+		<statement>
+			<p>
+				Let <m>I</m> be an ideal on <m>A</m>, and let <m>\varphi(x)</m> be a formula with one free variable.
+			</p>
+		
+			<p><ol>
+				<li>
+						<p>
+							If <m>(\forall^I a\in A)[\varphi(a)]</m> holds, then so does <m>(\exists^I a\in A)[\varphi(a)]</m>. The reverse implication need not hold.
+						</p>
+				</li>
+		
+				<li>
+						<p>
+							The statement <m>\neg(\forall^I a\in A)[\varphi(a)]</m> is equivalent to <m>(\exists^I a\in A)[\neg\varphi(a)]</m>.
+						</p>
+				</li>
+		
+				<li>
+						<p>
+							The statement <m>\neg(\exists^I a\in A)[\varphi(a)]</m> is equivalent to <m>(\forall^I a\in A)[\neg\varphi(a)].</m>
+						</p>
+				</li>
+		
+			</ol></p>
+		</statement>
+	</proposition>
+
+
+	<p>
+		Most of the time, we are going to be using variants of two basic instances of the above framework: when two functions are equal almost everywhere, and when one function is below another almost everywhere. The following definitions given names to some of the objects we will need to consider:
+	</p>
+
+
+	<definition xml:id="def-">
+		<statement>
+			<p>
+				For functions <m>f</m> and <m>g</m> in <m>\On^A</m> we define:
+		   </p>
+	   
+		   <p><ul>
+			   <li>
+					   <p>
+						   <m>\mathord{\le}(f,g)=\{a\in A\mid f(a)\le g(a)\}</m>
+					   </p>
+			   </li>
+	   
+			   <li>
+					   <p>
+						   <m>\mathord{&lt;}(f,g)=\{a\in A\mid f(a)&lt; g(a)\}</m>
+					   </p>
+			   </li>
+	   
+			   <li>
+					   <p>
+						   <m>\mathord{=}(f,g)=\{a\in A\mid f(a)= g(a)\}</m>
+					   </p>
+			   </li>
+	   
+		   </ul></p>
+	   
+		   <p>
+			   In a similar way, we can define sets <m>\mathord{\not=}(f,g)</m>, <m>\mathord{&gt;}(f,g)</m> and <m>\mathord{\ge}(f,g)</m>.
+		   </p>
+		</statement>
+	</definition>
+
+
+	<p>
+		The sets defined above allow us to make precise the idea of our relations holding <q>almost everywhere</q>.
+	</p>
+
+
+<definition xml:id="def-asd">
+	<statement>
+		<p>
+			Given an ideal <m>I</m> on <m>A</m>, we define relations <m>\le_I</m>, <m>&lt;_I</m>, <m>=_I</m>, and <m>\neq_I</m> between functions in <m>\On^A</m> as follows:
+		</p>
+	
+		<p><ul>
+			<li>
+					<p>
+						<m>f\le_I g \iff \mathord{&gt;}(f,g)\in I</m>
+					</p>
+			</li>
+	
+			<li>
+					<p>
+						<m>f&lt;_I g \iff \mathord{\ge}(f,g)\in I</m>
+					</p>
+			</li>
+	
+			<li>
+					<p>
+						<m>f=_I g \iff\mathord{\not=} (f,g)\in I</m>
+					</p>
+			</li>
+	
+			<li>
+					<p>
+						<m>f\not=_I g\iff \mathord{=}(f,g)\in I</m>
+					</p>
+			</li>
+	
+		</ul></p>
+	</statement>
+</definition>
+
+
+	<p>
+		The above notation does what we want. For example, <m>f\leq_I g</m> holds if and only if <m>f(a)\leq g(a)</m> for almost all <m>a\in A</m> (as measured by the ideal <m>I</m>). In symbols, <me>f\leq_I g\Longleftrightarrow (\forall^I a\in A)\left[f(a)\leq g(a)\right].</me> We do need to be a little careful with how we interpret negations in this framework. Since our ideals need not be maximal, there is potentially a big difference between statements such as <m>f\neq_I g</m> and <m>\neg(f=_I g)</m>. To see why, we can just write out the definitions: <me>\label{eqn1.1.1}
+f\neq_I g \Longleftrightarrow (\forall^I a\in A)[f(a)\neq g(a)],</me> while <me>\label{eqn1.1.2}
+\neg(f=_I g)\Longleftrightarrow (\exists^I a\in A)[f(a) \neq g(a)].</me> These will coincide if <m>I</m> is a maximal ideal on <m>A</m>, but in general they are going to mean different things. For example, if <m>I</m> is the smallest ideal <m>\{\emptyset\}</m> on <m>A</m>, then <xref ref="eqn1.1.1" /> says that <m>f</m> and <m>g</m> disagree everywhere on <m>A</m>, while <xref ref="eqn1.1.2" /> says that <m>f</m> and <m>g</m> disagree on at least one value. These are very different concepts if <m>A</m> has more than a single element!
+	</p>
+
+	<p>
+		Now that we have our notation fixed, we can start examining the behavior of these relations. Our first stop is a proposition whose proof follows almost immediately from the relevant definitions.
+	</p>
+
+
+<proposition xml:id="prop-asdfs">
+	<statement>
+			<p>
+				Let <m>I</m> be an ideal on a non-empty set <m>A</m>.
+		   </p>
+	   
+		   <p><ol>
+			   <li>
+					   <p>
+						   The relation <m>\le_I</m> is transitive and reflexive on <m>\On^A</m>.
+					   </p>
+			   </li>
+	   
+			   <li>
+					   <p>
+						   The relation <m>&lt;_I</m> is transitive on <m>\On^A</m>.
+					   </p>
+			   </li>
+	   
+			   <li>
+					   <p>
+						   If <m>I</m> is a proper ideal, then <m>&lt;_I</m> anti-reflexive.
+					   </p>
+			   </li>
+	   
+			   <li>
+					   <p>
+						   The relation <m>\le_I</m> is not anti-symmetric on <m>\On^A</m> unless <m>I=\{\emptyset\}</m>.
+					   </p>
+			   </li>
+	   
+		   </ol></p>
+	</statement>
+</proposition>	
+
+<proof>
+	<p>
+		See Exercise
+	</p>
+</proof>
+
+
+	<p>
+		Thus, the relation <m>\leq_I</m> is a quasi-order on the class <m>\On^A</m>, while <m>&lt;_I</m> is a strict partial order. Much of our work will be exploring the structure of these relations in the context of subsets of <m>\On^A</m>: given a set <m>F</m> of ordinal-valued functions defined on <m>A</m> and a (proper) ideal <m>I</m> on <m>A</m>, we will be mainly be looking at the quasi-ordered set <m>(F,\leq_I)</m> as well as the corresponding strictly partial ordered set <m>(F, &lt;_I)</m>
+	</p>
+
+	<p>
+		Of course, there is no need to restrict ourselves to the order and equality relations on ordinals. Given an arbitrary binary relation <m>R</m> on the ordinals, we get a corresponding binary relation <m>R_I</m> on <m>\On^A</m> defined by <me>f R_I g\Longleftrightarrow(\forall^I a\in A)\left[f(a) R g(a)\right].</me> Again, the point is that <m>f R_I g</m> will hold if and only if <m>f(a) R g(a)</m> for almost every <m>a</m> in <m>A</m>.
+	</p>
+</subsection>
+
+<subsection xml:id="more-examples">
+	<title>More Examples</title>
+
+	<p>
+		Let us now move on to examples illustrating two extreme special cases.
+	</p>
+
+<example>
+	<title>The Improper Ideal</title>
+	<p>
+		In this example, we consider what happens we relax our requirement that ideals on a set <m>A</m> are proper subsets of <m>\mathcal{P}(A)</m>. Such an ideal <m>I</m> is called <em>improper</em>, and this situation is not very interesting, because <em>every</em> subset of <m>A</m> is in the ideal <m>I</m>, and hence considered to be negligible. It follows that given <em>any</em> binary relation <m>R</m> on ordinals the <m>f R_I g</m> will hold for any two functions <m>f</m> and <m>g</m> in <m>\On^A</m>. To make matters worse, this also means that <m>f\neg{\mathbin{R}}_I g</m> will hold, because <m>\neg\mathbin{R}</m> is also a binary relation on ordinals. Thus, for example, we will have both <m>f=_I g</m> and <m>f\neq_Ig</m> for any two functions in <m>\On^A</m>.
+   </p>
+</example>
+
+
+	<p>
+		The lesson of the previous example is that modulo an improper ideal, everything collapses into a single uninteresting heap. This is why we focus our attention on the <em>proper</em> ideals.
+	</p>
+
+<example>
+	<title>The Trivial Ideal</title>
+	<p>
+		In stark contrast with the previous example, what happens if <m>I = \{\emptyset\}</m> is the smallest possible ideal on <m>A</m>? In this setting, the relations <m>\leq_I</m> and <m>&lt;_I</m> correspond to <m>\leq</m> and <m>&lt;</m> defined earlier, while <m>=_I</m> is the usual identity relation. More generally, if <m>R</m> is a binary relation on the ordinals and <m>I = \{\emptyset\}</m>, then <m>f R_I g</m> holds if and only if <m>f(a) R g(a)</m> holds for every <m>a</m> in <m>A</m>.
+   </p>	
+	
+</example>
+
+	<p>
+		Of course, there is a lot of room between these two extremes as we have seen previously with Examples <xref ref="def:fin(omega)" /> and <xref ref="def:primeideal" />. The following simple proposition will help with our understanding, as it shows us that enlarging an ideal on <m>A</m> will preserve the sorts of relationships we have been considering.
+	</p>
+
+<!-- div attr= class="proposition"-->
+	<p>
+		 Suppose <m>I\subseteq J</m> are ideals over a set <m>A</m>. Then for every binary relation <m>R</m> on the ordinals and functions <m>f</m> and <m>g</m> in <m>\On^A</m>, <me>f \mathbin{R}_I g \Longrightarrow f\mathbin{R}_J g.</me>
+	</p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+	<p>
+		<em>Proof.</em> Suppose <m>J\supseteq I</m> are ideals on <m>A</m>. If <m>f\mathbin{R}_I g</m> then <m>\{a\in A: \neg[f(a) R g(a)]\}</m> is in <m>I</m>, hence in <m>J</m> as well. Thus <m>f\mathbin{R}_J g</m> as well. ◻
+	</p><!--</div attr= class="proof">-->
+
+	<p>
+		As a corollary, we see that relationships between functions that hold modulo the smallest ideal on <m>A</m> hold modulo <em>every</em> ideal on <m>A</m>. More precisely, if <m>R</m> is any binary relation on <m>\On</m> and <m>f(a) \mathbin{R} g(a)</m> for all <m>a\in A</m> then we know <m>f\mathbin{R}_Ig</m> for every ideal <m>I</m> over <m>A</m>. Informally, if something happens for <em>every</em> <m>a\in A</m>, then it necessarily happens for  <em>almost every</em> <m>a\in A</m>, no matter which particular ideal <m>I</m> on <m>A</m> we are working with.
+	</p>
+
+	<p>
+		It is helpful to have a dynamic picture of how a relation of the form <m>R_I</m> evolves as the ideal under consideration gets larger. When the ideal <m>I</m> on <m>A</m> grows, it becomes easier for two functions to be related through one of <m>R_I</m> and <m>\neg R_I</m> as the larger ideal will make more decisions about when something can be considered negligible and ignored. One may keep enlarging the ideal until we hit a maximal proper ideal, at which point all the relevant decisions have been made in a coherent fashion. Any further attempt to extend the ideal will result in things collapsing into the situation of Example <xref ref="ex:improper" />.
+	</p>
+
+<!-- div attr= class="example"-->
+	<p>
+		One way of generalizing Example <xref ref="def:fin(omega)" /> to other infinite sets <m>A</m> is to just define <m>\Fin[A]</m> to consist of the finite subsets of <m>A</m>. If <m>A</m> is a set of ordinals, then we can also look at <m>J^{\bd}[A]</m>, the ideal of bounded subsets of <m>A</m>. In the case where <m>A</m> is <m>\omega_1</m>, any infinite subset of <m>\omega_1</m> is <m>\Fin[A]</m>-positive, while the <m>J^{\bd}[A]</m>-positive sets must be uncountable.
+	</p><!--</div attr= class="example">-->
+
+<!-- div attr= class="example"-->
+	<p>
+		Lorem Ipsum.
+	</p><!--</div attr= class="example">-->
+
+	<p>
+		We will revisit these examples throughout our narrative and develop others, but even our brief discussion highlights one of the central issues in pcf theory: there is <q>conservation of complexity</q> lurking in the background when we study <m>\On^A</m> modulo a proper ideal <m>I</m> on <m>A</m>. If <m>I=\{\emptyset\}</m> (so the ideal is as simple as possible) then the structure of <m>\On^A</m> under the relations <m>\leq_I</m> and <m>&lt;_I</m> is quite complicated. On the other hand, the relation <m>\leq_I</m> becomes linear if <m>I</m> is dual to an ultrafilter, but of course then <m>I</m> is likely to be a very complex object. Pcf theory gives a careful analysis of this relationship, and shows us that in many cases we can use simply describable ideals to obtain a high degree of organization among functions.
+	</p>
+</subsection>
+
+
+
+
+</section>

@@ -1,0 +1,122 @@
+
+	<section xml:id="a-notion-of-equivalence">
+		<title>A notion of equivalence</title>
+
+
+		<subsection xml:id="equivalence-of-subsets-of-ona">
+			<title>Equivalence of subsets of <m>\On^A</m></title>
+
+			<p>
+				One of the important lessons of the preceding sections is that arbitrary structures of the form <m>(F, \leq_I)</m> can be complicated, but by imposing some mild conditions (like <m>&lt;_I</m>-directedness, for example) we can obtain somewhat better behavior. In this section, we will begin investigating situations where a (possibly quite complicated) structure <m>(F,\leq_I)</m> might be considered <em>equivalent</em> to another collection of functions whose behavior modulo <m>I</m> is much more organized.
+			</p>
+
+			<p>
+				Our plan is to formulate an equivalence relation between subsets of <m>\On^A</m> that attempts to capture when two such sets of functions could be said to have the same cofinal behavior. In this section, we will define the relation and explore its basic properties, and in the next section we will try to characterize when sets of functions are equivalent to easily describable families. The notion of equivalence we want to use is as defined as follows:
+			</p>
+<definition xml:id="def-main-equivalence-def">
+	<statement>
+		<p>
+			Suppose <m>I</m> is an ideal on <m>A</m>, and <m>F</m> and <m>G</m> are subsets of <m>\On^A</m>. We say <m>F</m> and <m>G</m> are <em>equivalent modulo <m>I</m></em>, written <m>F\equiv_I G</m>, if for every <m>f\in F</m> there is <m>g\in G</m> such that <m>f\le _I g</m>, and for every <m>g\in G</m> there is <m>f\in F</m> such that <m>g\le_I f</m>.
+	   </p>
+	</statement>
+</definition>
+
+
+			<p>
+				This relation <m>\equiv_I</m> is an equivalence relation on the class of subsets of <m>\On^A</m>, and by our previous work, if <m>I\subseteq J</m> are ideals
+				 over <m>A</m> then for subsets <m>F</m> and <m>G</m> of <m>\On^A</m>, if <m>F\equiv_I G</m> then <m>F\equiv_J G</m>.
+				  We will spend some time investigating how this notion of equivalence interacts with relations such as <m>\leq_I</m>, with an aim of eventually detecting
+				   when a set of functions is equivalent modulo <m>I</m> to a set of functions that is nicely organized.
+				    The main point of the next couple of results is to illustrate how <m>\equiv_I</m> preserves many of the properties and cardinals we have considered to this point.
+					 For example, the cardinals <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> depend only on the <m>\equiv_I</m>-class of <m>F</m>:
+			</p>
+
+<proposition xml:id="prop-preserve-bounding-dominating">
+	<statement>
+		<p>
+			Let <m>I</m> be an ideal on the set <m>A</m>, and suppose <m>F</m> and <m>G</m> are families of functions from <m>\On^A</m> with <m>F\equiv_I G</m>. Then <me>\label{eqn:2.1.1}
+			\mathfrak{b}_I(F)=\mathfrak{b}_I(G),</me> and <me>\label{eqn:2.2.2}
+			\mathfrak{d}_I(F)=\mathfrak{d}_I(G).</me>
+	   </p>
+	</statement>
+</proposition>
+<proof>
+	<p>
+		Even though these proofs are easy, we will still give some details as we want to highlight a style of argument that will come to the forefront in Section I.<xref ref="tukeysection" /> when we discuss Tukey equivalence. By our assumptions, we can fix functions <m>\phi:F\rightarrow G</m> and <m>\psi:G\rightarrow F</m> such that <m>f\leq_I \phi(f)</m> and <m>g\leq_I \psi(g)</m> for all <m>f\in F</m> and <m>g\in G</m>.
+	</p>
+
+	<p>
+		We show first that <m>\phi</m> maps unbounded subsets of <m>F</m> to unbounded subsets of <m>G</m>. Suppose now that <m>X</m> is a subset of <m>F</m> whose image <m>\phi[X]</m> is bounded in <m>G</m>, say by <m>g</m>. Then <m>\psi(g)</m> is a function in <m>F</m>, and for any function <m>f\in F</m> we have <me>f\leq_I\phi(f)\leq_I g\leq_I \psi(g)</me> which shows us that <m>X</m> is bounded back in <m>F</m>. This then implies <m>\mathfrak{b}_I(G)\leq \mathfrak{b}_I(F)</m>, and the symmetric argument establishes <xref ref="eqn:2.1.1" />,
+	</p>
+
+	<p>
+		Now suppose that <m>Y</m> is a cofinal subset of <m>G</m>. Given <m>f\in F</m> we can choose <m>g\in Y</m> such that <m>\phi(f)\leq_I g</m>, and conclude <me>f\leq_I \phi(f)\leq_I g\leq_I \psi(g),</me> and hence the image of <m>Y</m> under <m>\psi</m> is cofinal in <m>(F, \leq_I)</m>. Thus <m>\psi</m> maps cofinal subsets of <m>G</m> to cofinal subsets of <m>F</m>, and so <m>\mathfrak{d}_I(F)\leq\mathfrak{d}_I(G)</m>. The symmetric argument will finish the proof of <xref ref="eqn:2.2.2" />. ◻
+	</p>
+</proof>
+
+<p>
+	The lesson from the above is that the cardinals <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m> are really characteristics of the equivalence class of <m>F</m> under <m>\equiv_I</m>. Moving on, we next show that our notion of equivalence preserves directedness under both <m>\leq_I</m> and <m>&lt;_I</m>. (A generalization of this result to stronger forms of directedness appears in Exercise <xref ref="exer:directedequiv" /> below.)
+</p>
+
+<proposition xml:id="prop-equiv">
+	<statement>
+		<p>
+			Suppose <m>F</m> and <m>G</m> are sets of functions that are equivalent modulo <m>I</m>. Then
+		</p>
+
+		<p><ol>
+			<li>
+						<p>
+							<m>F</m> is <m>\leq_I</m>-directed if and only if <m>G</m> is <m>\leq_I</m>-directed, and
+						</p>
+			</li>
+
+			<li>
+						<p>
+							<m>F</m> is <m>&lt;_I</m>-directed if and only if <m>G</m> is <m>&lt;_I</m>-directed.
+						</p>
+			</li>
+
+		</ol></p>
+	</statement>
+</proposition>
+<proof>
+	<p>
+	 We prove only one direction of (2), so assume <m>F</m> is <m>&lt;_I</m>-directed and let the functions <m>\phi:F\rightarrow G</m> and <m>\psi:G\rightarrow F</m> witness the equivalence as in the proof of Proposition <xref ref="prop:b=b" />. Given a finite subset <m>Y</m> of <m>G</m>, we can find a function <m>f\in F</m> with <m>\psi(y)\leq_I f</m> for all <m>y\in Y</m>, and then <m>\phi(f)</m> will be the required upper bound for <m>Y</m> in <m>G</m>. ◻
+	</p>
+</proof>
+
+
+
+</subsection>
+
+		<subsection xml:id="downward-closures-of-subsets-of-ona">
+			<title>Downward closures of subsets of <m>\On^A</m></title>
+
+			<p>
+				We close this section with another natural formulation of <m>\equiv_I</m> that will give us a chance to address some technical issues that lurk in the background of our discussions. We would like to state and prove a result that says, roughly, that two sets of functions are equivalent modulo <m>I</m> if and only if they determine the same initial segment of <m>\On^A</m> modulo <m>I</m>. But what exactly does this mean? To do this precisely, we need to grapple with the fact that <m>\On^A</m> is a proper class, and the <m>=_I</m>-equivalence classes of individual functions are proper classes as well. The difficulties are easy enough to manage because it is intuitively clear what we should mean by the expression <q><m>\On^A</m> modulo <m>=_I</m></q> but we will do it with some care this first time through.
+			</p>
+
+			<p>
+				Given subsets <m>F</m> and <m>G</m> of <m>\On^A</m>, we know that <m>F\cup G</m> is also a set of functions. Given any set <m>H</m> of functions from <m>\On^A</m> with <m>F\cup G\subseteq H</m>, we can apply the relation <m>=_I</m> on <m>H</m> to form equivalence classes without any trouble: each of these equivalence classes is a subset of <m>H</m>, and the set of equivalence classes forms a partially ordered set under the natural extension of <m>\leq_I</m> to such equivalence classes. If we start just with the set <m>F\cup G</m> and look at the corresponding collection of <m>=_I</m> equivalence classes then this structure is canonically isomorphic to a substructure of <m>H</m> modulo <m>=_I</m> for any set <m>H</m> that includes both <m>F</m> and <m>G</m>.
+			</p>
+
+			<p>
+				Given <m>F</m> and <m>G</m>, let <m>h:\On\rightarrow A</m> be defined by setting <m>h(a)</m> to be the supremum of all ordinals <m>x(a)+1</m> where <m>x\in F\cup G</m>, and let <m>H</m> be the corresponding product <m>\prod h</m>. The set <m>H</m> is large enough to contain both <m>F</m> and <m>G</m>, and since it is closed downward under <m>\leq</m> it is also an initial segment of <m>\On^A</m> under <m>\leq</m>. Given any function <m>x</m> from the proper class <m>\On^A</m>, if <m>x&lt;_I h</m> then <m>x=_I y</m> for some <m>y\in H</m>, and since both <m>F</m> and <m>G</m> are subsets of <m>H</m> we can speak unambiguously about <q>the</q> downward closures of <m>F</m> and <m>G</m> in <m>\On^A</m>: if <m>x\leq_I</m> for some <m>z\in F\cup H</m> then <m>x =_I y</m> for some <m>y\in H</m>. Similar circumlocutions allow is to essentially ignore the fact that we are dealing with equivalence classes that are <em>prima facie</em> proper classes: we can always capture our situation in a large enough set. Thus, when we talk about the initial segment of <m>\On^A</m> modulo <m>I</m> determined by a product <m>\prod h</m>, we can just treat the proper class of functions <m>x\in\On^A</m> that satisfy <m>x\leq_I y</m> for some <m>y\in \prod h</m> as if it were a set.
+			</p>
+
+<proposition xml:id="prop-">
+	<statement>
+		<p>
+			Suppose <m>F</m> and <m>G</m> subsets of <m>\On^A</m>. Then <m>F\equiv_I G</m> if and only if <m>F</m> and <m>G</m> have the same downward closure in <m>(\On^A,\leq_I)</m>, that is, <me>F\equiv_I G\Longleftrightarrow(\forall x\in \On^A)\bigl[(\exists f\in F)[x\leq_I f]\leftrightarrow (\exists g\in G)[x\leq_I g]\bigr].</me>
+	   </p>
+	</statement>
+</proposition>
+<proof>
+	<p>
+	 See Exercise <xref ref="exer:downwardclosure" />. ◻
+	</p>
+</proof>
+		</subsection>
+
+	</section>

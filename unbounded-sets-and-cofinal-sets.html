@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unbounded sets and cofinal sets</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-vocabulary.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Sh400.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="a-notion-of-equivalence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Sh400.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vocabulary.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="a-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="tukeysection.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="flat-products-and-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="the-trichotomy-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="unbounded-sets-and-cofinal-sets"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Unbounded sets and cofinal sets</span>
+</h2>
+<section class="subsection" id="cofinal-vs.-unbounded"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="space"> </span><span class="title">Cofinal and unbounded</span>
+</h3>
+<div class="para" id="cofinal-vs.-unbounded-2">We will begin this section in a more abstract setting than we ended the previous one, working with an arbitrary quasi-ordered set instead of just ordinal-valued functions.</div>
+<article class="definition definition-like" id="def-"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def--1-1">Let <span class="process-math">\(P\)</span> be a set (or occasionally a proper class), while <span class="process-math">\(\leq_P\)</span> is a quasi-order on <span class="process-math">\(P\text{.}\)</span>
+</div> <div class="para logical" id="def--1-2"><ol class="decimal">
+<li id="def--1-2-1-1"><div class="para logical" id="def--1-2-1-1-1">
+<div class="para">A subset <span class="process-math">\(Q\)</span> of <span class="process-math">\(P\)</span> is <em class="emphasis"><span class="process-math">\(\leq_P\)</span>-cofinal</em> (or just <em class="emphasis">cofinal</em> if the context is clear) in <span class="process-math">\(P\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\forall p\in P)(\exists q\in Q)\left[p\leq_P q\right].
+\end{equation*}
+</div>
+</div></li>
+<li id="def--1-2-1-2"><div class="para logical" id="def--1-2-1-2-1">
+<div class="para">We say that a subset <span class="process-math">\(Q\)</span> of <span class="process-math">\(P\)</span> is <em class="emphasis"><span class="process-math">\(\leq_P\)</span>-bounded</em> (or just <em class="emphasis">bounded</em>) in <span class="process-math">\(P\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\exists p\in P)(\forall q\in Q)\left[q\leq_P p\right],
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(Q\)</span> is said to be <span class="process-math">\(\leq_P\)</span>-unbounded (or just <em class="emphasis">unbounded</em>) if it is not bounded.</div>
+</div></li>
+<li id="def--1-2-1-3"><div class="para" id="def--1-2-1-3-1">
+<span class="process-math">\(P\)</span> is <em class="emphasis"><span class="process-math">\(\leq_P\)</span>-directed</em> if every finite subset of <span class="process-math">\(P\)</span> is <span class="process-math">\(\leq_P\)</span>-bounded in <span class="process-math">\(P\text{.}\)</span>
+</div></li>
+<li id="def--1-2-1-4"><div class="para logical" id="def--1-2-1-4-1">
+<div class="para">
+<span class="process-math">\(q\)</span> is a <span class="process-math">\(\leq_P\)</span>-maximum element of <span class="process-math">\(P\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\forall p\in P)\left[p\leq_P q\right]
+\end{equation*}
+</div>
+</div></li>
+<li id="def--1-2-1-5"><div class="para" id="def--1-2-1-5-1">The above concepts also make sense if we replace the quasi-order <span class="process-math">\(\leq_P\)</span> with a strict partial order <span class="process-math">\(&lt;_P\)</span> on <span class="process-math">\(P\text{.}\)</span>
+</div></li>
+</ol></div></article><details id="cofinal-vs.-unbounded-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="cofinal-vs.-unbounded-4-1">Suppose <span class="process-math">\((P, \leq_P)\)</span> has a <span class="process-math">\(\leq_P\)</span>-maximum element <span class="process-math">\(q\text{.}\)</span> Then <span class="process-math">\(P\)</span> is <span class="process-math">\(\leq_P\)</span>-bounded in <span class="process-math">\((P,\leq_P)\text{,}\)</span> while the singleton <span class="process-math">\(\{q\}\)</span> is cofinal in <span class="process-math">\((P,\leq_P)\text{.}\)</span> In this situation, <span class="process-math">\(P\)</span> has no unbounded subsets, while <span class="process-math">\(P\)</span> is <span class="process-math">\(\leq_P\)</span>-directed for trivial reasons.</div></article></details><div class="para" id="cofinal-vs.-unbounded-5">Notice that the preceding example gives us an example where <span class="process-math">\(P\)</span> contains a <span class="process-math">\(\leq_P\)</span>-bounded <span class="process-math">\(\leq_P\)</span>-cofinal subset. In fact, this sort of example is essentially unique: it not hard to show that <span class="process-math">\((P, \leq_P)\)</span> has a maximum element if and only if it has a bounded cofinal subset. We will be working primarily with structures where this will not happen. Our next examples are typical, and takes us back to the context of the preceding section.</div>
+<details id="cofinal-vs.-unbounded-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="cofinal-vs.-unbounded-6-1">Let <span class="process-math">\(A=\omega\text{,}\)</span> and let <span class="process-math">\(I=\{\emptyset\}\)</span> be the smallest ideal on <span class="process-math">\(\omega\text{.}\)</span> We will take <span class="process-math">\(F\)</span> to be the set of functions from <span class="process-math">\(\omega\)</span> to <span class="process-math">\(\omega\)</span> (often referred to as the <em class="emphasis">Baire space</em> in the sequel), and let <span class="process-math">\(X\)</span> be the subset of <span class="process-math">\(F\)</span> consisting of constant functions. The set <span class="process-math">\(X\)</span> is unbounded in <span class="process-math">\((F,\leq_I)\text{:}\)</span> given any <span class="process-math">\(f\in F\text{,}\)</span> if we define the function <span class="process-math">\(g\in X\)</span> to be constant with value <span class="process-math">\(f(0)+1\text{,}\)</span> then <span class="process-math">\(\neg(g\leq_I f)\text{.}\)</span> On the other hand, <span class="process-math">\(X\)</span> is not cofinal in <span class="process-math">\((F, \leq_I)\)</span> because the identity function is not bounded modulo <span class="process-math">\(I\)</span> by any function in <span class="process-math">\(X\text{.}\)</span> If we replace <span class="process-math">\(I\)</span> by the larger ideal <span class="process-math">\(J=\Fin(\omega)\)</span> of all finite subsets of <span class="process-math">\(\omega\text{,}\)</span> then the identity function witnesses that <span class="process-math">\(X\)</span> is bounded in <span class="process-math">\((F, \leq_J)\text{.}\)</span>
+</div></article></details></section><section class="subsection" id="cardinal-characteristics"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="space"> </span><span class="title">Cardinal Characteristics</span>
+</h3>
+<div class="para" id="cardinal-characteristics-2">Our next definition introduces some major players in our discussion, defining two cardinal characteristics of makes sense in the general context of Definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:orderstuff" missing or not unique]</code>, but we will formulate them in terms of our basic context because that is the only situation where we will use them. With that in mind, throughout the rest of this section we assume that <span class="process-math">\(I\)</span> is a (proper) ideal on a non-empty set <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para" id="cardinal-characteristics-3">Let <span class="process-math">\((P, \leq_P)\)</span> be a quasi-order without a maximum element.</div>
+<div class="para logical" id="cardinal-characteristics-4"><ol class="decimal">
+<li id="cardinal-characteristics-4-1-1"><div class="para" id="cardinal-characteristics-4-1-1-1">The cardinal <span class="process-math">\(\mathfrak b(P)\)</span> is defined to be the least cardinality of an unbounded subset of <span class="process-math">\((P, \leq_P)\text{.}\)</span>
+</div></li>
+<li id="cardinal-characteristics-4-1-2"><div class="para" id="cardinal-characteristics-4-1-2-1">The cardinal <span class="process-math">\(\mathfrak d(P)\)</span> is defined to be the least cardinality of a cofinal subset of <span class="process-math">\((P,\leq_P)\text{.}\)</span>
+</div></li>
+<li id="cardinal-characteristics-4-1-3"><div class="para" id="cardinal-characteristics-4-1-3-1">If <span class="process-math">\((P,\leq_P)\)</span> is a structure of the form <span class="process-math">\((F,\leq_I)\)</span> where <span class="process-math">\(F\subseteq\On^A\)</span> for some set <span class="process-math">\(A\)</span> and <span class="process-math">\(I\)</span> is an ideal on <span class="process-math">\(A\text{,}\)</span> then we will use the notation <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> for the cardinals <span class="process-math">\(\mathfrak{b}(P)\)</span> and <span class="process-math">\(\mathfrak{d}(P)\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="para" id="cardinal-characteristics-5">There are a couple of minor technical issues that arise when discussing unbounded sets. If <span class="process-math">\(P\)</span> has a <span class="process-math">\(\leq_P\)</span>-maximum element, then <span class="process-math">\(P\)</span> will have no unbounded subsets at all and the definition of <span class="process-math">\(\mathfrak{b}(P)\)</span> is problematic. If we find ourselves in such a situation, we will just define <span class="process-math">\(\mathfrak{b}(P)\)</span> to be <span class="process-math">\(\infty\text{,}\)</span> a formal symbol that is considered to be larger than any cardinal. Notice that it is possible for <span class="process-math">\(\mathfrak{b}(P)\)</span> to be finite: this happens if and only if <span class="process-math">\(P\)</span> is <em class="emphasis">NOT</em> <span class="process-math">\(\leq_P\)</span>-directed. We will almost always work in directed structures without a maximum element, and this situation happens if and only the corresponding cardinal <span class="process-math">\(\mathfrak{b}(P)\)</span> is infinite.</div>
+<div class="para" id="cardinal-characteristics-6">These sorts of problems do not arise with <span class="process-math">\(\mathfrak{d}(P)\)</span> as <span class="process-math">\(P\)</span> is always cofinal in itself and so <span class="process-math">\(\mathfrak{d}_I(F)\leq |F|\)</span> will hold automatically. It is possible for <span class="process-math">\(\mathfrak{d}(P)\)</span> to be finite as well, and <span class="process-math">\(\mathfrak{d}(P)=1\)</span> if and only if <span class="process-math">\(P\)</span> has a maximum element. If <span class="process-math">\(P\)</span> is <span class="process-math">\(\leq_P\)</span>-directed, then <span class="process-math">\(\mathfrak{d}(P)\)</span> is finite if and only if <span class="process-math">\(\mathfrak{d}(P)=1\text{.}\)</span>
+</div>
+<div class="para" id="cardinal-characteristics-7">If we move now to structures of the form <span class="process-math">\((F, \leq_I)\)</span> then the following related definitions make sense:</div>
+<div class="para" id="cardinal-characteristics-8">Assume <span class="process-math">\(I\)</span> is an ideal on the set <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(F\subseteq\On^A\text{.}\)</span>
+</div>
+<div class="para logical" id="cardinal-characteristics-9"><ol class="decimal">
+<li id="cardinal-characteristics-9-1-1"><div class="para logical" id="cardinal-characteristics-9-1-1-1">
+<div class="para">The <em class="emphasis">pointwise supremum</em> of <span class="process-math">\(F\text{,}\)</span> denoted <span class="process-math">\(\sup(F)\text{,}\)</span> is the function defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sup(F)(a):=\sup\{f(a):f\in F\}.
+\end{equation*}
+</div>
+</div></li>
+<li id="cardinal-characteristics-9-1-2"><div class="para" id="cardinal-characteristics-9-1-2-1">We say <span class="process-math">\(X\subseteq F\)</span> is <em class="emphasis">supremum-bounded</em> in <span class="process-math">\(F\)</span> if there exists <span class="process-math">\(g\in F\)</span> such that <span class="process-math">\(\sup(X)\le_I g\text{.}\)</span>
+</div></li>
+<li id="cardinal-characteristics-9-1-3"><div class="para" id="cardinal-characteristics-9-1-3-1">We define <span class="process-math">\(\sigma(F,I)\)</span> to be the least cardinality of a subset of <span class="process-math">\(F\)</span> which is not supremum bounded in <span class="process-math">\(F\text{.}\)</span> If <span class="process-math">\(F\)</span> (and therefore every subset of <span class="process-math">\(F\)</span>) is supremum bounded in <span class="process-math">\(F\)</span> we let <span class="process-math">\(\sigma(F,I)=\infty\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="para" id="cardinal-characteristics-10">Whereas the cardinals <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> depend only on the order-theoretic structure the <span class="process-math">\(=_I\)</span>-equivalence classes of <span class="process-math">\(F\text{,}\)</span> we have a different situation with the definition of <span class="process-math">\(\sigma(F, I)\text{:}\)</span> taking the supremum of a set of functions requires us to work with actual functions instead of just equivalence classes. The following example illustrates the problem.</div>
+<div class="para logical" id="cardinal-characteristics-11">
+<div class="para">Let <span class="process-math">\(A\)</span> be <span class="process-math">\(\omega\)</span> and let <span class="process-math">\(I\)</span> be the ideal <span class="process-math">\(\Fin(\omega)\text{.}\)</span> We will define two sets of functions <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> as follows. First, for any countable limit ordinal <span class="process-math">\(\alpha\)</span> we let <span class="process-math">\(g_\alpha\)</span> be the function on <span class="process-math">\(A\)</span> that is constant with value <span class="process-math">\(\alpha\text{,}\)</span> and let <span class="process-math">\(G=\{g_\alpha:\alpha&lt;\omega_1\}\text{.}\)</span> Next, we let <span class="process-math">\(f_\alpha = g_\alpha\)</span> whenever <span class="process-math">\(\alpha\)</span> is an <em class="emphasis">infinite</em> countable ordinal, and for <span class="process-math">\(\alpha = n&lt;\omega\)</span> we define <span class="process-math">\(f_n\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{examplesup} f_\alpha(k) =
+\begin{cases}
+\omega_1 &amp;\text{if $k = n$, and}\\
+n &amp;\text{otherwise,}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">and then define <span class="process-math">\(F=\{f_\alpha:\alpha&lt;\omega_1\}\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="cardinal-characteristics-12">The structures <span class="process-math">\((F, \leq_I)\)</span> and <span class="process-math">\((G,\leq_I)\)</span> are essentially the same modulo <span class="process-math">\(I\)</span> as the functions <span class="process-math">\(g_\alpha\)</span> and <span class="process-math">\(f_\alpha\)</span> agree almost everywhere for each <span class="process-math">\(\alpha\text{.}\)</span> The cardinal characteristics defined in Definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:bandd" missing or not unique]</code> will be exactly the same in each structure, as these cardinals are defined based on order-theoretic relations that depend only on the <span class="process-math">\(=_I\)</span>-equivalence classes of functions. However, the set <span class="process-math">\(\{g_n:n&lt;\omega\}\)</span> is supremum bounded in <span class="process-math">\(G\text{,}\)</span> while <span class="process-math">\(\{f_n:n&lt;\omega\}\)</span> is <em class="emphasis">NOT</em> supremum bounded in <span class="process-math">\(F\text{,}\)</span> even though <span class="process-math">\(f_n =_I g_n\)</span> for each <span class="process-math">\(n&lt;\omega\text{.}\)</span> This phenomenon does not occur with the other pieces of Definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:bandd" missing or not unique]</code>.</div>
+<div class="para" id="cardinal-characteristics-13">We mentioned earlier that the cardinal characteristics of the continuum <span class="process-math">\(\mathfrak{b}\)</span> and <span class="process-math">\(\mathfrak{d}\)</span> are special cases of the above definition, for if we take <span class="process-math">\(A\)</span> to be <span class="process-math">\(\omega\text{,}\)</span> <span class="process-math">\(I\)</span> to be <span class="process-math">\(\Fin(\omega)\text{,}\)</span> and <span class="process-math">\(F\)</span> to be the Baire Space of functions mapping <span class="process-math">\(\omega\)</span> to <span class="process-math">\(\omega\text{,}\)</span> then <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> are just the bounding number <span class="process-math">\(\mathfrak{b}\)</span> and the dominating number <span class="process-math">\(\mathfrak{d}\text{.}\)</span>
+</div></section><section class="subsection" id="directedness"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="space"> </span><span class="title">Directedness</span>
+</h3>
+<div class="para" id="directedness-2">Many things become clearer if we strengthen our assumptions to require <span class="process-math">\(F\)</span> to be <span class="process-math">\(&lt;_I\)</span>-directed. In this case, a subset <span class="process-math">\(X\)</span> of <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-cofinal in <span class="process-math">\(F\)</span> if and only if it is <span class="process-math">\(\leq_I\)</span>-cofinal, and this just requires the observation that in a <span class="process-math">\(&lt;_I\)</span>-directed <span class="process-math">\(F\text{,}\)</span> for any <span class="process-math">\(f\in F\)</span> there is a <span class="process-math">\(g\in F\)</span> with <span class="process-math">\(f&lt;_I g\text{.}\)</span> Thus, if <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed, we can just say “<span class="process-math">\(X\)</span> is cofinal in <span class="process-math">\(F\)</span>” without needing to specify which of the structures <span class="process-math">\((F, \leq_I)\)</span> and <span class="process-math">\((F, &lt;_I)\)</span> we mean.</div>
+<div class="para" id="directedness-3">The notions of <span class="process-math">\(&lt;_I\)</span>-directedness and <span class="process-math">\(\leq_I\)</span>-directedness are closely related as well, and they coincide under under the additional assumption that for any <span class="process-math">\(f\in F\)</span> there is a <span class="process-math">\(g\in F\)</span> such that <span class="process-math">\(f&lt;_I g\text{.}\)</span> Some assumption like this is necessary, as the following example illustrates.</div>
+<div class="para logical" id="directedness-4">
+<div class="para">Let <span class="process-math">\(A=\omega\)</span> and <span class="process-math">\(I=\Fin(\omega)\text{.}\)</span> Partition <span class="process-math">\(A\)</span> into countably many disjoint infinite sets <span class="process-math">\(A_n\)</span> for <span class="process-math">\(n&lt;\omega\text{,}\)</span> and let <span class="process-math">\(f_n\)</span> be the characteristic function of <span class="process-math">\(\bigcup_{i\leq n} A_i\text{,}\)</span> that is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_n(k)=
+\begin{cases}
+1   &amp;\text{if $k\in A_i$ for some $i\leq n$, and}\\
+0   &amp;\text{if not.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">The collection <span class="process-math">\(F= \{f_n:n&lt;\omega\}\)</span> is <span class="process-math">\(\leq_I\)</span>-directed; in fact, the sequence <span class="process-math">\(\langle f_n:n&lt;\omega\rangle\)</span> is <span class="process-math">\(\lneqq_I\)</span>-increasing. However, <span class="process-math">\(F\)</span> is not <span class="process-math">\(&lt;_I\)</span>-directed, as no two elements of <span class="process-math">\(F\)</span> are <span class="process-math">\(&lt;_I\)</span>-comparable.</div>
+</div>
+<div class="para" id="directedness-5">What can we say about the relationship between the cardinal <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\text{?}\)</span> If we know that every cofinal subset of <span class="process-math">\((F,\leq_I)\)</span> is unbounded, then it is clear that <span class="process-math">\(\mathfrak{b}_I(F)\)</span> is at most <span class="process-math">\(\mathfrak{d}_I(F)\text{.}\)</span> The only way this might fail is in the situation where <span class="process-math">\(F\)</span> has a maximum element, as then <span class="process-math">\(F\)</span> will have no unbounded subsets at all (and hence <span class="process-math">\(\mathfrak{b}_I(F)\)</span> is set to <span class="process-math">\(\infty\)</span> by convention) while <span class="process-math">\(\mathfrak{d}_I(F)\)</span> will be equal to <span class="process-math">\(1\text{.}\)</span> The following proposition records the situation in a more typical setting.</div>
+<div class="para logical" id="directedness-6">
+<div class="para">If <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-directed without a maximum element then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\aleph_0\leq\mathfrak{b}_I(F)\leq\mathfrak{d}_I(F)\leq |F|.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="directedness-7">Looking at the situation where we compare two ideals, we have the following natural result as well.</div>
+<div class="para" id="directedness-8">If <span class="process-math">\(I\su J\)</span> are ideals over <span class="process-math">\(A\)</span> and <span class="process-math">\(F\in \On^A\text{,}\)</span> then</div>
+<div class="para logical" id="directedness-9"><ol class="decimal">
+<li id="directedness-9-1-1"><div class="para" id="directedness-9-1-1-1">
+<span class="process-math">\(\mathfrak b_I(F)\le \mathfrak b_J(F)\text{,}\)</span> and</div></li>
+<li id="directedness-9-1-2"><div class="para" id="directedness-9-1-2-1"><span class="process-math">\(\mathfrak d_I(F)\ge \mathfrak d_J(F)\text{.}\)</span></div></li>
+</ol></div>
+<div class="para" id="directedness-10">
+<em class="emphasis">Proof.</em> If <span class="process-math">\((F,\leq_J)\)</span> does not have an unbounded subset, then the result follows because of our convention that <span class="process-math">\(\mathfrak{b}_J(F)\)</span> will be set to <span class="process-math">\(\infty\text{.}\)</span> Thus, it suffices to note that any unbounded subset of <span class="process-math">\((F,\leq_J)\)</span> is unbounded in <span class="process-math">\((F,\leq_I)\)</span> as well. But this is equivalent to showing that bounded subsets of <span class="process-math">\((F, \leq_I)\)</span> are bounded in <span class="process-math">\((F,\leq_J)\text{,}\)</span> and this follows immediately from Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "upwithI" missing or not unique]</code>. A similar argument shows that if a set <span class="process-math">\(X\su F\)</span> is cofinal in <span class="process-math">\((F,\le_I)\text{,}\)</span> then it is cofinal in the structure <span class="process-math">\((F,\le_J)\)</span> as well. This immediately implies <span class="process-math">\(\mathfrak{d}_I(F)\leq\mathfrak{d}_J(F)\text{.}\)</span> ◻</div>
+<div class="para" id="directedness-11">If <span class="process-math">\((F,\leq_I)\)</span> is directed without a maximum element, then <span class="process-math">\(\mathfrak{b}_I(F)\)</span> is an infinite regular cardinal.</div>
+<div class="para" id="directedness-12">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(\lambda=\mathfrak{b}_I(F)\text{.}\)</span> Our assumptions imply that <span class="process-math">\(\lambda\)</span> is an infinite cardinal, so we need only worry about proving <span class="process-math">\(\lambda\)</span> is regular. It suffices to prove that a union of fewer than <span class="process-math">\(\lambda\)</span> subsets of <span class="process-math">\(F\)</span> each of cardinality less than <span class="process-math">\(\lambda\)</span> must be bounded. So suppose <span class="process-math">\(\kappa&lt;\lambda\)</span> and for each <span class="process-math">\(\alpha&lt;\kappa\)</span> let <span class="process-math">\(G_\alpha\)</span> be a subset of <span class="process-math">\(F\)</span> of cardinality less than <span class="process-math">\(\lambda\text{.}\)</span> Since each <span class="process-math">\(G_\alpha\)</span> is bounded, we can find a function <span class="process-math">\(g_\alpha\)</span> in <span class="process-math">\(F\)</span> witnessing this. The collection <span class="process-math">\(\{g_\alpha:\alpha&lt;\kappa\}\)</span> is also bounded in <span class="process-math">\(F\text{,}\)</span> and any function <span class="process-math">\(f\in F\)</span> that <span class="process-math">\(\leq_I\)</span>-bounds <span class="process-math">\(\{g_\alpha:\alpha&lt;\kappa\}\)</span> will bound <span class="process-math">\(\bigcup_{\alpha&lt;\kappa}G_\alpha\text{.}\)</span> ◻</div>
+<div class="para" id="directedness-13">If we strengthen the assumption of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:firstb" missing or not unique]</code> and require <span class="process-math">\(&lt;_I\)</span>-directness, then we can find unbounded subsets of <span class="process-math">\(F\)</span> that can be enumerated as a <span class="process-math">\(&lt;_I\)</span>-increasing sequences of length <span class="process-math">\(\mathfrak{b}_I(F)\text{.}\)</span> In fact, though, the following proposition actually shows us something slightly stronger.</div>
+<div class="para" id="directedness-14">If <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed then for any cofinal subset <span class="process-math">\(X\)</span> of <span class="process-math">\(F\)</span> there is a <span class="process-math">\(&lt;_I\)</span>-increasing sequence <span class="process-math">\(\langle f_\alpha:\alpha&lt;\mathfrak{b}_I(F)\rangle\)</span> of elements of <span class="process-math">\(X\)</span> that is unbounded in <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="para" id="directedness-15">
+<em class="emphasis">Proof.</em> Our hypothesis implies that <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-directed without a maximum element, so <span class="process-math">\(\lambda=\mathfrak{b}_I(F)\)</span> is an infinite regular cardinal by Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:firstb" missing or not unique]</code>. Let <span class="process-math">\(\{g_\alpha:\alpha&lt;\lambda\}\)</span> be an unbounded subset of <span class="process-math">\(F\text{,}\)</span> and let <span class="process-math">\(X\)</span> be cofinal in <span class="process-math">\(F\text{.}\)</span> We will define functions <span class="process-math">\(f_\alpha\in X\)</span> by induction on <span class="process-math">\(\alpha&lt;\lambda\text{,}\)</span> making sure to arrange both <span class="process-math">\(g_\alpha&lt;_I f_\alpha\)</span> and that <span class="process-math">\(f_\beta&lt;_I f_\alpha\)</span> for <span class="process-math">\(\beta&lt;\alpha\text{.}\)</span> This is straightforward to do: at a stage <span class="process-math">\(\alpha\)</span> we will have the set <span class="process-math">\(\{f_\beta:\beta&lt;\alpha\}\cup\{g_\alpha\}\)</span> at our disposal, and this set is bounded modulo <span class="process-math">\(I\)</span> by some function <span class="process-math">\(h\in F\)</span> because it is of cardinality less than <span class="process-math">\(\lambda\text{.}\)</span> Since <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed and <span class="process-math">\(X\)</span> is cofinal in <span class="process-math">\(F\text{,}\)</span> we can find <span class="process-math">\(f_\alpha\in X\)</span> with <span class="process-math">\(h&lt;_I f_\alpha\text{.}\)</span> Now the sequence <span class="process-math">\(\langle f_\alpha:\alpha&lt;\lambda\rangle\)</span> is a <span class="process-math">\(&lt;_I\)</span>-increasing sequence of functions from <span class="process-math">\(X\text{,}\)</span> and it is unbounded in <span class="process-math">\(F\)</span> because <span class="process-math">\(Y\)</span> was. ◻</div>
+<div class="para logical" id="directedness-16">
+<div class="para">Let <span class="process-math">\(A\)</span> be <span class="process-math">\(\omega\text{,}\)</span> and let <span class="process-math">\(\{X_n:n&lt;\omega\}\)</span> enumerate the finite subsets of <span class="process-math">\(\omega\text{.}\)</span> Given <span class="process-math">\(n&lt;\omega\text{,}\)</span> we let <span class="process-math">\(f_n\in\On^A\)</span> be the function that is constant with value <span class="process-math">\(n\text{,}\)</span> and define another function <span class="process-math">\(h_n\in\On^A\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_n(k) =
+\begin{cases}
+n &amp;\text{if $k\notin X_n$, and}\\
+\omega &amp;\text{if $k\in X_n$.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Thus, the functions <span class="process-math">\(f_n\)</span> and <span class="process-math">\(h_n\)</span> agree and have value <span class="process-math">\(n\)</span> outside of <span class="process-math">\(X_n\text{,}\)</span> while on the set <span class="process-math">\(X_n\)</span> the function <span class="process-math">\(h_n\)</span> takes value <span class="process-math">\(\omega\text{.}\)</span> Let <span class="process-math">\(F\)</span> and <span class="process-math">\(H\)</span> be the corresponding sets of functions. If we let <span class="process-math">\(I = \{\emptyset\}\text{,}\)</span> then <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-increasing and hence <span class="process-math">\(&lt;_I\)</span>-directed. On the other hand, <span class="process-math">\(H\)</span> is <em class="emphasis">not</em> <span class="process-math">\(&lt;_I\)</span>-directed: if <span class="process-math">\(X_n\neq\emptyset\)</span> then there is no <span class="process-math">\(g\in H\)</span> with <span class="process-math">\(f_n&lt;_I g\text{.}\)</span>
+</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-vocabulary.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="a-notion-of-equivalence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

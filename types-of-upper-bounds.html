@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Types of Upper Bounds</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-2-theory-exact-upper-bounds.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-2-theory-exact-upper-bounds.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="flat-products-and-sequences.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Sh400.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vocabulary.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="a-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="tukeysection.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="flat-products-and-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="the-trichotomy-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="types-of-upper-bounds"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Types of Upper Bounds</span>
+</h2>
+<section class="subsection" id="basic-definitions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Basic Definitions</span>
+</h3>
+<div class="para" id="basic-definitions-2">We start our project by looking at how exact upper bounds compare to other natural candidates for being a “smallest” upper bound modulo <span class="process-math">\(I\)</span> for a collection of functions <span class="process-math">\(F\text{.}\)</span> We gather a few of these possibilities in the next definition.</div>
+<article class="definition definition-like" id="def-three-bounds"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-three-bounds-1-1">Suppose <span class="process-math">\(F\subseteq \On^A\)</span> is a set of functions, and <span class="process-math">\(f\)</span> is an upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{.}\)</span>
+</div> <div class="para logical" id="def-three-bounds-1-2"><ol class="decimal">
+<li id="def-three-bounds-1-2-1-1"><div class="para" id="def-three-bounds-1-2-1-1-1">We say <span class="process-math">\(f\)</span> is a <em class="emphasis">minimal upper bound</em> for <span class="process-math">\(F\)</span> if <span class="process-math">\(g&lt;_I f\)</span> implies that <span class="process-math">\(g\)</span> is not a <span class="process-math">\(\leq_I\)</span>-upper bound for <span class="process-math">\(F\text{.}\)</span>
+</div></li>
+<li id="def-three-bounds-1-2-1-2"><div class="para" id="def-three-bounds-1-2-1-2-1">We say <span class="process-math">\(f\)</span> is a <em class="emphasis">least upper bound</em> for <span class="process-math">\(F\)</span> if <span class="process-math">\(f\leq_I g\)</span> whenever <span class="process-math">\(g\)</span> is a <span class="process-math">\(\leq_I\)</span>-upper bound for <span class="process-math">\(F\text{.}\)</span> We say that <span class="process-math">\(f\)</span> is a <em class="emphasis">lub for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span></em>.</div></li>
+<li id="def-three-bounds-1-2-1-3"><div class="para" id="def-three-bounds-1-2-1-3-1">(<a href="" class="xref" data-knowl="./knowl/xref/def-eub.html" title="Definition 1.4.7">Definition 1.4.7</a>) We say <span class="process-math">\(f\)</span> is an <em class="emphasis">exact upper bound</em> for <span class="process-math">\(F\)</span> if for any <span class="process-math">\(g&lt;_I f\)</span> there is an <span class="process-math">\(h\in F\)</span> with <span class="process-math">\(g\leq_I h\text{.}\)</span> We say that <span class="process-math">\(f\)</span> is an <em class="emphasis">eub for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span></em>.</div></li>
+</ol></div></article><div class="para" id="basic-definitions-4">Note that these three conditions all coincide when <span class="process-math">\(I\)</span> is a maximal proper ideal on <span class="process-math">\(A\text{,}\)</span> and it should be clear that a least upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span> is also a minimal upper bound. In the circumstances of most interest to us, an exact upper bound will also be a least upper bound, as shown by the following claim.</div>
+<article class="proposition theorem-like" id="prop-eub-vs-lub"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-eub-vs-lub-1-1">If <span class="process-math">\(F\)</span> is non-empty and <span class="process-math">\(&lt;_I\)</span>-directed, then an exact upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span> is also a least upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{.}\)</span>
+</div></article><details id="basic-definitions-6" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="basic-definitions-6-1">Suppose that <span class="process-math">\(f\)</span> is an exact upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and <span class="process-math">\(g\)</span> is any other upper bound. We need to show <span class="process-math">\(f\leq_I g\)</span> holds.</div> <div class="para" id="basic-definitions-6-2">By replacing <span class="process-math">\(g\)</span> with <span class="process-math">\(\min\{f, g\}\)</span> if necessary, we may assume that <span class="process-math">\(f\leq g\text{.}\)</span> Now suppose that <span class="process-math">\(f\nleq_I g\text{,}\)</span> so that there is an <span class="process-math">\(I\)</span>-positive set of <span class="process-math">\(a\in A\)</span> with <span class="process-math">\(g(a)&lt;f(a)\text{.}\)</span> Let <span class="process-math">\(g'\)</span> be the function in <span class="process-math">\(\prod f\)</span> that agrees with <span class="process-math">\(g\)</span> at any <span class="process-math">\(a\)</span> for which <span class="process-math">\(g(a)\)</span> is less than <span class="process-math">\(f(a)\text{,}\)</span> and which takes on the value <span class="process-math">\(0\)</span> otherwise. Since we assumed that <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed, it follows that <span class="process-math">\(f(a)\)</span> must be non-zero almost everywhere and therefore <span class="process-math">\(g'&lt;_I f\text{.}\)</span> Since <span class="process-math">\(f\)</span> is an exact upper bound for <span class="process-math">\(F\text{,}\)</span> this means there must be an <span class="process-math">\(h\in F\)</span> such that <span class="process-math">\(g'\leq_I h\text{,}\)</span> and since <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed, we may assume that <span class="process-math">\(g'&lt;_I h\text{.}\)</span>
+</div> <div class="para" id="basic-definitions-6-3">Now we have a problem. On one hand, we know <span class="process-math">\(g'(a)&lt;h(a)\)</span> for almost every <span class="process-math">\(a\in A\text{,}\)</span> and we know <span class="process-math">\(h(a)\leq g(a)\)</span> for almost every <span class="process-math">\(a\in A\)</span> (as <span class="process-math">\(g\)</span> is an upper bound for <span class="process-math">\(f\)</span>). On the other hand, <span class="process-math">\(g'(a)=g(a)\)</span> on an <span class="process-math">\(I\)</span>-positive set by our construction. Thus, there must be an <span class="process-math">\(a\in A\)</span> for which <span class="process-math">\(g(a)=g'(a)&lt;h(a)&lt;g(a)\text{,}\)</span> and this is a contradiction. ◻</div></article></details><div class="para" id="basic-definitions-7">Some assumption like the above is necessary to conclude that an exact upper bound is a least upper bound: see Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:eubnotlub" missing or not unique]</code> below. These varieties of upper bounds do, however, all interact with the equivalence relations <span class="process-math">\(=_I\)</span> and <span class="process-math">\(\equiv_I\)</span> in the way we might wish.</div>
+<article class="proposition theorem-like" id="prop-bounds-interact"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-bounds-interact-1-1">Suppose <span class="process-math">\(I\)</span> is an ideal on the set <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> be subsets of <span class="process-math">\(\On^A\)</span> with <span class="process-math">\(F\equiv_I G\text{.}\)</span> If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are functions with <span class="process-math">\(f=_I g\text{,}\)</span> then</div> <div class="para logical" id="prop-bounds-interact-1-2"><ol class="decimal">
+<li id="prop-bounds-interact-1-2-1-1"><div class="para" id="prop-bounds-interact-1-2-1-1-1">
+<span class="process-math">\(f\)</span> is an upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span> if and only if <span class="process-math">\(g\)</span> is an upper bound for <span class="process-math">\(G\)</span> modulo <span class="process-math">\(I\text{,}\)</span>
+</div></li>
+<li id="prop-bounds-interact-1-2-1-2"><div class="para" id="prop-bounds-interact-1-2-1-2-1">
+<span class="process-math">\(f\)</span> is a minimal bound of <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span> if and only if <span class="process-math">\(g\)</span> is a minimal bound of <span class="process-math">\(G\)</span> modulo <span class="process-math">\(I\text{,}\)</span>
+</div></li>
+<li id="prop-bounds-interact-1-2-1-3"><div class="para" id="prop-bounds-interact-1-2-1-3-1">
+<span class="process-math">\(f\)</span> is a least upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span> if and only if <span class="process-math">\(g\)</span> is a least upper bound for <span class="process-math">\(G\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and</div></li>
+<li id="prop-bounds-interact-1-2-1-4"><div class="para" id="prop-bounds-interact-1-2-1-4-1">
+<span class="process-math">\(f\)</span> is an exact upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\)</span> if and only if <span class="process-math">\(g\)</span> is an exact upper bound for <span class="process-math">\(G\)</span> modulo <span class="process-math">\(I\text{.}\)</span>
+</div></li>
+</ol></div></article><div class="para" id="basic-definitions-9">Sometimes it is helpful to view these concepts in their contrapositive formulations. If <span class="process-math">\(f\)</span> is a minimal upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{,}\)</span> then any function that is almost everywhere strictly less than <span class="process-math">\(f\)</span> will fail to bound <span class="process-math">\(F\text{.}\)</span> If <span class="process-math">\(f\)</span> is a least upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{,}\)</span> then any function that is strictly less than <span class="process-math">\(f\)</span> on an <span class="process-math">\(I\)</span>-positive set will fail to bound <span class="process-math">\(F\text{.}\)</span> Finally, any function that is almost everywhere strictly less than an exact upper bound <span class="process-math">\(f\)</span> is actually bounded by some member of <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{.}\)</span> In a similar vein, we can characterize the concepts from <a href="" class="xref" data-knowl="./knowl/xref/def-three-bounds.html" title="Definition 2.1.1">Definition 2.1.1</a> for <span class="process-math">\(F\subseteq\prod f\)</span> by the way in which <span class="process-math">\(F\)</span> sits inside of <span class="process-math">\(\prod f\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="thm-three-characterizations"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-three-characterizations-1-1">Suppose <span class="process-math">\(A\)</span> is a set, <span class="process-math">\(f:A\rightarrow\On\text{,}\)</span> <span class="process-math">\(I\)</span> is a proper ideal on <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(F\subseteq\prod f\text{.}\)</span>
+</div> <div class="para logical" id="thm-three-characterizations-1-2"><ol class="decimal">
+<li id="thm-three-characterizations-1-2-1-1"><div class="para" id="thm-three-characterizations-1-2-1-1-1">
+<span class="process-math">\(f\)</span> is a <span class="process-math">\(&lt;_I\)</span>-minimal upper bound for <span class="process-math">\(F\)</span> if and only if <span class="process-math">\(F\)</span> is unbounded in <span class="process-math">\((\prod f, \leq_I)\text{.}\)</span>
+</div></li>
+<li id="thm-three-characterizations-1-2-1-2"><div class="para" id="thm-three-characterizations-1-2-1-2-1">
+<span class="process-math">\(f\)</span> is a least upper bound for <span class="process-math">\(F\)</span> if and only if <span class="process-math">\(F\)</span> is everywhere unbounded in <span class="process-math">\((\prod f, \leq_I)\text{,}\)</span> that is <span class="process-math">\(F\)</span> is unbounded modulo <span class="process-math">\(I\restriction B\)</span> for any <span class="process-math">\(I\)</span>-positive subset <span class="process-math">\(B\)</span> of <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="thm-three-characterizations-1-2-1-3"><div class="para" id="thm-three-characterizations-1-2-1-3-1">
+<span class="process-math">\(f\)</span> is an exact upper bound for <span class="process-math">\(F\)</span> if and only if <span class="process-math">\(F\)</span> is cofinal in <span class="process-math">\(\prod g\text{.}\)</span>
+</div></li>
+<li id="thm-three-characterizations-1-2-1-4"><div class="para" id="thm-three-characterizations-1-2-1-4-1">If in addition <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-directed, then <span class="process-math">\(f\)</span> is an exact upper bound for <span class="process-math">\(F\)</span> if and only if <span class="process-math">\(F\)</span> is unbounded in <span class="process-math">\((\prod f, \leq_J)\)</span> for any proper ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(A\)</span> extending <span class="process-math">\(I\text{.}\)</span>
+</div></li>
+</ol></div></article><details id="basic-definitions-11" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="basic-definitions-11-1">
+<div class="para">
+<em class="emphasis">Proof.</em> Statement (1) and (3) are very easy, and follow directly from the corresponding definitions. For (2), suppose first that there is an <span class="process-math">\(I\)</span>-positive <span class="process-math">\(B\subseteq A\)</span> and a function <span class="process-math">\(h\in\prod f\)</span> such that <span class="process-math">\(h\)</span> bounds <span class="process-math">\(F\)</span> modulo the ideal <span class="process-math">\(I\restriction B\text{.}\)</span> Define a function <span class="process-math">\(g\)</span> with domain <span class="process-math">\(A\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(a)=
+\begin{cases}
+h(a)   &amp;\text{if $a\in B$, and}\\
+f(a)   &amp;\text{otherwise.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">The function <span class="process-math">\(g\)</span> is an upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and since <span class="process-math">\(\neg f\leq_I g\)</span> it follows that <span class="process-math">\(f\)</span> is not a least upper bound for <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="basic-definitions-11-2">
+<div class="para">If on the other hand <span class="process-math">\(f\)</span> is not a least upper bound for <span class="process-math">\(F\subseteq\prod f\text{,}\)</span> then there will be a witnessing function <span class="process-math">\(g\text{,}\)</span> and we can take</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B:=&lt;(g, f)=\{a\in A: g(a)&lt;f(a)\}.
+\end{equation*}
+</div>
+<div class="para">The set <span class="process-math">\(B\)</span> is <span class="process-math">\(I\)</span>-positive (as <span class="process-math">\(g\)</span> and <span class="process-math">\(f\)</span> are not equal modulo <span class="process-math">\(I\)</span>), and <span class="process-math">\(g\)</span> bounds <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\restriction B\text{.}\)</span>
+</div>
+</div> <div class="para" id="basic-definitions-11-3">As for (4), note that if <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-cofinal in <span class="process-math">\(\prod f\)</span> then this will remain true in <span class="process-math">\((\prod f, \leq_J)\)</span> for any ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(A\)</span> that extends <span class="process-math">\(I\text{.}\)</span> If <span class="process-math">\(F\)</span> is NOT <span class="process-math">\(\leq_I\)</span>-cofinal in <span class="process-math">\(\prod f\)</span> then this will be witnessed by a function <span class="process-math">\(h\in\prod f\)</span> such that <span class="process-math">\(h\)</span> is not bounded by any <span class="process-math">\(g\in F\text{.}\)</span> Let <span class="process-math">\(J\)</span> be the ideal on <span class="process-math">\(A\)</span> generated by <span class="process-math">\(I\)</span> together with the sets <span class="process-math">\(&lt;(h, g)\)</span> for <span class="process-math">\(g\in F\text{.}\)</span> It is clear that <span class="process-math">\(F\)</span> will be <span class="process-math">\(\leq_J\)</span>-bounded by <span class="process-math">\(h\text{,}\)</span> so we finish if we show that <span class="process-math">\(J\)</span> is in fact a proper ideal.</div> <div class="para logical" id="basic-definitions-11-4">
+<div class="para">Suppose by way of contradiction that this fails. This means that there are finitely many functions <span class="process-math">\(\{g_i:i&lt;n\}\)</span> in <span class="process-math">\(F\)</span> and a set <span class="process-math">\(X\in I\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-rando.html">
+\begin{equation*}
+A = X \cup \bigcup_{i&lt;n}&lt;(h, g_i).
+\end{equation*}
+</div>
+<div class="para">Translating this into quantifiers, what we have is a function <span class="process-math">\(h\in\prod f\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-rando.html" id="eqn-rando">
+\begin{equation}
+(\forall^I i\in A)(\exists i&lt; n)\left[h(a)&lt;g_i(a)\right]	\tag{2.1.1}
+\end{equation}
+</div>
+<div class="para">We have assumed that <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-directed, so there is a single <span class="process-math">\(g\in F\)</span> such that <span class="process-math">\(g_i\leq_I g\)</span> for all <span class="process-math">\(i&lt;n\text{.}\)</span> But then <a href="" class="xref" data-knowl="./knowl/xref/eqn-rando.html" title="Equation 2.1.1">(2.1.1)</a> implies that <span class="process-math">\(h&lt;_I g\)</span> and this contradicts the choice of <span class="process-math">\(h\text{.}\)</span> Thus <span class="process-math">\(J\)</span> is a proper ideal on <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(h\)</span> witnesses that <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_J\)</span>-bounded in <span class="process-math">\(\prod f\text{.}\)</span> ◻</div>
+</div></article></details><article class="proposition theorem-like" id="prop-uniqueness-and-ugly"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-uniqueness-and-ugly-1-1">Let <span class="process-math">\(\ov{f}=\langle f_\alpha:\alpha&lt;\lambda\rangle\)</span> be a <span class="process-math">\(&lt;_I\)</span>-increasing sequence of functions.</div> <div class="para logical" id="prop-uniqueness-and-ugly-1-2"><ol class="decimal">
+<li id="prop-uniqueness-and-ugly-1-2-1-1"><div class="para" id="prop-uniqueness-and-ugly-1-2-1-1-1">If <span class="process-math">\(\ov{f}\)</span> has a least upper bound, then it is unique modulo <span class="process-math">\(I\text{.}\)</span>
+</div></li>
+<li id="prop-uniqueness-and-ugly-1-2-1-2"><div class="para" id="prop-uniqueness-and-ugly-1-2-1-2-1">If <span class="process-math">\(\ov{f}\)</span> has a least upper bound modulo <span class="process-math">\(I\)</span> that is not exact, then there is a function <span class="process-math">\(g\in\On^A\)</span> for which the <span class="process-math">\(\subseteq_I\)</span>-increasing sequence <span class="process-math">\(\langle t_\alpha:\alpha&lt;\lambda\rangle\)</span> of subsets of <span class="process-math">\(A\)</span> defined by letting <span class="process-math">\(t_\alpha = \{a\in A: g(a)&lt;f_\alpha(a)\}\)</span> does not stabilize modulo <span class="process-math">\(I\text{.}\)</span>
+</div></li>
+</ol></div></article><details id="basic-definitions-13" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="basic-definitions-13-1">Clause (1) is easy, as if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are upper bounds for <span class="process-math">\(\ov{f}\)</span> then so is the function <span class="process-math">\(\min(f, g)\text{.}\)</span> Suppose now that <span class="process-math">\(f\)</span> is a least upper bound for <span class="process-math">\(\ov{f}\)</span> that is not exact. This means that <span class="process-math">\(\ov{f}\)</span> fails to be cofinal in <span class="process-math">\((\prod f, &lt;_I)\text{,}\)</span> and so there is a function <span class="process-math">\(g\in\prod f\)</span> that witnesses this. We claim now that <span class="process-math">\(g\)</span> has the required properties. It is obvious that sequence <span class="process-math">\(\langle t_\alpha:\alpha&lt;\lambda\rangle\)</span> will be <span class="process-math">\(\subseteq_I\)</span>-increasing because <span class="process-math">\(\ov{f}\)</span> is <span class="process-math">\(&lt;_I\)</span>-increasing. Moreover, for each <span class="process-math">\(\alpha&lt;\lambda\)</span> both <span class="process-math">\(t_\alpha\)</span> and its complement must be <span class="process-math">\(I\)</span>-positive: <span class="process-math">\(g\)</span> does not bound <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\text{,}\)</span> nor does <span class="process-math">\(\ov{f}\)</span> bound <span class="process-math">\(g\text{.}\)</span> If the sequence of sets <span class="process-math">\(t_\alpha\)</span> were to eventually stabilize modulo <span class="process-math">\(I\text{,}\)</span> say <span class="process-math">\(t_\alpha =_I B\)</span> for all sufficiently large <span class="process-math">\(\alpha&lt;\lambda\text{,}\)</span> then we have a contradiction of part (2) of <a href="" class="xref" data-knowl="./knowl/xref/thm-three-characterizations.html" title="Theorem 2.1.4">Theorem 2.1.4</a> because <span class="process-math">\(\ov{f}\)</span> is bounded by <span class="process-math">\(g\)</span> on <span class="process-math">\(A\setminus B\text{.}\)</span> ◻</div></article></details><div class="para" id="basic-definitions-14">The following corollary follows from (2) above by an easy argument which we relegate to an exercise.</div>
+<article class="corollary theorem-like" id="cor-ugly"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="cor-ugly-1-1">If <span class="process-math">\(\ov{f}=\langle f_\alpha:\alpha&lt;\lambda\rangle\)</span> has a least upper bound that is not exact, then there is a family <span class="process-math">\(\langle X_\alpha:\alpha&lt;\lambda\rangle\)</span> of <span class="process-math">\(I\)</span>-positive sets such that <span class="process-math">\(X_\alpha\cap X_\beta \in I\)</span> for distinct <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> less than <span class="process-math">\(\lambda\text{.}\)</span>
+</div></article></section><section class="subsection" id="examples"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Examples</span>
+</h3>
+<div class="para" id="examples-2">We finish this section with a few examples chosen to illustrate the definitions we have been investigating.</div>
+<details id="examples-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examples-3-1">
+<div class="para">Let <span class="process-math">\(A=\omega\)</span> and let <span class="process-math">\(I\)</span> be the ideal <span class="process-math">\(\Fin(\omega)\)</span> of finite subsets of <span class="process-math">\(\omega\text{.}\)</span> For each <span class="process-math">\(n&lt;\omega\)</span> let <span class="process-math">\(f_n\)</span> be constant with value <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(F =\{f_n:n&lt;\omega\}\text{.}\)</span> If <span class="process-math">\(g\)</span> is any <span class="process-math">\(\leq_I\)</span>-upper bound for <span class="process-math">\(F\)</span> in <span class="process-math">\(\On^A\text{,}\)</span> the function <span class="process-math">\(h\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(n) =
+\begin{cases}
+g(n)-1   &amp;\text{if $g(n)&gt;0$, and}\\
+0        &amp;\text{otherwise.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">is another upper bound for <span class="process-math">\(F\)</span> with <span class="process-math">\(h&lt;_I g\text{.}\)</span> Even though <span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-bounded in <span class="process-math">\(\On^A\text{,}\)</span> it does not have a minimal upper bound. <span class="process-math">\(\blacksquare\)</span>
+</div>
+</div></article></details><details id="examples-4" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="examples-4-1">Continuing with <span class="process-math">\(A\)</span> and <span class="process-math">\(I\)</span> as in the previous example, let <span class="process-math">\(f_\alpha\)</span> be constant with value <span class="process-math">\(\alpha\)</span> for each <span class="process-math">\(\alpha\leq\omega_1\text{.}\)</span> We claim that <span class="process-math">\(g=f_{\omega_1}\)</span> is an exact upper bound for <span class="process-math">\(F=\{f_\alpha:\alpha&lt;\omega_1\}\)</span> modulo <span class="process-math">\(I\text{.}\)</span> Suppose <span class="process-math">\(h&lt;_I g\text{,}\)</span> so <span class="process-math">\(h(n)&lt;\omega_1\)</span> for all sufficiently large <span class="process-math">\(n\text{.}\)</span> Since <span class="process-math">\(|A|&lt;\cf(\omega_1)\text{,}\)</span> there is a single <span class="process-math">\(\alpha&lt;\omega_1\)</span> such that <span class="process-math">\(h(n)&lt;\alpha\)</span> for all sufficiently large <span class="process-math">\(n\text{,}\)</span> hence <span class="process-math">\(h&lt;_I f_\alpha\)</span> as required. <span class="process-math">\(\blacksquare\)</span>
+</div></article></details><details id="examples-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examples-5-1">
+<div class="para">Let <span class="process-math">\(A=\omega_1\text{,}\)</span> and for each <span class="process-math">\(\alpha&lt;\omega_1\)</span> let <span class="process-math">\(f_\alpha\)</span> be the function that is constant with value <span class="process-math">\(\alpha\)</span> for <span class="process-math">\(\alpha&lt;\omega_1\text{.}\)</span> Let <span class="process-math">\(F=\{f_\alpha:\alpha&lt;\omega_1\}\text{,}\)</span> and let <span class="process-math">\(g\)</span> be the identity function on <span class="process-math">\(\omega_1\text{.}\)</span> What occurs modulo the ideal <span class="process-math">\(I=J^\bd[A]\)</span> of bounded subsets of <span class="process-math">\(A\text{?}\)</span> The function <span class="process-math">\(g\)</span> is a minimal upper bound for <span class="process-math">\(F\)</span> because any function <span class="process-math">\(h\in\prod g\)</span> is bounded on a stationary (hence uncountable) set. On the other hand <span class="process-math">\(g\)</span> is not a least upper bound bound for <span class="process-math">\(F\text{:}\)</span> if <span class="process-math">\(X\)</span> is the collection of countable successor ordinals, then the function <span class="process-math">\(h\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(\alpha) = 
+\begin{cases}
+\beta  &amp;\text{if $\alpha=\beta+1$, and}\\
+\alpha &amp;\text{otherwise}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">sits below <span class="process-math">\(g\)</span> on an <span class="process-math">\(I\)</span>-positive set, but is still an upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{.}\)</span> <span class="process-math">\(\blacksquare\)</span>
+</div>
+</div></article></details><details id="examples-6" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para logical" id="examples-6-1">
+<div class="para">What occurs in the previous example if we enlarge <span class="process-math">\(I\)</span> to be the non-stationary ideal on <span class="process-math">\(\omega_1\text{?}\)</span> The function <span class="process-math">\(g\)</span> is now a least upper bound for <span class="process-math">\(F\)</span> because of the normality of <span class="process-math">\(I\text{:}\)</span> any function that is less than <span class="process-math">\(g\)</span> on an <span class="process-math">\(I\)</span>-positive set is constant on an <span class="process-math">\(I\)</span>-positive set and therefore cannot be an upper bound for <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{.}\)</span> On the other hand, <span class="process-math">\(g\)</span> is not an exact upper bound for <span class="process-math">\(F\text{.}\)</span> To see this, let <span class="process-math">\(\langle S_\alpha:\alpha&lt;\omega_1\rangle\)</span> partition <span class="process-math">\(\omega_1\)</span> into disjoint stationary sets, and let <span class="process-math">\(T_\alpha = S_\alpha\setminus \alpha+1\text{.}\)</span> Then each set <span class="process-math">\(S_\alpha\)</span> is stationary, and we have arranged <span class="process-math">\(\alpha&lt;\min(S_\alpha)\text{.}\)</span> Now define a function <span class="process-math">\(h\)</span> with domain <span class="process-math">\(A\)</span> by setting</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(\beta)=
+\begin{cases}
+\alpha &amp;\text{if $\beta\in S_\alpha$, and}\\
+0      &amp;\text{otherwise.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">The function <span class="process-math">\(h\)</span> is in <span class="process-math">\(\prod g\)</span> (as <span class="process-math">\(h(\beta)&lt;\beta\)</span> for all <span class="process-math">\(\beta\in A\)</span>) but there is no <span class="process-math">\(\alpha&lt;\omega_1\)</span> such that <span class="process-math">\(h\leq_I f_\alpha\text{.}\)</span> <span class="process-math">\(\blacksquare\)</span>
+</div>
+</div></article></details></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-2-theory-exact-upper-bounds.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="flat-products-and-sequences.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

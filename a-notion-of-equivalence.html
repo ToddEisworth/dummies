@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A notion of equivalence</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="unbounded-sets-and-cofinal-sets.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Sh400.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="true-cofinality-and-exact-upper-bounds.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Sh400.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vocabulary.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="a-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="tukeysection.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="flat-products-and-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="the-trichotomy-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="a-notion-of-equivalence"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">A notion of equivalence</span>
+</h2>
+<section class="subsection" id="equivalence-of-subsets-of-ona"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="space"> </span><span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span>
+</h3>
+<div class="para" id="equivalence-of-subsets-of-ona-2">One of the important lessons of the preceding sections is that arbitrary structures of the form <span class="process-math">\((F, \leq_I)\)</span> can be complicated, but by imposing some mild conditions (like <span class="process-math">\(&lt;_I\)</span>-directedness, for example) we can obtain somewhat better behavior. In this section, we will begin investigating situations where a (possibly quite complicated) structure <span class="process-math">\((F,\leq_I)\)</span> might be considered <em class="emphasis">equivalent</em> to another collection of functions whose behavior modulo <span class="process-math">\(I\)</span> is much more organized.</div>
+<div class="para" id="equivalence-of-subsets-of-ona-3">Our plan is to formulate an equivalence relation between subsets of <span class="process-math">\(\On^A\)</span> that attempts to capture when two such sets of functions could be said to have the same cofinal behavior. In this section, we will define the relation and explore its basic properties, and in the next section we will try to characterize when sets of functions are equivalent to easily describable families. The notion of equivalence we want to use is as defined as follows:</div>
+<article class="definition definition-like" id="def-main-equivalence-def"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-main-equivalence-def-1-1">Suppose <span class="process-math">\(I\)</span> is an ideal on <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are subsets of <span class="process-math">\(\On^A\text{.}\)</span> We say <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are <em class="emphasis">equivalent modulo <span class="process-math">\(I\)</span></em>, written <span class="process-math">\(F\equiv_I G\text{,}\)</span> if for every <span class="process-math">\(f\in F\)</span> there is <span class="process-math">\(g\in G\)</span> such that <span class="process-math">\(f\le _I g\text{,}\)</span> and for every <span class="process-math">\(g\in G\)</span> there is <span class="process-math">\(f\in F\)</span> such that <span class="process-math">\(g\le_I f\text{.}\)</span>
+</div></article><div class="para" id="equivalence-of-subsets-of-ona-5">This relation <span class="process-math">\(\equiv_I\)</span> is an equivalence relation on the class of subsets of <span class="process-math">\(\On^A\text{,}\)</span> and by our previous work, if <span class="process-math">\(I\subseteq J\)</span> are ideals over <span class="process-math">\(A\)</span> then for subsets <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> of <span class="process-math">\(\On^A\text{,}\)</span> if <span class="process-math">\(F\equiv_I G\)</span> then <span class="process-math">\(F\equiv_J G\text{.}\)</span> We will spend some time investigating how this notion of equivalence interacts with relations such as <span class="process-math">\(\leq_I\text{,}\)</span> with an aim of eventually detecting when a set of functions is equivalent modulo <span class="process-math">\(I\)</span> to a set of functions that is nicely organized. The main point of the next couple of results is to illustrate how <span class="process-math">\(\equiv_I\)</span> preserves many of the properties and cardinals we have considered to this point. For example, the cardinals <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> depend only on the <span class="process-math">\(\equiv_I\)</span>-class of <span class="process-math">\(F\text{:}\)</span>
+</div>
+<article class="proposition theorem-like" id="prop-preserve-bounding-dominating"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="prop-preserve-bounding-dominating-1-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an ideal on the set <span class="process-math">\(A\text{,}\)</span> and suppose <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are families of functions from <span class="process-math">\(\On^A\)</span> with <span class="process-math">\(F\equiv_I G\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:2.1.1}
+\mathfrak{b}_I(F)=\mathfrak{b}_I(G),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eqn:2.2.2}
+\mathfrak{d}_I(F)=\mathfrak{d}_I(G).
+\end{equation*}
+</div>
+</div></article><details id="equivalence-of-subsets-of-ona-7" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="equivalence-of-subsets-of-ona-7-1">Even though these proofs are easy, we will still give some details as we want to highlight a style of argument that will come to the forefront in Section I.<a href="tukeysection.html" class="internal" title="Section 1.5: Tukey Equivalence and Cofinal Similarity">Section 1.5</a> when we discuss Tukey equivalence. By our assumptions, we can fix functions <span class="process-math">\(\phi:F\rightarrow G\)</span> and <span class="process-math">\(\psi:G\rightarrow F\)</span> such that <span class="process-math">\(f\leq_I \phi(f)\)</span> and <span class="process-math">\(g\leq_I \psi(g)\)</span> for all <span class="process-math">\(f\in F\)</span> and <span class="process-math">\(g\in G\text{.}\)</span>
+</div> <div class="para logical" id="equivalence-of-subsets-of-ona-7-2">
+<div class="para">We show first that <span class="process-math">\(\phi\)</span> maps unbounded subsets of <span class="process-math">\(F\)</span> to unbounded subsets of <span class="process-math">\(G\text{.}\)</span> Suppose now that <span class="process-math">\(X\)</span> is a subset of <span class="process-math">\(F\)</span> whose image <span class="process-math">\(\phi[X]\)</span> is bounded in <span class="process-math">\(G\text{,}\)</span> say by <span class="process-math">\(g\text{.}\)</span> Then <span class="process-math">\(\psi(g)\)</span> is a function in <span class="process-math">\(F\text{,}\)</span> and for any function <span class="process-math">\(f\in F\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f\leq_I\phi(f)\leq_I g\leq_I \psi(g)
+\end{equation*}
+</div>
+<div class="para">which shows us that <span class="process-math">\(X\)</span> is bounded back in <span class="process-math">\(F\text{.}\)</span> This then implies <span class="process-math">\(\mathfrak{b}_I(G)\leq \mathfrak{b}_I(F)\text{,}\)</span> and the symmetric argument establishes <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:2.1.1" missing or not unique]</code>,</div>
+</div> <div class="para logical" id="equivalence-of-subsets-of-ona-7-3">
+<div class="para">Now suppose that <span class="process-math">\(Y\)</span> is a cofinal subset of <span class="process-math">\(G\text{.}\)</span> Given <span class="process-math">\(f\in F\)</span> we can choose <span class="process-math">\(g\in Y\)</span> such that <span class="process-math">\(\phi(f)\leq_I g\text{,}\)</span> and conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f\leq_I \phi(f)\leq_I g\leq_I \psi(g),
+\end{equation*}
+</div>
+<div class="para">and hence the image of <span class="process-math">\(Y\)</span> under <span class="process-math">\(\psi\)</span> is cofinal in <span class="process-math">\((F, \leq_I)\text{.}\)</span> Thus <span class="process-math">\(\psi\)</span> maps cofinal subsets of <span class="process-math">\(G\)</span> to cofinal subsets of <span class="process-math">\(F\text{,}\)</span> and so <span class="process-math">\(\mathfrak{d}_I(F)\leq\mathfrak{d}_I(G)\text{.}\)</span> The symmetric argument will finish the proof of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn:2.2.2" missing or not unique]</code>. ◻</div>
+</div></article></details><div class="para" id="equivalence-of-subsets-of-ona-8">The lesson from the above is that the cardinals <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> are really characteristics of the equivalence class of <span class="process-math">\(F\)</span> under <span class="process-math">\(\equiv_I\text{.}\)</span> Moving on, we next show that our notion of equivalence preserves directedness under both <span class="process-math">\(\leq_I\)</span> and <span class="process-math">\(&lt;_I\text{.}\)</span> (A generalization of this result to stronger forms of directedness appears in Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:directedequiv" missing or not unique]</code> below.)</div>
+<article class="proposition theorem-like" id="prop-equiv"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-equiv-1-1">Suppose <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are sets of functions that are equivalent modulo <span class="process-math">\(I\text{.}\)</span> Then</div> <div class="para logical" id="prop-equiv-1-2"><ol class="decimal">
+<li id="prop-equiv-1-2-1-1"><div class="para" id="prop-equiv-1-2-1-1-1">
+<span class="process-math">\(F\)</span> is <span class="process-math">\(\leq_I\)</span>-directed if and only if <span class="process-math">\(G\)</span> is <span class="process-math">\(\leq_I\)</span>-directed, and</div></li>
+<li id="prop-equiv-1-2-1-2"><div class="para" id="prop-equiv-1-2-1-2-1">
+<span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed if and only if <span class="process-math">\(G\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed.</div></li>
+</ol></div></article><details id="equivalence-of-subsets-of-ona-10" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="equivalence-of-subsets-of-ona-10-1">We prove only one direction of (2), so assume <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed and let the functions <span class="process-math">\(\phi:F\rightarrow G\)</span> and <span class="process-math">\(\psi:G\rightarrow F\)</span> witness the equivalence as in the proof of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:b=b" missing or not unique]</code>. Given a finite subset <span class="process-math">\(Y\)</span> of <span class="process-math">\(G\text{,}\)</span> we can find a function <span class="process-math">\(f\in F\)</span> with <span class="process-math">\(\psi(y)\leq_I f\)</span> for all <span class="process-math">\(y\in Y\text{,}\)</span> and then <span class="process-math">\(\phi(f)\)</span> will be the required upper bound for <span class="process-math">\(Y\)</span> in <span class="process-math">\(G\text{.}\)</span> ◻</div></article></details></section><section class="subsection" id="downward-closures-of-subsets-of-ona"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="space"> </span><span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span>
+</h3>
+<div class="para" id="downward-closures-of-subsets-of-ona-2">We close this section with another natural formulation of <span class="process-math">\(\equiv_I\)</span> that will give us a chance to address some technical issues that lurk in the background of our discussions. We would like to state and prove a result that says, roughly, that two sets of functions are equivalent modulo <span class="process-math">\(I\)</span> if and only if they determine the same initial segment of <span class="process-math">\(\On^A\)</span> modulo <span class="process-math">\(I\text{.}\)</span> But what exactly does this mean? To do this precisely, we need to grapple with the fact that <span class="process-math">\(\On^A\)</span> is a proper class, and the <span class="process-math">\(=_I\)</span>-equivalence classes of individual functions are proper classes as well. The difficulties are easy enough to manage because it is intuitively clear what we should mean by the expression “<span class="process-math">\(\On^A\)</span> modulo <span class="process-math">\(=_I\)</span>” but we will do it with some care this first time through.</div>
+<div class="para" id="downward-closures-of-subsets-of-ona-3">Given subsets <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> of <span class="process-math">\(\On^A\text{,}\)</span> we know that <span class="process-math">\(F\cup G\)</span> is also a set of functions. Given any set <span class="process-math">\(H\)</span> of functions from <span class="process-math">\(\On^A\)</span> with <span class="process-math">\(F\cup G\subseteq H\text{,}\)</span> we can apply the relation <span class="process-math">\(=_I\)</span> on <span class="process-math">\(H\)</span> to form equivalence classes without any trouble: each of these equivalence classes is a subset of <span class="process-math">\(H\text{,}\)</span> and the set of equivalence classes forms a partially ordered set under the natural extension of <span class="process-math">\(\leq_I\)</span> to such equivalence classes. If we start just with the set <span class="process-math">\(F\cup G\)</span> and look at the corresponding collection of <span class="process-math">\(=_I\)</span> equivalence classes then this structure is canonically isomorphic to a substructure of <span class="process-math">\(H\)</span> modulo <span class="process-math">\(=_I\)</span> for any set <span class="process-math">\(H\)</span> that includes both <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{.}\)</span>
+</div>
+<div class="para" id="downward-closures-of-subsets-of-ona-4">Given <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> let <span class="process-math">\(h:\On\rightarrow A\)</span> be defined by setting <span class="process-math">\(h(a)\)</span> to be the supremum of all ordinals <span class="process-math">\(x(a)+1\)</span> where <span class="process-math">\(x\in F\cup G\text{,}\)</span> and let <span class="process-math">\(H\)</span> be the corresponding product <span class="process-math">\(\prod h\text{.}\)</span> The set <span class="process-math">\(H\)</span> is large enough to contain both <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> and since it is closed downward under <span class="process-math">\(\leq\)</span> it is also an initial segment of <span class="process-math">\(\On^A\)</span> under <span class="process-math">\(\leq\text{.}\)</span> Given any function <span class="process-math">\(x\)</span> from the proper class <span class="process-math">\(\On^A\text{,}\)</span> if <span class="process-math">\(x&lt;_I h\)</span> then <span class="process-math">\(x=_I y\)</span> for some <span class="process-math">\(y\in H\text{,}\)</span> and since both <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are subsets of <span class="process-math">\(H\)</span> we can speak unambiguously about “the” downward closures of <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> in <span class="process-math">\(\On^A\text{:}\)</span> if <span class="process-math">\(x\leq_I\)</span> for some <span class="process-math">\(z\in F\cup H\)</span> then <span class="process-math">\(x =_I y\)</span> for some <span class="process-math">\(y\in H\text{.}\)</span> Similar circumlocutions allow is to essentially ignore the fact that we are dealing with equivalence classes that are <em class="emphasis">prima facie</em> proper classes: we can always capture our situation in a large enough set. Thus, when we talk about the initial segment of <span class="process-math">\(\On^A\)</span> modulo <span class="process-math">\(I\)</span> determined by a product <span class="process-math">\(\prod h\text{,}\)</span> we can just treat the proper class of functions <span class="process-math">\(x\in\On^A\)</span> that satisfy <span class="process-math">\(x\leq_I y\)</span> for some <span class="process-math">\(y\in \prod h\)</span> as if it were a set.</div>
+<article class="proposition theorem-like" id="prop-"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="prop--1-1">
+<div class="para">Suppose <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> subsets of <span class="process-math">\(\On^A\text{.}\)</span> Then <span class="process-math">\(F\equiv_I G\)</span> if and only if <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> have the same downward closure in <span class="process-math">\((\On^A,\leq_I)\text{,}\)</span> that is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F\equiv_I G\Longleftrightarrow(\forall x\in \On^A)\bigl[(\exists f\in F)[x\leq_I f]\leftrightarrow (\exists g\in G)[x\leq_I g]\bigr].
+\end{equation*}
+</div>
+</div></article><details id="downward-closures-of-subsets-of-ona-6" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="downward-closures-of-subsets-of-ona-6-1">See Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:downwardclosure" missing or not unique]</code>. ◻</div></article></details></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="unbounded-sets-and-cofinal-sets.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="true-cofinality-and-exact-upper-bounds.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

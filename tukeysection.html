@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Tukey Equivalence and Cofinal Similarity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="true-cofinality-and-exact-upper-bounds.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Sh400.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-2-theory-exact-upper-bounds.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Sh400.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vocabulary.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="a-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="tukeysection.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="flat-products-and-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="the-trichotomy-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="tukeysection"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Tukey Equivalence and Cofinal Similarity</span>
+</h2>
+<section class="subsection" id="galois-tukey-connections"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="space"> </span><span class="title">Galois-Tukey Connections</span>
+</h3>
+<div class="para" id="galois-tukey-connections-2">In this section, we will generalize our notion of <span class="process-math">\(\equiv_I\)</span> (which operates on sets of ordinal-valued functions with the same domain modulo the same ideal) to Tukey equivalence and Galois-Tukey connections, both of which operate on the more abstract level of quasi-ordered sets. The additional generality will provide us with a streamlined way of comparing the cofinal structures of such objects.</div>
+<article class="definition definition-like" id="def-tukey-function"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-tukey-function-1-1">Suppose <span class="process-math">\((P, \leq_P)\)</span> and <span class="process-math">\((Q, \leq_Q)\)</span> are quasi-ordered sets.</div> <div class="para logical" id="def-tukey-function-1-2"><ol class="decimal">
+<li id="def-tukey-function-1-2-1-1"><div class="para" id="def-tukey-function-1-2-1-1-1">A map <span class="process-math">\(\phi:P\rightarrow Q\)</span> is a <em class="emphasis">Tukey function</em> if <span class="process-math">\(f\)</span> maps unbounded subsets of <span class="process-math">\(P\)</span> to unbounded subsets of <span class="process-math">\(Q\text{.}\)</span>
+</div></li>
+<li id="def-tukey-function-1-2-1-2"><div class="para" id="def-tukey-function-1-2-1-2-1">A map <span class="process-math">\(\psi:Q\rightarrow P\)</span> is a <em class="emphasis">convergent function</em> if <span class="process-math">\(\psi\)</span> maps cofinal subsets of <span class="process-math">\(Q\)</span> to cofinal subsets of <span class="process-math">\(P\text{.}\)</span>
+</div></li>
+<li id="def-tukey-function-1-2-1-3"><div class="para" id="def-tukey-function-1-2-1-3-1">We say <span class="process-math">\(P\)</span> is <em class="emphasis">Tukey-reducible</em> to <span class="process-math">\(Q\)</span> (equivalent, <span class="process-math">\(P\)</span> is a <em class="emphasis">Tukey quotient</em> of <span class="process-math">\(Q\)</span> if there is Tukey function mapping <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and we write this as <span class="process-math">\(P\leq_T Q\text{.}\)</span>
+</div></li>
+<li id="def-tukey-function-1-2-1-4"><div class="para" id="def-tukey-function-1-2-1-4-1">If both <span class="process-math">\(P\leq_T Q\)</span> and <span class="process-math">\(Q\leq_T P\)</span> hold then we say <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are <em class="emphasis">Tukey equivalent</em>, and we write this as <span class="process-math">\(P\equiv_T Q\text{.}\)</span>
+</div></li>
+<li id="def-tukey-function-1-2-1-5"><div class="para logical" id="def-tukey-function-1-2-1-5-1">
+<div class="para">A <em class="emphasis">Galois-Tukey</em> connection from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> is a pair of functions <span class="process-math">\((\phi,\psi)\)</span> such that <span class="process-math">\(\phi:P\rightarrow Q\text{,}\)</span> <span class="process-math">\(\psi:Q\rightarrow P\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eq:GT}  \phi(p)\leq_Q q \Longrightarrow p\leq_P \psi(q).
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article><article class="lemma theorem-like" id="lem-tukey-map-char"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem-tukey-map-char-1-1">The following statements are equivalent for quasi-ordered sets <span class="process-math">\((P, \leq_P)\)</span> and <span class="process-math">\((Q,\leq_Q)\text{:}\)</span>
+</div> <div class="para logical" id="lem-tukey-map-char-1-2"><ol class="decimal">
+<li id="lem-tukey-map-char-1-2-1-1"><div class="para" id="lem-tukey-map-char-1-2-1-1-1">
+<span class="process-math">\(P\leq_T Q\text{,}\)</span> that is, there is a Tukey function from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span>
+</div></li>
+<li id="lem-tukey-map-char-1-2-1-2"><div class="para" id="lem-tukey-map-char-1-2-1-2-1">There is a convergent function mapping <span class="process-math">\(Q\)</span> to <span class="process-math">\(P\text{.}\)</span>
+</div></li>
+<li id="lem-tukey-map-char-1-2-1-3"><div class="para" id="lem-tukey-map-char-1-2-1-3-1">There is a Galois-Tukey connection from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span>
+</div></li>
+</ol></div></article><details id="galois-tukey-connections-5" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="galois-tukey-connections-5-1">
+<em class="emphasis">Proof.</em> Suppose first that <span class="process-math">\(\phi:P\rightarrow Q\)</span> is a Tukey function. Then for each <span class="process-math">\(q\in Q\text{,}\)</span> the set of <span class="process-math">\(\{p\in P: \phi(p)\leq_Q q\}\)</span> must be bounded in <span class="process-math">\(P\text{,}\)</span> so we can define a function <span class="process-math">\(\psi:Q\rightarrow P\)</span> by choosing <span class="process-math">\(\psi(q)\)</span> to bound this set in <span class="process-math">\(P\text{.}\)</span> We leave the proof that <span class="process-math">\(\psi\)</span> maps cofinal subsets of <span class="process-math">\(Q\)</span> to cofinal subsets of <span class="process-math">\(P\)</span> as an exercise.</div> <div class="para logical" id="galois-tukey-connections-5-2">
+<div class="para">Next, suppose <span class="process-math">\(\psi:Q\rightarrow P\)</span> maps cofinal sets to cofinal sets. Given <span class="process-math">\(p\in P\text{,}\)</span> we can let <span class="process-math">\(\phi(p)\)</span> be some element of <span class="process-math">\(Q\)</span> with the property that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eq:turnaround}
+\phi(p)\leq_Q q\Longrightarrow p\leq_P \psi(q).
+\end{equation*}
+</div>
+<div class="para">This is possible because by our assumption on <span class="process-math">\(\psi\text{,}\)</span> the set of <span class="process-math">\(x\in Q\)</span> for which <span class="process-math">\(p\nleq_P \psi(x)\)</span> is not cofinal in <span class="process-math">\(Q\text{,}\)</span> and so such a choice for <span class="process-math">\(\phi(p)\)</span> must exist. Thus, the pair <span class="process-math">\((\phi,\psi)\)</span> is a Galois-Tukey connection from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{.}\)</span>
+</div>
+</div> <div class="para" id="galois-tukey-connections-5-3">Now assume <span class="process-math">\(\phi\)</span> and <span class="process-math">\(\psi\)</span> are functions satisfying <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:GT" missing or not unique]</code>. It suffices to note that <span class="process-math">\(\phi\)</span> is a Tukey function: if <span class="process-math">\(X\)</span> is a subset of <span class="process-math">\(P\)</span> whose image under <span class="process-math">\(\phi\)</span> is bounded by some <span class="process-math">\(q\in Q\text{,}\)</span> then <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:GT" missing or not unique]</code> shows us that <span class="process-math">\(\psi(q)\)</span> bounds <span class="process-math">\(X\)</span> in <span class="process-math">\(P\text{.}\)</span> Note that the function <span class="process-math">\(\psi\)</span> is also convergent by a similar argument, left to Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:convergent" missing or not unique]</code> ◻</div></article></details><div class="para" id="galois-tukey-connections-6">The above result has a couple of corollaries that are useful to us. The first one provides a connection between Tukey reductions and some of the cardinal characteristics we considered early.</div>
+<article class="corollary theorem-like" id="cor-preserve-card"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="cor-preserve-card-1-1">Suppose <span class="process-math">\((P,\leq_P)\)</span> and <span class="process-math">\((Q,\leq_Q)\)</span> are quasi-ordered sets with <span class="process-math">\(P\leq_T Q\text{.}\)</span> Then <span class="process-math">\(\mathfrak{b}(Q)\leq \mathfrak{b}(P)\)</span> and <span class="process-math">\(\mathfrak{d}(P)\leq\mathfrak{d}(Q)\text{.}\)</span>
+</div></article><details id="galois-tukey-connections-8" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="galois-tukey-connections-8-1">Fix a Tukey <span class="process-math">\(\phi:P\rightarrow Q\)</span> and a convergent <span class="process-math">\(\psi:Q\rightarrow P\text{.}\)</span> Then the image under <span class="process-math">\(\phi\)</span> of an unbounded subset of <span class="process-math">\(P\)</span> of minimal cardinality shows us that <span class="process-math">\(\mathfrak{b}(Q)\)</span> is at most <span class="process-math">\(\mathfrak{b}_P\text{,}\)</span> and a similar argument using <span class="process-math">\(\psi\)</span> shows us that <span class="process-math">\(P\)</span> has a cofinal subset of cardinality at most <span class="process-math">\(\mathfrak{d}(Q)\text{.}\)</span> ◻</div></article></details><div class="para" id="galois-tukey-connections-9">The above corollary is extraordinarily useful for us, as it tells us that the values various cardinals like <span class="process-math">\(\mathfrak{b}(P)\)</span> and <span class="process-math">\(\mathfrak{d}(P)\)</span> are preserved by Tukey equivalence. For example, suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are sets carrying the ideals <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> respectively, and let <span class="process-math">\(F\subseteq \On^A\)</span> and <span class="process-math">\(G\subseteq \On^B\)</span> be directed under <span class="process-math">\(\leq_I\)</span> and <span class="process-math">\(\leq_J\)</span> respectively. If the structures <span class="process-math">\((F,\leq_I)\)</span> and <span class="process-math">\((G,\leq_J)\)</span> are Tukey equivalent, then <span class="process-math">\(\mathfrak{b}_I(F)=\mathfrak{b}_J(G)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)=\mathfrak{d}_J(G)\text{.}\)</span> It is also quite useful to note that if <span class="process-math">\((F, \leq_I)\leq_T (G, \leq_J)\)</span> and <span class="process-math">\(G\)</span> has true cofinality, then so does <span class="process-math">\(F\)</span> and the respective true cofinalities are exactly the same. This follows from the above discussion by way of Theorem <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "thm:tcfchar" missing or not unique]</code>. We will explore some related results in the exercises.</div>
+<div class="para" id="galois-tukey-connections-10">Our next corollary simply verifies something that we might expect to be true, given that Tukey equivalence is supposed to indicate that two structures have the same cofinal behavior.</div>
+<article class="corollary theorem-like" id="cor-tukey-equiv-cofinal-subset"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="cor-tukey-equiv-cofinal-subset-1-1">Suppose <span class="process-math">\((P, \leq_P)\)</span> is a quasi-ordered set. Then <span class="process-math">\(P\)</span> is Tukey-equivalent to any of its cofinal subsets.</div></article><details id="galois-tukey-connections-12" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="galois-tukey-connections-12-1">Suppose <span class="process-math">\(Q\)</span> is a cofinal subset of <span class="process-math">\(P\text{.}\)</span> Any cofinal subset of <span class="process-math">\(Q\)</span> will also be cofinal in <span class="process-math">\(P\text{,}\)</span> so the inclusion map corresponding to <span class="process-math">\(Q\subset P\)</span> gives us a convergent function mapping <span class="process-math">\(Q\)</span> to <span class="process-math">\(P\)</span> so <span class="process-math">\(P\leq_T Q\text{.}\)</span> For the other direction, we let <span class="process-math">\(c\)</span> be some function that assigns to an arbitrary <span class="process-math">\(p\in P\)</span> an element <span class="process-math">\(c(p)\)</span> of <span class="process-math">\(Q\)</span> such that <span class="process-math">\(p\leq_P c(p)\)</span> (such a function exists as <span class="process-math">\(Q\)</span> is cofinal in <span class="process-math">\(P\)</span>). Suppose now that <span class="process-math">\(X\)</span> is cofinal in <span class="process-math">\(P\text{.}\)</span> Given <span class="process-math">\(q\in Q\)</span> we can find an <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(p\leq_P x\text{,}\)</span> and our definition of <span class="process-math">\(c\)</span> then tells us <span class="process-math">\(q\leq_P x\leq_P c(x)\text{.}\)</span> Thus the image of <span class="process-math">\(X\)</span> under <span class="process-math">\(c\)</span> is a cofinal subset of <span class="process-math">\(Q\text{,}\)</span> and so the convergent map <span class="process-math">\(c:P\rightarrow Q\)</span> establishes <span class="process-math">\(Q\leq_T P\text{.}\)</span> ◻</div></article></details><div class="para" id="galois-tukey-connections-13">This corollary is quite useful, as there are situations where complicated ordered sets have cofinal subsets with much simpler structure. One obvious example of this occurs with true cofinality — “having a true cofinality” is the same as “has a cofinal subset order-isomorphic to a regular cardinal” — and so given a <span class="process-math">\(&lt;_I\)</span>-directed set <span class="process-math">\(F\subseteq\On^A\)</span> we can see that the statement “<span class="process-math">\(\tcf_I(F)=\lambda\)</span>” means simply that <span class="process-math">\((F,&lt;_I)\)</span> is Tukey equivalent to <span class="process-math">\((\lambda, &lt;)\text{.}\)</span> We look at two additional important examples of this type of phenomenon below.</div>
+<details id="galois-tukey-connections-14" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="galois-tukey-connections-14-1">Suppose <span class="process-math">\(f:A\rightarrow\On\)</span> is such that <span class="process-math">\(f(a)\)</span> is a limit ordinal for all <span class="process-math">\(a\in A\text{,}\)</span> and for each <span class="process-math">\(a\in A\)</span> let <span class="process-math">\(\lambda(a)=\cf(f(a))\text{.}\)</span>
+</div> <div class="para" id="galois-tukey-connections-14-2">If we let <span class="process-math">\(\ov{\lambda}\)</span> denote <span class="process-math">\(\langle \lambda(a):a\in A\rangle\)</span> then <span class="process-math">\(\ov{\lambda}\)</span> is an <span class="process-math">\(A\)</span>-indexed sequence of regular cardinals.</div> <div class="para" id="galois-tukey-connections-14-3">For each <span class="process-math">\(a\in A\text{,}\)</span> we can choose a set <span class="process-math">\(S(a)\)</span> cofinal in <span class="process-math">\(f(a)\)</span> of order-type <span class="process-math">\(\lambda(a)\text{,}\)</span> and it is clear that the products <span class="process-math">\(\prod S(a)\)</span> and <span class="process-math">\(\prod\ov{\lambda}\)</span> are order-isomorphic through the obvious correspondence.</div> <div class="para" id="galois-tukey-connections-14-4">Since <span class="process-math">\(\prod S(a)\)</span> is cofinal in <span class="process-math">\(\prod f\text{,}\)</span> it follows that <span class="process-math">\(\prod f\)</span> is Tukey equivalent to the product <span class="process-math">\(\prod \ov{\lambda}\text{.}\)</span>
+</div> <div class="para" id="galois-tukey-connections-14-5">Moreover, this situation persists if we move from <span class="process-math">\(\leq\)</span> to a <span class="process-math">\(\leq_I\)</span> for some ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\text{:}\)</span> it is still the case that <span class="process-math">\((\prod\ov{\lambda}, \leq_I)\)</span> is order-isomorphic to a cofinal subset of <span class="process-math">\((\prod f, \leq_I)\)</span> and hence these two structures are Tukey equivalent.</div></article></details><div class="para" id="galois-tukey-connections-15">Our next example shows that under a mild assumption it is possible to find even nicer cofinal subsets of <span class="process-math">\(\prod f\text{.}\)</span>
+</div>
+<details id="galois-tukey-connections-16" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="galois-tukey-connections-16-1">Continuing with the notation of Example <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "ex:prodseq" missing or not unique]</code>, let us now make the additional assumption that the cardinality of <span class="process-math">\(A\)</span> is strictly less than each <span class="process-math">\(\lambda(a)\)</span> and then define <span class="process-math">\(B\)</span> to be the range <span class="process-math">\(\{\lambda(a):a\in A\}\)</span> of <span class="process-math">\(\ov{\lambda}\)</span> (considered as a function from <span class="process-math">\(A\)</span> onto <span class="process-math">\(B\)</span>). Our aim is to show that <span class="process-math">\(\prod f\)</span> and <span class="process-math">\(\prod B\)</span> are essentially the same, in the sense that for any ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> there is a corresponding ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span> such that <span class="process-math">\((\prod f, \leq_I)\)</span> and <span class="process-math">\((\prod B, \leq_J)\)</span> are Tukey equivalent, and vice versa.</div> <div class="para logical" id="galois-tukey-connections-16-2">
+<div class="para">We define <span class="process-math">\(T\)</span> to be the set of functions in <span class="process-math">\(\prod S(a)\)</span> that are constant on the pre-images of elements of <span class="process-math">\(B\)</span> under <span class="process-math">\(\ov{\lambda}\text{.}\)</span> Thus, a function in <span class="process-math">\(\prod f\)</span> gets into <span class="process-math">\(T\)</span> if its value at <span class="process-math">\(a\)</span> depends only on the value <span class="process-math">\(\lambda(a)\text{.}\)</span> Our assumption that <span class="process-math">\(|A|\)</span> is less than <span class="process-math">\(\min(B)\)</span> is used to show that <span class="process-math">\(T\)</span> is cofinal in <span class="process-math">\(\prod f\text{:}\)</span> Given <span class="process-math">\(g\in\prod f\)</span> we define <span class="process-math">\(g^*\in T\)</span> by setting</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+g^*(a) =  \sup\{g(b):\lambda(a)=\lambda(b)\}.
+\end{equation*}
+</div>
+<div class="para">It is clear that <span class="process-math">\(g\leq g^*(a)\text{,}\)</span> and <span class="process-math">\(\lambda(a)=\lambda(b)\)</span> implies <span class="process-math">\(g^*(a)=g^*(b)\text{,}\)</span> so <span class="process-math">\(g^*\)</span> will be in <span class="process-math">\(T\)</span> provided we can show <span class="process-math">\(g^*\)</span> is in <span class="process-math">\(\prod f\text{.}\)</span> But this is where are assumption <span class="process-math">\(|A|&lt;\min(B)\)</span> comes to the rescue, as in each coordinate <span class="process-math">\(a\)</span> the set <span class="process-math">\(\{g(b):\lambda(a)=\lambda(b)\}\)</span> will be bounded below <span class="process-math">\(\lambda(a)\text{.}\)</span> The structure <span class="process-math">\(\prod B\)</span> is isomorphic to <span class="process-math">\(T\)</span> in a natural way as well, for given <span class="process-math">\(x\in \prod B\)</span> define <span class="process-math">\(\psi(x)\in T\)</span> through the formula</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\label{eq:psiform}
+\psi(x)(a)= x(\lambda(a)).
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\((\prod f, \leq)\)</span> and <span class="process-math">\((\prod B, \leq)\)</span> are Tukey equivalent by way of Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor:equivcofinal" missing or not unique]</code>.</div>
+</div> <div class="para logical" id="galois-tukey-connections-16-3">
+<div class="para">Much more can be said, though, as the function <span class="process-math">\(\ov{\lambda}\)</span> induces a natural correspondence between ideals on <span class="process-math">\(A\)</span> and ideals on <span class="process-math">\(B\text{:}\)</span> given an ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> (respectively, <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span>) then we get another ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span> (respectively, <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span>) by defining</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\in J\Longleftrightarrow \{a\in A:\lambda(a)\in X\}\in I,
+\end{equation*}
+</div>
+<div class="para">and we denote this relationship by writing <span class="process-math">\(J=\ov{\lambda}[I]\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="galois-tukey-connections-16-4">
+<div class="para">We now show that if <span class="process-math">\(J = \ov{\lambda}[I]\text{,}\)</span> then the function <span class="process-math">\(\psi\)</span> defined above is an isomorphism between <span class="process-math">\((\prod B, \leq_J)\)</span> and <span class="process-math">\((T,\leq_I)\text{.}\)</span> To see this, note that for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in <span class="process-math">\(\prod B\)</span> we can apply <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:psiform" missing or not unique]</code> to obtain the equalities</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+\{a\in A:\psi(x)(a)&lt;\psi(y)(a)\}&amp;=\{a\in A: x(\lambda(a))&lt;y(\lambda(a)\}\\&amp;=\ov{\lambda}^{-1}(\{\theta\in B: x(\theta)&lt;y(\theta)\}).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(J=\ov{\lambda}[I]\text{,}\)</span> this shows us that <span class="process-math">\(x\leq_J y\)</span> in <span class="process-math">\(\prod B\)</span> if and only if <span class="process-math">\(\psi(x)\leq_I \psi(y)\)</span> in <span class="process-math">\(\prod f\text{.}\)</span> We conclude that for every ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> there is an ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span> such that <span class="process-math">\((\prod f, \leq_I)\)</span> is Tukey equivalent to <span class="process-math">\((\prod B, \leq_J)\text{,}\)</span> and vice versa. <span class="process-math">\(\blacksquare\)</span>
+</div>
+</div></article></details><div class="para" id="galois-tukey-connections-17">The two preceding examples capture an important point: in many situations</div>
+<div class="para" id="galois-tukey-connections-18">The following lemma is the first place where we really need to assume that we are working with directed sets.</div>
+<article class="lemma theorem-like" id="lem-tukey-equivalence-char"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem-tukey-equivalence-char-1-1">If <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are directed sets, then the following are equivalent:</div> <div class="para logical" id="lem-tukey-equivalence-char-1-2"><ol class="decimal">
+<li id="lem-tukey-equivalence-char-1-2-1-1"><div class="para" id="lem-tukey-equivalence-char-1-2-1-1-1">
+<span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are Tukey equivalent.</div></li>
+<li id="lem-tukey-equivalence-char-1-2-1-2"><div class="para logical" id="lem-tukey-equivalence-char-1-2-1-2-1">
+<div class="para">There is a Galois-Tukey connection <span class="process-math">\((\phi,\psi)\)</span> from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> such that <span class="process-math">\((\psi,\phi)\)</span> is a Galois-Tukey connection from <span class="process-math">\(Q\)</span> to <span class="process-math">\(P\text{.}\)</span> In particular,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\label{eq:equiv1}\phi(p)\leq_Q q&amp;\Longrightarrow p\leq_P \psi(q)\\
+\mathrm{and}\\
+\label{eq:equiv2}\psi(q)\leq_P p&amp;\Longrightarrow q\leq_Q\phi(p).
+\end{aligned}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article><details id="galois-tukey-connections-20" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="galois-tukey-connections-20-1">
+<div class="para">
+<em class="emphasis">Proof.</em> The implication from (2) to (1) follows from the preceding lemma, so assume <span class="process-math">\(P\equiv_T Q\text{.}\)</span> Let <span class="process-math">\((\phi_0,\psi_0)\)</span> witness <span class="process-math">\(P\leq_T Q\)</span> and let <span class="process-math">\((\psi_1, \phi_1)\)</span> witness <span class="process-math">\(Q\leq_T P\text{.}\)</span> This means</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\phi_0(p)\leq_Q q&amp;\Longrightarrow p\leq_Q \psi_0(q)\\
+\mathrm{and}
+\psi_1(q)\leq_P p&amp;\Longrightarrow q\leq_P \phi_1(p).
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="galois-tukey-connections-20-2">
+<div class="para">Now we use the directedness of <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> to define <span class="process-math">\(\phi\)</span> and <span class="process-math">\(\psi\text{,}\)</span> choosing <span class="process-math">\(\phi(p)\)</span> so that it bounds both <span class="process-math">\(\phi_0(p)\)</span> and <span class="process-math">\(\phi_1(p)\text{,}\)</span> and defining <span class="process-math">\(\psi\)</span> in the analogous fashion from <span class="process-math">\(\psi_0\)</span> and <span class="process-math">\(\psi_q\text{.}\)</span> This works, as given <span class="process-math">\(p\in P\)</span> and <span class="process-math">\(q\in Q\text{,}\)</span> we our definitions imply</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(p)\leq_Q q\Longrightarrow \phi_0(p)\leq_Q q \Longrightarrow p\leq\psi_0(q)\leq \psi(q),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\psi(q)\leq_P p \Longrightarrow \psi_1(q)\leq_P p \Longrightarrow q\leq_Q\phi_1(p)\leq \phi(p).
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\((\phi, \psi)\)</span> witnesses <span class="process-math">\(P\leq_T Q\)</span> while <span class="process-math">\((\psi, \phi)\)</span> shows us <span class="process-math">\(Q\leq_T P\text{.}\)</span> ◻</div>
+</div></article></details></section><section class="subsection" id="cofinal-similarity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="space"> </span><span class="title">Cofinal Similarity</span>
+</h3>
+<div class="para" id="cofinal-similarity-2">The preceding lemma will be the key ingredient of a lovely result of Tukey that lays out the practical meaning of <span class="process-math">\(\equiv_T\)</span> in exact terms. With this goal in mind, we make the following definition.</div>
+<article class="definition definition-like" id="def-cofinal-similarity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-cofinal-similarity-1-1">Let <span class="process-math">\((P, \leq_P)\)</span> and <span class="process-math">\((Q, \leq_Q)\)</span> be directed quasi-ordered sets.</div> <div class="para logical" id="def-cofinal-similarity-1-2"><ol class="decimal">
+<li id="def-cofinal-similarity-1-2-1-1"><div class="para" id="def-cofinal-similarity-1-2-1-1-1">A pair of mappings <span class="process-math">\((\phi,\psi)\)</span> is said to be a <em class="emphasis">Galois-Tukey equivalence</em> between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> if it satisfies (2) of the preceding lemma.</div></li>
+<li id="def-cofinal-similarity-1-2-1-2"><div class="para" id="def-cofinal-similarity-1-2-1-2-1">
+<span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are <em class="emphasis">cofinally similar</em> if there is a partially ordered set into which both <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> (or rather, the partial ordered sets obtained from the respective quasi-orders) can be embedded as cofinal subsets.</div></li>
+</ol></div></article><div class="para" id="cofinal-similarity-4">Now for the promised theorem that yields a convenient characterization of Tukey equivalence.</div>
+<article class="theorem theorem-like" id="thm-cofinal-similarity-equivalence"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-cofinal-similarity-equivalence-1-1">If <span class="process-math">\((P, \leq_P)\)</span> and <span class="process-math">\((Q, \leq_Q)\)</span> are directed sets, then <span class="process-math">\(P\equiv_T Q\)</span> if and only if <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are cofinally similar.</div></article><details id="cofinal-similarity-6" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="cofinal-similarity-6-1">
+<div class="para">Showing that Tukey equivalence follows from cofinal similarity is trivial, so we show the other direction. Let <span class="process-math">\((\phi, \psi)\)</span> be a Galois-Tukey equivalence between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span> We can assume without generality that <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are disjoint, and we will first define a quasi-order <span class="process-math">\(\preceq\)</span> on the set <span class="process-math">\(P\cup Q\text{.}\)</span> We start in the obvious way by letting <span class="process-math">\(\preceq\)</span> agree with <span class="process-math">\(\leq_P\)</span> on <span class="process-math">\(P\)</span> and <span class="process-math">\(\leq_Q\)</span> on <span class="process-math">\(Q\text{.}\)</span> For comparisons between elements of <span class="process-math">\(P\)</span> and of <span class="process-math">\(Q\text{,}\)</span> we define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+p\preceq q &amp;\Longleftrightarrow (\exists r\in P)\left[p\leq_P r\text{ and }\phi(r)\leq_Q q\right]\\
+\mathrm{and}\\
+q\preceq p  &amp;\Longleftrightarrow (\exists s\in Q)\left[q\leq_Q s\text{ and }\psi(s)\leq_P p\right].
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">We need to verify that <span class="process-math">\(\preceq\)</span> is transitive, so let us assume <span class="process-math">\(a\preceq b\)</span> and <span class="process-math">\(b\preceq c\)</span> in <span class="process-math">\(P\cup Q\text{.}\)</span> The verification of <span class="process-math">\(a\preceq c\)</span> involves breaking into cases depending on where <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> sit in <span class="process-math">\(P\cup Q\text{.}\)</span> We do only a couple of representative examples leaving the rest of the details as an exercise.</div>
+</div> <div class="para logical" id="cofinal-similarity-6-2">
+<div class="para">Assume first that <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are in <span class="process-math">\(P\)</span> but <span class="process-math">\(c\)</span> is in <span class="process-math">\(Q\text{.}\)</span> By definition, there is an <span class="process-math">\(r\in P\)</span> such that <span class="process-math">\(b\leq_P r\)</span> and <span class="process-math">\(\phi(r)\leq_Q c\text{,}\)</span> and this <span class="process-math">\(r\)</span> also certifies the relation <span class="process-math">\(a\preceq c\text{.}\)</span> In the situation where both <span class="process-math">\(a\)</span> and <span class="process-math">\(c\)</span> are in <span class="process-math">\(P\)</span> but <span class="process-math">\(b\)</span> is an element of <span class="process-math">\(Q\text{,}\)</span> there are <span class="process-math">\(r\in P\)</span> and <span class="process-math">\(s\in Q\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+a\leq_P r &amp;\text{ and } \phi(r)\leq_Q b,\\
+\mathrm{and}\\
+b\leq_Q s &amp;\text{ and }\psi(s)\leq_P c.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">We know <span class="process-math">\(r\leq_P \psi(s)\)</span> because <span class="process-math">\(\phi(r)\leq_Q b\leq_Q s\text{,}\)</span> and so we can conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a\leq_P r\leq_P \psi(s)\leq_P c,
+\end{equation*}
+</div>
+<div class="para">as required. The remaining cases needed to establish the transitivity of <span class="process-math">\(\preceq\)</span> are left to Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "??" missing or not unique]</code>, but proceed in a similar manner.</div>
+</div> <div class="para" id="cofinal-similarity-6-3">The quasi-order <span class="process-math">\(\preceq\)</span> induces an equivalence relation on <span class="process-math">\(P\cup Q\text{,}\)</span> and a corresponding partial order (which we also denote by <span class="process-math">\(\preceq\)</span>) on the set <span class="process-math">\(C\)</span> of equivalence classes. It is straightforward to see that the mapping sending <span class="process-math">\(a \in P\cup Q\)</span> to its corresponding equivalence class <span class="process-math">\([a]\in C\)</span> embeds <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> as cofinal subsets of the partially-ordered set <span class="process-math">\((C, \preceq)\text{.}\)</span> ◻</div></article></details><div class="para" id="cofinal-similarity-7">There is a well-developed literature associated with the notion of cofinal similarity of directed sets. The above theorem shows us that it is an equivalence relation, and in the literature the equivalence classes under cofinal similarity are called <em class="emphasis">cofinal types</em>.</div>
+<div class="para" id="cofinal-similarity-8">We will shortly look at these notions in the contexts of products in <span class="process-math">\(\On^A\text{,}\)</span> but first we prove a lemma that provides us with a tool for easily constructing Galois-Tukey equivalences. We won’t need the full generality of this result for our short term goals, but these ideas will resurface later in our study.</div>
+<article class="lemma theorem-like" id="lem-stronger-tukey-equivalence"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="lem-stronger-tukey-equivalence-1-1">
+<div class="para">Suppose <span class="process-math">\((P, \leq_P)\)</span> and <span class="process-math">\((Q, \leq_P)\)</span> are directed quasi-orders. If <span class="process-math">\(\phi:P\rightarrow Q\)</span> and <span class="process-math">\(\psi:Q\rightarrow P\)</span> are order-preserving functions such that both <span class="process-math">\(p\leq_P \psi(\phi(p))\)</span> and <span class="process-math">\(\phi(\psi(q))\leq_Q q\)</span> hold, then the pair <span class="process-math">\((\phi,\psi)\)</span> is a Galois-Tukey equivalence between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> that moreover satisfies satisfies the following stronger property:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{eq:gconnection}
+\phi(p)\leq_Q q \Longleftrightarrow p\leq_P \phi(q).
+\end{equation*}
+</div>
+</div></article><details id="cofinal-similarity-10" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="cofinal-similarity-10-1">
+<div class="para">It is clear that <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:gconnection" missing or not unique]</code> implies both <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:equiv1" missing or not unique]</code> and <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:equiv2" missing or not unique]</code>, so we aim for this stronger property. Our assumptions make this an easy computation, as illustrated by the inequalities</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+\phi(p)\leq_Q q\Longrightarrow  p\leq_P \psi(\phi(p))\leq_P\psi(q),
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+p\leq_P \psi(q)\Longrightarrow \phi(p)\leq_Q \phi(\psi(q))\leq_Q q.
+\end{equation*}
+</div>
+<div class="para"> ◻</div>
+</div></article></details></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="true-cofinality-and-exact-upper-bounds.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-2-theory-exact-upper-bounds.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

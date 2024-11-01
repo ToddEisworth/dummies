@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Functions, ideals, and filters</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-Sh400.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Sh400.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="unbounded-sets-and-cofinal-sets.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Sh400.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-vocabulary.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vocabulary.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="a-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="a-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="tukeysection.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="tukeysection.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="flat-products-and-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="the-trichotomy-theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-vocabulary"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Functions, ideals, and filters</span>
+</h2>
+<section class="subsection" id="ideals-filters"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Ideals and Filters</span>
+</h3>
+<div class="para" id="ideals-filters-2">Suppose <span class="process-math">\(A\)</span> is a non-empty set, and let <span class="process-math">\(\On^A\)</span> be the class of ordinal-valued functions with domain <span class="process-math">\(A\text{.}\)</span> This structure can be partially-ordered by comparing functions pointwise, setting <span class="process-math">\(f\leq g\)</span> if and only if <span class="process-math">\(f(a)\leq g(a)\)</span> for all <span class="process-math">\(a\in A\text{.}\)</span> This is certainly a natural way to impose some organization on <span class="process-math">\(\On^A\text{,}\)</span> but it is a bit intractable because such functions can intertwine in complicated ways and arbitrary functions in <span class="process-math">\(\On^A\)</span> are unlikely to be comparable under the pointwise order.</div>
+<article class="definition definition-like" id="def-1"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-1-1-1">Suppose <span class="process-math">\(A\)</span> is a non-empty set.</div> <div class="para logical" id="def-1-1-2"><ol class="decimal">
+<li id="def-1-1-2-1-1">
+<div class="para" id="def-1-1-2-1-1-1">A collection <span class="process-math">\(I\)</span> of subsets of <span class="process-math">\(A\)</span> is an <em class="emphasis">ideal on <span class="process-math">\(A\)</span></em> if it satisfies</div>
+<div class="para logical" id="def-1-1-2-1-1-2"><ol class="lower-alpha">
+<li id="def-1-1-2-1-1-2-1-1"><div class="para" id="def-1-1-2-1-1-2-1-1-1">
+<span class="process-math">\(A\notin I\)</span> and <span class="process-math">\(\emptyset\in I\text{,}\)</span>
+</div></li>
+<li id="def-1-1-2-1-1-2-1-2"><div class="para" id="def-1-1-2-1-1-2-1-2-1">if <span class="process-math">\(X\in I\)</span> and <span class="process-math">\(Y\in I\)</span> then <span class="process-math">\(X\cup Y\in I\text{,}\)</span> and</div></li>
+<li id="def-1-1-2-1-1-2-1-3"><div class="para" id="def-1-1-2-1-1-2-1-3-1">if <span class="process-math">\(X\in I\)</span> and <span class="process-math">\(Y\subseteq X\)</span> then <span class="process-math">\(Y\in I\text{.}\)</span>
+</div></li>
+</ol></div>
+</li>
+<li id="def-1-1-2-1-2">
+<div class="para" id="def-1-1-2-1-2-1">A collection <span class="process-math">\(F\)</span> of subsets of <span class="process-math">\(A\)</span> is a <em class="emphasis">filter on <span class="process-math">\(A\)</span></em> if it satisfies</div>
+<div class="para logical" id="def-1-1-2-1-2-2"><ol class="lower-alpha">
+<li id="def-1-1-2-1-2-2-1-1"><div class="para" id="def-1-1-2-1-2-2-1-1-1">
+<span class="process-math">\(A\in F\)</span> and <span class="process-math">\(\emptyset\notin F\text{,}\)</span>
+</div></li>
+<li id="def-1-1-2-1-2-2-1-2"><div class="para" id="def-1-1-2-1-2-2-1-2-1">if <span class="process-math">\(X\in F\)</span> and <span class="process-math">\(Y\in F\)</span> then <span class="process-math">\(X\cap Y\in F\text{,}\)</span> and</div></li>
+<li id="def-1-1-2-1-2-2-1-3"><div class="para" id="def-1-1-2-1-2-2-1-3-1">if <span class="process-math">\(X\in F\)</span> and <span class="process-math">\(X\subseteq Y\)</span> then <span class="process-math">\(Y\in F\text{.}\)</span>
+</div></li>
+</ol></div>
+</li>
+</ol></div></article><div class="para" id="ideals-filters-4">An ideal on <span class="process-math">\(A\)</span> should be thought of as a collection of “negligible” or “small” subsets of <span class="process-math">\(A\text{,}\)</span> while filters on <span class="process-math">\(A\)</span> capture the dual notion of being “substantial” or “large”. This basic intuition motivates much of the way we think about these objects. In both definitions, the first requirement imposes a non-triviality condition: we ask that the collections are non-empty without containing every subset of <span class="process-math">\(A\text{.}\)</span> On a few occasions, we may relax this condition and talk about the <em class="emphasis">improper ideal</em>, which corresponds to the degenerate case <span class="process-math">\(I=\mathcal{P}(A)\text{,}\)</span> but we will warn the reader ahead of time. We will also formulate most of our discussion in terms of ideals, but keep in mind that almost everything can be stated in terms of filters as well.</div>
+<div class="para" id="ideals-filters-5">We turn now to some basic vocabulary:</div>
+<article class="definition definition-like" id="def-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-2-1-1">Suppose <span class="process-math">\(I\)</span> is an ideal on <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para logical" id="def-2-1-2"><ol class="decimal">
+<li id="def-2-1-2-1-1"><div class="para" id="def-2-1-2-1-1-1">The <em class="emphasis">domain of <span class="process-math">\(I\)</span></em>, <span class="process-math">\(\dom(I)\text{,}\)</span> is defined to be the set <span class="process-math">\(\bigcup I\text{.}\)</span>
+</div></li>
+<li id="def-2-1-2-1-2"><div class="para" id="def-2-1-2-1-2-1">We define <span class="process-math">\(I^+\text{,}\)</span> the collection of <span class="process-math">\(I\)</span>-positive subsets of <span class="process-math">\(A\)</span> (or the <em class="emphasis">co-ideal determined by <span class="process-math">\(I\)</span></em>), by <span class="process-math">\(I^+=\mathcal{P}(A)\setminus I\text{.}\)</span>
+</div></li>
+<li id="def-2-1-2-1-3"><div class="para" id="def-2-1-2-1-3-1">The filter dual to <span class="process-math">\(I\text{,}\)</span> denoted <span class="process-math">\(I^*\text{,}\)</span> is defined as <span class="process-math">\(I^*=\{X\subseteq A: A\setminus X\in I\}\text{.}\)</span>
+</div></li>
+<li id="def-2-1-2-1-4"><div class="para logical" id="def-2-1-2-1-4-1">
+<div class="para">If <span class="process-math">\(X\)</span> is an <span class="process-math">\(I\)</span>-positive subset of <span class="process-math">\(A\text{,}\)</span> then we define <span class="process-math">\(I\restr X\text{,}\)</span> the restriction of <span class="process-math">\(I\)</span> to <span class="process-math">\(X\text{,}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I\restr X = \{Y\subseteq A: X\cap Y\in I\}.
+\end{equation*}
+</div>
+</div></li>
+<li id="def-2-1-2-1-5"><div class="para logical" id="def-2-1-2-1-5-1">
+<div class="para">If <span class="process-math">\(X\)</span> is a subset of <span class="process-math">\(A\)</span> with <span class="process-math">\(A\setminus X\in I^+\text{,}\)</span> then we define <span class="process-math">\(I+X\text{,}\)</span> the extension of <span class="process-math">\(I\)</span> by <span class="process-math">\(X\text{,}\)</span> to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I+X = I\restr (A\setminus X) = \{Y\subseteq A: X\setminus Y\in I\}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article><div class="para" id="ideals-filters-7">We pause for a moment to examine how the preceding definition plays out in the context of some standard examples.</div>
+<details id="ideals-filters-8" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Ideal <span class="process-math">\(\Fin(\omega)\)</span>$.</span>
+</h4></summary><article class="example example-like"> <div class="para" id="ideals-filters-8-2">Our first example is a familar one: start with the set of natural numbers <span class="process-math">\(\omega\text{,}\)</span> and take <span class="process-math">\(I\)</span> to be the <em class="emphasis">Frechet ideal</em> <span class="process-math">\(\Fin(\omega)\)</span> on <span class="process-math">\(\omega\)</span> consisting of all finite sets of natural numbers. This satisfies the requirements for being an ideal with <span class="process-math">\(\dom(I)=\omega\text{,}\)</span> and a subset of <span class="process-math">\(\omega\)</span> is <span class="process-math">\(I\)</span>-positive if and only if it is infinite. The corresponding dual filter <span class="process-math">\(I^*\)</span> (also known as the <em class="emphasis">Frechet filter</em>) consists of all of the co-finite subsets of <span class="process-math">\(\omega\text{.}\)</span>
+</div></article></details><details id="ideals-filters-9" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="ideals-filters-9-1">If we take <span class="process-math">\(X\)</span> to be the set of even numbers, then both <span class="process-math">\(X\)</span> and its complement are <span class="process-math">\(I\)</span>-positive so both <span class="process-math">\(I\restr X\)</span> and <span class="process-math">\(I+X\)</span> are also ideals on <span class="process-math">\(\omega\text{.}\)</span> Note that a set is in <span class="process-math">\(I\restr X\)</span> if and only if it contains only finitely many even numbers, and a set is in <span class="process-math">\(I+X\)</span> if and only if contains only finitely many odd numbers.</div></article></details><details id="ideals-filters-10" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="ideals-filters-10-1">We could just as easily consider <span class="process-math">\(I\)</span> to be an ideal on any set <span class="process-math">\(A\)</span> containing <span class="process-math">\(\omega\text{:}\)</span> <span class="process-math">\(I\)</span> will still be a subset of <span class="process-math">\(\mathcal{P}(A)\)</span> satisfying the definition of an ideal. If <span class="process-math">\(\omega\)</span> is a proper subset of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(I\)</span> will be a proper subset of <span class="process-math">\(\Fin(A)\text{,}\)</span> the ideal of finite subsets of <span class="process-math">\(A\text{.}\)</span> This is where the notion of domain is helpful: the domain of <span class="process-math">\(\Fin(\omega)\)</span> will remain <span class="process-math">\(\omega\text{,}\)</span> even if we decide for some reason to view it as an ideal on a larger set.</div></article></details><details id="ideals-filters-11" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h4></summary><article class="example example-like"><div class="para" id="ideals-filters-11-1">Suppose <span class="process-math">\(A\)</span> is a non-empty set and <span class="process-math">\(\mathbb{I}\)</span> is the collection of ideals on <span class="process-math">\(A\)</span> ordered by inclusion. Since the increasing union of a sequence of ideals is again an ideal on <span class="process-math">\(A\text{,}\)</span> we know there are ideals on <span class="process-math">\(A\)</span> that are maximal, in the sense that they are not properly contained in any other ideal. Such maximal ideals are called <em class="emphasis">prime ideals</em>, and their dual filters (which are also maximal elements of a suitable partial order) are called <em class="emphasis">ultrafilters</em>. If <span class="process-math">\(I\)</span> is a prime ideal then <span class="process-math">\(I^+\)</span> and <span class="process-math">\(I^*\)</span> coincide, so a set is in <span class="process-math">\(I\)</span> if and only if its complement is not. This means that for <span class="process-math">\(X\in I^+=I^*\)</span> we have <span class="process-math">\(I\restr X = I\text{,}\)</span> and if <span class="process-math">\(A\setminus X\)</span> is in <span class="process-math">\(I\)</span> then <span class="process-math">\(I+X=I\)</span> as well.</div></article></details></section><section class="subsection" id="almost-everywhere"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Almost Everywhere</span>
+</h3>
+<div class="para" id="almost-everywhere-2">As soon as we fix an ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\text{,}\)</span> we get a natural way to speak about a property holding almost everywhere: we can interpret this as meaning that the set of <span class="process-math">\(a\in A\)</span> which fail to have the property is in <span class="process-math">\(I\text{.}\)</span> This is in accord with our intuition that sets in the ideal are negligible, and of course it is also equivalent to stating that the set of <span class="process-math">\(a\in A\)</span> that <em class="emphasis">do</em> have the property is in the filter dual to <span class="process-math">\(I\text{.}\)</span> The following definition captures this idea using some tailor-made quantifiers.</div>
+<article class="definition definition-like" id="def-blah"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-blah-1-1">Let <span class="process-math">\(I\)</span> be an ideal on the set <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para logical" id="def-blah-1-2"><ol class="decimal">
+<li id="def-blah-1-2-1-1"><div class="para" id="def-blah-1-2-1-1-1">If <span class="process-math">\(\varphi(x)\)</span> is a formula with one free variable, then <span class="process-math">\((\forall^I a\in A)[\varphi(a)]\)</span> will mean “the set of <span class="process-math">\(a\in A\)</span> for which <span class="process-math">\(\varphi(a)\)</span> fails is in <span class="process-math">\(I\)</span>”, or, more informally, <span class="process-math">\(\varphi(a)\)</span> holds for <span class="process-math">\(I\)</span>-almost every <span class="process-math">\(a\)</span> in <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="def-blah-1-2-1-2"><div class="para" id="def-blah-1-2-1-2-1">Similarly, we define <span class="process-math">\((\exists^I a\in A)[\varphi(a)]\)</span> to mean that there <span class="process-math">\(\varphi(a)\)</span> is true for an <span class="process-math">\(I\)</span>-positive set of <span class="process-math">\(a\in A\text{.}\)</span>
+</div></li>
+</ol></div></article><div class="para" id="almost-everywhere-4">The following easy proposition lays out some of the basic properties of these quantifiers. We leave the proof as an exercise.</div>
+<article class="proposition theorem-like" id="prop-"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop--1-1">Let <span class="process-math">\(I\)</span> be an ideal on <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(\varphi(x)\)</span> be a formula with one free variable.</div> <div class="para logical" id="prop--1-2"><ol class="decimal">
+<li id="prop--1-2-1-1"><div class="para" id="prop--1-2-1-1-1">If <span class="process-math">\((\forall^I a\in A)[\varphi(a)]\)</span> holds, then so does <span class="process-math">\((\exists^I a\in A)[\varphi(a)]\text{.}\)</span> The reverse implication need not hold.</div></li>
+<li id="prop--1-2-1-2"><div class="para" id="prop--1-2-1-2-1">The statement <span class="process-math">\(\neg(\forall^I a\in A)[\varphi(a)]\)</span> is equivalent to <span class="process-math">\((\exists^I a\in A)[\neg\varphi(a)]\text{.}\)</span>
+</div></li>
+<li id="prop--1-2-1-3"><div class="para" id="prop--1-2-1-3-1">The statement <span class="process-math">\(\neg(\exists^I a\in A)[\varphi(a)]\)</span> is equivalent to <span class="process-math">\((\forall^I a\in A)[\neg\varphi(a)].\)</span>
+</div></li>
+</ol></div></article><div class="para" id="almost-everywhere-6">Most of the time, we are going to be using variants of two basic instances of the above framework: when two functions are equal almost everywhere, and when one function is below another almost everywhere. The following definitions given names to some of the objects we will need to consider:</div>
+<article class="definition definition-like" id="def-"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="def--1-1">For functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\On^A\)</span> we define:</div> <div class="para logical" id="def--1-2"><ul class="disc">
+<li id="def--1-2-1-1"><div class="para" id="def--1-2-1-1-1"><span class="process-math">\(\displaystyle \mathord{\le}(f,g)=\{a\in A\mid f(a)\le g(a)\}\)</span></div></li>
+<li id="def--1-2-1-2"><div class="para" id="def--1-2-1-2-1"><span class="process-math">\(\displaystyle \mathord{&lt;}(f,g)=\{a\in A\mid f(a)&lt; g(a)\}\)</span></div></li>
+<li id="def--1-2-1-3"><div class="para" id="def--1-2-1-3-1"><span class="process-math">\(\displaystyle \mathord{=}(f,g)=\{a\in A\mid f(a)= g(a)\}\)</span></div></li>
+</ul></div> <div class="para" id="def--1-3">In a similar way, we can define sets <span class="process-math">\(\mathord{\not=}(f,g)\text{,}\)</span> <span class="process-math">\(\mathord{&gt;}(f,g)\)</span> and <span class="process-math">\(\mathord{\ge}(f,g)\text{.}\)</span>
+</div></article><div class="para" id="almost-everywhere-8">The sets defined above allow us to make precise the idea of our relations holding “almost everywhere”.</div>
+<article class="definition definition-like" id="def-asd"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-asd-1-1">Given an ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\text{,}\)</span> we define relations <span class="process-math">\(\le_I\text{,}\)</span> <span class="process-math">\(&lt;_I\text{,}\)</span> <span class="process-math">\(=_I\text{,}\)</span> and <span class="process-math">\(\neq_I\)</span> between functions in <span class="process-math">\(\On^A\)</span> as follows:</div> <div class="para logical" id="def-asd-1-2"><ul class="disc">
+<li id="def-asd-1-2-1-1"><div class="para" id="def-asd-1-2-1-1-1"><span class="process-math">\(\displaystyle f\le_I g \iff \mathord{&gt;}(f,g)\in I\)</span></div></li>
+<li id="def-asd-1-2-1-2"><div class="para" id="def-asd-1-2-1-2-1"><span class="process-math">\(\displaystyle f&lt;_I g \iff \mathord{\ge}(f,g)\in I\)</span></div></li>
+<li id="def-asd-1-2-1-3"><div class="para" id="def-asd-1-2-1-3-1"><span class="process-math">\(\displaystyle f=_I g \iff\mathord{\not=} (f,g)\in I\)</span></div></li>
+<li id="def-asd-1-2-1-4"><div class="para" id="def-asd-1-2-1-4-1"><span class="process-math">\(\displaystyle f\not=_I g\iff \mathord{=}(f,g)\in I\)</span></div></li>
+</ul></div></article><div class="para logical" id="almost-everywhere-10">
+<div class="para">The above notation does what we want. For example, <span class="process-math">\(f\leq_I g\)</span> holds if and only if <span class="process-math">\(f(a)\leq g(a)\)</span> for almost all <span class="process-math">\(a\in A\)</span> (as measured by the ideal <span class="process-math">\(I\)</span>). In symbols,</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+f\leq_I g\Longleftrightarrow (\forall^I a\in A)\left[f(a)\leq g(a)\right].
+\end{equation*}
+</div>
+<div class="para">We do need to be a little careful with how we interpret negations in this framework. Since our ideals need not be maximal, there is potentially a big difference between statements such as <span class="process-math">\(f\neq_I g\)</span> and <span class="process-math">\(\neg(f=_I g)\text{.}\)</span> To see why, we can just write out the definitions:</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\label{eqn1.1.1}
+f\neq_I g \Longleftrightarrow (\forall^I a\in A)[f(a)\neq g(a)],
+\end{equation*}
+</div>
+<div class="para">while</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\label{eqn1.1.2}
+\neg(f=_I g)\Longleftrightarrow (\exists^I a\in A)[f(a) \neq g(a)].
+\end{equation*}
+</div>
+<div class="para">These will coincide if <span class="process-math">\(I\)</span> is a maximal ideal on <span class="process-math">\(A\text{,}\)</span> but in general they are going to mean different things. For example, if <span class="process-math">\(I\)</span> is the smallest ideal <span class="process-math">\(\{\emptyset\}\)</span> on <span class="process-math">\(A\text{,}\)</span> then <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn1.1.1" missing or not unique]</code> says that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> disagree everywhere on <span class="process-math">\(A\text{,}\)</span> while <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn1.1.2" missing or not unique]</code> says that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> disagree on at least one value. These are very different concepts if <span class="process-math">\(A\)</span> has more than a single element!</div>
+</div>
+<div class="para" id="almost-everywhere-11">Now that we have our notation fixed, we can start examining the behavior of these relations. Our first stop is a proposition whose proof follows almost immediately from the relevant definitions.</div>
+<article class="proposition theorem-like" id="prop-asdfs"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="prop-asdfs-1-1">Let <span class="process-math">\(I\)</span> be an ideal on a non-empty set <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para logical" id="prop-asdfs-1-2"><ol class="decimal">
+<li id="prop-asdfs-1-2-1-1"><div class="para" id="prop-asdfs-1-2-1-1-1">The relation <span class="process-math">\(\le_I\)</span> is transitive and reflexive on <span class="process-math">\(\On^A\text{.}\)</span>
+</div></li>
+<li id="prop-asdfs-1-2-1-2"><div class="para" id="prop-asdfs-1-2-1-2-1">The relation <span class="process-math">\(&lt;_I\)</span> is transitive on <span class="process-math">\(\On^A\text{.}\)</span>
+</div></li>
+<li id="prop-asdfs-1-2-1-3"><div class="para" id="prop-asdfs-1-2-1-3-1">If <span class="process-math">\(I\)</span> is a proper ideal, then <span class="process-math">\(&lt;_I\)</span> anti-reflexive.</div></li>
+<li id="prop-asdfs-1-2-1-4"><div class="para" id="prop-asdfs-1-2-1-4-1">The relation <span class="process-math">\(\le_I\)</span> is not anti-symmetric on <span class="process-math">\(\On^A\)</span> unless <span class="process-math">\(I=\{\emptyset\}\text{.}\)</span>
+</div></li>
+</ol></div></article><details id="almost-everywhere-13" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="almost-everywhere-13-1">See Exercise</div></article></details><div class="para" id="almost-everywhere-14">Thus, the relation <span class="process-math">\(\leq_I\)</span> is a quasi-order on the class <span class="process-math">\(\On^A\text{,}\)</span> while <span class="process-math">\(&lt;_I\)</span> is a strict partial order. Much of our work will be exploring the structure of these relations in the context of subsets of <span class="process-math">\(\On^A\text{:}\)</span> given a set <span class="process-math">\(F\)</span> of ordinal-valued functions defined on <span class="process-math">\(A\)</span> and a (proper) ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\text{,}\)</span> we will be mainly be looking at the quasi-ordered set <span class="process-math">\((F,\leq_I)\)</span> as well as the corresponding strictly partial ordered set <span class="process-math">\((F, &lt;_I)\)</span>
+</div>
+<div class="para logical" id="almost-everywhere-15">
+<div class="para">Of course, there is no need to restrict ourselves to the order and equality relations on ordinals. Given an arbitrary binary relation <span class="process-math">\(R\)</span> on the ordinals, we get a corresponding binary relation <span class="process-math">\(R_I\)</span> on <span class="process-math">\(\On^A\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f R_I g\Longleftrightarrow(\forall^I a\in A)\left[f(a) R g(a)\right].
+\end{equation*}
+</div>
+<div class="para">Again, the point is that <span class="process-math">\(f R_I g\)</span> will hold if and only if <span class="process-math">\(f(a) R g(a)\)</span> for almost every <span class="process-math">\(a\)</span> in <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></section><section class="subsection" id="more-examples"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">More Examples</span>
+</h3>
+<div class="para" id="more-examples-2">Let us now move on to examples illustrating two extreme special cases.</div>
+<details id="more-examples-3" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">The Improper Ideal.</span>
+</h4></summary><article class="example example-like"> <div class="para" id="more-examples-3-2">In this example, we consider what happens we relax our requirement that ideals on a set <span class="process-math">\(A\)</span> are proper subsets of <span class="process-math">\(\mathcal{P}(A)\text{.}\)</span> Such an ideal <span class="process-math">\(I\)</span> is called <em class="emphasis">improper</em>, and this situation is not very interesting, because <em class="emphasis">every</em> subset of <span class="process-math">\(A\)</span> is in the ideal <span class="process-math">\(I\text{,}\)</span> and hence considered to be negligible. It follows that given <em class="emphasis">any</em> binary relation <span class="process-math">\(R\)</span> on ordinals the <span class="process-math">\(f R_I g\)</span> will hold for any two functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\On^A\text{.}\)</span> To make matters worse, this also means that <span class="process-math">\(f\neg{\mathbin{R}}_I g\)</span> will hold, because <span class="process-math">\(\neg\mathbin{R}\)</span> is also a binary relation on ordinals. Thus, for example, we will have both <span class="process-math">\(f=_I g\)</span> and <span class="process-math">\(f\neq_Ig\)</span> for any two functions in <span class="process-math">\(\On^A\text{.}\)</span>
+</div></article></details><div class="para" id="more-examples-4">The lesson of the previous example is that modulo an improper ideal, everything collapses into a single uninteresting heap. This is why we focus our attention on the <em class="emphasis">proper</em> ideals.</div>
+<details id="more-examples-5" class="example example-like born-hidden-knowl"><summary><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">The Trivial Ideal.</span>
+</h4></summary><article class="example example-like"> <div class="para" id="more-examples-5-2">In stark contrast with the previous example, what happens if <span class="process-math">\(I = \{\emptyset\}\)</span> is the smallest possible ideal on <span class="process-math">\(A\text{?}\)</span> In this setting, the relations <span class="process-math">\(\leq_I\)</span> and <span class="process-math">\(&lt;_I\)</span> correspond to <span class="process-math">\(\leq\)</span> and <span class="process-math">\(&lt;\)</span> defined earlier, while <span class="process-math">\(=_I\)</span> is the usual identity relation. More generally, if <span class="process-math">\(R\)</span> is a binary relation on the ordinals and <span class="process-math">\(I = \{\emptyset\}\text{,}\)</span> then <span class="process-math">\(f R_I g\)</span> holds if and only if <span class="process-math">\(f(a) R g(a)\)</span> holds for every <span class="process-math">\(a\)</span> in <span class="process-math">\(A\text{.}\)</span>
+</div></article></details><div class="para" id="more-examples-6">Of course, there is a lot of room between these two extremes as we have seen previously with Examples <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:fin(omega)" missing or not unique]</code> and <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:primeideal" missing or not unique]</code>. The following simple proposition will help with our understanding, as it shows us that enlarging an ideal on <span class="process-math">\(A\)</span> will preserve the sorts of relationships we have been considering.</div>
+<div class="para logical" id="more-examples-7">
+<div class="para">Suppose <span class="process-math">\(I\subseteq J\)</span> are ideals over a set <span class="process-math">\(A\text{.}\)</span> Then for every binary relation <span class="process-math">\(R\)</span> on the ordinals and functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\On^A\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f \mathbin{R}_I g \Longrightarrow f\mathbin{R}_J g.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="more-examples-8">
+<em class="emphasis">Proof.</em> Suppose <span class="process-math">\(J\supseteq I\)</span> are ideals on <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(f\mathbin{R}_I g\)</span> then <span class="process-math">\(\{a\in A: \neg[f(a) R g(a)]\}\)</span> is in <span class="process-math">\(I\text{,}\)</span> hence in <span class="process-math">\(J\)</span> as well. Thus <span class="process-math">\(f\mathbin{R}_J g\)</span> as well. ◻</div>
+<div class="para" id="more-examples-9">As a corollary, we see that relationships between functions that hold modulo the smallest ideal on <span class="process-math">\(A\)</span> hold modulo <em class="emphasis">every</em> ideal on <span class="process-math">\(A\text{.}\)</span> More precisely, if <span class="process-math">\(R\)</span> is any binary relation on <span class="process-math">\(\On\)</span> and <span class="process-math">\(f(a) \mathbin{R} g(a)\)</span> for all <span class="process-math">\(a\in A\)</span> then we know <span class="process-math">\(f\mathbin{R}_Ig\)</span> for every ideal <span class="process-math">\(I\)</span> over <span class="process-math">\(A\text{.}\)</span> Informally, if something happens for <em class="emphasis">every</em> <span class="process-math">\(a\in A\text{,}\)</span> then it necessarily happens for  <em class="emphasis">almost every</em> <span class="process-math">\(a\in A\text{,}\)</span> no matter which particular ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> we are working with.</div>
+<div class="para" id="more-examples-10">It is helpful to have a dynamic picture of how a relation of the form <span class="process-math">\(R_I\)</span> evolves as the ideal under consideration gets larger. When the ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> grows, it becomes easier for two functions to be related through one of <span class="process-math">\(R_I\)</span> and <span class="process-math">\(\neg R_I\)</span> as the larger ideal will make more decisions about when something can be considered negligible and ignored. One may keep enlarging the ideal until we hit a maximal proper ideal, at which point all the relevant decisions have been made in a coherent fashion. Any further attempt to extend the ideal will result in things collapsing into the situation of Example <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "ex:improper" missing or not unique]</code>.</div>
+<div class="para" id="more-examples-11">One way of generalizing Example <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:fin(omega)" missing or not unique]</code> to other infinite sets <span class="process-math">\(A\)</span> is to just define <span class="process-math">\(\Fin[A]\)</span> to consist of the finite subsets of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(A\)</span> is a set of ordinals, then we can also look at <span class="process-math">\(J^{\bd}[A]\text{,}\)</span> the ideal of bounded subsets of <span class="process-math">\(A\text{.}\)</span> In the case where <span class="process-math">\(A\)</span> is <span class="process-math">\(\omega_1\text{,}\)</span> any infinite subset of <span class="process-math">\(\omega_1\)</span> is <span class="process-math">\(\Fin[A]\)</span>-positive, while the <span class="process-math">\(J^{\bd}[A]\)</span>-positive sets must be uncountable.</div>
+<div class="para" id="more-examples-12">Lorem Ipsum.</div>
+<div class="para" id="more-examples-13">We will revisit these examples throughout our narrative and develop others, but even our brief discussion highlights one of the central issues in pcf theory: there is “conservation of complexity” lurking in the background when we study <span class="process-math">\(\On^A\)</span> modulo a proper ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(I=\{\emptyset\}\)</span> (so the ideal is as simple as possible) then the structure of <span class="process-math">\(\On^A\)</span> under the relations <span class="process-math">\(\leq_I\)</span> and <span class="process-math">\(&lt;_I\)</span> is quite complicated. On the other hand, the relation <span class="process-math">\(\leq_I\)</span> becomes linear if <span class="process-math">\(I\)</span> is dual to an ultrafilter, but of course then <span class="process-math">\(I\)</span> is likely to be a very complex object. Pcf theory gives a careful analysis of this relationship, and shows us that in many cases we can use simply describable ideals to obtain a high degree of organization among functions.</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-Sh400.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="unbounded-sets-and-cofinal-sets.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

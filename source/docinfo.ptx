@@ -23,7 +23,11 @@
     \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
     \newcommand{\bd}{\mathrm{bd}}
     \newcommand{\tcf}{\mathrm{tcf}}
-    \newcommand{\Fin}{\mathsf{Fin}}\newcommand{\On}{\mathsf{On}}\newcommand{\dom}{\mathrm{dom}}
+    \newcommand{\Fin}{\mathsf{Fin}}
+    \newcommand{\ov}{\overline}
+    \newcommand{\On}{\mathsf{On}}
+    \newcommand{\dom}{\mathrm{dom}}
+    \newcommand{\pcf}{\mathrm{pcf}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

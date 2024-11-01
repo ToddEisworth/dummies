@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-2-theory-exact-upper-bounds" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>The theory of exact upper bounds</title>
+
+  <introduction>
+  <p>
+	  This chapter is focused on a general question: under what circumstances will a <m>&lt;_I</m>-increasing sequence have an exact upper bound?
+      We already have one answer to this question: such a sequence will have an exact upper bound if and only if it is equivalent modulo <m>I</m>
+       to a product <m>(\prod f, \leq_I)</m> for some function~<m>f</m>.  This answer is not a very satisfying one, though, because it is just a manipulation of these
+        definitions we have made.  Our goal in this chapter is to obtain a real answer to this question, with an eye towards developing internal criteria that can be
+         applied to sequences to detect when a suitable <m>f</m> must exist.
+  </p>
+  </introduction>
+  
+<xi:include href="sec-2-1-types-upper-bounds.ptx" />
+</chapter>

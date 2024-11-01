@@ -1,0 +1,325 @@
+<section xml:id="tukeysection">
+<title>Tukey Equivalence and Cofinal Similarity</title>
+
+
+	<subsection xml:id="galois-tukey-connections">
+		<title>Galois-Tukey Connections</title>
+
+		<p>
+			In this section, we will generalize our notion of <m>\equiv_I</m> (which operates on sets of ordinal-valued functions with the same domain modulo the same ideal) to Tukey equivalence and Galois-Tukey connections, both of which operate on the more abstract level of quasi-ordered sets. The additional generality will provide us with a streamlined way of comparing the cofinal structures of such objects.
+		</p>
+
+		<definition xml:id="def-tukey-function">
+			<statement>
+				<p>
+					Suppose <m>(P, \leq_P)</m> and <m>(Q, \leq_Q)</m> are quasi-ordered sets.
+				</p>
+	
+				<p><ol>
+					<li>
+								<p>
+									A map <m>\phi:P\rightarrow Q</m> is a <em>Tukey function</em> if <m>f</m> maps unbounded subsets of <m>P</m> to unbounded subsets of <m>Q</m>.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									A map <m>\psi:Q\rightarrow P</m> is a <em>convergent function</em> if <m>\psi</m> maps cofinal subsets of <m>Q</m> to cofinal subsets of <m>P</m>.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									We say <m>P</m> is <em>Tukey-reducible</em> to <m>Q</m> (equivalent, <m>P</m> is a <em>Tukey quotient</em> of <m>Q</m> if there is Tukey function mapping <m>P</m> to <m>Q</m>, and we write this as <m>P\leq_T Q</m>.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									If both <m>P\leq_T Q</m> and <m>Q\leq_T P</m> hold then we say <m>P</m> and <m>Q</m> are <em>Tukey equivalent</em>, and we write this as <m>P\equiv_T Q</m>.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									A <em>Galois-Tukey</em> connection from <m>P</m> to <m>Q</m> is a pair of functions <m>(\phi,\psi)</m> such that <m>\phi:P\rightarrow Q</m>, <m>\psi:Q\rightarrow P</m>, and <me>\label{eq:GT}  \phi(p)\leq_Q q \Longrightarrow p\leq_P \psi(q).</me>
+								</p>
+					</li>
+	
+				</ol></p>
+			</statement>
+		</definition>
+
+		<lemma xml:id="lem-tukey-map-char">
+			<statement>
+				<p>
+					The following statements are equivalent for quasi-ordered sets <m>(P, \leq_P)</m> and <m>(Q,\leq_Q)</m>:
+				</p>
+	
+				<p><ol>
+					<li>
+								<p>
+									<m>P\leq_T Q</m>, that is, there is a Tukey function from <m>P</m> to <m>Q</m>.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									There is a convergent function mapping <m>Q</m> to <m>P</m>.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									There is a Galois-Tukey connection from <m>P</m> to <m>Q</m>.
+								</p>
+					</li>
+	
+				</ol></p>
+			</statement>
+		</lemma>
+			<proof>
+			<p>
+				<em>Proof.</em> Suppose first that <m>\phi:P\rightarrow Q</m> is a Tukey function. Then for each <m>q\in Q</m>, the set of <m>\{p\in P: \phi(p)\leq_Q q\}</m> must be bounded in <m>P</m>, so we can define a function <m>\psi:Q\rightarrow P</m> by choosing <m>\psi(q)</m> to bound this set in <m>P</m>. We leave the proof that <m>\psi</m> maps cofinal subsets of <m>Q</m> to cofinal subsets of <m>P</m> as an exercise.
+			</p>
+
+			<p>
+				Next, suppose <m>\psi:Q\rightarrow P</m> maps cofinal sets to cofinal sets. Given <m>p\in P</m>, we can let <m>\phi(p)</m> be some element of <m>Q</m> with the property that <me>\label{eq:turnaround}
+				\phi(p)\leq_Q q\Longrightarrow p\leq_P \psi(q).</me> This is possible because by our assumption on <m>\psi</m>, the set of <m>x\in Q</m> for which <m>p\nleq_P \psi(x)</m> is not cofinal in <m>Q</m>, and so such a choice for <m>\phi(p)</m> must exist. Thus, the pair <m>(\phi,\psi)</m> is a Galois-Tukey connection from <m>P</m> to <m>Q</m>.
+			</p>
+
+			<p>
+				Now assume <m>\phi</m> and <m>\psi</m> are functions satisfying <xref ref="eq:GT" />. It suffices to note that <m>\phi</m> is a Tukey function: if <m>X</m> is a subset of <m>P</m> whose image under <m>\phi</m> is bounded by some <m>q\in Q</m>, then <xref ref="eq:GT" /> shows us that <m>\psi(q)</m> bounds <m>X</m> in <m>P</m>. Note that the function <m>\psi</m> is also convergent by a similar argument, left to Exercise <xref ref="exer:convergent" /> ◻
+			</p>
+			</proof>
+		<p>
+			The above result has a couple of corollaries that are useful to us. The first one provides a connection between Tukey reductions and some of the cardinal characteristics we considered early.
+		</p>
+
+		<corollary xml:id="cor-preserve-card">
+			<statement>
+				<p>
+					Suppose <m>(P,\leq_P)</m> and <m>(Q,\leq_Q)</m> are quasi-ordered sets with <m>P\leq_T Q</m>. 
+					Then <m>\mathfrak{b}(Q)\leq \mathfrak{b}(P)</m> and <m>\mathfrak{d}(P)\leq\mathfrak{d}(Q)</m>.
+			   </p>
+			</statement>
+		</corollary>
+
+		<proof>
+			<p>
+					Fix a Tukey <m>\phi:P\rightarrow Q</m> and a convergent <m>\psi:Q\rightarrow P</m>. Then the image under <m>\phi</m> of an unbounded subset of <m>P</m> of minimal cardinality shows us that <m>\mathfrak{b}(Q)</m> is at most <m>\mathfrak{b}_P</m>, and a similar argument using <m>\psi</m> shows us that <m>P</m> has a cofinal subset of cardinality at most <m>\mathfrak{d}(Q)</m>. ◻
+			</p>	
+		</proof>
+
+
+		<p>
+			The above corollary is extraordinarily useful for us, as it tells us that the values various cardinals like <m>\mathfrak{b}(P)</m> and <m>\mathfrak{d}(P)</m> are preserved by Tukey equivalence. For example, suppose that <m>A</m> and <m>B</m> are sets carrying the ideals <m>I</m> and <m>J</m> respectively, and let <m>F\subseteq \On^A</m> and <m>G\subseteq \On^B</m> be directed under <m>\leq_I</m> and <m>\leq_J</m> respectively. If the structures <m>(F,\leq_I)</m> and <m>(G,\leq_J)</m> are Tukey equivalent, then <m>\mathfrak{b}_I(F)=\mathfrak{b}_J(G)</m> and <m>\mathfrak{d}_I(F)=\mathfrak{d}_J(G)</m>. It is also quite useful to note that if <m>(F, \leq_I)\leq_T (G, \leq_J)</m> and <m>G</m> has true cofinality, then so does <m>F</m> and the respective true cofinalities are exactly the same. This follows from the above discussion by way of Theorem <xref ref="thm:tcfchar" />. We will explore some related results in the exercises.
+		</p>
+
+		<p>
+			Our next corollary simply verifies something that we might expect to be true, given that Tukey equivalence is supposed to indicate that two structures have the same cofinal behavior.
+		</p>
+
+		<corollary xml:id="cor-tukey-equiv-cofinal-subset">
+			<statement>
+				<p>
+					Suppose <m>(P, \leq_P)</m> is a quasi-ordered set. Then <m>P</m> is Tukey-equivalent to any of its cofinal subsets.
+			   </p>
+			</statement>
+		</corollary>
+		<proof>
+			<p>
+				Suppose <m>Q</m> is a cofinal subset of <m>P</m>. Any cofinal subset of <m>Q</m> will also be cofinal in <m>P</m>, so the inclusion map corresponding to <m>Q\subset P</m> gives us a convergent function mapping <m>Q</m> to <m>P</m> so <m>P\leq_T Q</m>. For the other direction, we let <m>c</m> be some function that assigns to an arbitrary <m>p\in P</m> an element <m>c(p)</m> of <m>Q</m> such that <m>p\leq_P c(p)</m> (such a function exists as <m>Q</m> is cofinal in <m>P</m>). Suppose now that <m>X</m> is cofinal in <m>P</m>. Given <m>q\in Q</m> we can find an <m>x\in X</m> with <m>p\leq_P x</m>, and our definition of <m>c</m> then tells us <m>q\leq_P x\leq_P c(x)</m>. Thus the image of <m>X</m> under <m>c</m> is a cofinal subset of <m>Q</m>, and so the convergent map <m>c:P\rightarrow Q</m> establishes <m>Q\leq_T P</m>. ◻
+			</p>
+		</proof>
+
+		<p>
+				This corollary is quite useful, as there are situations where complicated ordered sets have cofinal subsets with much simpler structure. One obvious example of this occurs with true cofinality — <q>having a true cofinality</q> is the same as <q>has a cofinal subset order-isomorphic to a regular cardinal</q> — and so given a <m>&lt;_I</m>-directed set <m>F\subseteq\On^A</m> we can see that the statement <q><m>\tcf_I(F)=\lambda</m></q> means simply that <m>(F,&lt;_I)</m> is Tukey equivalent to <m>(\lambda, &lt;)</m>. We look at two additional important examples of this type of phenomenon below.
+		</p>
+		<example>
+			<p>
+				Suppose <m>f:A\rightarrow\On</m> is such that <m>f(a)</m> is a limit ordinal for all <m>a\in A</m>, and for each <m>a\in A</m> let <m>\lambda(a)=\cf(f(a))</m>.
+		   </p>
+
+		   <p>
+			   If we let <m>\ov{\lambda}</m> denote <m>\langle \lambda(a):a\in A\rangle</m> then <m>\ov{\lambda}</m> is an <m>A</m>-indexed sequence of regular cardinals.
+		   </p>
+
+		   <p>
+			   For each <m>a\in A</m>, we can choose a set <m>S(a)</m> cofinal in <m>f(a)</m> of order-type <m>\lambda(a)</m>, and it is clear that the products <m>\prod S(a)</m> and <m>\prod\ov{\lambda}</m> are order-isomorphic through the obvious correspondence.
+		   </p>
+
+		   <p>
+			   Since <m>\prod S(a)</m> is cofinal in <m>\prod f</m>, it follows that <m>\prod f</m> is Tukey equivalent to the product <m>\prod \ov{\lambda}</m>.
+		   </p>
+
+		   <p>
+			   Moreover, this situation persists if we move from <m>\leq</m> to a <m>\leq_I</m> for some ideal <m>I</m> on <m>A</m>: it is still the case that <m>(\prod\ov{\lambda}, \leq_I)</m> is order-isomorphic to a cofinal subset of <m>(\prod f, \leq_I)</m> and hence these two structures are Tukey equivalent.
+		   </p>
+		</example>
+
+		<p>
+			Our next example shows that under a mild assumption it is possible to find even nicer cofinal subsets of <m>\prod f</m>.
+		</p>
+		<example>
+			<p>
+				Continuing with the notation of Example <xref ref="ex:prodseq" />, let us now make the additional assumption that the cardinality of <m>A</m> is strictly less than each <m>\lambda(a)</m> and then define <m>B</m> to be the range <m>\{\lambda(a):a\in A\}</m> of <m>\ov{\lambda}</m> (considered as a function from <m>A</m> onto <m>B</m>). Our aim is to show that <m>\prod f</m> and <m>\prod B</m> are essentially the same, in the sense that for any ideal <m>I</m> on <m>A</m> there is a corresponding ideal <m>J</m> on <m>B</m> such that <m>(\prod f, \leq_I)</m> and <m>(\prod B, \leq_J)</m> are Tukey equivalent, and vice versa.
+			</p>
+
+			<p>
+				We define <m>T</m> to be the set of functions in <m>\prod S(a)</m> that are constant on the pre-images of elements of <m>B</m> under <m>\ov{\lambda}</m>. Thus, a function in <m>\prod f</m> gets into <m>T</m> if its value at <m>a</m> depends only on the value <m>\lambda(a)</m>. Our assumption that <m>|A|</m> is less than <m>\min(B)</m> is used to show that <m>T</m> is cofinal in <m>\prod f</m>: Given <m>g\in\prod f</m> we define <m>g^*\in T</m> by setting <me>g^*(a) =  \sup\{g(b):\lambda(a)=\lambda(b)\}.</me> It is clear that <m>g\leq g^*(a)</m>, and <m>\lambda(a)=\lambda(b)</m> implies <m>g^*(a)=g^*(b)</m>, so <m>g^*</m> will be in <m>T</m> provided we can show <m>g^*</m> is in <m>\prod f</m>. But this is where are assumption <m>|A|&lt;\min(B)</m> comes to the rescue, as in each coordinate <m>a</m> the set <m>\{g(b):\lambda(a)=\lambda(b)\}</m> will be bounded below <m>\lambda(a)</m>. The structure <m>\prod B</m> is isomorphic to <m>T</m> in a natural way as well, for given <m>x\in \prod B</m> define <m>\psi(x)\in T</m> through the formula <me>\label{eq:psiform}
+\psi(x)(a)= x(\lambda(a)).</me> Thus, <m>(\prod f, \leq)</m> and <m>(\prod B, \leq)</m> are Tukey equivalent by way of Corollary <xref ref="cor:equivcofinal" />.
+			</p>
+
+			<p>
+				Much more can be said, though, as the function <m>\ov{\lambda}</m> induces a natural correspondence between ideals on <m>A</m> and ideals on <m>B</m>: given an ideal <m>I</m> on <m>A</m> (respectively, <m>J</m> on <m>B</m>) then we get another ideal <m>J</m> on <m>B</m> (respectively, <m>I</m> on <m>A</m>) by defining <me>X\in J\Longleftrightarrow \{a\in A:\lambda(a)\in X\}\in I,</me> and we denote this relationship by writing <m>J=\ov{\lambda}[I]</m>.
+			</p>
+
+			<p>
+				We now show that if <m>J = \ov{\lambda}[I]</m>, then the function <m>\psi</m> defined above is an isomorphism between <m>(\prod B, \leq_J)</m> and <m>(T,\leq_I)</m>. To see this, note that for <m>x</m> and <m>y</m> in <m>\prod B</m> we can apply <xref ref="eq:psiform" /> to obtain the equalities <me>\begin{aligned}
+\{a\in A:\psi(x)(a)&lt;\psi(y)(a)\}&amp;=\{a\in A: x(\lambda(a))&lt;y(\lambda(a)\}\\&amp;=\ov{\lambda}^{-1}(\{\theta\in B: x(\theta)&lt;y(\theta)\}).
+\end{aligned}</me> Since <m>J=\ov{\lambda}[I]</m>, this shows us that <m>x\leq_J y</m> in <m>\prod B</m> if and only if <m>\psi(x)\leq_I \psi(y)</m> in <m>\prod f</m>. We conclude that for every ideal <m>I</m> on <m>A</m> there is an ideal <m>J</m> on <m>B</m> such that <m>(\prod f, \leq_I)</m> is Tukey equivalent to <m>(\prod B, \leq_J)</m>, and vice versa. <m>\blacksquare</m>
+			</p>
+		</example>
+
+
+		<p>
+			The two preceding examples capture an important point: in many situations
+		</p>
+
+		<p>
+			The following lemma is the first place where we really need to assume that we are working with directed sets.
+		</p>
+		<lemma xml:id="lem-tukey-equivalence-char">
+			<statement>
+				<p>
+					If <m>P</m> and <m>Q</m> are directed sets, then the following are equivalent:
+				</p>
+	
+				<p><ol>
+					<li>
+								<p>
+									<m>P</m> and <m>Q</m> are Tukey equivalent.
+								</p>
+					</li>
+	
+					<li>
+								<p>
+									There is a Galois-Tukey connection <m>(\phi,\psi)</m> from <m>P</m> to <m>Q</m> such that <m>(\psi,\phi)</m> is a Galois-Tukey connection from <m>Q</m> to <m>P</m>. In particular, <me>\begin{aligned}
+					\label{eq:equiv1}\phi(p)\leq_Q q&amp;\Longrightarrow p\leq_P \psi(q)\\
+					\mathrm{and}\\
+					\label{eq:equiv2}\psi(q)\leq_P p&amp;\Longrightarrow q\leq_Q\phi(p).
+					\end{aligned}</me>
+								</p>
+					</li>
+	
+				</ol></p>
+			</statement>
+		</lemma>
+		<proof>
+			<p>
+				<em>Proof.</em> The implication from (2) to (1) follows from the preceding lemma, so assume <m>P\equiv_T Q</m>. Let <m>(\phi_0,\psi_0)</m> witness <m>P\leq_T Q</m> and let <m>(\psi_1, \phi_1)</m> witness <m>Q\leq_T P</m>. This means <me>\begin{aligned}
+				\phi_0(p)\leq_Q q&amp;\Longrightarrow p\leq_Q \psi_0(q)\\
+				\mathrm{and}
+				\psi_1(q)\leq_P p&amp;\Longrightarrow q\leq_P \phi_1(p).
+\end{aligned}</me>
+			</p>
+
+			<p>
+				Now we use the directedness of <m>P</m> and <m>Q</m> to define <m>\phi</m> and <m>\psi</m>, choosing <m>\phi(p)</m> so that it bounds both <m>\phi_0(p)</m> and <m>\phi_1(p)</m>, and defining <m>\psi</m> in the analogous fashion from <m>\psi_0</m> and <m>\psi_q</m>. This works, as given <m>p\in P</m> and <m>q\in Q</m>, we our definitions imply <me>\phi(p)\leq_Q q\Longrightarrow \phi_0(p)\leq_Q q \Longrightarrow p\leq\psi_0(q)\leq \psi(q),</me> and <me>\psi(q)\leq_P p \Longrightarrow \psi_1(q)\leq_P p \Longrightarrow q\leq_Q\phi_1(p)\leq \phi(p).</me> Thus, <m>(\phi, \psi)</m> witnesses <m>P\leq_T Q</m> while <m>(\psi, \phi)</m> shows us <m>Q\leq_T P</m>. ◻
+			</p>
+		</proof>
+	</subsection>
+
+	<subsection xml:id="cofinal-similarity">
+
+			<title>Cofinal Similarity</title>
+
+		<p>
+			The preceding lemma will be the key ingredient of a lovely result of Tukey that lays out the practical meaning of <m>\equiv_T</m> in exact terms. With this goal in mind, we make the following definition.
+		</p>
+
+		<definition xml:id="def-cofinal-similarity">
+				<statement>
+					<p>
+						Let <m>(P, \leq_P)</m> and <m>(Q, \leq_Q)</m> be directed quasi-ordered sets.
+					</p>
+		
+					<p><ol>
+						<li>
+									<p>
+										A pair of mappings <m>(\phi,\psi)</m> is said to be a <em>Galois-Tukey equivalence</em> between <m>P</m> and <m>Q</m> if it satisfies (2) of the preceding lemma.
+									</p>
+						</li>
+		
+						<li>
+									<p>
+										<m>P</m> and <m>Q</m> are <em>cofinally similar</em> if there is a partially ordered set into which both <m>P</m> and <m>Q</m> (or rather, the partial ordered sets obtained from the respective quasi-orders) can be embedded as cofinal subsets.
+									</p>
+						</li>
+		
+					</ol></p>
+				</statement>
+		</definition>
+
+
+		<p>
+			Now for the promised theorem that yields a convenient characterization of Tukey equivalence.
+		</p>
+		<theorem xml:id="thm-cofinal-similarity-equivalence">
+			<statement>
+				<p>
+					If <m>(P, \leq_P)</m> and <m>(Q, \leq_Q)</m> are directed sets, then <m>P\equiv_T Q</m> if and only if <m>P</m> and <m>Q</m> are cofinally similar.
+				</p>
+			</statement>
+		</theorem>
+		<proof>
+			<p>
+				Showing that Tukey equivalence follows from cofinal similarity is trivial, so we show the other direction. Let <m>(\phi, \psi)</m> be a Galois-Tukey equivalence between <m>P</m> and <m>Q</m>. We can assume without generality that <m>P</m> and <m>Q</m> are disjoint, and we will first define a quasi-order <m>\preceq</m> on the set <m>P\cup Q</m>. We start in the obvious way by letting <m>\preceq</m> agree with <m>\leq_P</m> on <m>P</m> and <m>\leq_Q</m> on <m>Q</m>. For comparisons between elements of <m>P</m> and of <m>Q</m>, we define <me>\begin{aligned}
+    			p\preceq q &amp;\Longleftrightarrow (\exists r\in P)\left[p\leq_P r\text{ and }\phi(r)\leq_Q q\right]\\
+				\mathrm{and}\\
+				q\preceq p  &amp;\Longleftrightarrow (\exists s\in Q)\left[q\leq_Q s\text{ and }\psi(s)\leq_P p\right].
+				\end{aligned}</me> 
+				We need to verify that <m>\preceq</m> is transitive, so let us assume <m>a\preceq b</m> and <m>b\preceq c</m> in <m>P\cup Q</m>. The verification of <m>a\preceq c</m> involves breaking into cases depending on where <m>a</m>, <m>b</m>, and <m>c</m> sit in <m>P\cup Q</m>. We do only a couple of representative examples leaving the rest of the details as an exercise.
+			</p>
+
+			<p>
+				Assume first that <m>a</m> and <m>b</m> are in <m>P</m> but <m>c</m> is in <m>Q</m>. By definition, there is an <m>r\in P</m> such that <m>b\leq_P r</m> and <m>\phi(r)\leq_Q c</m>, and this <m>r</m> also certifies the relation <m>a\preceq c</m>. In the situation where both <m>a</m> and <m>c</m> are in <m>P</m> but <m>b</m> is an element of <m>Q</m>, there are <m>r\in P</m> and <m>s\in Q</m> such that <me>\begin{aligned}
+				a\leq_P r &amp;\text{ and } \phi(r)\leq_Q b,\\
+				\mathrm{and}\\
+				b\leq_Q s &amp;\text{ and }\psi(s)\leq_P c.
+				\end{aligned}
+				</me> 
+				We know <m>r\leq_P \psi(s)</m> because <m>\phi(r)\leq_Q b\leq_Q s</m>, and so we can conclude <me>a\leq_P r\leq_P \psi(s)\leq_P c,</me> as required. The remaining cases needed to establish the transitivity of <m>\preceq</m> are left to Exercise <xref ref="??" />, but proceed in a similar manner.
+			</p>
+			
+			<p>
+				The quasi-order <m>\preceq</m> induces an equivalence relation on <m>P\cup Q</m>, and a corresponding partial order (which we also denote by <m>\preceq</m>) on the set <m>C</m> of equivalence classes. It is straightforward to see that the mapping sending <m>a \in P\cup Q</m> to its corresponding equivalence class <m>[a]\in C</m> embeds <m>P</m> and <m>Q</m> as cofinal subsets of the partially-ordered set <m>(C, \preceq)</m>. ◻
+			</p>
+			</proof>
+
+
+			<p>
+				There is a well-developed literature associated with the notion of cofinal similarity of directed sets. The above theorem shows us that it is an equivalence relation, and in the literature the equivalence classes under cofinal similarity are called <em>cofinal types</em>.
+			</p>
+
+			<p>
+				We will shortly look at these notions in the contexts of products in <m>\On^A</m>, but first we prove a lemma that provides us with a tool for easily constructing Galois-Tukey equivalences. We won’t need the full generality of this result for our short term goals, but these ideas will resurface later in our study.
+			</p>
+
+			<lemma xml:id="lem-stronger-tukey-equivalence">
+				<statement>
+					<p>
+						Suppose <m>(P, \leq_P)</m> and <m>(Q, \leq_P)</m> are directed quasi-orders. If <m>\phi:P\rightarrow Q</m> and <m>\psi:Q\rightarrow P</m> are order-preserving functions such that both <m>p\leq_P \psi(\phi(p))</m> and <m>\phi(\psi(q))\leq_Q q</m> hold, then the pair <m>(\phi,\psi)</m> is a Galois-Tukey equivalence between <m>P</m> and <m>Q</m> that moreover satisfies satisfies the following stronger property: <me>\label{eq:gconnection}
+	   \phi(p)\leq_Q q \Longleftrightarrow p\leq_P \phi(q).</me>
+					</p>
+				</statement>
+			</lemma>
+			<proof>
+				<p>
+					It is clear that <xref ref="eq:gconnection" /> implies both <xref ref="eq:equiv1" /> and <xref ref="eq:equiv2" />, so we aim for this stronger property. Our assumptions make this an easy computation, as illustrated by the inequalities <me>\phi(p)\leq_Q q\Longrightarrow  p\leq_P \psi(\phi(p))\leq_P\psi(q),</me> and <me>p\leq_P \psi(q)\Longrightarrow \phi(p)\leq_Q \phi(\psi(q))\leq_Q q.</me> ◻
+				</p>
+			</proof>
+	</subsection>
+
+</section>

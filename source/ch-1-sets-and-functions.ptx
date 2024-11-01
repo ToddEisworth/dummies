@@ -15,4 +15,5 @@
     <xi:include href="sec-1-2-unbounded-cofinal.ptx" />
     <xi:include href="sec-1-3-notion-equivalence.ptx" />
     <xi:include href="sec-1-4-tcf-eub.ptx" />
+    <xi:include href="sec-1-5-tukey.ptx" />
 </chapter>

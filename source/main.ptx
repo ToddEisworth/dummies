@@ -7,13 +7,16 @@
   <book xml:id="pcf-notes">
     <title>Notes on PCF Theory</title>
   
-
     <!-- Include chapters -->
+     
     <xi:include href="./ch-1-sets-and-functions.ptx" />
+
+    <xi:include href="./ch-2-theory-exact-upper-bounds.ptx" />
 
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
+
 
   </book>
 </pretext>

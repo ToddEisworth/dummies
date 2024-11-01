@@ -1,10 +1,8 @@
+<section xml:id="true-cofinality-and-exact-upper-bounds">
+	<title>True cofinality and exact upper bounds</title>
 
 
-	<section xml:id="true-cofinality-and-exact-upper-bounds">
-		<title>True cofinality and exact upper bounds</title>
-
-
-		<subsection xml:id="true-cofinality">
+<subsection xml:id="true-cofinality">
 			<title>True cofinality</title>
 
 			<p>
@@ -87,14 +85,13 @@
 				Notice that we are justified in using the modifier <q>the</q> because if <m>F</m> has a true cofinality modulo <m>I</m>, then this true cofinality is uniquely determined as being the common value of <m>\mathfrak{b}_I(F)</m> and <m>\mathfrak{d}_I(F)</m>. Moreover, if <m>F</m> and <m>G</m> are equivalent families of functions modulo <m>I</m>, then one of them has a true cofinality if and only if the other does, and the values of these true cofinalities are the same.
 			</p>
 
-		</subsection>
+</subsection>
 
-		<subsection xml:id="exact-upper-bounds">
-			<title>Exact Upper Bounds</title>
-
-			<p>
-				Having now characterized when a set of functions <m>F\subseteq\On^A</m> is equivalent (modulo an ideal <m>I</m>) to a <m>&lt;_I</m>-increasing sequence of functions, we take a look at when <m>F</m> is equivalent to a product. We have already used the notion of product in our brief treatment of proper classes in the previous section, but we pause to give the official definition.
-			</p>
+<subsection xml:id="exact-upper-bounds">
+<title>Exact Upper Bounds</title>
+		<p>
+			Having now characterized when a set of functions <m>F\subseteq\On^A</m> is equivalent (modulo an ideal <m>I</m>) to a <m>&lt;_I</m>-increasing sequence of functions, we take a look at when <m>F</m> is equivalent to a product. We have already used the notion of product in our brief treatment of proper classes in the previous section, but we pause to give the official definition.
+		</p>
 <definition xml:id="def-product-g">
 	<statement>
 		<p>
@@ -137,73 +134,88 @@ g(a)-1 &amp;\text{if $a\in X$, and}\\
 The question about when a product has true cofinality modulo an ideal turns out to have depths that we will plumb shortly. For now, we provide the following shallow answer that follows immediately from our earlier work.
 </p>
 
-<!-- div attr= class="proposition"-->
-			<p>
-				Suppose <m>I</m> is an ideal on the set <m>A</m>, and <m>g\in\On^A</m> is such that <m>\prod g</m> is <m>&lt;_I</m>-directed. Then the following are equivalent:
-			</p>
 
-			<p><ol>
-				<li>
-							<p>
-								<m>\tcf_I(\prod g)</m> exists and is equal to <m>\lambda</m>.
-							</p>
-				</li>
+<proposition xml:id="prop-simple-eub-char">
+	<statement>
+		<p>
+			Suppose <m>I</m> is an ideal on the set <m>A</m>, and <m>g\in\On^A</m> is such that <m>\prod g</m> is <m>&lt;_I</m>-directed. Then the following are equivalent:
+		</p>
 
-				<li>
-							<p>
-								<m>\lambda</m> is a regular cardinal and there is a <m>&lt;_I</m>-increasing and cofinal sequence of length <m>\lambda</m> in <m>\prod g</m>.
-							</p>
-				</li>
+		<p><ol>
+			<li>
+						<p>
+							<m>\tcf_I(\prod g)</m> exists and is equal to <m>\lambda</m>.
+						</p>
+			</li>
 
-			</ol></p><!--</div attr= class="proposition">-->
+			<li>
+						<p>
+							<m>\lambda</m> is a regular cardinal and there is a <m>&lt;_I</m>-increasing and cofinal sequence of length <m>\lambda</m> in <m>\prod g</m>.
+						</p>
+			</li>
 
-			<p>
-				So in the above situation, <m>g</m> is an upper bound for the sequence <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m> (as each <m>f_\alpha</m> is in <m>\prod g</m>), but <m>g</m> also has the property that any <m>h&lt;_I g</m> must lie below some <m>f_\alpha</m> modulo <m>I</m>. This latter property says that <m>g</m> is a <q>smallest</q> upper bound for <m>F</m> in a strong sense, and this turns out to be a fundamental idea that we capture in the following definition.
-			</p>
+		</ol></p>
+	</statement>
+</proposition>
 
-<!-- div attr= class="definition"-->
-			<p>
-				 Let <m>I</m> be an ideal on <m>A</m>, and suppose <m>F\subseteq\prod g</m> for some function <m>g\in\On^A</m>. We say <m>g</m> is an <em>exact upper bound</em> of <m>F</m> modulo <m>I</m> if for all <m>h:A\to \On</m>, if <m>h&lt;_I g</m> then there exists some <m>f\in F</m> such that <m>h\le_I f</m>.
-			</p><!--</div attr= class="definition">-->
+<p>
+	So in the above situation, <m>g</m> is an upper bound for the sequence <m>\langle f_\alpha:\alpha&lt;\lambda\rangle</m> (as each <m>f_\alpha</m> is in <m>\prod g</m>), but <m>g</m> also has the property that any <m>h&lt;_I g</m> must lie below some <m>f_\alpha</m> modulo <m>I</m>. This latter property says that <m>g</m> is a <q>smallest</q> upper bound for <m>F</m> in a strong sense, and this turns out to be a fundamental idea that we capture in the following definition.
+</p>
 
-			<p>
-				Exact upper bounds arise in several places when one considers products. For an easy example, note that if <m>g\in\On^A</m> is never zero, then <m>g</m> is an exact upper bound for <m>\prod g</m> modulo the smallest ideal <m>\{\emptyset\}</m>, and hence modulo any ideal <m>I</m> on <m>A</m>. This follows immediately, as a function <m>f</m> is in <m>\prod g</m> if and only if <m>f&lt;_{\{\emptyset\}} g</m>. Just as easy, we have the following characterization of exact upper bounds in terms of equivalence.
-			</p>
+<definition xml:id="def-eub">
+	<statement>
+		<p>
+			Let <m>I</m> be an ideal on <m>A</m>, and suppose <m>F\subseteq\prod g</m> for some function <m>g\in\On^A</m>. We say <m>g</m> is an <em>exact upper bound</em> of <m>F</m> modulo <m>I</m> if for all <m>h:A\to \On</m>, if <m>h&lt;_I g</m> then there exists some <m>f\in F</m> such that <m>h\le_I f</m>.
+	   </p>
+	</statement>
+</definition>
 
-<!-- div attr= class="proposition"-->
-			<p>
-				 Let <m>I</m> be an ideal on the set <m>A</m>. The following statements are equivalent for a non-empty <m>F\subseteq\prod g</m>:
-			</p>
 
-			<p><ol>
-				<li>
-							<p>
-								<m>g</m> is an exact upper bound for <m>F</m> modulo <m>I</m>.
-							</p>
-				</li>
+<p>
+	Exact upper bounds arise in several places when one considers products. For an easy example, note that if <m>g\in\On^A</m> is never zero, then <m>g</m> is an exact upper bound for <m>\prod g</m> modulo the smallest ideal <m>\{\emptyset\}</m>, and hence modulo any ideal <m>I</m> on <m>A</m>. This follows immediately, as a function <m>f</m> is in <m>\prod g</m> if and only if <m>f&lt;_{\{\emptyset\}} g</m>. Just as easy, we have the following characterization of exact upper bounds in terms of equivalence.
+</p>
 
-				<li>
-							<p>
-								<m>F</m> is cofinal in <m>\prod g</m>.
-							</p>
-				</li>
 
-				<li>
-							<p>
-								<m>F\equiv_I\prod g</m>.
-							</p>
-				</li>
+<proposition xml:id="prop-eub-char">
+	<statement>
+		<p>
+			Let <m>I</m> be an ideal on the set <m>A</m>. The following statements are equivalent for a non-empty <m>F\subseteq\prod g</m>:
+	   </p>
 
-			</ol></p><!--</div attr= class="proposition">-->
+	   <p><ol>
+		   <li>
+					   <p>
+						   <m>g</m> is an exact upper bound for <m>F</m> modulo <m>I</m>.
+					   </p>
+		   </li>
 
-<!-- div attr= class="proof"-->
-			<p>
-				<em>Proof.</em> See Exercise <xref ref="exer:easyeub" />. ◻
-			</p><!--</div attr= class="proof">-->
+		   <li>
+					   <p>
+						   <m>F</m> is cofinal in <m>\prod g</m>.
+					   </p>
+		   </li>
 
-			<p>
-				The next chapter in the book examines exact upper bounds in detail, as understanding when and where they exist will anchor our development of pcf theory.
-			</p>
-		</subsection>
+		   <li>
+					   <p>
+						   <m>F\equiv_I\prod g</m>.
+					   </p>
+		   </li>
 
-	</section>
+	   </ol></p>
+	</statement>
+</proposition>
+<proof>
+	<p>
+		<p>
+			<em>Proof.</em> See Exercise <xref ref="exer:easyeub" />. ◻
+		</p>	
+	</p>
+</proof>
+
+
+<p>
+	The next chapter in the book examines exact upper bounds in detail, as understanding when and where they exist will anchor our development of pcf theory.
+</p>
+</subsection>
+
+</section>

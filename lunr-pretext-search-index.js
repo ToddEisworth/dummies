@@ -1,6 +1,15 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
+  "id": "frontmatter",
+  "level": "1",
+  "url": "frontmatter.html",
+  "type": "Front Matter",
+  "number": "",
+  "title": "Front Matter",
+  "body": "   Todd Eisworth  Department of Mathematics  Ohio University    Menachem Kojman  Department of Mathematics  Ben-Gurion University of the Negev        "
+},
+{
   "id": "sec-1-1-functions-ideals-filters",
   "level": "1",
   "url": "sec-1-1-functions-ideals-filters.html",

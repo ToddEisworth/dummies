@@ -6,7 +6,7 @@
 
   <book xml:id="pcf-notes">
     <title>Notes on PCF Theory</title>
-  
+    <xi:include href="frontmatter.ptx" />
     <!-- Include chapters -->
      
     <xi:include href="./ch-1-sets-and-functions.ptx" />

@@ -1,9 +1,9 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "sec-vocabulary",
+  "id": "sec-1-1-functions-ideals-filters",
   "level": "1",
-  "url": "sec-vocabulary.html",
+  "url": "sec-1-1-functions-ideals-filters.html",
   "type": "Section",
   "number": "1.1",
   "title": "Functions, ideals, and filters",
@@ -12,7 +12,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-1",
   "level": "2",
-  "url": "sec-vocabulary.html#def-1",
+  "url": "sec-1-1-functions-ideals-filters.html#def-1",
   "type": "Definition",
   "number": "1.1.1",
   "title": "",
@@ -21,7 +21,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-2",
   "level": "2",
-  "url": "sec-vocabulary.html#def-2",
+  "url": "sec-1-1-functions-ideals-filters.html#def-2",
   "type": "Definition",
   "number": "1.1.2",
   "title": "",
@@ -30,7 +30,7 @@ var ptx_lunr_docs = [
 {
   "id": "ideals-filters-8",
   "level": "2",
-  "url": "sec-vocabulary.html#ideals-filters-8",
+  "url": "sec-1-1-functions-ideals-filters.html#ideals-filters-8",
   "type": "Example",
   "number": "1.1.3",
   "title": "The Ideal <span class=\"process-math\">\\(\\Fin(\\omega)\\)<\/span>$.",
@@ -39,7 +39,7 @@ var ptx_lunr_docs = [
 {
   "id": "ideals-filters-9",
   "level": "2",
-  "url": "sec-vocabulary.html#ideals-filters-9",
+  "url": "sec-1-1-functions-ideals-filters.html#ideals-filters-9",
   "type": "Example",
   "number": "1.1.4",
   "title": "",
@@ -48,7 +48,7 @@ var ptx_lunr_docs = [
 {
   "id": "ideals-filters-10",
   "level": "2",
-  "url": "sec-vocabulary.html#ideals-filters-10",
+  "url": "sec-1-1-functions-ideals-filters.html#ideals-filters-10",
   "type": "Example",
   "number": "1.1.5",
   "title": "",
@@ -57,7 +57,7 @@ var ptx_lunr_docs = [
 {
   "id": "ideals-filters-11",
   "level": "2",
-  "url": "sec-vocabulary.html#ideals-filters-11",
+  "url": "sec-1-1-functions-ideals-filters.html#ideals-filters-11",
   "type": "Example",
   "number": "1.1.6",
   "title": "",
@@ -66,7 +66,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-blah",
   "level": "2",
-  "url": "sec-vocabulary.html#def-blah",
+  "url": "sec-1-1-functions-ideals-filters.html#def-blah",
   "type": "Definition",
   "number": "1.1.7",
   "title": "",
@@ -75,7 +75,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-",
   "level": "2",
-  "url": "sec-vocabulary.html#prop-",
+  "url": "sec-1-1-functions-ideals-filters.html#prop-",
   "type": "Proposition",
   "number": "1.1.8",
   "title": "",
@@ -84,7 +84,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-",
   "level": "2",
-  "url": "sec-vocabulary.html#def-",
+  "url": "sec-1-1-functions-ideals-filters.html#def-",
   "type": "Definition",
   "number": "1.1.9",
   "title": "",
@@ -93,7 +93,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-asd",
   "level": "2",
-  "url": "sec-vocabulary.html#def-asd",
+  "url": "sec-1-1-functions-ideals-filters.html#def-asd",
   "type": "Definition",
   "number": "1.1.10",
   "title": "",
@@ -102,7 +102,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-asdfs",
   "level": "2",
-  "url": "sec-vocabulary.html#prop-asdfs",
+  "url": "sec-1-1-functions-ideals-filters.html#prop-asdfs",
   "type": "Proposition",
   "number": "1.1.11",
   "title": "",
@@ -111,7 +111,7 @@ var ptx_lunr_docs = [
 {
   "id": "almost-everywhere-13",
   "level": "2",
-  "url": "sec-vocabulary.html#almost-everywhere-13",
+  "url": "sec-1-1-functions-ideals-filters.html#almost-everywhere-13",
   "type": "Proof",
   "number": "1.1.2.1",
   "title": "",
@@ -120,7 +120,7 @@ var ptx_lunr_docs = [
 {
   "id": "more-examples-3",
   "level": "2",
-  "url": "sec-vocabulary.html#more-examples-3",
+  "url": "sec-1-1-functions-ideals-filters.html#more-examples-3",
   "type": "Example",
   "number": "1.1.12",
   "title": "The Improper Ideal.",
@@ -129,7 +129,7 @@ var ptx_lunr_docs = [
 {
   "id": "more-examples-5",
   "level": "2",
-  "url": "sec-vocabulary.html#more-examples-5",
+  "url": "sec-1-1-functions-ideals-filters.html#more-examples-5",
   "type": "Example",
   "number": "1.1.13",
   "title": "The Trivial Ideal.",
@@ -172,9 +172,9 @@ var ptx_lunr_docs = [
   "body": " Let , and let be the smallest ideal on  . We will take to be the set of functions from to (often referred to as the Baire space in the sequel), and let be the subset of consisting of constant functions. The set is unbounded in : given any , if we define the function to be constant with value , then . On the other hand, is not cofinal in because the identity function is not bounded modulo  by any function in . If we replace by the larger ideal of all finite subsets of  , then the identity function witnesses that is bounded in .  "
 },
 {
-  "id": "a-notion-of-equivalence",
+  "id": "sec-1-3-notion-of-equivalence",
   "level": "1",
-  "url": "a-notion-of-equivalence.html",
+  "url": "sec-1-3-notion-of-equivalence.html",
   "type": "Section",
   "number": "1.3",
   "title": "A notion of equivalence",
@@ -183,7 +183,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-main-equivalence-def",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#def-main-equivalence-def",
+  "url": "sec-1-3-notion-of-equivalence.html#def-main-equivalence-def",
   "type": "Definition",
   "number": "1.3.1",
   "title": "",
@@ -192,7 +192,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-preserve-bounding-dominating",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#prop-preserve-bounding-dominating",
+  "url": "sec-1-3-notion-of-equivalence.html#prop-preserve-bounding-dominating",
   "type": "Proposition",
   "number": "1.3.2",
   "title": "",
@@ -201,7 +201,7 @@ var ptx_lunr_docs = [
 {
   "id": "equivalence-of-subsets-of-ona-7",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#equivalence-of-subsets-of-ona-7",
+  "url": "sec-1-3-notion-of-equivalence.html#equivalence-of-subsets-of-ona-7",
   "type": "Proof",
   "number": "1.3.1.1",
   "title": "",
@@ -210,7 +210,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-equiv",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#prop-equiv",
+  "url": "sec-1-3-notion-of-equivalence.html#prop-equiv",
   "type": "Proposition",
   "number": "1.3.3",
   "title": "",
@@ -219,7 +219,7 @@ var ptx_lunr_docs = [
 {
   "id": "equivalence-of-subsets-of-ona-10",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#equivalence-of-subsets-of-ona-10",
+  "url": "sec-1-3-notion-of-equivalence.html#equivalence-of-subsets-of-ona-10",
   "type": "Proof",
   "number": "1.3.1.2",
   "title": "",
@@ -228,7 +228,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#prop-",
+  "url": "sec-1-3-notion-of-equivalence.html#prop-",
   "type": "Proposition",
   "number": "1.3.4",
   "title": "",
@@ -237,7 +237,7 @@ var ptx_lunr_docs = [
 {
   "id": "downward-closures-of-subsets-of-ona-6",
   "level": "2",
-  "url": "a-notion-of-equivalence.html#downward-closures-of-subsets-of-ona-6",
+  "url": "sec-1-3-notion-of-equivalence.html#downward-closures-of-subsets-of-ona-6",
   "type": "Proof",
   "number": "1.3.2.1",
   "title": "",
@@ -352,9 +352,9 @@ var ptx_lunr_docs = [
   "body": "   Proof. See Exercise  . ◻   "
 },
 {
-  "id": "tukeysection",
+  "id": "sec-1-5-tukey",
   "level": "1",
-  "url": "tukeysection.html",
+  "url": "sec-1-5-tukey.html",
   "type": "Section",
   "number": "1.5",
   "title": "Tukey Equivalence and Cofinal Similarity",
@@ -363,7 +363,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-tukey-function",
   "level": "2",
-  "url": "tukeysection.html#def-tukey-function",
+  "url": "sec-1-5-tukey.html#def-tukey-function",
   "type": "Definition",
   "number": "1.5.1",
   "title": "",
@@ -372,7 +372,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-tukey-map-char",
   "level": "2",
-  "url": "tukeysection.html#lem-tukey-map-char",
+  "url": "sec-1-5-tukey.html#lem-tukey-map-char",
   "type": "Lemma",
   "number": "1.5.2",
   "title": "",
@@ -381,7 +381,7 @@ var ptx_lunr_docs = [
 {
   "id": "galois-tukey-connections-5",
   "level": "2",
-  "url": "tukeysection.html#galois-tukey-connections-5",
+  "url": "sec-1-5-tukey.html#galois-tukey-connections-5",
   "type": "Proof",
   "number": "1.5.1.1",
   "title": "",
@@ -390,7 +390,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-preserve-card",
   "level": "2",
-  "url": "tukeysection.html#cor-preserve-card",
+  "url": "sec-1-5-tukey.html#cor-preserve-card",
   "type": "Corollary",
   "number": "1.5.3",
   "title": "",
@@ -399,7 +399,7 @@ var ptx_lunr_docs = [
 {
   "id": "galois-tukey-connections-8",
   "level": "2",
-  "url": "tukeysection.html#galois-tukey-connections-8",
+  "url": "sec-1-5-tukey.html#galois-tukey-connections-8",
   "type": "Proof",
   "number": "1.5.1.2",
   "title": "",
@@ -408,7 +408,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-tukey-equiv-cofinal-subset",
   "level": "2",
-  "url": "tukeysection.html#cor-tukey-equiv-cofinal-subset",
+  "url": "sec-1-5-tukey.html#cor-tukey-equiv-cofinal-subset",
   "type": "Corollary",
   "number": "1.5.4",
   "title": "",
@@ -417,25 +417,25 @@ var ptx_lunr_docs = [
 {
   "id": "galois-tukey-connections-12",
   "level": "2",
-  "url": "tukeysection.html#galois-tukey-connections-12",
+  "url": "sec-1-5-tukey.html#galois-tukey-connections-12",
   "type": "Proof",
   "number": "1.5.1.3",
   "title": "",
   "body": " Suppose is a cofinal subset of . Any cofinal subset of will also be cofinal in , so the inclusion map corresponding to gives us a convergent function mapping to so . For the other direction, we let be some function that assigns to an arbitrary an element of such that (such a function exists as is cofinal in ). Suppose now that is cofinal in . Given we can find an with , and our definition of then tells us . Thus the image of under is a cofinal subset of , and so the convergent map establishes . ◻  "
 },
 {
-  "id": "galois-tukey-connections-14",
+  "id": "example-first-tukey",
   "level": "2",
-  "url": "tukeysection.html#galois-tukey-connections-14",
+  "url": "sec-1-5-tukey.html#example-first-tukey",
   "type": "Example",
   "number": "1.5.5",
   "title": "",
   "body": " Suppose is such that is a limit ordinal for all , and for each let .  If we let denote then is an -indexed sequence of regular cardinals.  For each , we can choose a set cofinal in of order-type , and it is clear that the products and are order-isomorphic through the obvious correspondence.  Since is cofinal in , it follows that is Tukey equivalent to the product .  Moreover, this situation persists if we move from to a for some ideal on : it is still the case that is order-isomorphic to a cofinal subset of and hence these two structures are Tukey equivalent.  "
 },
 {
-  "id": "galois-tukey-connections-16",
+  "id": "example-second-tukey",
   "level": "2",
-  "url": "tukeysection.html#galois-tukey-connections-16",
+  "url": "sec-1-5-tukey.html#example-second-tukey",
   "type": "Example",
   "number": "1.5.6",
   "title": "",
@@ -444,7 +444,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-tukey-equivalence-char",
   "level": "2",
-  "url": "tukeysection.html#lem-tukey-equivalence-char",
+  "url": "sec-1-5-tukey.html#lem-tukey-equivalence-char",
   "type": "Lemma",
   "number": "1.5.7",
   "title": "",
@@ -453,7 +453,7 @@ var ptx_lunr_docs = [
 {
   "id": "galois-tukey-connections-20",
   "level": "2",
-  "url": "tukeysection.html#galois-tukey-connections-20",
+  "url": "sec-1-5-tukey.html#galois-tukey-connections-20",
   "type": "Proof",
   "number": "1.5.1.4",
   "title": "",
@@ -462,7 +462,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-cofinal-similarity",
   "level": "2",
-  "url": "tukeysection.html#def-cofinal-similarity",
+  "url": "sec-1-5-tukey.html#def-cofinal-similarity",
   "type": "Definition",
   "number": "1.5.8",
   "title": "",
@@ -471,7 +471,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-cofinal-similarity-equivalence",
   "level": "2",
-  "url": "tukeysection.html#thm-cofinal-similarity-equivalence",
+  "url": "sec-1-5-tukey.html#thm-cofinal-similarity-equivalence",
   "type": "Theorem",
   "number": "1.5.9",
   "title": "",
@@ -480,7 +480,7 @@ var ptx_lunr_docs = [
 {
   "id": "cofinal-similarity-6",
   "level": "2",
-  "url": "tukeysection.html#cofinal-similarity-6",
+  "url": "sec-1-5-tukey.html#cofinal-similarity-6",
   "type": "Proof",
   "number": "1.5.2.1",
   "title": "",
@@ -489,7 +489,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-stronger-tukey-equivalence",
   "level": "2",
-  "url": "tukeysection.html#lem-stronger-tukey-equivalence",
+  "url": "sec-1-5-tukey.html#lem-stronger-tukey-equivalence",
   "type": "Lemma",
   "number": "1.5.10",
   "title": "",
@@ -498,16 +498,16 @@ var ptx_lunr_docs = [
 {
   "id": "cofinal-similarity-10",
   "level": "2",
-  "url": "tukeysection.html#cofinal-similarity-10",
+  "url": "sec-1-5-tukey.html#cofinal-similarity-10",
   "type": "Proof",
   "number": "1.5.2.2",
   "title": "",
   "body": " It is clear that implies both and  , so we aim for this stronger property. Our assumptions make this an easy computation, as illustrated by the inequalities and  ◻  "
 },
 {
-  "id": "types-of-upper-bounds",
+  "id": "sec-2-1-types-of-upper-bounds",
   "level": "1",
-  "url": "types-of-upper-bounds.html",
+  "url": "sec-2-1-types-of-upper-bounds.html",
   "type": "Section",
   "number": "2.1",
   "title": "Types of Upper Bounds",
@@ -516,7 +516,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-three-bounds",
   "level": "2",
-  "url": "types-of-upper-bounds.html#def-three-bounds",
+  "url": "sec-2-1-types-of-upper-bounds.html#def-three-bounds",
   "type": "Definition",
   "number": "2.1.1",
   "title": "",
@@ -525,7 +525,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-eub-vs-lub",
   "level": "2",
-  "url": "types-of-upper-bounds.html#prop-eub-vs-lub",
+  "url": "sec-2-1-types-of-upper-bounds.html#prop-eub-vs-lub",
   "type": "Proposition",
   "number": "2.1.2",
   "title": "",
@@ -534,7 +534,7 @@ var ptx_lunr_docs = [
 {
   "id": "basic-definitions-6",
   "level": "2",
-  "url": "types-of-upper-bounds.html#basic-definitions-6",
+  "url": "sec-2-1-types-of-upper-bounds.html#basic-definitions-6",
   "type": "Proof",
   "number": "2.1.1.1",
   "title": "",
@@ -543,7 +543,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-bounds-interact",
   "level": "2",
-  "url": "types-of-upper-bounds.html#prop-bounds-interact",
+  "url": "sec-2-1-types-of-upper-bounds.html#prop-bounds-interact",
   "type": "Proposition",
   "number": "2.1.3",
   "title": "",
@@ -552,7 +552,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-three-characterizations",
   "level": "2",
-  "url": "types-of-upper-bounds.html#thm-three-characterizations",
+  "url": "sec-2-1-types-of-upper-bounds.html#thm-three-characterizations",
   "type": "Theorem",
   "number": "2.1.4",
   "title": "",
@@ -561,7 +561,7 @@ var ptx_lunr_docs = [
 {
   "id": "basic-definitions-11",
   "level": "2",
-  "url": "types-of-upper-bounds.html#basic-definitions-11",
+  "url": "sec-2-1-types-of-upper-bounds.html#basic-definitions-11",
   "type": "Proof",
   "number": "2.1.1.2",
   "title": "",
@@ -570,7 +570,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-uniqueness-and-ugly",
   "level": "2",
-  "url": "types-of-upper-bounds.html#prop-uniqueness-and-ugly",
+  "url": "sec-2-1-types-of-upper-bounds.html#prop-uniqueness-and-ugly",
   "type": "Proposition",
   "number": "2.1.5",
   "title": "",
@@ -579,7 +579,7 @@ var ptx_lunr_docs = [
 {
   "id": "basic-definitions-13",
   "level": "2",
-  "url": "types-of-upper-bounds.html#basic-definitions-13",
+  "url": "sec-2-1-types-of-upper-bounds.html#basic-definitions-13",
   "type": "Proof",
   "number": "2.1.1.3",
   "title": "",
@@ -588,7 +588,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-ugly",
   "level": "2",
-  "url": "types-of-upper-bounds.html#cor-ugly",
+  "url": "sec-2-1-types-of-upper-bounds.html#cor-ugly",
   "type": "Corollary",
   "number": "2.1.6",
   "title": "",
@@ -597,7 +597,7 @@ var ptx_lunr_docs = [
 {
   "id": "examples-3",
   "level": "2",
-  "url": "types-of-upper-bounds.html#examples-3",
+  "url": "sec-2-1-types-of-upper-bounds.html#examples-3",
   "type": "Example",
   "number": "2.1.7",
   "title": "",
@@ -606,7 +606,7 @@ var ptx_lunr_docs = [
 {
   "id": "examples-4",
   "level": "2",
-  "url": "types-of-upper-bounds.html#examples-4",
+  "url": "sec-2-1-types-of-upper-bounds.html#examples-4",
   "type": "Example",
   "number": "2.1.8",
   "title": "",
@@ -615,7 +615,7 @@ var ptx_lunr_docs = [
 {
   "id": "examples-5",
   "level": "2",
-  "url": "types-of-upper-bounds.html#examples-5",
+  "url": "sec-2-1-types-of-upper-bounds.html#examples-5",
   "type": "Example",
   "number": "2.1.9",
   "title": "",
@@ -624,34 +624,61 @@ var ptx_lunr_docs = [
 {
   "id": "examples-6",
   "level": "2",
-  "url": "types-of-upper-bounds.html#examples-6",
+  "url": "sec-2-1-types-of-upper-bounds.html#examples-6",
   "type": "Example",
   "number": "2.1.10",
   "title": "",
   "body": " What occurs in the previous example if we enlarge to be the non-stationary ideal on  ? The function is now a least upper bound for because of the normality of : any function that is less than on an -positive set is constant on an -positive set and therefore cannot be an upper bound for modulo . On the other hand, is not an exact upper bound for . To see this, let partition into disjoint stationary sets, and let . Then each set is stationary, and we have arranged . Now define a function with domain by setting The function is in (as for all ) but there is no such that .    "
 },
 {
-  "id": "flat-products-and-sequences",
+  "id": "sec-2-2-flat-sequences",
   "level": "1",
-  "url": "flat-products-and-sequences.html",
+  "url": "sec-2-2-flat-sequences.html",
   "type": "Section",
   "number": "2.2",
   "title": "Flat Products and Sequences",
   "body": " Flat Products and Sequences  This section begins with an expansion of Example  , as the existence of an exact upper bound in that situation is a general phenomenon that crops up in many places.   Suppose is an infinite set and is a regular cardinal with . If is a -increasing sequence in , then the pointwise supremum of the functions is an exact upper bound for modulo any proper ideal on . To see this, let be the corresponding supremum, that is, . Let be any function in . For each , we define to be least for which . Clearly will exist, as the sequence is strictly increasing with supremum . Since , we know the supremum of the ordinals (for ) is some ordinal strictly less than , and therefore will be less than for all . Since is bounded everywhere by , it is clear that for any proper ideal on , and therefore is an exact upper bound for mod .    The point is that the pointwise supremum of a sufficiently long (that is, of length strictly greater than the cardinality of  ) -increasing sequence will be an exact upper bound of the sequence for reasons of elementary cardinal arithmetic. Turning this around, it is easy to characterize when a function will be an exact upper bound for such a -increasing sequence.   Suppose is an infinite set and is a regular cardinal greater than . If and for all , then will have true cofinality .    Proof. For each let be the increasing enumeration of a cofinal subset of . Then for each , we can define and the sequence is -increasing. Since is the pointwise supremum of this sequence, we are in the situation of Example  . Thus, is an exact upper bound for and has true cofinality . ◻  Of course, it is sufficient to demand only that the cofinality of should be for -almost all , as such a function is equal modulo to one that has the required cofinality everywhere. The following proposition wraps Proposition  and Example  together, along with a couple of other easy equivalences.   Suppose is a regular cardinal with . Then the following are equivalent for a function .     for all .     contains a -increasing sequence and .     .     for every (proper) ideal on .      Proof. The implication from (1) to (2) holds using , and does not require to be greater than . Moving from (2) to (3) is done as in Example  , and (4) follows from (3) by definition. If (1) fails, then it fails for some specific , and if we let be the principle ideal then will be . ◻  If start with an ideal and weaken condition (1) to require only that has cofinality for -almost all , then we lose (2) and (3) in the above equivalence, but (4) remains equivalent if we require that the condition holds for all proper ideals on that extend . Of course, every such is equal (modulo  ) to a function that attains cofinality in every coordinate. This configuration arises enough that it makes sense to assign some terminology.   Let be a set and let be a regular cardinal.    A function is said to be flat of cofinality if for -almost all .    The product associated with such a function is called a flat product with cofinality .    A set of functions in is flat of cofinality modulo if has an exact upper bound that is flat of cofinality .    Our aim is to give an internal characterization of flat sets of functions, at least in the case where . We do this in Theorem  below, but before stating and proving the theorem we will engage in a bit of exploration. Suppose that is flat of cofinality modulo with , and let be a corresponding flat exact upper bound for . We may assume that for all , so we can also fix for each and unbounded of order-type . The work we did in Example  and Proposition  shows us that is equivalent modulo  to the product , and also equivalent modulo  to a -increasing sequence . This turns out to be a powerful assumption, as it implies the pointwise supremum of fewer than functions in is bounded modulo in : Given with , we choose for each a corresponding ordinal with . Since is regular, we know that the supremum over all of the ordinals will be less than , and hence is everywhere bounded by for some . Now we can choose for which . Looking back to notation established in the last chapter, we have shown that is at least . This observation is one of the important ingredients in our internal characterization of flatness.   Suppose with regular. Then the following statements are equivalent for a family of functions and ideal on :     is flat of cofinality modulo  .     .     has a cofinal subset of cardinality such that for all .     is -directed and equivalent modulo to a -increasing sequence of length .     is equivalent modulo to a -increasing sequence of length .     is equivalent modulo to a product where has order-type .      Proof. If is flat of cofinality , then by our discussion above we know is at least . Since has true cofinality , we can invoke Theorem I. and conclude If we assume (2), then (3) follows from the proof of Theorem I. . Since we fix a cofinal family in and build by induction, making sure at stage to select so that   Clearly (3) implies that is -directed. If we define then is -increasing and equivalent to .  How would we establish (4) from the existence of such a sequence ? Given , look at the sequence . This is non-decreasing by our assumption on and nothing in our assumptions prevents the sequence from stabilizing. However, our assumptions DO imply that this cannot happen very often: the set of for which the sequence of values eventually stabilizes must be in .  To see this, suppose it fails and the set of for which the corresponding sequence stabilizes is -positive. Since and is regular, there will be a with the property all of these sequences will have stabilized before stage . Thus, if and we know and hence . But now we have a problem: since is -directed and equivalent to so we can find an greater than such that for -almost all in . Thus, the set must be in .  Given , if is not in then there will be some ordinal greater than for which . We can use the fact that once more to conclude and now (5) follows easily. The implications from (5) to (6) and from (6) to (1) have been established earlier in this section. ◻  We end this section by pointing out how the preceding theorem clarifies the relationship between simply having true cofinality  modulo  and being flat of cofinality modulo  . Given a directed structure we know in all cases, while the structure has true cofinality if and only if The structure will be flat of cofinality if and only if we have the stronger condition Thus, flatness of a set of functions can be characterized solely in terms of cardinal characteristics  "
 },
 {
-  "id": "exactsequences",
+  "id": "sec-2-3-exactsequences",
   "level": "1",
-  "url": "exactsequences.html",
+  "url": "sec-2-3-exactsequences.html",
   "type": "Section",
   "number": "2.3",
   "title": "Global Structure of Exact Sequences",
-  "body": " Global Structure of Exact Sequences  Now that we can claim to understand the structure of flat families of functions, we move now to the more general problem of characterizing when a -increasing sequence of functions has an exact upper bound that need not be flat.   A -increasing sequence in is called exact of cofinality if the sequence has an exact upper bound and .  Any -increasing sequence Notice that any -increasing sequence of limit length is equivalent to a sequence indexed by a regular cardinal, so there , as every -increasing sequence of limit length is equivalent to such a sequence modulo . If we need further generality, we will follow the practice established in the last section and say that a -increasing sequence of length some limit ordinal is exact if it has an exact upper bound, and then the original sequence will be equivalent modulo  to an exact sequence of length .  As far as eubs go, there are some things we can say about their structure without knowing much about the sequence at all. For example, the following relies only on the fact that is an infinite cardinal.   Suppose is an exact sequence of length , and let be an exact upper bound. Then is an infinite limit ordinal for -almost all .    Proof. It is obvious that cannot equal 0 on an -positive set: just the fact that is enough to guarantee that must be greater than for almost all , and hence the same must hold for .  Next, suppose by way of contradiction that there is an -positive set of coordinates for which is a successor ordinal. Define a function with domain by Since , we can choose with . If is in and , then it must be the case that is less than or equal to . Thus, there is an -positive set of for which . But this is absurd as we know . ◻  The preceding proposition allows us to invoke Theorem I. when discussing exact sequences and assume without loss of generality that the exact upper bounds have the form , where each is a regular cardinal. Moreover, if we know that is greater than for -almost every coordinate , then the know that is equivalent modulo to an isomorphic copy of the product    Suppose is a -exact sequence of length with exact upper bound  .    If the sequence is constant with some value on an -positive set, then either or .     for -almost all .      Proof. It suffices to show that if is a regular cardinal with and , then . To do this, assume is a regular cardinal greater than and there is an -positive set on which is constant with value . If we let be the ideal , then is will be (modulo ) flat of cofinality . Since extends and is exact of length modulo , we conclude that must equal .  For the second part of the theorem, assume by way of contradiction that there is an -positive set such that for all . Since each is a regular cardinal, we know that for in , the set is bounded below . Thus, we can define a function by setting to be outside of , while for all and , is less than We get a contradiction, as there must be a for which , but for an -positive set of . ◻  The preceding theorem foreshadows a connection between the structure of an exact sequence and the nature of its exact upper bound . To see how, let us first focus on the situation where the regular cardinals in the upper bound are (almost) all greater than the cardinality of . In this situation, we know that must be greater than as well, and if our sequence is constant with value on an -positive set, then the only possibility is for to be , the length of . Let be the set of for which and set . It is certainly possible for either of these sets to be empty, but we know that since they partition into finitely many pieces, at least one of them must be -positive. If is in the ideal , then our sequence is flat of cofinality . If is in the ideal , then for any -positive set the sequence is not flat modulo . Even if both and are in , we still have shown that assuming that for all , our index set will into two pieces: on one of which looks flat of cofinality  modulo , and on the other where is nowhere flat modulo .  What happens we don’t assume that is always greater than ? First, note that since need not be maximal, there is nothing preventing the situation where the sequence is constant with different values on disjoint -positive sets. So for example, we could have an -positive set on which our sequence looks flat of cofinality , and there could be another -positive set where is constant with some value . What we do know is that if the latter situation occurs, then , so there is an -positive set on which lives in a small product . Here, in contrast to the flat situation, things can be very sensitive to the underlying set theory, even in the simplest situation where both and are .   Suppose is an arbitrary uncountable regular cardinal. Let be a model of in which and holds. Let , the Baire space of all functions from to , and let be the ideal of finite subsets of . Martin’s Axiom implies that the cardinals and are equal to the continuum, and so will have true cofinality  . Any sequence witnessing this will have the function that is constant with value as exact upper bound. Thus, the exact upper bound does not seem to be connected with the sequence in this situation.  If we do not insist on our examples involving and instead allow larger ideals, then we can have (at least consistently) even worse behavior as the following example shows.   It is consistent that is arbitrarily large, and for any uncountable regular there is an ideal on such that has true cofinality modulo . Again, the exact upper bound is exactly the same across all relevant — is always the function with domain that is constant with value — but the lengths of the exact sequences in realize all possibilities by varying the ideals involved.  As interesting as products of small sets are, they are not particularly useful for us because imposes few restrictions on how they behave, and we officially adopt the attitude that products of sets of size at most are intractable. If our exact sequence has an exact upper bound such that on an -positive set, then we will not be able to say much about the structure without adopting additional set-theoretic axioms because it hides a copy of a product of small sets within. Thus, the following definition is quite natural.   Suppose is a sequence of regular cardinals. We define to be the least cardinal such that there is an -positive set of with .  The preceding definition is made without assuming anything about the product  having true cofinality modulo  , and so it makes sense for any sequence of regular cardinals. It gives us some handy language as well: if is not greater than , then we know there is an -positive set of coordinates on which our product looks like a product of small sets, and we have declared such things to be taboo. Thus, we will want to focus our attention on products for which is greater than . Our intent is to look at this cardinal in the context of general products of regular cardinals , and then return to questions related to exact sequences a little later.  We will start with some elementary observations, so let us assume is an -indexed sequence of regular cardinals. First, Definition  will always make sense because is a proper ideal, and This shows us that the easiest way to guarantee that is greater than is to insist that each is greater than , and we will see this hypothesis come to the forefront as we move deeper into pcf theory.  Second, it is elementary to prove that must be in the closure of the set . This is quite useful, because it implies that if each is greater than and does not stabilize on an -positive set, then must be singular of cofinality at most (see Exercise  ).  Finally, Definition  extracts a cardinal characteristic from the sequence , without looking at the associated product . This is a shortcoming, as it would be useful to know that this particular cardinal could be recovered from the product itself as that would give us a means of looking at a collection of functions and determining if it is hiding an intractable product of small sets. Luckily, it happens that it is tightly connected to the cardinal  , which is defined from the product.   Suppose is a sequence of regular cardinals. Then     , and    if then .      Proof. Let , and suppose is a subset of of some cardinality . Since the product is closed downward under , we need to show that the function is in the product modulo . Clearly for all , and whenever because each is regular. The choice of means that this holds for almost all , so is equal (modulo ) to some function in our product.  Now suppose . We need to produce a subset of our product of cardinality whose supremum is not in . But this is easy: For each with and we add a function to that has value on coordinate and is identically elsewhere. The cardinality of is at most , and for all with . But this is an -positive set, so is not in our product. ◻  As a corollary, we end up with the desired characterization of using the functions in the product , at least for the situation in which we will operate most of the time.   If is a sequence of regular cardinals each greater than , then   We can take the above observation and use it to obtain a nice counterpart to our characterization of flatness  as the relation .   Suppose is an -indexed sequence of regular cardinals each greater than and let be the product . Then the following statements are equivalent:     is regular.    There is an for which .     .      Proof. Let denote . We know is in the closure of the set of regular cardinals , and our assumption implies that is less than . If is regular, it cannot be a limit point of the range of , and therefore must be an element of this set and so (2) holds.  Now assume (2). The inequality holds automatically and by Corollary  , so it suffices to produce an unbounded subset of with cardinality . For each , define a function by The definition of tells us that (2) implies for an -positive set of coordinates , and so will have the value on an -positive set . Since , (2) also implies that is a regular cardinal greater than the cardinality of . Thus, the sequence is flat of cofinality modulo the (proper) ideal , and furthermore the pointwise supremum of the sequence will be an exact upper bound. By construction, the supremum is equal to on , so any function is below modulo . This means that there will be an such that for -almost all , and we conclude that set of functions is unbounded in modulo .  The final implication from (3) to (1) is easy given our prior work: we know will equal , and we finish by way of Proposition I. , which tells us that is a regular cardinal. ◻  We now come to an important corollary that tells us that singular cardinals are always hiding just around the corner in our work.   Suppose is an -indexed sequence of regular cardinals greater than and let denote the product .    If , then there is an -positive set on which is flat of cofinality .    If does not stabilize on an -positive set, then       Proof. The first follows from the equivalence of (2) and (3) in our theorem, and the second from the equivalence of (1) and (2) combined with earlier observations. ◻  The above corollary tells us where to look if we are interested in finding exact sequences that are nowhere flat but do not live in an intractable product of small sets: we are going to need to find products of regular cardinals satisfying (so there will be a true cofinality modulo ) for which the cardinal is singular and strictly less than (which must happen if we are to avoid an -positive set on which looks flat modulo ). The following gives us our first example of such an exact sequence, but it has the defect of making some cardinal arithmetic assumptions, a defect that will be removed later in this chapter when we show that such sequences are quite common.   Assume holds, and let be the product , where . If we let be the ideal of finite subsets of , then is -directed, and so We see that is , and therefore as well by Corollary  . Since is regular and at least of cardinality , we conclude that both and are and therefore has true cofinality modulo .  "
+  "body": " Global Structure of Exact Sequences  Now that we can claim to understand the structure of flat families of functions, we move now to the more general problem of characterizing when a -increasing sequence of functions has an exact upper bound that need not be flat.    A -increasing sequence in is called exact of cofinality if the sequence has an exact upper bound and .    Notice that any -increasing sequence of limit length has a cofinal subsequence of length , and hence we will usually restrict our attention to increasing sequences with length a regular cardinal. If we need further generality, we will follow the practice established in the last section and say that a -increasing sequence of length some limit ordinal is exact if it has an exact upper bound, and then the original sequence will be equivalent modulo  to an exact sequence of length .  As far as eubs go, there are some things we can say about their structure without knowing much about the sequence at all. For example, the following relies only on the fact that the length of the sequence is an infinite cardinal.    Suppose is an exact sequence of length , and let be an exact upper bound. Then is an infinite limit ordinal for -almost all .     It is obvious that cannot equal 0 on an -positive set: just the fact that is enough to guarantee that must be greater than for almost all , and hence the same must hold for .  Next, suppose by way of contradiction that there is an -positive set of coordinates for which is a successor ordinal. Define a function with domain by Since , we can choose with . If is in and , then it must be the case that is less than or equal to . Thus, there is an -positive set of for which . But this is absurd as we know . ◻   The preceding proposition allows us to invoke when discussing exact sequences and assume without loss of generality that the exact upper bounds have the form , where each is a regular cardinal. Moreover, if we know that is greater than for -almost every coordinate , then by the argument of  is equivalent modulo to an isomorphic copy of the product .   Suppose is a -exact sequence of length with exact upper bound  .    If the sequence is constant with some value on an -positive set, then either or .     for -almost all .      Proof. It suffices to show that if is a regular cardinal with and , then . To do this, assume is a regular cardinal greater than and there is an -positive set on which is constant with value . If we let be the ideal , then is will be (modulo ) flat of cofinality . Since extends and is exact of length modulo , we conclude that must equal .  For the second part of the theorem, assume by way of contradiction that there is an -positive set such that for all . Since each is a regular cardinal, we know that for in , the set is bounded below . Thus, we can define a function by setting to be outside of , while for all and , is less than We get a contradiction, as there must be a for which , but for an -positive set of . ◻  The preceding theorem foreshadows a connection between the structure of an exact sequence and the nature of its exact upper bound . To see how, let us first focus on the situation where the regular cardinals in the upper bound are (almost) all greater than the cardinality of . In this situation, we know that must be greater than as well, and if our sequence is constant with value on an -positive set, then the only possibility is for to be , the length of . Let be the set of for which and set . It is certainly possible for either of these sets to be empty, but we know that since they partition into finitely many pieces, at least one of them must be -positive. If is in the ideal , then our sequence is flat of cofinality . If is in the ideal , then for any -positive set the sequence is not flat modulo . Even if both and are in , we still have shown that assuming that for all , our index set will into two pieces: on one of which looks flat of cofinality  modulo , and on the other where is nowhere flat modulo .  What happens we don’t assume that is always greater than ? First, note that since need not be maximal, there is nothing preventing the situation where the sequence is constant with different values on disjoint -positive sets. So for example, we could have an -positive set on which our sequence looks flat of cofinality , and there could be another -positive set where is constant with some value . What we do know is that if the latter situation occurs, then , so there is an -positive set on which lives in a small product . Here, in contrast to the flat situation, things can be very sensitive to the underlying set theory, even in the simplest situation where both and are .   Suppose is an arbitrary uncountable regular cardinal. Let be a model of in which and holds. Let , the Baire space of all functions from to , and let be the ideal of finite subsets of . Martin’s Axiom implies that the cardinals and are equal to the continuum, and so will have true cofinality  . Any sequence witnessing this will have the function that is constant with value as exact upper bound. Thus, the exact upper bound does not seem to be connected with the sequence in this situation.  If we do not insist on our examples involving and instead allow larger ideals, then we can have (at least consistently) even worse behavior as the following example shows.   It is consistent that is arbitrarily large, and for any uncountable regular there is an ideal on such that has true cofinality modulo . Again, the exact upper bound is exactly the same across all relevant — is always the function with domain that is constant with value — but the lengths of the exact sequences in realize all possibilities by varying the ideals involved.  As interesting as products of small sets are, they are not particularly useful for us because imposes few restrictions on how they behave, and we officially adopt the attitude that products of sets of size at most are intractable. If our exact sequence has an exact upper bound such that on an -positive set, then we will not be able to say much about the structure without adopting additional set-theoretic axioms because it hides a copy of a product of small sets within. Thus, the following definition is quite natural.   Suppose is a sequence of regular cardinals. We define to be the least cardinal such that there is an -positive set of with .  The preceding definition is made without assuming anything about the product  having true cofinality modulo  , and so it makes sense for any sequence of regular cardinals. It gives us some handy language as well: if is not greater than , then we know there is an -positive set of coordinates on which our product looks like a product of small sets, and we have declared such things to be taboo. Thus, we will want to focus our attention on products for which is greater than . Our intent is to look at this cardinal in the context of general products of regular cardinals , and then return to questions related to exact sequences a little later.  We will start with some elementary observations, so let us assume is an -indexed sequence of regular cardinals. First, Definition  will always make sense because is a proper ideal, and This shows us that the easiest way to guarantee that is greater than is to insist that each is greater than , and we will see this hypothesis come to the forefront as we move deeper into pcf theory.  Second, it is elementary to prove that must be in the closure of the set . This is quite useful, because it implies that if each is greater than and does not stabilize on an -positive set, then must be singular of cofinality at most (see Exercise  ).  Finally, Definition  extracts a cardinal characteristic from the sequence , without looking at the associated product . This is a shortcoming, as it would be useful to know that this particular cardinal could be recovered from the product itself as that would give us a means of looking at a collection of functions and determining if it is hiding an intractable product of small sets. Luckily, it happens that it is tightly connected to the cardinal  , which is defined from the product.   Suppose is a sequence of regular cardinals. Then     , and    if then .      Proof. Let , and suppose is a subset of of some cardinality . Since the product is closed downward under , we need to show that the function is in the product modulo . Clearly for all , and whenever because each is regular. The choice of means that this holds for almost all , so is equal (modulo ) to some function in our product.  Now suppose . We need to produce a subset of our product of cardinality whose supremum is not in . But this is easy: For each with and we add a function to that has value on coordinate and is identically elsewhere. The cardinality of is at most , and for all with . But this is an -positive set, so is not in our product. ◻  As a corollary, we end up with the desired characterization of using the functions in the product , at least for the situation in which we will operate most of the time.   If is a sequence of regular cardinals each greater than , then   We can take the above observation and use it to obtain a nice counterpart to our characterization of flatness  as the relation .   Suppose is an -indexed sequence of regular cardinals each greater than and let be the product . Then the following statements are equivalent:     is regular.    There is an for which .     .      Proof. Let denote . We know is in the closure of the set of regular cardinals , and our assumption implies that is less than . If is regular, it cannot be a limit point of the range of , and therefore must be an element of this set and so (2) holds.  Now assume (2). The inequality holds automatically and by Corollary  , so it suffices to produce an unbounded subset of with cardinality . For each , define a function by The definition of tells us that (2) implies for an -positive set of coordinates , and so will have the value on an -positive set . Since , (2) also implies that is a regular cardinal greater than the cardinality of . Thus, the sequence is flat of cofinality modulo the (proper) ideal , and furthermore the pointwise supremum of the sequence will be an exact upper bound. By construction, the supremum is equal to on , so any function is below modulo . This means that there will be an such that for -almost all , and we conclude that set of functions is unbounded in modulo .  The final implication from (3) to (1) is easy given our prior work: we know will equal , and we finish by way of Proposition I. , which tells us that is a regular cardinal. ◻  We now come to an important corollary that tells us that singular cardinals are always hiding just around the corner in our work.   Suppose is an -indexed sequence of regular cardinals greater than and let denote the product .    If , then there is an -positive set on which is flat of cofinality .    If does not stabilize on an -positive set, then       Proof. The first follows from the equivalence of (2) and (3) in our theorem, and the second from the equivalence of (1) and (2) combined with earlier observations. ◻  The above corollary tells us where to look if we are interested in finding exact sequences that are nowhere flat but do not live in an intractable product of small sets: we are going to need to find products of regular cardinals satisfying (so there will be a true cofinality modulo ) for which the cardinal is singular and strictly less than (which must happen if we are to avoid an -positive set on which looks flat modulo ). The following gives us our first example of such an exact sequence, but it has the defect of making some cardinal arithmetic assumptions, a defect that will be removed later in this chapter when we show that such sequences are quite common.   Assume holds, and let be the product , where . If we let be the ideal of finite subsets of , then is -directed, and so We see that is , and therefore as well by Corollary  . Since is regular and at least of cardinality , we conclude that both and are and therefore has true cofinality modulo .  "
 },
 {
-  "id": "the-trichotomy-theorem",
+  "id": "def-exact-sequence",
+  "level": "2",
+  "url": "sec-2-3-exactsequences.html#def-exact-sequence",
+  "type": "Definition",
+  "number": "2.3.1",
+  "title": "",
+  "body": "  A -increasing sequence in is called exact of cofinality if the sequence has an exact upper bound and .   "
+},
+{
+  "id": "prop-basic-eub-prop",
+  "level": "2",
+  "url": "sec-2-3-exactsequences.html#prop-basic-eub-prop",
+  "type": "Proposition",
+  "number": "2.3.2",
+  "title": "",
+  "body": "  Suppose is an exact sequence of length , and let be an exact upper bound. Then is an infinite limit ordinal for -almost all .   "
+},
+{
+  "id": "sec-2-3-exactsequences-7",
+  "level": "2",
+  "url": "sec-2-3-exactsequences.html#sec-2-3-exactsequences-7",
+  "type": "Proof",
+  "number": "2.3.1",
+  "title": "",
+  "body": " It is obvious that cannot equal 0 on an -positive set: just the fact that is enough to guarantee that must be greater than for almost all , and hence the same must hold for .  Next, suppose by way of contradiction that there is an -positive set of coordinates for which is a successor ordinal. Define a function with domain by Since , we can choose with . If is in and , then it must be the case that is less than or equal to . Thus, there is an -positive set of for which . But this is absurd as we know . ◻  "
+},
+{
+  "id": "sec-2-4-trichotomy",
   "level": "1",
-  "url": "the-trichotomy-theorem.html",
+  "url": "sec-2-4-trichotomy.html",
   "type": "Section",
   "number": "2.4",
   "title": "The Trichotomy Theorem",

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
+</h4>
+<div class="para">Continuing with the notation of Example <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "ex:prodseq" missing or not unique]</code>, let us now make the additional assumption that the cardinality of <span class="process-math">\(A\)</span> is strictly less than each <span class="process-math">\(\lambda(a)\)</span> and then define <span class="process-math">\(B\)</span> to be the range <span class="process-math">\(\{\lambda(a):a\in A\}\)</span> of <span class="process-math">\(\ov{\lambda}\)</span> (considered as a function from <span class="process-math">\(A\)</span> onto <span class="process-math">\(B\)</span>). Our aim is to show that <span class="process-math">\(\prod f\)</span> and <span class="process-math">\(\prod B\)</span> are essentially the same, in the sense that for any ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> there is a corresponding ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span> such that <span class="process-math">\((\prod f, \leq_I)\)</span> and <span class="process-math">\((\prod B, \leq_J)\)</span> are Tukey equivalent, and vice versa.</div> <div class="para logical">
+<div class="para">We define <span class="process-math">\(T\)</span> to be the set of functions in <span class="process-math">\(\prod S(a)\)</span> that are constant on the pre-images of elements of <span class="process-math">\(B\)</span> under <span class="process-math">\(\ov{\lambda}\text{.}\)</span> Thus, a function in <span class="process-math">\(\prod f\)</span> gets into <span class="process-math">\(T\)</span> if its value at <span class="process-math">\(a\)</span> depends only on the value <span class="process-math">\(\lambda(a)\text{.}\)</span> Our assumption that <span class="process-math">\(|A|\)</span> is less than <span class="process-math">\(\min(B)\)</span> is used to show that <span class="process-math">\(T\)</span> is cofinal in <span class="process-math">\(\prod f\text{:}\)</span> Given <span class="process-math">\(g\in\prod f\)</span> we define <span class="process-math">\(g^*\in T\)</span> by setting</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+g^*(a) =  \sup\{g(b):\lambda(a)=\lambda(b)\}.
+\end{equation*}
+</div>
+<div class="para">It is clear that <span class="process-math">\(g\leq g^*(a)\text{,}\)</span> and <span class="process-math">\(\lambda(a)=\lambda(b)\)</span> implies <span class="process-math">\(g^*(a)=g^*(b)\text{,}\)</span> so <span class="process-math">\(g^*\)</span> will be in <span class="process-math">\(T\)</span> provided we can show <span class="process-math">\(g^*\)</span> is in <span class="process-math">\(\prod f\text{.}\)</span> But this is where are assumption <span class="process-math">\(|A|&lt;\min(B)\)</span> comes to the rescue, as in each coordinate <span class="process-math">\(a\)</span> the set <span class="process-math">\(\{g(b):\lambda(a)=\lambda(b)\}\)</span> will be bounded below <span class="process-math">\(\lambda(a)\text{.}\)</span> The structure <span class="process-math">\(\prod B\)</span> is isomorphic to <span class="process-math">\(T\)</span> in a natural way as well, for given <span class="process-math">\(x\in \prod B\)</span> define <span class="process-math">\(\psi(x)\in T\)</span> through the formula</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\label{eq:psiform}
+\psi(x)(a)= x(\lambda(a)).
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\((\prod f, \leq)\)</span> and <span class="process-math">\((\prod B, \leq)\)</span> are Tukey equivalent by way of Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor:equivcofinal" missing or not unique]</code>.</div>
+</div> <div class="para logical">
+<div class="para">Much more can be said, though, as the function <span class="process-math">\(\ov{\lambda}\)</span> induces a natural correspondence between ideals on <span class="process-math">\(A\)</span> and ideals on <span class="process-math">\(B\text{:}\)</span> given an ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> (respectively, <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span>) then we get another ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span> (respectively, <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span>) by defining</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X\in J\Longleftrightarrow \{a\in A:\lambda(a)\in X\}\in I,
+\end{equation*}
+</div>
+<div class="para">and we denote this relationship by writing <span class="process-math">\(J=\ov{\lambda}[I]\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We now show that if <span class="process-math">\(J = \ov{\lambda}[I]\text{,}\)</span> then the function <span class="process-math">\(\psi\)</span> defined above is an isomorphism between <span class="process-math">\((\prod B, \leq_J)\)</span> and <span class="process-math">\((T,\leq_I)\text{.}\)</span> To see this, note that for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in <span class="process-math">\(\prod B\)</span> we can apply <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:psiform" missing or not unique]</code> to obtain the equalities</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+\{a\in A:\psi(x)(a)&lt;\psi(y)(a)\}&amp;=\{a\in A: x(\lambda(a))&lt;y(\lambda(a)\}\\&amp;=\ov{\lambda}^{-1}(\{\theta\in B: x(\theta)&lt;y(\theta)\}).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(J=\ov{\lambda}[I]\text{,}\)</span> this shows us that <span class="process-math">\(x\leq_J y\)</span> in <span class="process-math">\(\prod B\)</span> if and only if <span class="process-math">\(\psi(x)\leq_I \psi(y)\)</span> in <span class="process-math">\(\prod f\text{.}\)</span> We conclude that for every ideal <span class="process-math">\(I\)</span> on <span class="process-math">\(A\)</span> there is an ideal <span class="process-math">\(J\)</span> on <span class="process-math">\(B\)</span> such that <span class="process-math">\((\prod f, \leq_I)\)</span> is Tukey equivalent to <span class="process-math">\((\prod B, \leq_J)\text{,}\)</span> and vice versa. <span class="process-math">\(\blacksquare\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-1-5-tukey.html#example-second-tukey">in-context</a></span>
+</body>
+</html>

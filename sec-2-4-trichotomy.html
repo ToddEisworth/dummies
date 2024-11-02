@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Trichotomy Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-2-3-exactsequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-2-theory-exact-upper-bounds.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-1-sets-and-functions.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-5-tukey.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-tukey.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-tukey.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-1-types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-2-flat-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-3-exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-2-4-trichotomy.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-2-4-trichotomy"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">The Trichotomy Theorem</span>
+</h2>
+<div class="para" id="sec-2-4-trichotomy-2">So far we have not been able to produce a example of a non-flat exact sequence. We take a big step towards this goal in this section, as we prove Shelah’s Trichotomy Theorem which shows that any <span class="process-math">\(&lt;_I\)</span>-increasing sequence <span class="process-math">\(\langle f_\alpha:\alpha&lt;\delta\rangle\)</span> in <span class="process-math">\(\On^A\)</span> whose length satisfies <span class="process-math">\(\cf(\delta)&gt;|A|^+\)</span> must fall into one of three categories. We will then show that ANY <span class="process-math">\(&lt;_I\)</span>-increasing sequence with length of cofinality greater than <span class="process-math">\(2^{|A|}\)</span> will be exact. But first, we state the Trichotomy Theorem as it is found in the literature, and then spend a little time discussion the alternatives before presenting the proof.</div>
+<div class="para" id="sec-2-4-trichotomy-3"> Suppose <span class="process-math">\(I\)</span> is an ideal on the set <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(\lambda\)</span> is a regular cardinal greater than <span class="process-math">\(|A|^+\text{.}\)</span> If <span class="process-math">\(\ov f=\lng f_\alpha:\alpha&lt;\lambda\rng\)</span> is an <span class="process-math">\(&lt;_I\)</span>-increasing sequence of ordinal functions in <span class="process-math">\(\On^A\text{,}\)</span> then <span class="process-math">\(\ov f\)</span> satisfies one of the following conditions:</div>
+<div class="para logical" id="sec-2-4-trichotomy-4"><ul class="disc">
+<li id="sec-2-4-trichotomy-4-1-1"><div class="para" id="sec-2-4-trichotomy-4-1-1-1">() <span class="process-math">\(\ov f\)</span> has an eub <span class="process-math">\(f\)</span> with <span class="process-math">\(\cf(f(a))&gt;|A|\)</span> for all <span class="process-math">\(a\in A\text{.}\)</span>
+</div></li>
+<li id="sec-2-4-trichotomy-4-1-2"><div class="para" id="sec-2-4-trichotomy-4-1-2-1">() There are sets <span class="process-math">\(S(a)\)</span> for <span class="process-math">\(a\in A\)</span> satisfying <span class="process-math">\(|S(a)|\le |A|\)</span> and an ultrafilter <span class="process-math">\(D\)</span> over <span class="process-math">\(A\)</span> extending the dual of <span class="process-math">\(I\)</span> so that for all <span class="process-math">\(\alpha&lt;\lambda\)</span> there exists <span class="process-math">\(h_\alpha\in\prod S(a)\)</span> and <span class="process-math">\(\beta&lt;\lambda\)</span> such that <span class="process-math">\(f_\alpha &lt;_D h_\alpha &lt;_D f_\beta\text{.}\)</span>
+</div></li>
+<li id="sec-2-4-trichotomy-4-1-3"><div class="para" id="sec-2-4-trichotomy-4-1-3-1">() There is a function <span class="process-math">\(g:A\to \On\)</span> such that the <span class="process-math">\(\subseteq_I\)</span>-increasing sequence <span class="process-math">\(\ov t=\lng t_\alpha:\alpha&lt;\lambda\rng\)</span> does not stabilize modulo <span class="process-math">\(I\text{,}\)</span> where <span class="process-math">\(t_\alpha\)</span> is defined to be <span class="process-math">\(\{a\in A:
+f_\alpha(a)&gt;g(a)\}\text{.}\)</span>
+</div></li>
+</ul></div>
+<div class="para" id="sec-2-4-trichotomy-5">We have invested a great deal of time in discussing . As far as goes, we should recognize this as related to behavior we took great pains to avoid in the previous section: tells us that we can embed <span class="process-math">\(\ov{f}\)</span> into a product of small sets modulo an ideal that extends <span class="process-math">\(I\text{,}\)</span> and we know products of small sets can exhibit all sorts of behavior. If happens, the sequence may or may not have an exact upper bound: products of small sets are intractable from our point of view.</div>
+<div class="para" id="sec-2-4-trichotomy-6">It is really that appears to be to the new ingredient here, but we have actually seen this condition earlier. Looking back at part (2) of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:eubfromlub" missing or not unique]</code>, we see that is precisely the condition that arises if we find a <span class="process-math">\(&lt;_I\)</span>-increasing sequence with an lub modulo <span class="process-math">\(I\)</span> that fails to be exact. Said another way, if fails for a sequence <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\)</span> then any least upper bound for <span class="process-math">\(\ov{f}\)</span> will be exact. We will use this observation as one ingredient in our proof of the Trichotomy, but the assumption that fails provides much deeper information about the way in which <span class="process-math">\(\ov{f}\)</span> sits inside of <span class="process-math">\(\On^A\text{.}\)</span> We will expand on this before proving the Trichotomy Theorem, because it makes the argument clearer and removes some of sense of <em class="emphasis">deus ex machina</em> from Shelah’s original proof.</div>
+<div class="para" id="sec-2-4-trichotomy-7">Suppose now that <span class="process-math">\(\ov{f}\)</span> is a <span class="process-math">\(&lt;_I\)</span>-increasing sequence in <span class="process-math">\(\On^A\)</span> and fails. This means that given a function <span class="process-math">\(g\text{,}\)</span> the corresponding <span class="process-math">\(\subseteq_I\)</span>-increasing sequence of sets <span class="process-math">\(t_\alpha\)</span> stabilizes modulo <span class="process-math">\(I\text{.}\)</span> Thus, we can fix a subset <span class="process-math">\(L\)</span> of <span class="process-math">\(A\)</span> such that <span class="process-math">\(t_\alpha =_I L\)</span> for all sufficiently large <span class="process-math">\(\alpha&lt;\lambda\text{.}\)</span> If <span class="process-math">\(L\)</span> is in <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(t_\alpha\)</span> is in <span class="process-math">\(I\)</span> for all <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(g\)</span> is an upper bound for <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\text{.}\)</span> If, on the other hand, <span class="process-math">\(L\)</span> is equal to <span class="process-math">\(A\)</span> modulo <span class="process-math">\(I\text{,}\)</span> then <span class="process-math">\(g\leq_I f_\alpha\)</span> for all sufficiently large <span class="process-math">\(\alpha&lt;\lambda\)</span> and <span class="process-math">\(g\)</span> is bounded by <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\text{.}\)</span> If both <span class="process-math">\(L\)</span> and its complement <span class="process-math">\(U=A\setminus L\)</span> are <span class="process-math">\(I\)</span>-positive, then the sets capture the way in which <span class="process-math">\(g\)</span> interacts with the sequence <span class="process-math">\(\ov{f}\text{.}\)</span> On the set <span class="process-math">\(L\text{,}\)</span> <span class="process-math">\(g\)</span> is bounded modulo <span class="process-math">\(I\)</span> by some <span class="process-math">\(f_\alpha\text{,}\)</span> while on the set <span class="process-math">\(U\)</span> the function <span class="process-math">\(g\)</span> is an upper bound for <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\text{.}\)</span> Thus, <span class="process-math">\(g\)</span> is bounded by <span class="process-math">\(\ov{f}\)</span> modulo the ideal <span class="process-math">\(I\restr L\)</span> and bounds <span class="process-math">\(\ov{f}\)</span> modulo the ideal <span class="process-math">\(I\restr U\text{.}\)</span> The point is that the interaction between <span class="process-math">\(g\)</span> and <span class="process-math">\(\ov{f}\)</span> is captured by the partition of <span class="process-math">\(A\)</span> into the sets <span class="process-math">\(L\)</span> and <span class="process-math">\(U\text{,}\)</span> and situations where this fails to happen are .</div>
+<div class="para" id="sec-2-4-trichotomy-8">We will round out this discussion of and its negation by re-proving the second part of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:eubfromlub" missing or not unique]</code> and showing that the failure of means least upper bounds are exact. Suppose then that <span class="process-math">\(f\)</span> is a least upper bound for the <span class="process-math">\(&lt;_I\)</span>-increasing sequence <span class="process-math">\(\ov{f}\)</span> and fails. Given a function <span class="process-math">\(g\)</span> in <span class="process-math">\(\prod f\)</span> we need to show that there is an <span class="process-math">\(\alpha&lt;\lambda\)</span> with <span class="process-math">\(g\leq_I f_\alpha\text{.}\)</span> Since our sequence is not ugly, we can accomplish this by showing that the set <span class="process-math">\(L\)</span> (the eventual value of <span class="process-math">\(t_\alpha\)</span>) is equal to <span class="process-math">\(A\)</span> modulo <span class="process-math">\(I\text{,}\)</span> or equivalently, showing that the set <span class="process-math">\(U = A\setminus L\)</span> is in <span class="process-math">\(I\text{.}\)</span> Let us define a function <span class="process-math">\(h\)</span> by putting <span class="process-math">\(h\restr L\)</span> equal to <span class="process-math">\(f\)</span> and <span class="process-math">\(h\restr U\)</span> equal to <span class="process-math">\(g\text{.}\)</span> This function <span class="process-math">\(h\)</span> is an upper bound for <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and since <span class="process-math">\(f\)</span> is a least upper bound we know <span class="process-math">\(f\leq_I h\text{.}\)</span> Since <span class="process-math">\(h(a)=g(a)&lt;f(a)\)</span> for <span class="process-math">\(a\in U\text{,}\)</span> we conclude that <span class="process-math">\(U\)</span> is in <span class="process-math">\(I\)</span> and so <span class="process-math">\(g\)</span> is bounded by <span class="process-math">\(\ov{f}\)</span> as required.</div>
+<div class="para" id="sec-2-4-trichotomy-9">
+<em class="emphasis">Proof of the Trichotomy Theorem.</em> Let <span class="process-math">\(\ov{f}=\langle f_\alpha:\alpha&lt;\lambda\rangle\)</span> be a <span class="process-math">\(&lt;_I\)</span>-increasing sequence whose length <span class="process-math">\(\lambda\)</span> is a regular cardinal greater than <span class="process-math">\(|A|^+\text{.}\)</span> It suffices to prove that the failure of implies that either <span class="process-math">\(\ov{f}\)</span> is or <span class="process-math">\(\ov{f}\)</span> has a least upper bound <span class="process-math">\(f\)</span> modulo <span class="process-math">\(I\text{.}\)</span> If we manage to produce such a least upper bound, then the failure of implies it is exact, and if <span class="process-math">\(\cf(f(a))\)</span> were less than or equal to <span class="process-math">\(|A|\)</span> on a <span class="process-math">\(I\)</span>-positive set, then any ultrafilter on <span class="process-math">\(A\)</span> containing this set and disjoint to <span class="process-math">\(I\)</span> would serve to establish .</div>
+<div class="para" id="sec-2-4-trichotomy-10">By induction on <span class="process-math">\(\zeta&lt;|A|^+\)</span> we will attempt define a <span class="process-math">\(\lneqq_I\)</span>-decreasing sequence <span class="process-math">\(\langle g_\zeta:\zeta&lt;|A|^+\rangle\)</span> of upper bounds for <span class="process-math">\(\ov{f}\text{.}\)</span> We will start with letting <span class="process-math">\(g_0(a)\)</span> equal <span class="process-math">\(\sup\{f_\alpha(a)+1:\alpha&lt;\lambda\}\text{.}\)</span> Successor stages are also straightforward: Given <span class="process-math">\(g_\zeta\)</span> we will ask if it is a least upper bound for <span class="process-math">\(\ov{f}\text{.}\)</span> If the answer is yes, then we are finished. If the answer is “no”, then <span class="process-math">\(g_{\zeta+1}\)</span> will be an upper bound for <span class="process-math">\(\ov{f}\)</span> that satisfies <span class="process-math">\(g_{\zeta+1}\lneqq_I g_\zeta\text{,}\)</span> so <span class="process-math">\(g_{\zeta+1}(a)\)</span> is strictly less than <span class="process-math">\(g_\zeta(a)\)</span> on an <span class="process-math">\(I\)</span>-positive set of coordinates.</div>
+<div class="para logical" id="sec-2-4-trichotomy-11">
+<div class="para">How do we proceed at limit ordinals? Suppose we have successfully defined the sequence <span class="process-math">\(\langle g_\xi:\xi&lt;\zeta\rangle\)</span> through some limit stage <span class="process-math">\(\zeta&lt;|A|^+\text{.}\)</span> Our goal is to show that either a suitable <span class="process-math">\(g_\zeta\)</span> can be found, or we can show that <span class="process-math">\(\ov{f}\)</span> is . How might we do this? If we want to show that our sequence is , then we will need some sort of product of small sets to aim for. Our work so far provides a natural candidate: for each <span class="process-math">\(a\in A\)</span> we can define <span class="process-math">\(S_\zeta(a)\)</span> to be the set <span class="process-math">\(\{g_\xi(a):\xi&lt;\zeta\}\text{.}\)</span> Since <span class="process-math">\(\zeta&lt;|A|^+\text{,}\)</span> the sets <span class="process-math">\(S(a)\)</span> are of cardinality at most <span class="process-math">\(|A|\text{.}\)</span> For each <span class="process-math">\(\alpha&lt;\lambda\)</span> we let <span class="process-math">\(h_\alpha^\zeta\)</span> be the upward projection of <span class="process-math">\(f_\alpha\)</span> up into the product <span class="process-math">\(\prod S_\zeta(a)\text{,}\)</span> defined by setting</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\label{eq:upwardproj}
+h_\alpha^\zeta(a):=\min(S_\zeta(a)\setminus f_\alpha(a)).
+\end{equation*}
+</div>
+<div class="para">The sequence <span class="process-math">\(\langle h^\zeta_\alpha:\alpha&lt;\lambda\rangle\)</span> is <span class="process-math">\(\leq_I\)</span>-increasing in the product <span class="process-math">\(\prod S_\zeta(a)\text{.}\)</span> Note as well that the definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:upwardproj" missing or not unique]</code> implies <span class="process-math">\(h_\alpha^\zeta\leq_I g_\xi\)</span> for any <span class="process-math">\(\alpha&lt;\lambda\)</span> and <span class="process-math">\(\xi&lt;\zeta\text{.}\)</span> This is because <span class="process-math">\(g_\xi\)</span> bounds <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\)</span> and <span class="process-math">\(g_\xi(a)\in S(a)\)</span> for each <span class="process-math">\(a\in A\text{.}\)</span> Thus, if there is an <span class="process-math">\(\alpha&lt;\lambda\)</span> for which <span class="process-math">\(h_\alpha^\zeta\)</span> is an upper bound for <span class="process-math">\(\ov{f}\)</span> our construction can continue by selecting this function as <span class="process-math">\(g_\zeta\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="sec-2-4-trichotomy-12">
+<div class="para">Since fails by assumption, we know that for each <span class="process-math">\(\alpha&lt;\lambda\)</span> that there is a set <span class="process-math">\(L^\zeta(\alpha)\subseteq A\)</span> such that for all sufficiently large <span class="process-math">\(\beta&lt;\lambda\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\label{eq:stable}
+L^\zeta(\alpha) =_I \{a\in A: h^\zeta_\alpha(a)&lt;f_\beta(a)\},
+\end{equation*}
+</div>
+<div class="para">and so we can choose <span class="process-math">\(\beta^\zeta(\alpha)&lt;\lambda\)</span> such that <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:stable" missing or not unique]</code> holds whenever <span class="process-math">\(\beta^\zeta(\alpha)\leq \beta&lt;\lambda\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-2-4-trichotomy-13">We come now to a very important point: the sequence <span class="process-math">\(\langle L^\zeta(\alpha):\alpha&lt;\lambda\rangle\)</span> is <span class="process-math">\(\subseteq_I\)</span>-decreasing. This is easy to see: given <span class="process-math">\(\alpha&lt;\gamma&lt;\lambda\)</span> we choose <span class="process-math">\(\beta\)</span> greater than <span class="process-math">\(\max(\beta^\zeta(\alpha),\beta^\zeta(\gamma))\text{,}\)</span> and the result follows from the definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:stable" missing or not unique]</code> because <span class="process-math">\(f_\alpha&lt;_I f_\gamma\text{.}\)</span> The behavior of this <span class="process-math">\(\subseteq_I\)</span>-decreasing sequence is how we determine if our construction continues, or if we stall at stage <span class="process-math">\(\zeta\)</span> because <span class="process-math">\(\ov{f}\)</span> is .</div>
+<div class="para" id="sec-2-4-trichotomy-14">There is an <span class="process-math">\(\alpha\)</span> such that <span class="process-math">\(L^\zeta(\alpha)\)</span> is in <span class="process-math">\(I\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-4-trichotomy-15">Looking back at the definition of <span class="process-math">\(L^\zeta(\alpha)\text{,}\)</span> our case assumption implies that <span class="process-math">\(f_\beta\leq_I h^\zeta_\alpha\)</span> for all sufficiently large <span class="process-math">\(\beta&lt;\lambda\text{.}\)</span> Since <span class="process-math">\(\ov{f}\)</span> is <span class="process-math">\(&lt;_I\)</span>-increasing, it follows that <span class="process-math">\(h^\zeta_\alpha\)</span> is an upper bound for <span class="process-math">\(\ov{f}\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and as we have observed previously we can continue by setting <span class="process-math">\(g_\zeta = h^\zeta_\alpha\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-2-4-trichotomy-16">
+<div class="para">Actually, though, we can say something stronger in this situation. If <span class="process-math">\(\alpha&lt;\gamma\)</span> we know <span class="process-math">\(h^\zeta_\alpha\leq h^\zeta_\gamma\)</span> automatically. However, because in addition <span class="process-math">\(h^\zeta_\alpha\)</span> bounds <span class="process-math">\(f_\gamma\)</span> modulo <span class="process-math">\(I\text{,}\)</span> it follows that for almost every <span class="process-math">\(a\in A\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h^\zeta_\gamma(a)=\min(S(a)\setminus f_\gamma(a)) \leq h^\zeta_\alpha(a),
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(h^\zeta_\gamma\leq_I h^\zeta_\alpha\)</span> as well. As soon as we hit an <span class="process-math">\(\alpha\)</span> for which <span class="process-math">\(L^\zeta(\alpha)\)</span> is in <span class="process-math">\(I\text{,}\)</span> the upward projections stabilize and we have <span class="process-math">\(h^\zeta_\gamma =_I g_\zeta\)</span> for all sufficiently large <span class="process-math">\(\gamma&lt;\lambda\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-2-4-trichotomy-17">
+<span class="process-math">\(L^\zeta(\alpha)\)</span> is <span class="process-math">\(I\)</span>-positive for all <span class="process-math">\(\alpha&lt;\lambda\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-4-trichotomy-18">In this situation, we have a <span class="process-math">\(\subseteq_I\)</span>-decreasing sequence of <span class="process-math">\(I\)</span>-positive sets and so there is an ultrafilter <span class="process-math">\(D\)</span> on <span class="process-math">\(A\)</span> disjoint to <span class="process-math">\(I\)</span> that contains each of the sets <span class="process-math">\(L^\zeta(\alpha)\text{.}\)</span> Given <span class="process-math">\(\alpha&lt;\lambda\)</span> we know <span class="process-math">\(f_\alpha\leq h^\zeta_\alpha\)</span> by construction, and for all sufficiently large <span class="process-math">\(\beta&lt;\lambda\)</span> we can use <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:stable" missing or not unique]</code> to conclude that <span class="process-math">\(h^\zeta_\alpha&lt;_D f_\beta\text{.}\)</span> Thus the sequence <span class="process-math">\(\langle h^\zeta_\alpha:\alpha&lt;\lambda\rangle\)</span> of functions in <span class="process-math">\(\prod S(a)\)</span> together with the ultrafilter <span class="process-math">\(D\)</span> witness that <span class="process-math">\(\ov{f}\)</span> is and our construction halts.</div>
+<div class="para" id="sec-2-4-trichotomy-19">To finish the proof, it suffices to show that our construction must halt at some stage prior to <span class="process-math">\(|A|^+\text{.}\)</span> We stop in one of two ways: either we come across a stage <span class="process-math">\(\zeta\)</span> for which <span class="process-math">\(g_\zeta\)</span> is a least upper bound for <span class="process-math">\(\ov{f}\text{,}\)</span> or we are able to establish that our sequence is through our work at some limit ordinal <span class="process-math">\(\zeta\text{.}\)</span> Let us assume by way of contradiction that neither of these events occurs. If this is the case, then for each limit ordinal <span class="process-math">\(\zeta&lt;|A|^+\)</span> our construction lands in Case 1, and so there is an ordinal <span class="process-math">\(\alpha(\zeta)&lt;\lambda\)</span> such that the associated set <span class="process-math">\(L^\zeta(\alpha(\zeta))\)</span> is in <span class="process-math">\(I\text{,}\)</span> and more importantly, such that <span class="process-math">\(g_\zeta =_I h^\zeta_\gamma\)</span> for all <span class="process-math">\(\gamma\geq\alpha(\zeta)\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-2-4-trichotomy-20">
+<div class="para">Now at last we use our assumption that <span class="process-math">\(\lambda\)</span> is greater than <span class="process-math">\(|A|^+\text{,}\)</span> as this allows us to find an <span class="process-math">\(\alpha(*)&lt;\lambda\)</span> such that <span class="process-math">\(\alpha(\zeta)&lt;\alpha(*)\)</span> for an unbounded set <span class="process-math">\(X\)</span> of limit ordinals <span class="process-math">\(\zeta&lt;|A|^+\text{.}\)</span> As we have noted, this means</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\label{eq:gzeta}
+\zeta\in X\Longrightarrow g_\zeta =_I h^\zeta_{\alpha(*)}.
+\end{equation*}
+</div>
+<div class="para">For each <span class="process-math">\(a\in A\text{,}\)</span> our definitions imply that the sequence <span class="process-math">\(\langle S_\zeta(a):\zeta\in X\rangle\)</span> is <span class="process-math">\(\subseteq\)</span>-increasing, and therefore the corresponding sequence of upward projections <span class="process-math">\(\langle h^\zeta_{\alpha(*)}:\zeta\in X\rangle\)</span> is <span class="process-math">\(\leq\)</span>-decreasing. Since any <span class="process-math">\(\leq\)</span>-decreasing sequence of ordinals is eventually constant and <span class="process-math">\(|A|&lt;\lambda=|X|\text{,}\)</span> our sequence of functions <span class="process-math">\(h^\zeta_{\alpha(*)}\)</span> is forced to stabilize at some point as well. Thus, there is a <span class="process-math">\(\zeta(*)\in X\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\label{eq:hzeta}
+\zeta\in X\setminus\zeta(*)\Longrightarrow h^\zeta_{\alpha(*)}= h^{\zeta(*)}_{\alpha(*)}.
+\end{equation*}
+</div>
+<div class="para">Now we have a problem, as the conjunction of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:gzeta" missing or not unique]</code> and <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:hzeta" missing or not unique]</code> tell us that that <span class="process-math">\(\langle g_\zeta:\zeta\in X\rangle\)</span> stabilizes modulo <span class="process-math">\(I\)</span> but this is absurd as our construction guarantees that the sequence is <span class="process-math">\(\lneqq_I\)</span>-decreasing. Thus, our construction must end at some stage prior to <span class="process-math">\(|A|^+\text{,}\)</span> and therefore <span class="process-math">\(\ov{f}\)</span> is either (if we stopped at a limit ordinal) or has a least upper bound (if we stopped at a successor ordinal). As we noted at the start of the proof, this is sufficient to establish the theorem. ◻</div>
+</div>
+<div class="para" id="sec-2-4-trichotomy-21">We close this section with a few remarks on the Trichotomy Theorem, the details of which are relegated to a few exercises. We start with a useful corollary of the Trichotomy Theorem that shows that any <span class="process-math">\(&lt;_I\)</span>-increasing sequence whose length has sufficiently high cofinality will be exact.</div>
+<div class="para" id="sec-2-4-trichotomy-22">A <span class="process-math">\(&lt;_I\)</span>-increasing sequence <span class="process-math">\(\langle f_\alpha:\alpha&lt;\delta\rangle\)</span> with <span class="process-math">\(\cf(\delta)&gt;2^{|A|}\)</span> is exact.</div>
+<div class="para" id="sec-2-4-trichotomy-23">
+<em class="emphasis">Proof.</em> See Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:longisexact" missing or not unique]</code> ◻</div>
+<div class="para" id="sec-2-4-trichotomy-24">This tells us that exact sequences are easy to find, and also provides us with examples of exact sequences that are far from being flat. We sketch such an example below, and leave the details to the exercises.</div>
+<div class="para" id="sec-2-4-trichotomy-25">Let <span class="process-math">\(\mu\)</span> is a singular cardinal of countable cofinality with <span class="process-math">\(2^{\aleph_0}&lt;\mu\text{,}\)</span> and let <span class="process-math">\(\langle\mu_n:n&lt;\omega\rangle\)</span> be an increasing sequence of regular cardinals cofinal in <span class="process-math">\(\mu\)</span> with <span class="process-math">\(2^{\aleph_0}&lt;\mu_0\text{.}\)</span> Set <span class="process-math">\(A=\omega\)</span> and let <span class="process-math">\(I\)</span> be the ideal of finite subsets of <span class="process-math">\(\omega\text{.}\)</span> If we let <span class="process-math">\(F=\prod_{n\in\omega}\mu_n\text{,}\)</span> then <span class="process-math">\(\mathfrak{b}_I(F)\)</span> is at least <span class="process-math">\(\mu^+\text{,}\)</span> and so <span class="process-math">\(F\)</span> contains <span class="process-math">\(&lt;_I\)</span>-increasing sequences of length <span class="process-math">\(\mu^+\text{.}\)</span> Such a sequence is exact by Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor:longisexact" missing or not unique]</code>, and there is no <span class="process-math">\(I\)</span>-positive set on which it looks flat.</div>
+<div class="para" id="sec-2-4-trichotomy-26">If <span class="process-math">\(\ov{f}\)</span> is , then there is a family of <span class="process-math">\(\lambda\)</span> <span class="process-math">\(I\)</span>-positives sets whose pairwise intersections are in <span class="process-math">\(I\text{,}\)</span> that is, <span class="process-math">\(I\)</span> is not <em class="emphasis"><span class="process-math">\(\lambda\)</span>-saturated</em>. This situation is impossible if <span class="process-math">\(I\)</span> is a maximal ideal, as <span class="process-math">\(I\)</span>-positive sets are just elements of the dual ultrafilter and ultrafilters are closed under finite intersections. This tells us that when <span class="process-math">\(I\)</span> is a maximal ideal on <span class="process-math">\(A\text{,}\)</span> the possibility in the Trichotomy cannot occur, and any <span class="process-math">\(&lt;_I\)</span>-increasing sequence <span class="process-math">\(\langle f_\alpha:\alpha&lt;\delta\rangle\)</span> with <span class="process-math">\(\cf(\delta)&gt;|A|^+\)</span> must either be or .</div>
+<div class="para" id="sec-2-4-trichotomy-27">Finally, the assumption <span class="process-math">\(\lambda&gt;|A|^+\)</span> is necessary and cannot be replaced by <span class="process-math">\(\lambda&gt;|A|\text{.}\)</span> This, however, is not that important for pcf theory, because we will typically be working with situations in which <span class="process-math">\(|A|^{+\omega}&lt;\lambda\text{.}\)</span>
+</div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-2-3-exactsequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

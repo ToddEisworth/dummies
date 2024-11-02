@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Global Structure of Exact Sequences</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Notes on PCF Theory">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="notesonpcf" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="pcf-notes.html"><span class="title">Notes on PCF Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-2-2-flat-sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-2-theory-exact-upper-bounds.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-2-4-trichotomy.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\reg}{\mathsf{Reg}}
+   \newcommand{\cf}{\mathrm{cf}} \newcommand{\ran}{\mathrm{ran}} \newcommand{\restr}{\upharpoonright}
+   \newcommand{\bd}{\mathrm{bd}}
+   \newcommand{\tcf}{\mathrm{tcf}}
+   \newcommand{\Fin}{\mathsf{Fin}}
+   \newcommand{\ov}{\overline}
+   \newcommand{\On}{\mathsf{On}}
+   \newcommand{\dom}{\mathrm{dom}}
+   \newcommand{\pcf}{\mathrm{pcf}}
+   \newcommand{\lng}{\langle}
+   \newcommand{\rng}{\rangle}
+   \newcommand{\zfc}{\mathsf{ZFC}}
+   \newcommand{\ma}{\mathsf{MA}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-1-sets-and-functions.html" class="internal"><span class="codenumber">1</span> <span class="title">Ordinal-valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Functions, ideals, and filters</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html#ideals-filters" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Ideals and Filters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html#almost-everywhere" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Almost Everywhere</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-functions-ideals-filters.html#more-examples" class="internal"><span class="codenumber">1.1.3</span> <span class="title">More Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unbounded sets and cofinal sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cofinal-vs.-unbounded" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Cofinal and unbounded</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#cardinal-characteristics" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Cardinal Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unbounded-sets-and-cofinal-sets.html#directedness" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Directedness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-notion-of-equivalence.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A notion of equivalence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-notion-of-equivalence.html#equivalence-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Equivalence of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-notion-of-equivalence.html#downward-closures-of-subsets-of-ona" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Downward closures of subsets of <span class="process-math">\(\On^A\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html" class="internal"><span class="codenumber">1.4</span> <span class="title">True cofinality and exact upper bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#true-cofinality" class="internal"><span class="codenumber">1.4.1</span> <span class="title">True cofinality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="true-cofinality-and-exact-upper-bounds.html#exact-upper-bounds" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exact Upper Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-5-tukey.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Tukey Equivalence and Cofinal Similarity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-tukey.html#galois-tukey-connections" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Galois-Tukey Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-tukey.html#cofinal-similarity" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Cofinal Similarity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-2-theory-exact-upper-bounds.html" class="internal"><span class="codenumber">2</span> <span class="title">The theory of exact upper bounds</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-1-types-of-upper-bounds.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Types of Upper Bounds</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-types-of-upper-bounds.html#basic-definitions" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-types-of-upper-bounds.html#examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-2-flat-sequences.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Flat Products and Sequences</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-2-3-exactsequences.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Global Structure of Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2-4-trichotomy.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Trichotomy Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-2-3-exactsequences"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Global Structure of Exact Sequences</span>
+</h2>
+<div class="para" id="sec-2-3-exactsequences-2">Now that we can claim to understand the structure of flat families of functions, we move now to the more general problem of characterizing when a <span class="process-math">\(&lt;_I\)</span>-increasing sequence of functions <span class="process-math">\(\ov{f}\)</span> has an exact upper bound <span class="process-math">\(f\)</span> that need not be flat.</div>
+<article class="definition definition-like" id="def-exact-sequence"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-exact-sequence-1-1">A <span class="process-math">\(&lt;_I\)</span>-increasing sequence <span class="process-math">\(\ov f=\langle f_\alpha\mid \alpha&lt;\delta\rangle\)</span> in <span class="process-math">\(\On^A\)</span> is called <em class="emphasis">exact of cofinality <span class="process-math">\(\lambda\)</span></em> if the sequence <span class="process-math">\(\ov{f}\)</span> has an exact upper bound and <span class="process-math">\(\cf(\delta)=\lambda\text{.}\)</span>
+</div></article><div class="para" id="sec-2-3-exactsequences-4">Notice that any <span class="process-math">\(&lt;_I\)</span>-increasing sequence of limit length <span class="process-math">\(\delta\)</span> has a cofinal subsequence of length <span class="process-math">\(\cf(\delta)\text{,}\)</span> and hence we will usually restrict our attention to increasing sequences with length a regular cardinal. If we need further generality, we will follow the practice established in the last section and say that a <span class="process-math">\(&lt;_I\)</span>-increasing sequence of length some limit ordinal <span class="process-math">\(\delta\)</span> is exact if it has an exact upper bound, and then the original sequence will be equivalent modulo <span class="process-math">\(I\)</span> to an exact sequence of length <span class="process-math">\(\cf(\delta)\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-5">As far as eubs go, there are some things we can say about their structure without knowing much about the sequence <span class="process-math">\(\ov{f}\)</span> at all. For example, the following relies only on the fact that the length of the sequence is an infinite cardinal.</div>
+<article class="proposition theorem-like" id="prop-basic-eub-prop"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="prop-basic-eub-prop-1-1">Suppose <span class="process-math">\(\ov f\)</span> is an exact sequence of length <span class="process-math">\(\lambda\text{,}\)</span> and let <span class="process-math">\(g\)</span> be an exact upper bound. Then <span class="process-math">\(g(a)\)</span> is an infinite limit ordinal for <span class="process-math">\(I\)</span>-almost all <span class="process-math">\(a\in A\text{.}\)</span>
+</div></article><details id="sec-2-3-exactsequences-7" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-2-3-exactsequences-7-1">It is obvious that <span class="process-math">\(g\)</span> cannot equal 0 on an <span class="process-math">\(I\)</span>-positive set: just the fact that <span class="process-math">\(f_0&lt;_I f_1\)</span> is enough to guarantee that <span class="process-math">\(f_1(a)\)</span> must be greater than <span class="process-math">\(0\)</span> for almost all <span class="process-math">\(a\in A\text{,}\)</span> and hence the same must hold for <span class="process-math">\(g\text{.}\)</span>
+</div> <div class="para logical" id="sec-2-3-exactsequences-7-2">
+<div class="para">Next, suppose by way of contradiction that there is an <span class="process-math">\(I\)</span>-positive set <span class="process-math">\(X\)</span> of coordinates <span class="process-math">\(a\)</span> for which <span class="process-math">\(g(a)\)</span> is a successor ordinal. Define a function <span class="process-math">\(h\)</span> with domain <span class="process-math">\(A\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(a)=
+\begin{cases}
+g(a)-1   &amp;\text{if $a\in X$, and}\\
+0        &amp;\text{otherwise}.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(h&lt;_I g\text{,}\)</span> we can choose <span class="process-math">\(\alpha&lt;\lambda\)</span> with <span class="process-math">\(h&lt;_I f_\alpha\text{.}\)</span> If <span class="process-math">\(a\)</span> is in <span class="process-math">\(X\)</span> and <span class="process-math">\(h(a)&lt;f_\alpha(a)\text{,}\)</span> then it must be the case that <span class="process-math">\(g(a)\)</span> is less than or equal to <span class="process-math">\(f_\alpha(a)\text{.}\)</span> Thus, there is an <span class="process-math">\(I\)</span>-positive set of <span class="process-math">\(a\)</span> for which <span class="process-math">\(g(a)\leq f_\alpha(a)\text{.}\)</span> But this is absurd as we know <span class="process-math">\(f_\alpha&lt;_I g\text{.}\)</span> ◻</div>
+</div></article></details><div class="para" id="sec-2-3-exactsequences-8">The preceding proposition allows us to invoke <a href="" class="xref" data-knowl="./knowl/xref/example-first-tukey.html" title="Example 1.5.5">Example 1.5.5</a> when discussing exact sequences and assume without loss of generality that the exact upper bounds have the form <span class="process-math">\(\ov{\lambda}=\langle\lambda(a):a\in A\rangle\text{,}\)</span> where each <span class="process-math">\(\lambda(a)\)</span> is a regular cardinal. Moreover, if we know that <span class="process-math">\(\lambda(a)\)</span> is greater than <span class="process-math">\(|A|\)</span> for <span class="process-math">\(I\)</span>-almost every coordinate <span class="process-math">\(a\text{,}\)</span> then by the argument of <a href="" class="xref" data-knowl="./knowl/xref/example-second-tukey.html" title="Example 1.5.6">Example 1.5.6</a> <span class="process-math">\(\ov{f}\)</span> is equivalent modulo <span class="process-math">\(I\)</span> to an isomorphic copy of the product <span class="process-math">\(\prod\{\lambda(a):a\in A\}\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-9">Suppose <span class="process-math">\(\ov{f}\)</span> is a <span class="process-math">\(&lt;_I\)</span>-exact sequence of length <span class="process-math">\(\lambda\)</span> with exact upper bound <span class="process-math">\(\ov{\lambda}\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-2-3-exactsequences-10"><ol class="decimal">
+<li id="sec-2-3-exactsequences-10-1-1"><div class="para" id="sec-2-3-exactsequences-10-1-1-1">If the sequence <span class="process-math">\(\ov{\lambda}\)</span> is constant with some value <span class="process-math">\(\theta\)</span> on an <span class="process-math">\(I\)</span>-positive set, then either <span class="process-math">\(\theta=\lambda\)</span> or <span class="process-math">\(\theta\leq|A|\text{.}\)</span>
+</div></li>
+<li id="sec-2-3-exactsequences-10-1-2"><div class="para" id="sec-2-3-exactsequences-10-1-2-1">
+<span class="process-math">\(\lambda(a)\leq \lambda\)</span> for <span class="process-math">\(I\)</span>-almost all <span class="process-math">\(a\in A\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="para" id="sec-2-3-exactsequences-11">
+<em class="emphasis">Proof.</em> It suffices to show that if <span class="process-math">\(\theta\)</span> is a regular cardinal with <span class="process-math">\(|A|&lt;\theta\)</span> and <span class="process-math">\(\theta\neq\lambda\text{,}\)</span> then <span class="process-math">\(\{a\in A: \lambda(a)=\theta\}\in I\text{.}\)</span> To do this, assume <span class="process-math">\(\theta\)</span> is a regular cardinal greater than <span class="process-math">\(|A|\)</span> and there is an <span class="process-math">\(I\)</span>-positive set <span class="process-math">\(X\)</span> on which <span class="process-math">\(\lambda(a)=\cf(g(a))\)</span> is constant with value <span class="process-math">\(\theta\text{.}\)</span> If we let <span class="process-math">\(J\)</span> be the ideal <span class="process-math">\(I\restr X\text{,}\)</span> then <span class="process-math">\(\ov{f}\)</span> is will be (modulo <span class="process-math">\(J\)</span>) flat of cofinality <span class="process-math">\(\theta\text{.}\)</span> Since <span class="process-math">\(J\)</span> extends <span class="process-math">\(I\)</span> and <span class="process-math">\(\ov{f}\)</span> is exact of length <span class="process-math">\(\lambda\)</span> modulo <span class="process-math">\(I\text{,}\)</span> we conclude that <span class="process-math">\(\theta\)</span> must equal <span class="process-math">\(\lambda\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-12">For the second part of the theorem, assume by way of contradiction that there is an <span class="process-math">\(I\)</span>-positive set <span class="process-math">\(X\subseteq A\)</span> such that <span class="process-math">\(\lambda&lt;\lambda(a)\)</span> for all <span class="process-math">\(a\in X\text{.}\)</span> Since each <span class="process-math">\(\lambda(a)\)</span> is a regular cardinal, we know that for <span class="process-math">\(a\)</span> in <span class="process-math">\(X\text{,}\)</span> the set <span class="process-math">\(\{f_\alpha(a):\alpha&lt;\lambda\}\)</span> is bounded below <span class="process-math">\(\lambda\text{.}\)</span> Thus, we can define a function <span class="process-math">\(h\in\prod\lambda(a)\)</span> by setting <span class="process-math">\(h\)</span> to be <span class="process-math">\(0\)</span> outside of <span class="process-math">\(X\text{,}\)</span> while for all <span class="process-math">\(\alpha&lt;\lambda\)</span> and <span class="process-math">\(a\in X\text{,}\)</span> <span class="process-math">\(f_\alpha(a)\)</span> is less than <span class="process-math">\(h(a)\)</span> We get a contradiction, as there must be a <span class="process-math">\(\beta&lt;\lambda\)</span> for which <span class="process-math">\(h&lt;_I f_\beta\text{,}\)</span> but <span class="process-math">\(f_\beta(a)&lt;h(a)\)</span> for an <span class="process-math">\(I\)</span>-positive set of <span class="process-math">\(a\in A\text{.}\)</span> ◻</div>
+<div class="para" id="sec-2-3-exactsequences-13">The preceding theorem foreshadows a connection between the structure of an exact sequence <span class="process-math">\(\ov{f}\)</span> and the nature of its exact upper bound <span class="process-math">\(\ov{\lambda}\text{.}\)</span> To see how, let us first focus on the situation where the regular cardinals in the upper bound are (almost) all greater than the cardinality of <span class="process-math">\(A\text{.}\)</span> In this situation, we know that <span class="process-math">\(\lambda\)</span> must be greater than <span class="process-math">\(|A|\)</span> as well, and if our sequence <span class="process-math">\(\ov\lambda\)</span> is constant with value <span class="process-math">\(\theta\)</span> on an <span class="process-math">\(I\)</span>-positive set, then the only possibility is for <span class="process-math">\(\theta\)</span> to be <span class="process-math">\(\lambda\text{,}\)</span> the length of <span class="process-math">\(\ov{f}\text{.}\)</span> Let <span class="process-math">\(X\)</span> be the set of <span class="process-math">\(a\in A\)</span> for which <span class="process-math">\(\lambda(a)=\lambda\)</span> and set <span class="process-math">\(Y = A\setminus X\text{.}\)</span> It is certainly possible for either of these sets to be empty, but we know that since they partition <span class="process-math">\(A\)</span> into finitely many pieces, at least one of them must be <span class="process-math">\(I\)</span>-positive. If <span class="process-math">\(Y\)</span> is in the ideal <span class="process-math">\(I\text{,}\)</span> then our sequence <span class="process-math">\(\ov{f}\)</span> is flat of cofinality <span class="process-math">\(\lambda\text{.}\)</span> If <span class="process-math">\(X\)</span> is in the ideal <span class="process-math">\(I\text{,}\)</span> then for any <span class="process-math">\(I\)</span>-positive set <span class="process-math">\(Z\)</span> the sequence <span class="process-math">\(\ov{f}\)</span> is not flat modulo <span class="process-math">\(I\restr Z\text{.}\)</span> Even if both <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are in <span class="process-math">\(I^+\text{,}\)</span> we still have shown that assuming that <span class="process-math">\(|A|&lt;\lambda(a)\)</span> for all <span class="process-math">\(a\text{,}\)</span> our index set <span class="process-math">\(A\)</span> will into two pieces: on one of which <span class="process-math">\(\ov{f}\)</span> looks flat of cofinality <span class="process-math">\(\lambda\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and on the other where <span class="process-math">\(\ov{f}\)</span> is “nowhere flat” modulo <span class="process-math">\(I\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-14">What happens we don’t assume that <span class="process-math">\(\lambda(a)\)</span> is always greater than <span class="process-math">\(|A|\text{?}\)</span> First, note that since <span class="process-math">\(I\)</span> need not be maximal, there is nothing preventing the situation where the sequence <span class="process-math">\(\ov{\lambda}\)</span> is constant with different values on disjoint <span class="process-math">\(I\)</span>-positive sets. So for example, we could have an <span class="process-math">\(I\)</span>-positive set on which our sequence looks flat of cofinality <span class="process-math">\(\lambda\text{,}\)</span> and there could be another <span class="process-math">\(I\)</span>-positive set where <span class="process-math">\(\ov{\lambda}\)</span> is constant with some value <span class="process-math">\(\theta\neq\lambda\text{.}\)</span> What we do know is that if the latter situation occurs, then <span class="process-math">\(\theta\leq |A|\text{,}\)</span> so there is an <span class="process-math">\(I\)</span>-positive set on which <span class="process-math">\(\ov{f}\)</span> lives in a “small product”. Here, in contrast to the flat situation, things can be very sensitive to the underlying set theory, even in the simplest situation where both <span class="process-math">\(A\)</span> and <span class="process-math">\(\theta\)</span> are <span class="process-math">\(\omega\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-15">Suppose <span class="process-math">\(\lambda&gt;\aleph_0\)</span> is an arbitrary uncountable regular cardinal. Let <span class="process-math">\(V\)</span> be a model of <span class="process-math">\(\zfc\)</span> in which <span class="process-math">\(2^{\aleph_0}=\lambda\)</span> and <span class="process-math">\(\ma\)</span> holds. Let <span class="process-math">\(F=\omega^\omega\text{,}\)</span> the Baire space of all functions from <span class="process-math">\(\omega\)</span> to <span class="process-math">\(\omega\text{,}\)</span> and let <span class="process-math">\(I\)</span> be the ideal of finite subsets of <span class="process-math">\(\omega\text{.}\)</span> Martin’s Axiom implies that the cardinals <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> are equal to the continuum, and so <span class="process-math">\((F, &lt;_I)\)</span> will have true cofinality <span class="process-math">\(\lambda\text{.}\)</span> Any sequence <span class="process-math">\(\ov{f}\)</span> witnessing this will have the function that is constant with value <span class="process-math">\(\omega\)</span> as exact upper bound. Thus, the exact upper bound does not seem to be connected with the sequence <span class="process-math">\(\ov{f}\)</span> in this situation.</div>
+<div class="para" id="sec-2-3-exactsequences-16">If we do not insist on our examples involving <span class="process-math">\(\Fin(\omega)\)</span> and instead allow larger ideals, then we can have (at least consistently) even worse behavior as the following example shows.</div>
+<div class="para" id="sec-2-3-exactsequences-17">It is consistent that <span class="process-math">\(2^{\aleph_0}\)</span> is arbitrarily large, and for any uncountable regular <span class="process-math">\(\kappa\leq 2^{\aleph_0}\)</span> there is an ideal <span class="process-math">\(I(\kappa)\)</span> on <span class="process-math">\(\omega\)</span> such that <span class="process-math">\(\omega^\omega\)</span> has true cofinality <span class="process-math">\(\kappa\)</span> modulo <span class="process-math">\(I(\kappa)\text{.}\)</span> Again, the exact upper bound is exactly the same across all relevant <span class="process-math">\(\kappa\)</span> — <span class="process-math">\(\ov{\lambda}\)</span> is always the function with domain <span class="process-math">\(\omega\)</span> that is constant with value <span class="process-math">\(\omega\)</span> — but the lengths of the exact sequences in <span class="process-math">\(F\)</span> realize all possibilities by varying the ideals involved.</div>
+<div class="para" id="sec-2-3-exactsequences-18">As interesting as products of small sets are, they are not particularly useful for us because imposes few restrictions on how they behave, and we officially adopt the attitude that products of sets of size at most <span class="process-math">\(|A|\)</span> are intractable. If our exact sequence <span class="process-math">\(\ov{f}\)</span> has an exact upper bound <span class="process-math">\(g\)</span> such that <span class="process-math">\(\cf(g(a))\leq|A|\)</span> on an <span class="process-math">\(I\)</span>-positive set, then we will not be able to say much about the structure <span class="process-math">\((\prod g, &lt;_I)\)</span> without adopting additional set-theoretic axioms because it hides a copy of a product of small sets within. Thus, the following definition is quite natural.</div>
+<div class="para" id="sec-2-3-exactsequences-19">Suppose <span class="process-math">\(\ov{\lambda}=\langle \lambda(a):a\in A\rangle\)</span> is a sequence of regular cardinals. We define <span class="process-math">\(\liminf_I\ov{\lambda}\)</span> to be the least cardinal <span class="process-math">\(\mu\)</span> such that there is an <span class="process-math">\(I\)</span>-positive set of <span class="process-math">\(a\in A\)</span> with <span class="process-math">\(\lambda(a)\leq\mu\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-20">The preceding definition is made without assuming anything about the product <span class="process-math">\(\prod \ov{\lambda}\)</span> having true cofinality modulo <span class="process-math">\(I\text{,}\)</span> and so it makes sense for any sequence <span class="process-math">\(\ov{\lambda}\)</span> of regular cardinals. It gives us some handy language as well: if <span class="process-math">\(\liminf_I(\ov{\lambda})\)</span> is not greater than <span class="process-math">\(|A|\text{,}\)</span> then we know there is an <span class="process-math">\(I\)</span>-positive set of coordinates on which our product looks like a product of small sets, and we have declared such things to be taboo. Thus, we will want to focus our attention on products <span class="process-math">\(\prod\ov{\lambda}\)</span> for which <span class="process-math">\(\liminf_I\ov{\lambda}\)</span> is greater than <span class="process-math">\(A\text{.}\)</span> Our intent is to look at this cardinal in the context of general products of regular cardinals <span class="process-math">\(\prod\ov{\lambda}\text{,}\)</span> and then return to questions related to exact sequences a little later.</div>
+<div class="para logical" id="sec-2-3-exactsequences-21">
+<div class="para">We will start with some elementary observations, so let us assume <span class="process-math">\(\ov{\lambda}\)</span> is an <span class="process-math">\(A\)</span>-indexed sequence of regular cardinals. First, Definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:liminfdef" missing or not unique]</code> will always make sense because <span class="process-math">\(I\)</span> is a proper ideal, and</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\min\{\lambda(a):a\in A\}\leq\liminf{}_I\ov\lambda \leq\sup\{\lambda(a):a\in A\}.
+\end{equation*}
+</div>
+<div class="para">This shows us that the easiest way to guarantee that <span class="process-math">\(\liminf_I\ov{\lambda}\)</span> is greater than <span class="process-math">\(|A|\)</span> is to insist that each <span class="process-math">\(\lambda(a)\)</span> is greater than <span class="process-math">\(|A|\text{,}\)</span> and we will see this hypothesis come to the forefront as we move deeper into pcf theory.</div>
+</div>
+<div class="para" id="sec-2-3-exactsequences-22">Second, it is elementary to prove that <span class="process-math">\(\liminf_I\ov{\lambda}\)</span> must be in the closure of the set <span class="process-math">\(\{\lambda(a):a\in A\}\text{.}\)</span> This is quite useful, because it implies that if each <span class="process-math">\(\lambda(a)\)</span> is greater than <span class="process-math">\(|A|\)</span> and <span class="process-math">\(\ov\lambda\)</span> does not stabilize on an <span class="process-math">\(I\)</span>-positive set, then <span class="process-math">\(\liminf_I\ov\lambda\)</span> must be singular of cofinality at most <span class="process-math">\(|A|\)</span> (see Exercise <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:singular" missing or not unique]</code>).</div>
+<div class="para" id="sec-2-3-exactsequences-23">Finally, Definition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:liminfdef" missing or not unique]</code> extracts a cardinal characteristic from the sequence <span class="process-math">\(\ov{\lambda}\text{,}\)</span> without looking at the associated product <span class="process-math">\(\prod\ov{\lambda}\text{.}\)</span> This is a shortcoming, as it would be useful to know that this particular cardinal could be recovered from the product itself as that would give us a means of looking at a collection of functions and determining if it is hiding an intractable product of small sets. Luckily, it happens that it is tightly connected to the cardinal <span class="process-math">\(\sigma_I(\prod\ov{\lambda})\text{,}\)</span> which <em class="emphasis">is</em> defined from the product.</div>
+<div class="para" id="sec-2-3-exactsequences-24">Suppose <span class="process-math">\(\ov{\lambda}=\langle \lambda(a):a\in A\rangle\)</span> is a sequence of regular cardinals. Then</div>
+<div class="para logical" id="sec-2-3-exactsequences-25"><ol class="decimal">
+<li id="sec-2-3-exactsequences-25-1-1"><div class="para" id="sec-2-3-exactsequences-25-1-1-1">
+<span class="process-math">\(\liminf{}_I\ov{\lambda}\le \sigma_I(\prod\ov{\lambda})\text{,}\)</span> and</div></li>
+<li id="sec-2-3-exactsequences-25-1-2"><div class="para" id="sec-2-3-exactsequences-25-1-2-1">if <span class="process-math">\(|A|\leq\liminf_I\ov{\lambda}\)</span> then <span class="process-math">\(\sigma_I(\prod\ov{\lambda})=\liminf\hphantom{}_I \ov\lambda\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="para" id="sec-2-3-exactsequences-26">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(\mu=\liminf_I\ov{\lambda}\text{,}\)</span> and suppose <span class="process-math">\(F\)</span> is a subset of <span class="process-math">\(\prod\ov{\lambda}\)</span> of some cardinality <span class="process-math">\(\theta&lt;\mu\text{.}\)</span> Since the product is closed downward under <span class="process-math">\(&lt;_I\text{,}\)</span> we need to show that the function <span class="process-math">\(h:=\sup(F)\)</span> is in the product modulo <span class="process-math">\(I\text{.}\)</span> Clearly <span class="process-math">\(h(a)\leq\lambda(a)\)</span> for all <span class="process-math">\(a\in A\text{,}\)</span> and <span class="process-math">\(h(a)&lt;\lambda(a)\)</span> whenever <span class="process-math">\(\theta&lt;\lambda(a)\)</span> because each <span class="process-math">\(\lambda(a)\)</span> is regular. The choice of <span class="process-math">\(\theta\)</span> means that this holds for almost all <span class="process-math">\(a\in A\text{,}\)</span> so <span class="process-math">\(\sup(F)\)</span> is equal (modulo <span class="process-math">\(I\)</span>) to some function in our product.</div>
+<div class="para" id="sec-2-3-exactsequences-27">Now suppose <span class="process-math">\(|A|\leq\mu\text{.}\)</span> We need to produce a subset <span class="process-math">\(F\)</span> of our product of cardinality <span class="process-math">\(\mu\)</span> whose supremum is not in <span class="process-math">\(\prod\ov{\lambda}\text{.}\)</span> But this is easy: For each <span class="process-math">\(a\in A\)</span> with <span class="process-math">\(\lambda(a)\leq\mu\)</span> and <span class="process-math">\(\alpha&lt;\lambda(a)\)</span> we add a function to <span class="process-math">\(F\)</span> that has value <span class="process-math">\(\alpha\)</span> on coordinate <span class="process-math">\(a\)</span> and is identically <span class="process-math">\(0\)</span> elsewhere. The cardinality of <span class="process-math">\(F\)</span> is at most <span class="process-math">\(\mu\times|A|=\mu\text{,}\)</span> and <span class="process-math">\(\sup(F)(a)=\lambda(a)\)</span> for all <span class="process-math">\(a\in A\)</span> with <span class="process-math">\(\lambda(a)\leq\mu\text{.}\)</span> But this is an <span class="process-math">\(I\)</span>-positive set, so <span class="process-math">\(\sup(F)\)</span> is not in our product. ◻</div>
+<div class="para" id="sec-2-3-exactsequences-28">As a corollary, we end up with the desired characterization of <span class="process-math">\(\liminf_I\ov{\lambda}\)</span> using the functions in the product <span class="process-math">\(\prod\ov{\lambda}\text{,}\)</span> at least for the situation in which we will operate most of the time.</div>
+<div class="para logical" id="sec-2-3-exactsequences-29">
+<div class="para">If <span class="process-math">\(\ov{\lambda}\)</span> is a sequence of regular cardinals each greater than <span class="process-math">\(|A|\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_I\bigl(\prod\ov{\lambda}\bigr)=\liminf{}_I\ov{\lambda}.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec-2-3-exactsequences-30">We can take the above observation and use it to obtain a nice counterpart to our characterization of flatness <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq:flatness" missing or not unique]</code> as the relation <span class="process-math">\(\sigma_I(F)=\mathfrak{d}_I(F)\text{.}\)</span>
+</div>
+<div class="para" id="sec-2-3-exactsequences-31">Suppose <span class="process-math">\(\ov{\lambda}\)</span> is an <span class="process-math">\(A\)</span>-indexed sequence of regular cardinals each greater than <span class="process-math">\(|A|\)</span> and let <span class="process-math">\(F\)</span> be the product <span class="process-math">\(\prod\ov{\lambda}\text{.}\)</span> Then the following statements are equivalent:</div>
+<div class="para logical" id="sec-2-3-exactsequences-32"><ol class="decimal">
+<li id="sec-2-3-exactsequences-32-1-1"><div class="para" id="sec-2-3-exactsequences-32-1-1-1">
+<span class="process-math">\(\liminf_I(\ov{\lambda})\)</span> is regular.</div></li>
+<li id="sec-2-3-exactsequences-32-1-2"><div class="para" id="sec-2-3-exactsequences-32-1-2-1">There is an <span class="process-math">\(a\in A\)</span> for which <span class="process-math">\(\lambda(a)=\liminf_I(\ov\lambda)\text{.}\)</span>
+</div></li>
+<li id="sec-2-3-exactsequences-32-1-3"><div class="para" id="sec-2-3-exactsequences-32-1-3-1"><span class="process-math">\(\sigma_I(F)=\mathfrak{b}_I(F)\text{.}\)</span></div></li>
+</ol></div>
+<div class="para" id="sec-2-3-exactsequences-33">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(\mu\)</span> denote <span class="process-math">\(\liminf_I(\ov\lambda)\text{.}\)</span> We know <span class="process-math">\(\mu\)</span> is in the closure of the set of regular cardinals <span class="process-math">\(\{\lambda(a):a\in A\}\text{,}\)</span> and our assumption implies that <span class="process-math">\(|A|\)</span> is less than <span class="process-math">\(\mu\text{.}\)</span> If <span class="process-math">\(\mu\)</span> is regular, it cannot be a limit point of the range of <span class="process-math">\(\ov{\lambda}\text{,}\)</span> and therefore must be an element of this set and so (2) holds.</div>
+<div class="para logical" id="sec-2-3-exactsequences-34">
+<div class="para">Now assume (2). The inequality <span class="process-math">\(\sigma_I(F)\leq\mathfrak{b}_I(F)\)</span> holds automatically and <span class="process-math">\(\mu=\sigma_I(F)\)</span> by Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor:liminfsigma" missing or not unique]</code>, so it suffices to produce an unbounded subset of <span class="process-math">\(F\)</span> with cardinality <span class="process-math">\(\sigma_I(F)\text{.}\)</span> For each <span class="process-math">\(\alpha&lt;\mu\text{,}\)</span> define a function <span class="process-math">\(f_\alpha\)</span> by</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_\alpha(a)=
+\begin{cases}
+\alpha  &amp;\text{if $\lambda(a)=\sigma_I(F)$, and}\\
+0       &amp;\text{otherwise.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">The definition of <span class="process-math">\(\liminf_I(\ov\lambda)\)</span> tells us that (2) implies <span class="process-math">\(\lambda(a)=\mu\)</span> for an <span class="process-math">\(I\)</span>-positive set of coordinates <span class="process-math">\(a\text{,}\)</span> and so <span class="process-math">\(f_\alpha\)</span> will have the value <span class="process-math">\(\alpha\)</span> on an <span class="process-math">\(I\)</span>-positive set <span class="process-math">\(X\text{.}\)</span> Since <span class="process-math">\(\sigma_I(F)=\liminf_I\ov{\lambda}\text{,}\)</span> (2) also implies that <span class="process-math">\(\sigma_I(F)\)</span> is a regular cardinal greater than the cardinality of <span class="process-math">\(A\text{.}\)</span> Thus, the sequence <span class="process-math">\(\langle f_\alpha:\alpha&lt;\lambda\rangle\)</span> is flat of cofinality <span class="process-math">\(\sigma_I(F)\)</span> modulo the (proper) ideal <span class="process-math">\(I\restr X\text{,}\)</span> and furthermore the pointwise supremum <span class="process-math">\(f\)</span> of the sequence will be an exact upper bound. By construction, the supremum <span class="process-math">\(f\)</span> is equal to <span class="process-math">\(\lambda(a)\)</span> on <span class="process-math">\(X\text{,}\)</span> so any function <span class="process-math">\(h\in F\)</span> is below <span class="process-math">\(f\)</span> modulo <span class="process-math">\(I\restr X\text{.}\)</span> This means that there will be an <span class="process-math">\(\alpha&lt;\mu\)</span> such that <span class="process-math">\(h(a)&lt;f_\alpha(a)\)</span> for <span class="process-math">\(I\)</span>-almost all <span class="process-math">\(a\in X\text{,}\)</span> and we conclude that set of functions <span class="process-math">\(f_\alpha\)</span> is unbounded in <span class="process-math">\(F\)</span> modulo <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-2-3-exactsequences-35">The final implication from (3) to (1) is easy given our prior work: we know <span class="process-math">\(\liminf_I\ov{\lambda}\)</span> will equal <span class="process-math">\(\sigma_I(F)\text{,}\)</span> and we finish by way of Proposition I.<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:firstb" missing or not unique]</code>, which tells us that <span class="process-math">\(\mathfrak{b}_I(F)\)</span> is a regular cardinal. ◻</div>
+<div class="para" id="sec-2-3-exactsequences-36">We now come to an important corollary that tells us that singular cardinals are always hiding just around the corner in our work.</div>
+<div class="para" id="sec-2-3-exactsequences-37">Suppose <span class="process-math">\(\ov{\lambda}\)</span> is an <span class="process-math">\(A\)</span>-indexed sequence of regular cardinals greater than <span class="process-math">\(|A|\)</span> and let <span class="process-math">\(F\)</span> denote the product <span class="process-math">\(\prod\ov{\lambda}\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-2-3-exactsequences-38"><ol class="decimal">
+<li id="sec-2-3-exactsequences-38-1-1"><div class="para" id="sec-2-3-exactsequences-38-1-1-1">If <span class="process-math">\(\sigma_I(F)=\mathfrak{b}_I(F)\text{,}\)</span> then there is an <span class="process-math">\(I\)</span>-positive set <span class="process-math">\(X\)</span> on which <span class="process-math">\(F\)</span> is flat of cofinality <span class="process-math">\(\sigma_I(F)\text{.}\)</span>
+</div></li>
+<li id="sec-2-3-exactsequences-38-1-2"><div class="para logical" id="sec-2-3-exactsequences-38-1-2-1">
+<div class="para">If <span class="process-math">\(\ov{\lambda}\)</span> does not stabilize on an <span class="process-math">\(I\)</span>-positive set, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cf(\sigma_I(F))\leq|A|&lt;\sigma_I(F)&lt;\mathfrak{b}_I(F)\leq\mathfrak{d}_I(F)\leq |F|.
+\end{equation*}
+</div>
+</div></li>
+</ol></div>
+<div class="para" id="sec-2-3-exactsequences-39">
+<em class="emphasis">Proof.</em> The first follows from the equivalence of (2) and (3) in our theorem, and the second from the equivalence of (1) and (2) combined with earlier observations. ◻</div>
+<div class="para" id="sec-2-3-exactsequences-40">The above corollary tells us where to look if we are interested in finding exact sequences that are “nowhere” flat but do not live in an intractable product of small sets: we are going to need to find products <span class="process-math">\(F\)</span> of regular cardinals satisfying <span class="process-math">\(\mathfrak{b}_I(F)=\mathfrak{d}_I(F)\)</span> (so there will be a true cofinality modulo <span class="process-math">\(I\)</span>) for which the cardinal <span class="process-math">\(\sigma_I(F)\)</span> is singular and strictly less than <span class="process-math">\(\mathfrak{b}_I(F)\)</span> (which must happen if we are to avoid an <span class="process-math">\(I\)</span>-positive set on which <span class="process-math">\(F\)</span> looks flat modulo <span class="process-math">\(I\)</span>). The following gives us our first example of such an exact sequence, but it has the defect of making some cardinal arithmetic assumptions, a defect that will be removed later in this chapter when we show that such sequences are quite common.</div>
+<div class="para logical" id="sec-2-3-exactsequences-41">
+<div class="para">Assume <span class="process-math">\(\gch\)</span> holds, and let <span class="process-math">\(F\)</span> be the product <span class="process-math">\(\prod\ov{\lambda}\text{,}\)</span> where <span class="process-math">\(\lambda(n)=\aleph_{n+1}\text{.}\)</span> If we let <span class="process-math">\(I\)</span> be the ideal <span class="process-math">\(\Fin(\omega)\)</span> of finite subsets of <span class="process-math">\(\omega\text{,}\)</span> then <span class="process-math">\(F\)</span> is <span class="process-math">\(&lt;_I\)</span>-directed, and so</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sigma_I(F)\le\mathfrak b_I(F)\le \mathfrak
+d_I(F)\le |F|=\aleph_{\omega+1}.
+\end{equation*}
+</div>
+<div class="para">We see that <span class="process-math">\(\liminf_I(\ov{\lambda})\)</span> is <span class="process-math">\(\aleph_\omega\text{,}\)</span> and therefore <span class="process-math">\(\sigma_I(F)=\aleph_\omega\)</span> as well by Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor:liminfsigma" missing or not unique]</code>. Since <span class="process-math">\(\mathfrak{b}_I(F)\)</span> is regular and at least of cardinality <span class="process-math">\(\sigma_I(F)\text{,}\)</span> we conclude that both <span class="process-math">\(\mathfrak{b}_I(F)\)</span> and <span class="process-math">\(\mathfrak{d}_I(F)\)</span> are <span class="process-math">\(\aleph_{\omega+1}\)</span> and therefore <span class="process-math">\(F\)</span> has true cofinality <span class="process-math">\(\aleph_{\omega+1}\)</span> modulo <span class="process-math">\(I\text{.}\)</span>
+</div>
+</div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-2-2-flat-sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-2-4-trichotomy.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

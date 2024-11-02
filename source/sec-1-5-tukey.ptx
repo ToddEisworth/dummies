@@ -136,7 +136,8 @@
 		<p>
 				This corollary is quite useful, as there are situations where complicated ordered sets have cofinal subsets with much simpler structure. One obvious example of this occurs with true cofinality — <q>having a true cofinality</q> is the same as <q>has a cofinal subset order-isomorphic to a regular cardinal</q> — and so given a <m>&lt;_I</m>-directed set <m>F\subseteq\On^A</m> we can see that the statement <q><m>\tcf_I(F)=\lambda</m></q> means simply that <m>(F,&lt;_I)</m> is Tukey equivalent to <m>(\lambda, &lt;)</m>. We look at two additional important examples of this type of phenomenon below.
 		</p>
-		<example>
+		<example xml:id="example-first-tukey">
+			
 			<p>
 				Suppose <m>f:A\rightarrow\On</m> is such that <m>f(a)</m> is a limit ordinal for all <m>a\in A</m>, and for each <m>a\in A</m> let <m>\lambda(a)=\cf(f(a))</m>.
 		   </p>
@@ -161,7 +162,7 @@
 		<p>
 			Our next example shows that under a mild assumption it is possible to find even nicer cofinal subsets of <m>\prod f</m>.
 		</p>
-		<example>
+		<example xml:id="example-second-tukey">
 			<p>
 				Continuing with the notation of Example <xref ref="ex:prodseq" />, let us now make the additional assumption that the cardinality of <m>A</m> is strictly less than each <m>\lambda(a)</m> and then define <m>B</m> to be the range <m>\{\lambda(a):a\in A\}</m> of <m>\ov{\lambda}</m> (considered as a function from <m>A</m> onto <m>B</m>). Our aim is to show that <m>\prod f</m> and <m>\prod B</m> are essentially the same, in the sense that for any ideal <m>I</m> on <m>A</m> there is a corresponding ideal <m>J</m> on <m>B</m> such that <m>(\prod f, \leq_I)</m> and <m>(\prod B, \leq_J)</m> are Tukey equivalent, and vice versa.
 			</p>

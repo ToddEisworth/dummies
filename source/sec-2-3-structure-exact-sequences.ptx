@@ -6,40 +6,63 @@
 		<p>
 			Now that we can claim to understand the structure of flat families of functions, we move now to the more general problem of characterizing when a <m>&lt;_I</m>-increasing sequence of functions <m>\ov{f}</m> has an exact upper bound <m>f</m> that need not be flat.
 		</p>
+		<definition xml:id="def-exact-sequence">
+			<statement>
+				<p>
+					A <m>&lt;_I</m>-increasing sequence <m>\ov f=\langle f_\alpha\mid \alpha&lt;\delta\rangle</m> in <m>\On^A</m> is called <em>exact of cofinality <m>\lambda</m></em> if the sequence <m>\ov{f}</m> has an exact upper bound and <m>\cf(\delta)=\lambda</m>.
+				</p>
+			</statement>
+		</definition>
 
-<!-- div attr= class="definition"-->
 		<p>
-			A <m>&lt;_I</m>-increasing sequence <m>\ov f=\langle f_\alpha\mid \alpha&lt;\delta\rangle</m> in <m>\On^A</m> is called <em>exact of cofinality <m>\lambda</m></em> if the sequence <m>\ov{f}</m> has an exact upper bound and <m>\cf(\delta)=\lambda</m>.
-		</p><!--</div attr= class="definition">-->
-
-		<p>
-			Any <m>&lt;_I</m>-increasing sequence <m>\langle f_\alpha:\alpha&lt;\delta\rangle</m> Notice that any <m>&lt;_I</m>-increasing sequence of limit length is equivalent to a sequence indexed by a regular cardinal, so there , as every <m>&lt;_I</m>-increasing sequence of limit length is equivalent to such a sequence modulo <m>I</m>. If we need further generality, we will follow the practice established in the last section and say that a <m>&lt;_I</m>-increasing sequence of length some limit ordinal <m>\delta</m> is exact if it has an exact upper bound, and then the original sequence will be equivalent modulo <m>I</m> to an exact sequence of length <m>\cf(\delta)</m>.
+			 Notice that any <m>&lt;_I</m>-increasing sequence of limit length <m>\delta</m> has a cofinal subsequence of
+			 length <m>\cf(\delta)</m>, and hence we will usually restrict our attention to increasing
+			 sequences with length a regular cardinal. If we need further generality,
+			  we will follow the practice established in the last section and say that a
+			   <m>&lt;_I</m>-increasing sequence of length some limit
+			    ordinal <m>\delta</m> is exact if it has an exact upper bound,
+				 and then the original sequence will be equivalent modulo <m>I</m> to an
+				  exact sequence of length <m>\cf(\delta)</m>.
 		</p>
 
 		<p>
-			As far as eubs go, there are some things we can say about their structure without knowing much about the sequence <m>\ov{f}</m> at all. For example, the following relies only on the fact that <m>\lambda</m> is an infinite cardinal.
+			As far as eubs go, there are some things we can say about their
+			 structure without knowing much about the sequence <m>\ov{f}</m> at all.
+			  For example, the following relies only on the fact that the length of the sequence
+			  is an infinite cardinal.
 		</p>
-
-<!-- div attr= class="proposition"-->
+	<proposition xml:id="prop-basic-eub-prop">
+		<statement>
+			<p>
+				Suppose <m>\ov f</m> is an exact sequence of length <m>\lambda</m>,
+				 and let <m>g</m> be an exact upper bound. Then <m>g(a)</m> is an infinite 
+				 limit ordinal for <m>I</m>-almost all <m>a\in A</m>.
+			</p>
+		</statement>
+	</proposition>
+	<proof>
 		<p>
-			Suppose <m>\ov f</m> is an exact sequence of length <m>\lambda</m>, and let <m>g</m> be an exact upper bound. Then <m>g(a)</m> is an infinite limit ordinal for <m>I</m>-almost all <m>a\in A</m>.
-		</p><!--</div attr= class="proposition">-->
-
-<!-- div attr= class="proof"-->
-		<p>
-			<em>Proof.</em> It is obvious that <m>g</m> cannot equal 0 on an <m>I</m>-positive set: just the fact that <m>f_0&lt;_I f_1</m> is enough to guarantee that <m>f_1(a)</m> must be greater than <m>0</m> for almost all <m>a\in A</m>, and hence the same must hold for <m>g</m>.
+		It is obvious that <m>g</m> cannot equal 0 on an <m>I</m>-positive set: just the fact that <m>f_0&lt;_I f_1</m> is enough to guarantee that <m>f_1(a)</m> must be greater than <m>0</m> for almost all <m>a\in A</m>, and hence the same must hold for <m>g</m>.
 		</p>
-
 		<p>
 			Next, suppose by way of contradiction that there is an <m>I</m>-positive set <m>X</m> of coordinates <m>a</m> for which <m>g(a)</m> is a successor ordinal. Define a function <m>h</m> with domain <m>A</m> by <me>h(a)=
 \begin{cases}
     g(a)-1   &amp;\text{if $a\in X$, and}\\
     0        &amp;\text{otherwise}.
 \end{cases}</me> Since <m>h&lt;_I g</m>, we can choose <m>\alpha&lt;\lambda</m> with <m>h&lt;_I f_\alpha</m>. If <m>a</m> is in <m>X</m> and <m>h(a)&lt;f_\alpha(a)</m>, then it must be the case that <m>g(a)</m> is less than or equal to <m>f_\alpha(a)</m>. Thus, there is an <m>I</m>-positive set of <m>a</m> for which <m>g(a)\leq f_\alpha(a)</m>. But this is absurd as we know <m>f_\alpha&lt;_I g</m>. ◻
-		</p><!--</div attr= class="proof">-->
+		</p>
+	</proof>
 
 		<p>
-			The preceding proposition allows us to invoke Theorem I.<xref ref="thm:equivtoproduct" /> when discussing exact sequences and assume without loss of generality that the exact upper bounds have the form <m>\ov{\lambda}=\langle\lambda(a):a\in A\rangle</m>, where each <m>\lambda(a)</m> is a regular cardinal. Moreover, if we know that <m>\lambda(a)</m> is greater than <m>|A|</m> for <m>I</m>-almost every coordinate <m>a</m>, then the know that <m>\ov{f}</m> is equivalent modulo <m>I</m> to an isomorphic copy of the product <m>\prod\{\lambda(a):a\in A\}</m>
+			The preceding proposition allows us to invoke 
+			<xref ref="example-first-tukey" /> when discussing exact sequences and assume
+			 without loss of generality that the exact upper bounds
+			  have the form <m>\ov{\lambda}=\langle\lambda(a):a\in A\rangle</m>,
+			   where each <m>\lambda(a)</m> is a regular cardinal. Moreover, if we know
+			    that <m>\lambda(a)</m> is greater than <m>|A|</m> for <m>I</m>-almost 
+				every coordinate <m>a</m>, then by the argument of <xref ref="example-second-tukey"/>
+				 <m>\ov{f}</m> is equivalent modulo <m>I</m> to an isomorphic copy of the
+				  product <m>\prod\{\lambda(a):a\in A\}</m>.
 		</p>
 
 <!-- div attr= class="theorem"-->

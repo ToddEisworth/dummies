@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rudin-type Dowker spaces: Start over</title>
+<link rel="prev" href="sect0002.html" title="The spaces" />
+<link rel="up" href="index.html" title="Rudin-type Dowker spaces" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Rudin-type Dowker spaces</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The spaces</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Start over</span></a>
+ </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000004">3 Start over</h1>
+<p>Assume that \(2^{\aleph _0}\le \mu \) and \(\mu {\lt}\ov \kappa \), an increasing sequence of regulars. or, just a sequence with an infinite range. </p>
+<p>\(\mathcal H\subseteq \mathcal P(X(\mu ,\overline\kappa ))\) is a pairwise disjoint family of sets such that the union of each subcollection of \(\mathcal H\) is closed. Denote \(H=\bigcup \mahtcal H\). For \(h\in H\) let \(D(h)\) be the unique element of \(\mathcal H\) to which \(h\) belongs. </p>
+<p>\(t=\sup (U)\). Case: \(\forall _{i\in \omega } \cf (t(i)){\gt}\mu \) and \(t\notin X\). </p>
+<p>Let \(U_n=\{ h\in U\mid (\forall ){i}(\cf (h(i))\le \kappa _n)\). </p>
+<p><div class="claim_thmwrapper " id="a0000000023">
+  <div class="claim_thmheading">
+    <span class="claim_thmcaption">
+    Claim
+    </span>
+    <span class="claim_thmlabel">3.0.1</span>
+  </div>
+  <div class="claim_thmcontent">
+  <p>For a given \(n\in \omega \) there is some \(h_n{\lt}t\) such that \((h_n,t]\cap U_n\) meets at most one member of \(\mathcal H\). </p>
+
+  </div>
+</div> </p>
+<p><div class="proof_wrapper" id="a0000000024">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">â–¼</span>
+  </div>
+  <div class="proof_content">
+  
+  </div>
+</div> Assume: \((*)\) for all \(h{\lt}t\) there are \(k^h_0,k^h_1\in H\cap U_n \cap (h,t]\) such that \(D(k^h_0)\not=D(k^h_1)\). </p>
+<p>Notation: \(A_0=\{ i\in \omega \mid \cf (t(i))\le \kappa _n\} \). \(A_1=\omega \setminus A_0\). \(t_0=t\restriction A_0\) and \(t_1=t\setminus t_0\). </p>
+<p>First let us state </p>
+<ol class="enumerate">
+  <li><p>For all \(h\in U_n\) it holds that \(h\restriction A_1 {\lt} t_1\). </p>
+</li>
+</ol>
+<p>Consequently, \((H\cap U_n)\restriction A_1\subseteq \prod t_1\) and is cofinal in \((\prod t_1,{\lt})\) by \((*)\). Also, if \(h\in U_n\) then \(\mathord {=}(h,t)\subseteq A_0\). </p>
+<p>Case 1: \(\cf (\prod t_0,{\lt})\le \kappa _n\). Done. </p>
+<p>Case 2: \(\cf (\prod t_p,{\lt}){\gt} \kappa _n\). </p>
+<p><div class="claim_thmwrapper " id="a0000000025">
+  <div class="claim_thmheading">
+    <span class="claim_thmcaption">
+    Claim
+    </span>
+    <span class="claim_thmlabel">3.0.2</span>
+  </div>
+  <div class="claim_thmcontent">
+  <p>There are some \(B_0,B_1\subseteq A_0\) such that for all \(g{\lt}t\) there is are \(k_0,k_1\in H\) such that \(\mathord {=}(k_0,t)=B_0\) and \(g {\lt} h\). </p>
+
+  </div>
+</div> </p>
+<p>Suppose this is not the case and for every \(B_0,B_1\subseteq A_0\) find some \(g_{B_0,B_1}{\lt}t\) such that for all \(k_0,k_1\in H\), if \(\nathord {=}(k_j,t)=B_j\) for \(j{\lt}2\) then \(k_j\not\le g_B\) for some \(j{\lt}2\). </p>
+<p>Let \(g=\sup \{ g_B\mid B\subseteq A_0\} \). As \(2^{\aleph _0}\le \mu {\lt}\min \{ \cf (t(i))\mid i\in \omega \} \), it holds that \(g{\lt}t\). By out assumption there is \(k\in H\cap U_n\cap (g,t]\). But then \(\mathord {=}(g,t)\subseteq A_0\). Denote it by \(B\). So \(g_B\le g{\lt}k\), contradiction. </p>
+<p>Let \(B_0\) be as stated. So for all \(g{\lt}t\) we can choose \(k\) </p>
+<dl class="bibliography">
+  <dt><a name="balogh1">1</a></dt>
+  <dd><p>Z. T. Balogh. <i class="sl">A small Dowker space in ZFC</i>, Proc. Amer. Math. Soc. 124 (1996), no. 8, 2555–2560 </p>
+</dd>
+  <dt><a name="gitik-shelah">2</a></dt>
+  <dd><p>. M. Gitik and S. Shelah. <i class="sl">On certain indestructibility of strong cardinals and a question of Hajnal</i>, Arch. Math. Logic 28 (1989), no. 1, 35–42. </p>
+</dd>
+  <dt><a name="good">3</a></dt>
+  <dd><p>C. Good. <i class="sl">Large cardinals and small Dowker spaces</i>,Proc. Amer. Math. Soc.123 (1995), no.1, 263–272. </p>
+</dd>
+  <dt><a name="kojmich">4</a></dt>
+  <dd><p>M. Kojman and H. Michalewski. <i class="sl">Borel extensions of Baire measures in ZFC</i>, Fund. Math. 211 (2011), no.3, 197–223. </p>
+</dd>
+  <dt><a name="kojlub">5</a></dt>
+  <dd><p>M. Kojman and V. Lubitch. <i class="sl">Sequentially linearly Lindelöf spaces</i>, Topology Appl. 128 (2003), no.2-3, 135–144. </p>
+</dd>
+  <dt><a name="kojsh">6</a></dt>
+  <dd><p>M. Kojman and S. Shelah. <i class="sl">A ZFC Dowker space in \(\aleph _{\omega +1}\): an application of PCF theory to topology</i>, Proc. Amer. Math. Soc. 126 (1998), no. 8, 2459–2465. </p>
+</dd>
+  <dt><a name="miscenko">7</a></dt>
+  <dd><p>A. Miščenko. <i class="sl">On finally compact spaces</i>, Dokl. Akad. Nauk SSSR 145 (1962), 1224–1227. </p>
+</dd>
+  <dt><a name="RST">8</a></dt>
+  <dd><p>A. Rinot, R. Shalev, and S.Todorcevic. <i class="sl">A new small Dowker space</i>, Period. Math. Hungar. 88 (2024), no.1, 102–117. </p>
+</dd>
+  <dt><a name="open2">9</a></dt>
+  <dd><p>E. Pearl, ed. <i class="sl">Open problems in topology. II</i>, Elsevier B. V., Amsterdam, 2007. xii+763 pp. </p>
+</dd>
+  <dt><a name="rudin">10</a></dt>
+  <dd><p>M. E. Rudin. <i class="sl">A normal space X for which \(X\times I\) is not normal</i>, Fund. Math.73 (1971/72), no.2, 179–186. </p>
+</dd>
+  <dt><a name="simon">11</a></dt>
+  <dd><p>P. Simon. <i class="sl">A note on Rudin’s example of Dowker space</i>. Comment. Math. Univ. Carolinae 12 (1971), 825–834. </p>
+</dd>
+</dl>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0002.html" title="The spaces"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Rudin-type Dowker spaces"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

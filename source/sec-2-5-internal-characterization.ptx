@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<section xml:id="sec-2-5-internal-characterization">
+		<title>Characterization of Exact Sequences</title>
+
+		<p>
+			Our goal in this section is to use our work in the previous two sections to give necessary and sufficient conditions for a <m>&lt;_I</m>-increasing sequence to be exact.
+		</p>
+
+<!-- div attr= class="definition"-->
+		<p>
+			 Let <m>\ov{f}</m> be a <m>&lt;_I</m>-increasing sequence that is exact of length <m>\lambda</m> with <m>|A|^+&lt;\lambda</m>.
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						An ordinal <m>\delta&lt;\lambda</m> is a <em>flat point</em> of <m>\ov{f}</m> if and only if <m>\ov f\restriction \delta</m> is flat. We define <me>\Flat(\ov f)=\{\delta&lt;\lambda: |A|&lt;\cf(\delta)&lt;\lambda\text{ and $\delta$ is a flat point of $\ov f$}\}.</me>
+					</p>
+			</li>
+
+			<li>
+					<p>
+						For a regular cardinal <m>\theta</m> with <m>|A|&lt;\theta&lt;\lambda</m>, we define <me>F(\ov{f},\theta) = \Flat(\ov f)\cap S^\lambda_\theta,</me> or, equivalently, those <m>\delta&lt;\lambda</m> for which <m>\ov f\restr \delta</m> is flat of cofinality <m>\theta</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						The <em>flatness spectrum</em> of <m>\ov f</m>, denoted by <m>FS(\ov f)</m>, is defined to be the set of regular cardinals <m>\theta</m> for which <m>|A|&lt;\theta&lt;\lambda</m> and <m>F(\ov{f},\theta)</m> is a stationary subset of <m>\lambda</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="definition">-->
+
+		<p>
+			Our first observation is that the restriction <m>|A|^+&lt;\lambda</m> is harmless given our goals, as we have already committed ourselves to avoiding intractable products of small sets, so the only way <m>\lambda=|A|^+</m> might arise is with a flat product and we already understand that situation. Our second observation is that the set <m>\Flat(\ov{f})</m> is determined (modulo the non-stationary ideal on <m>\lambda</m>) by the <m>\equiv_I</m>-class of <m>\ov{f}</m>.
+		</p>
+
+<!-- div attr= class="proposition"-->
+		<p>
+			Suppose <m>\ov{f}</m> is an exact sequence of length <m>\lambda</m> in <m>\On^A</m>, where <m>|A|^+&lt;\lambda</m>. If <m>\ov{g}=\langle g_\alpha:\alpha&lt;\lambda\rangle</m> is <m>&lt;_I</m>-increasing with <m>\ov{f}\equiv_I\ov{g}</m> then <m>\ov{g}</m> is exact of length <m>\lambda</m> and there is a closed unbounded <m>C\subseteq\lambda</m> such that <me>\Flat(\ov f)\cap C = \Flat(\ov g)\cap C.</me>
+		</p><!--</div attr= class="proposition">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> We know that if <m>F</m> and <m>G</m> are subsets of <m>\On^A</m> that are equivalent modulo <m>I</m>, then a function in <m>\On^A</m> is an eub for <m>F</m> modulo <m>I</m> if and only if it is an eub for <m>G</m> modulo <m>I</m>. We can fix a closed unbounded <m>C\subseteq\lambda</m> of ordinals <m>\delta</m> such that <m>\ov{f}\restr\delta</m> is equivalent modulo <m>I</m> to <m>\ov{g}\restr\delta</m> (Exercise <xref ref="?" /> below). Now if <m>\delta\in C</m> has cofinality <m>\theta&gt;|A|</m> and <m>\ov{f}\restr\delta</m> is flat, then <m>\ov{g}\restr\delta</m> must be flat as well: any flat eub for <m>\ov{f}\restr\delta</m> modulo <m>I</m> will also be an eub for <m>\ov{g}\restr\delta</m> modulo <m>I</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+<!-- div attr= class="theorem"-->
+		<p>
+			 Let <m>\ov{f}</m> be an <m>I</m>-exact sequence of length <m>\lambda</m> with exact upper bound <m>g</m>, and assume <m>\lambda(a)=\cf(g(a))</m> is greater than <m>|A|^+</m> for all <m>a\in A</m>. Then <me>FS(\ov{f})=\{\theta: |A|&lt;\theta=\cf(\theta)&lt;\liminf{}_I\ov\lambda\}.</me>
+		</p><!--</div attr= class="theorem">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> We may dispense with the function <m>g</m> and just assume that <m>\ov{f}</m> is subset of <m>\prod_{a\in A}\lambda(a)</m>. Let <m>\mu</m> denote <m>\liminf_I(\ov{\lambda})</m>, and note that our assumptions imply <m>|A|^+&lt;\mu</m>.
+		</p>
+
+		<p>
+			Given a regular cardinal <m>\theta</m> satisfying <m>|A|&lt;\theta&lt;\mu</m> and a closed unbounded set <m>C\subseteq\lambda</m>, we need to find a <m>\delta\in C</m> of cofinality <m>\theta</m> for which <m>\ov{f}\restr\delta</m> is flat. Using induction on <m>i&lt;\theta</m>, we define a strictly increasing sequence <m>\langle\alpha(i):i&lt;\theta\rangle</m> of ordinals in <m>C</m> so that <m>\sup\{f_{\alpha(j)}:j&lt;i\}&lt;_I f_{\alpha(i)}</m>. This can be done by way of Corollary <xref ref="cor:liminfsigma" />: we know that the pointwise supremum of fewer than <m>\mu</m> functions in <m>\prod\ov{\lambda}</m> is bounded modulo <m>I</m>, and since <m>\ov{f}</m> is <m>&lt;_I</m>-increasing and cofinal in this product, any sufficiently large ordinal in <m>C</m> will work as <m>\alpha(i)</m>. If we let <m>\delta</m> be the supremum of the ordinals <m>\alpha(i)</m>, then <m>\delta</m> is an ordinal in <m>C</m> of cofinality <m>\theta</m> by construction, and <m>\ov{f}\restr\delta</m> is flat by (3) of Theorem <xref ref="flatEquivs" />. Thus, <m>\theta\in FS(\ov{f})</m>.
+		</p>
+
+		<p>
+			We now show that <m>FS(\ov{f})</m> does not contain any regular cardinals greater than or equal to <m>\mu</m>. If <m>\mu</m> were regular, then Theorem <xref ref="liminfvsb" /> tells us <m>\lambda=\mu</m>, and so there cannot be any flat points of cofinality <m>\mu</m>. Thus, we are left with considering regular cardinals <m>\theta</m> for which <m>\mu&lt;\theta&lt;\lambda</m>, if any. We claim that it is impossible for an ordinal of cofinality <m>\theta</m> to be a flat point for <m>\ov{f}</m>, for the simple reason that the product <m>\prod\lambda(a)</m> does not have room for the exact upper bound: if <m>\ov{f}\restr\delta</m> were flat of cofinality <m>\theta</m>, say with eub <m>h</m>, then <m>h(a)</m> would have cofinality <m>\theta</m> for almost every <m>a\in A</m>, and thus would need to be greater than <m>\lambda(a)</m> for almost all <m>a\in A</m>. But such an <m>h</m> is not in the product <m>\prod\lambda(a)</m> and we have a contradiction. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			Back in Section <xref ref="exactsequences" />, we spent some time investigating necessary conditions for the existence of exact upper bounds, and in Theorem <xref ref="thm:flatnessspectrum" /> we proved that an exact sequence necessarily has lots of flat initial segments. In this section, we will use the Trichotomy Theorem to look for conditions we can impose on <m>&lt;_I</m>-increasing sequences to guarantee the existence of exact upper bound <m>f</m>, and investigate the degree to which we can control the the value of <m>\liminf_I(\cf\circ f)</m>. We then bring several results together to formulate a characterization of exactness. We start this journey with a sort of reflection lemma that tells us that and sequences cannot have many flat points.
+		</p>
+
+<!-- div attr= class="lemma"-->
+		<p>
+			Suppose <m>I</m> is an ideal on the set <m>A</m>, <m>\lambda</m> is a regular cardinal greater than <m>|A|^+</m>, and <m>\ov{f}</m> is a <m>&lt;_I</m>-increasing sequence of length <m>\lambda</m>. If <m>\ov{f}</m> is or , then <m>\Flat(\ov{f})</m> is non-stationary.
+		</p><!--</div attr= class="lemma">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> We prove this by contradiction, so assume that there is a stationary set of flat points of cofinality greater than <m>|A|</m>. Suppose first that <m>\ov{f}</m> is , as witnessed by the function <m>g</m>. Since the associated sequence <m>\langle t_\alpha:\alpha&lt;\lambda\rangle</m> does not stabilize modulo <m>I</m>, there is a closed unbounded <m>E\subseteq\lambda</m> such that <m>t_\alpha\subsetneqq_I t_\beta</m> for <m>\alpha&lt;\beta</m> in <m>E</m>, and we can fix a flat point <m>\delta\in E</m> with <m>|A|&lt;\cf(\delta)=\theta</m>. This means that there is a <m>&lt;</m>-increasing sequence <m>\langle g_i:i&lt;\theta\rangle</m> that is equivalent to <m>\ov{f}\restr\delta</m> modulo <m>I</m>. By thinning out this sequence if necessary, we may assume that for each <m>i&lt;\theta</m> there are <m>\alpha&lt;\beta&lt;\delta</m> such that <me>\label{eq:uglyreflect}
+g_i&lt;_i f_\alpha &lt;_I f_\beta &lt;_I g_{i+1}.</me> For each <m>i&lt;\theta</m> define <m>s_i</m> to be the set of <m>a\in A</m> for which <m>g(a)&lt;g_i(a)</m>, and then <xref ref="eq:uglyreflect" /> tells us <me>\label{eq:uglyreflect2}
+s_i\subseteq_I t_\alpha\subsetneqq_I t_\beta\subseteq_I s_{i+1}.</me> Since <m>g_i&lt;g_{i+1}</m> the definitions imply that <m>s_i</m> is an actual subset of <m>s_{i+1}</m> (not just modulo <m>I</m>), and <xref ref="eq:uglyreflect2" /> tells us that in fact it is a <em>proper</em> subset of <m>s_{i+1}</m>. Since <m>|A|&lt;\theta</m> we have a contradiction, as any <m>\subseteq</m>-increasing sequence of subsets of <m>A</m> of length at least <m>|A|^+</m> must stabilize eventually.
+		</p>
+
+		<p>
+			Next, we suppose that <m>\ov{f}</m> is . This means we have a sequence <m>\langle S(a):a\in A\rangle</m> of sets each of cardinality at most <m>|A|</m>, an ultrafilter <m>D</m> on <m>A</m> disjoint to <m>I</m>, and a corresponding sequence <m>\langle h_\alpha:\alpha&lt;\lambda\rangle</m> of functions in <m>\prod S(a)</m> such that for every <m>\alpha&lt;\lambda</m> there is a <m>\beta&lt;\lambda</m> such that <m>f_\alpha&lt;_D h_\alpha &lt;_D f_\beta</m>. Fix a closed unbounded set <m>E\subseteq\lambda</m> such that <me>\label{eq:badreflect}
+f_\alpha&lt;_D h_\alpha &lt;_D f_\beta</me> for <m>\alpha&lt;\beta</m> in <m>E</m>, and let <m>\delta\in\acc(E)</m> be a flat point for <m>\ov{f}</m> of cofinality <m>\theta&gt;|A|</m>. The sequence <m>\ov{f}\restr\delta</m> has an exact upper bound <m>g</m> modulo <m>I</m> such that <m>\cf(g(a))=\theta</m> for all <m>a\in A</m>. Since <me>|S(a)|\leq |A|&lt;\theta=\cf(g(a)),</me> we know that <m>S(a)\cap g(a)</m> is bounded <m>g(a)</m> for each <m>a</m> and so the function <m>h</m> defined by setting <m>h(a)=\sup(S(a)\cap g(a))</m> is in <m>\prod g</m>. Now we made sure that <m>E\cap\delta</m> is unbounded in <m>\delta</m>, so we can find an <m>\alpha\in E\cap \delta</m> such that <me>\label{eq:badreflect2}
+h&lt;_I g_\alpha</me> and we are also guaranteed that <m>\beta=\min(E\setminus\alpha+1)</m> is also less than <m>\delta</m>. Now we get a contradiction from our definition of <m>h</m> and the conjunction of <xref ref="eq:badreflect" /> and <xref ref="eq:badreflect2" />: we can choose an <m>a\in A</m> for which <me>\sup(S(a)\cap g(a))=h(a)&lt;g_\alpha(a)&lt;h_\alpha(a)&lt;f_\beta(a)&lt;g(a)</me> and this is absurd, because <m>h_\alpha(a)</m> is in <m>S(a)\cap g(a)</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			Given the previous lemma, the next theorem characterizing exactness follows almost immediately from our work in Section <xref ref="eub" /> on the Flatness Spectrum.
+		</p>
+
+<!-- div attr= class="theorem"-->
+		<p>
+			 Suppose <m>\theta</m> and <m>\lambda</m> are regular cardinals with <m>|A|&lt;\theta&lt;\lambda</m>. Then the following two statements are equivalent for a <m>&lt;_I</m>-increasing sequence <m>\ov{f}</m> of length <m>\lambda</m>:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						<m>\ov f</m> has an exact upper bound <m>f</m> satisfying <m>\{a: \cf f(a)&lt; \theta\}\in ~I</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\theta</m> is in the flatness spectrum <m>FS(\ov{f})</m> of <m>\ov{f}</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="theorem">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> The implication from (1) to (2) is a special case of Theorem <xref ref="thm:flatnessspectrum" /> as the assumption on <m>f</m> tells us that the <m>\liminf_I(\ov{\lambda})</m> is greater than <m>\theta</m>, where as usual we define <m>\ov{\lambda}</m> by <m>\lambda(a)=\cf(f(a))</m>.
+		</p>
+
+		<p>
+			For the other direction, the existence of a stationary set <m>S</m> of flat points of cofinality greater than <m>|A|</m> tells us that <m>\ov{f}</m> must have an exact upper bound <m>f</m> for which <m>\cf(f(a))</m> is greater than <m>|A|</m>. We now use the fact that we may assume <m>S</m> consists of ordinals of cofinality <m>\theta</m> to improve this conclusion, and show that in fact <m>f(a)</m> is of cofinality at least <m>\theta</m> for almost all <m>a\in A</m>.
+		</p>
+
+		<p>
+			Assume by way of contradiction that there is an <m>I</m>-positive set <m>B</m> of coordinates where <m>f</m> has cofinality less than <m>\theta</m>. For each <m>a\in A</m> we can fix a set <m>S(a)</m> cofinal in <m>f(a)</m> of cardinality <m>\cf(f(a))</m>, so <m>|S(a)|\leq \theta</m> for <m>a\in B</m>. The product <m>\prod S(a)</m> is equivalent to <m>\prod f</m> modulo <m>I</m>, so let <m>\langle h_\alpha:\alpha&lt;\lambda\rangle</m> be a <m>&lt;_I</m>-increasing sequence of functions from <m>\prod S(a)</m> that is cofinal in <m>\prod f</m> modulo <m>I</m>. It follows that there is a closed unbounded <m>E\subseteq\lambda</m> such that <me>f_\alpha &lt;_I h_\alpha &lt;_I f_\beta</me> whenever <m>\alpha&lt;\beta</m> in <m>E</m>.
+		</p>
+
+		<p>
+			We now choose <m>\delta</m> to be an flat point for <m>\ov{f}</m> of cofinality <m>\theta</m> that is also a limit point of <m>E</m>, and let <m>g</m> be an exact upper bound for <m>\ov{f}\restr\delta</m> with <m>\cf(g(a))=\theta</m> for all <m>A</m>.
+		</p>
+
+		<p>
+			We now reach a contradiction just as we did in our lemma. On one hand, our insistence that <m>\delta</m> is a limit point of <m>E</m> guarantees that <m>\ov{h}\restr\delta</m> is cofinal in <m>\prod g</m>, but on the other hand <m>S(a)\cap g(a)</m> is bounded below <m>g(a)</m> for all <m>a</m> in the <m>I</m>-positive set <m>B</m>. This is impossible and therefore <m>\theta\leq \cf(f(a))</m> for <m>I</m>-almost all <m>a</m> in <m>A</m>, as required. ◻
+		</p><!--</div attr= class="proof">-->
+
+<!-- div attr= class="lemma"-->
+		<p>
+			Suppose <m>I</m> is an ideal on the set <m>A</m>, <m>\lambda</m> is a regular cardinal greater than <m>|A|^+</m>, and <m>\ov{f}</m> is a flat <m>&lt;_I</m>-increasing sequence of length <m>\lambda</m>. Then there is a closed unbounded <m>E\subseteq\lambda</m> such that <m>\Flat(\ov f)</m> contains every <m>\delta\in E</m> of cofinality greater than <m>|A|</m>.
+		</p><!--</div attr= class="lemma">-->
+
+<!-- div attr= class="theorem"-->
+		<p>
+			 Suppose <m>I</m> is an ideal over <m>A</m>, and let <m>\theta&lt;\lambda</m> be regular cardinals greater than <m>|A|</m>. If <m>\ov{f}</m> is a <m>&lt;_I</m>-increasing sequence of length <m>\lambda</m> has an exact upper bound <m>f</m> satisfying <m>\liminf_I</m> If <m>\ov{f}</m> is a <m>&lt;_I</m>-increasing sequence of length <m>\lambda</m> an
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						The sequence <m>\ov{f}</m> has an exact upper bound <m>f</m> satisfying <m>\mu\leq \liminf_I \cf (f(a))</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>FS(\ov{f})</m> includes all regular cardinals in the interval <m>(|A|,\mu)</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>FS(\ov{f})</m> is unbounded in <m>\mu</m>.
+					</p>
+			</li>
+
+		</ol></p><!--</div attr= class="theorem">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> We have done several pieces of this theorem already. For example (1) implies (2) by way of Theorem <xref ref="thm:flatnessspectrum" />, and (2) implies (3) by way of <xref ref="?" /> Assume that <m>\ov f</m> is not flat. The case where <m>\ov f</m> is flat is easy and is settled later.
+		</p>
+
+		<p>
+			(2) <m>\imply</m> (1) Since <m>\lambda&gt;|A|^+</m>, the Trichotomy applies to <m>\ov
+f</m>. Let <m>\kappa\in (|A|,\mu)</m> be an arbitrary regular cardinal for which the set of flat points of cofinality <m>\kappa</m> is stationary in <m>\lambda</m> We show that neither Bad nor Ugly hold.
+		</p>
+
+		<p>
+			Assume first that Ugly holds. Fix <m>g\in \On^A</m> such that letting <m>t_\alpha=\{a\in A: f_\alpha(a)&gt;g(a)\}</m> the sequence <m>\ov t=\lng
+t_\alpha:\alpha&lt;\lambda\rng</m> does not stabilize mod <m>I</m>. Let <m>E\su
+\lambda</m> be a club of <m>\lambda</m> such that <m>\alpha&lt;\beta</m> in <m>E</m> implies <m>t_\alpha\subsetneqq_I t_\beta</m>. Choose a flat point <m>\alpha&lt;\lambda</m>, <m>\cf\alpha=\kappa</m> and <m>\alpha</m> is a limit of <m>E</m>.
+		</p>
+
+		<p>
+			Fix a <m>&lt;</m>-increasing sequence <m>\lng g_i:i&lt;\kappa\rng</m> which is cofinal with <m>\ov f\restriction \alpha</m> mod <m>I</m>. Since <m>\alpha</m> is a limit point of <m>E</m> we may assume, by passing to a subsequence of <m>\ov
+ g</m>, that for every <m>i&lt;\kappa</m> there are <m>\beta&lt;\gamma</m> in <m>E</m> for which <m>g_i&lt;_I f_\beta &lt;_I f_\gamma &lt;_I g_{i+1}</m>.
+		</p>
+
+		<p>
+			Let <m>s_i=\{a\in A:g_i(a)&gt;g(a)\}</m> for <m>i&lt;\kappa</m>. By the above, <m>s_i\su_I t_\alpha\subsetneqq_I t_\gamma\su_I s_{i+1}</m>. In particular we have for <m>i&lt;j&lt;\kappa</m> that <m>s_i\subsetneqq_I s_j</m>. Since <m>\lng
+g_i:i&lt;\kappa\rng</m> is <m>&lt;</m>-increasing, we conclude that <m>\lng
+s_i:i&lt;\kappa\rng</m> is also <m>\su</m>-increasing. But now this is absurd, because to increase in both <m>\su</m> and <m>\subsetneqq_I</m> means to increase in <m>\subsetneqq</m>; and there is no <m>\subsetneqq</m>-increasing sequence of subsets of <m>A</m> of length <m>\kappa&gt;|A|</m>.
+		</p>
+
+		<p>
+			Assume now that Bad holds with respect to sets <m>S(a)</m> with <m>|S(a)|\le |A|</m> and an ultrafilter <m>D</m>. Find a club <m>E\su \lambda</m> such that for <m>\alpha&lt;\beta</m> in <m>E</m> it holds that <m>f_\alpha&lt;_D h_\alpha &lt;_D f_\beta</m>. Choose a flat point <m>\alpha\in \acc E</m> of cofinality <m>\kappa</m> in <m>\acc E</m> and choose an eub <m>f</m> of <m>\ov f\restriction \alpha</m> with <m>\cf f(a)=\kappa</m> for <m>a\in A</m>. Since <m>S(a)\cap f(a)</m> is bounded below <m>f(a)</m> for all <m>a\in A</m> no subset of <m>\prod S(a)</m> can be cofinal with <m>\ov f\restriction
+\alpha</m>, contrary to <m>\alpha</m> being a limit of <m>E</m>.
+		</p>
+
+		<p>
+			Thus Bad and Ugly fail, and hence Good holds by the Trichotomy Theorem. Fix an eub <m>f</m> of <m>\ov f</m> with <m>\cf f(a)&gt;|A|</m> for all <m>a\in
+A</m>.
+		</p>
+
+		<p>
+			We show next that <m>\liminf_I\cf f(a) \ge\mu</m>. If <m>\liminf_I\cf f(a)&lt;\mu</m> then (since <m>\kappa&lt;\mu</m> is arbitrarily large) we may assume that <m>\liminf_I \cf f(a)&lt;\kappa</m>. Let <m>B=\{a\in A:\cf f(a)&lt;\kappa\}</m> and work mod <m>{I\restriction B}</m>. Let <m>S(a)\su f(a)</m> be cofinal of order type <m>\cf f(a)</m> for all <m>a\in B</m>. A contradiction follows by choosing a flat point <m>\alpha\in \acc E</m> of cofinality <m>\kappa</m>, where <m>E\su \lambda</m> is a club such that <m>\alpha&lt;\beta</m> in <m>E</m> implies that for some <m>h_\alpha\in \prod
+S(a)</m>, <m>f_\alpha&lt;_{I\restriction B} h_\alpha&lt;_{I\restriction B} f_\beta</m>.
+		</p>
+
+		<p>
+			(1) <m>\imply</m> (2): Suppose that <m>f</m> is an eub and that <m>\liminf_I \cf f(a) =\mu&gt;|A|</m>. By <xref ref="singularAccumulation" /> we know that <m>\mu</m> is singular of cofinality <m>\le |A|</m>. Let <m>\kappa\in(|A|,\mu)</m> be an arbitrary regular cardinal. Correcting <m>f</m> on a null set we may assume that <m>\cf f(a)&gt;\kappa</m> for all <m>a\in A</m>.
+		</p>
+
+		<p>
+			We have shown [<xref ref="intAppStat" />] that the heights of internally
+		</p>
+
+		<p>
+			approachable <m>\kappa</m>-models are stationary in <m>\lambda</m> if <m>\lambda=\cf\lambda&gt;\kappa</m>. Let us show that if <m>\ov
+M=\bigcup_{\zeta&lt;\kappa}M_\zeta</m> is an internally approachable <m>\kappa</m>-model and <m>\ov f,f\in M_0</m> then the height of <m>\ov M</m> in <m>\lambda</m> is a flat point.
+		</p>
+
+		<p>
+			For every <m>a\in A</m> and <m>\zeta&lt;\kappa</m> define <m>\chi_\zeta(a)=\sup
+M_\zeta\cap f(a)</m>. Since <m>\cf f(a)&gt;\kappa</m> and <m>|M|\le \kappa</m> it follows that <m>\chi_\zeta&lt; f</m>.
+		</p>
+
+		<p>
+			The function <m>\chi_\zeta</m> is in <m>M_{\zeta+1}</m> and <m>M_{\zeta+1}\sat</m> <q><m>f</m> is an eub of <m>\ov f</m></q> so there is some <m>\alpha_\zeta\in M_{\zeta+1}\cap \lambda</m> for which <m>\chi_\zeta&lt;_I f_{\alpha_\zeta}</m>. Since <m>\ov f\in M_{\zeta+1}</m> also <m>f_{\alpha_\zeta}\in M_{\zeta+1}</m> and hence <m>f_{\alpha_\zeta}&lt;\chi_{\zeta+1}</m>.
+		</p>
+
+		<p>
+			Conversely, if <m>\beta&lt;\alpha</m> then by increasing <m>\beta</m> we may assume that <m>\beta\in M</m> and therefore there is some <m>\zeta&lt;\kappa^+</m> for which <m>\beta\in M_\zeta</m>. So also <m>f_\beta\in M_\zeta</m> by elementarity and <m>f_\beta&lt;\chi_{\zeta+1}</m>.
+		</p>
+
+		<p>
+			The sequence <m>\lng \chi_\zeta:\zeta&lt;\kappa\rng</m> is thus <m>&lt;</m>-increasing and cofinal with <m>\ov f\restriction \alpha</m> mod <m>I</m>, proving that <m>\alpha</m> is a flat point in <m>\ov f</m>.
+		</p>
+
+		<p>
+			This proves the theorem for <m>\ov f</m> which is not flat. If <m>\ov f</m> is flat then both (1) and (2) hold trivially: <m>\ov f</m> has an eub <m>f</m> with <m>\cf f(a)=\lambda</m> for all <m>A</m> by one definition of flatness, in particular <m>\lim_I \cf f(a)=\lambda</m>, so (1) holds. By another definition of flatness, fix a <m>&lt;</m>-increasing <m>\ov g=\lng g_\alpha:\alpha&lt;\lambda\rng</m> and a club <m>E\su \lambda</m> such that <m>\ov f\restriction \alpha\equiv_I \ov g\restriction \alpha</m> for all <m>\alpha\in E</m>. If <m>\alpha\in E</m> and <m>\cf\alpha=\kappa&gt;|A|</m> then <m>\alpha</m> is a flat point in <m>\ov f</m>. Thus also (2) holds, even in a stronger form: for every regular <m>\kappa\in (|A|,\lambda)</m> the set of flat points of cofinality <m>\kappa</m> is equivalent to the set of all points of cofinality <m>\kappa</m> modulo the non-stationary ideal over <m>\lambda</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			Can we hope to prove that all, or all but non-stationarily many, points of cofinality <m>\kappa\in (|A|,\mu)</m> are flat if (1) in the Theorem <xref ref="statNecSuff" /> holds? Not always, but sometimes this is true. One case is when <m>\ov f</m> is flat, as we have seen above. Another case is presented in the next lemma, and yet another will be presented later.
+		</p>
+
+<!-- div attr= class="lemma"-->
+		<p>
+			 Suppose that <m>\ov f=\lng f_\alpha:\alpha&lt;\lambda\rng\su \On^A</m> is <m>&lt;_I</m> increasing, <m>f</m> is an eub of <m>\ov f</m> and <m>\liminf_I \cf
+f(a)=\mu</m>. If <m>\kappa=\cf\kappa&lt;\mu</m> and <m>\theta^{|A|}&lt;\kappa</m> for all <m>\theta&lt;\kappa</m>, then every point of cofinality <m>\kappa</m> in <m>\ov f</m> is flat.
+		</p><!--</div attr= class="lemma">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> Suppose that <m>\alpha&lt;\lambda</m> has cofinality <m>\kappa</m>. Since <m>2^{|A|}&lt;\kappa</m> we have that <m>\kappa&gt;|A|^+</m>. By the Trichotomy Theorem applied to <m>\ov f\restriction
+\alpha</m> and as <m>2^{|A|}&lt;\kappa</m> excludes Bad and Ugly, we conclude that <m>\ov f\restriction \alpha</m> has an eub, say <m>h</m>. Denote <m>\mu=\liminf_I \cf h(a)</m>. We know that <m>\mu\leq\kappa</m> by <xref ref="noMoreThanLambda" />. We easily see that <m>\mu\ge\kappa</m> as well, since if <m>B=\{a\in A:\cf h(a)&lt;\kappa\}\in I^+</m>, by regularity of <m>\kappa&gt;|A|</m>, <m>\theta=\sup\{\cf f(a):a\in A\}&lt;\kappa</m>. Since <m>h</m> is an eub mod <m>I\restriction B</m> we conclude that <m>\ov f\restriction \alpha\equiv _{I\restriction B} \prod_{a\in B} S(a)</m>, where <m>S(a)\su h(a)</m> is cofinal of order type <m>\cf h(a)</m>. This is absurd, because <m>|\prod_{a\in B} S(a)|\le \theta^{|A|}&lt;\kappa</m>. ◻
+		</p><!--</div attr= class="proof">-->
+
+		<p>
+			The next theorem gives a necessary and sufficient condition for the existence of an eub of a sequence with large cofinalities in terms of flatness of initial segments of the sequence.
+		</p>
+
+		<p>
+			To conclude, let us sum up the relationship between the existence of an eub, the cofinalities of its values, and the set of flat points of a given <m>\ov f</m>. Suppose <m>\ov f=\langle f_\alpha\mid \alpha&lt;\lambda\rangle</m> is <m>&lt;_I</m> increasing in <m>\On^A</m> and that <m>\lambda=\cf\lambda&gt;|A|^+</m>. If there is some regular cardinal <m>\theta</m> such that <m>|A|&lt;\theta&lt;\lambda</m> and <m>S_\theta=\{\alpha&lt;\lambda\mid \cf\alpha=\theta\text{ and }\ov f \restriction\alpha\text{ is flat}\}</m> is stationary in <m>\lambda</m>, then Good holds for <m>\ov f</m> by Theorem <xref ref="eub" />.
+		</p>
+
+		<p>
+			Assume next that <m>g:A\to \On</m> is an eub of <m>\ov f</m> modulo <m>I</m>. Almost everywhere, so, without loss of generality, everywhere, <m>g(a)</m> is a limit ordinal, so <m>\cf g(a)</m> is a regular cardinal. We showed that for every regular <m>\theta&lt;\lambda</m> the set <m>\{a\in
+A\mid \cf g(a)=\theta\}</m> belongs to <m>I</m>. Let <m>\mu</m> be the least cardinal such that <m>\{a\in A\mid \cf g(a)&lt;\mu\}\notin I</m>. This is the <m>\liminf</m> of the cofinality function mod <m>I</m>. We know that <m>\mu&lt;\lambda</m>, as <m>\cf \mu \le |A|</m>, and that for every <m>\theta\in (|A|,\mu)</m> the set <m>S_\theta</m> is stationary in <m>\lambda</m> by Theorem <xref ref="eub" />. Finally, let us prove:
+		</p>
+
+<!-- div attr= class="lemma"-->
+		<p>
+			For every regular <m>\theta&lt;\lambda</m> such that <m>\{a\in A\mid \cf
+g(a)&lt;\theta\}\notin I</m> there are no flat points of cofinality <m>\theta</m> below <m>\lambda</m>.
+		</p><!--</div attr= class="lemma">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> Let <m>B=\{a\in A\mid \cf g(a)&lt;\theta\}</m>. Replace <m>I</m> by <m>I\restriction B</m>. For every <m>a\in B</m> fix a cofinal <m>S(a)</m> in <m>g(a)</m> of order type <m>\cf(g(a))</m>. For every <m>\alpha&lt;\lambda</m> let <m>f_\alpha^*(a)=\min(S(a)\setminus f_\alpha(a)</m> for all <m>a\in B</m>. As <m>g</m> is an eub of <m>\ov f</m> modulo <m>J=I\restriction B</m>, <m>\ov
+  f\equiv_J \prod_{a\in B}S(a)</m>. We can then fix a club <m>C\subseteq \lambda</m> such that for all <m>\alpha,\beta\in C</m>, if <m>\alpha&lt;\beta</m> then <me>f_\alpha\le f_\alpha^*&lt;_J f_\beta.</me>
+		</p>
+
+		<p>
+			Suppose to the contrary that <m>S=\{\delta&lt;\lambda\mid \cf(\delta)=\theta\wedge
+  \ov f\restriction \delta \text{ is flat }\}</m> is stationary. Fix <m>\delta\in
+  (S\cap \acc C)</m>. Since <m>\ov f\restriction \delta</m> is flat of cofinality <m>\theta</m> we can fix an eub <m>t</m> of <m>\ov f \restriction \delta</m> with <m>\cf(t(a))=\theta</m> for all <m>\alpha\in B</m> and a <m>&lt;</m>-increasing sequence <m>\ov
+  h=\langle h_i\mid i&lt;\theta \rangle</m> with <m>t=\sup_{i&lt;\theta}h_i</m>, such that <m>\ov f\restriction \delta\equiv_J \ov
+  h</m>.
+		</p>
+
+		<p>
+			For every <m>a\in B</m> it holds that <m>\otp (S(a)\cap t(a))&lt;\theta</m>, so <m>\ell(a):=\sup(S(a)\cap t(a))&lt;t(a)</m>. Fix some <m>i&lt;\theta</m> such that <m>\ell(a)&lt;h_i(a)</m> for all <m>a\in B</m>. As <m>\ov f\restriction \delta\equiv_J\ov h</m> there is some <m>\alpha&lt;\delta</m> such that <m>h_i&lt;_J f_\alpha</m>, and hence <m>f_\alpha\le f_\alpha^*\in \prod_a\in B S(a)</m>. But then there is some <m>a\in B</m> such that <m>\ell(a)=\sup (S(a)\cap t(a))&lt;f^*_\alpha(a)\in S(a)\cap t</m>, which is absurd. ◻
+		</p><!--</div attr= class="proof">-->
+	</section>

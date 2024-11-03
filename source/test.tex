@@ -1,0 +1,633 @@
+\documentclass{amsart}
+\usepackage{amssymb,stmaryrd}
+\usepackage[colorlinks,citecolor=blue,urlcolor=black,linkcolor=black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theoremA}{Theorem~A}
+\newtheorem*{theoremB}{Theorem~B}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\MA}{\sf MA}
+\DeclareMathOperator{\gma}{\sf GMA}
+\DeclareMathOperator{\zfc}{\sf ZFC}
+\DeclareMathOperator{\ssh}{\sf SSH}
+\DeclareMathOperator{\gch}{\sf GCH}
+\DeclareMathOperator{\sch}{\sf SCH}
+
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\otp}{otp}
+\DeclareMathOperator{\dom}{dom}
+\newcommand{\s}{\subseteq}
+\DeclareMathOperator{\add}{Add}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\pcf}{pcf}
+\DeclareMathOperator{\reg}{Reg}
+\DeclareMathOperator{\Reg}{Reg}
+\renewcommand\mid{\mathrel{|}\allowbreak}
+
+
+\title{Rudin-type Dowker spaces}
+
+%\subjclass[2010]{Primary 03E02; Secondary 03E35}
+%\keywords{Partition relations, Strong colorings, Cochromatic number, Generalized {M}artin's axiom.}
+
+
+\author[M. Kojman]{Menachem Kojman}
+\address{Department of Mathematics, Ben-Gurion University of the Negev, P.O.B. 653, Be’er Sheva, 84105 Israel}
+\urladdr{https://www.math.bgu.ac.il/~kojman/}
+% E-mail address: kojman@woobling.org
+
+\begin{document}
+
+\begin{abstract}
+A construction scheme of topological spaces, which generalizes M. E. Rudin's
+construction of a Dowker space in \(\zfc\), is given, and is shown to produce
+a proper class of Dowker spaces. A proper subclass of this class of  spaces
+are provably collectionwise normal Dowker in \(\zfc\) alone. The theory
+\(\zfc +\ssh\), where \(\ssh\) is Shelah's Strong Hypothesis, proves that  the whole class
+consists of collectionwise normal  Dowker spaces. Whether all members of this class are Dowker in \(\zfc\) is still open.
+\end{abstract}
+
+\maketitle
+\section{Introduction}
+Rudin's construction of a Dowker space in \(\zfc\) \cite{rudin} is one of the
+most elegant constructions in set-theoretic topology. Rudin's  space, \(X^R\), 
+is a subset of the product \(\prod_{0<n} (\aleph_n+1)\), with the topology
+inherited from the box topology on the full product. Its topological properties
+were established by Rudin via, somewhat surprisingly,  typical PCF theory arguments --- about twenty years before Shelah developed  PCF theory. 
+
+Recently, A. Rinot asked if there was a proper class of Dowker spaces in \(\zfc\) alone, and, more specifically, whether replacing the sequence of \(\aleph_n\)-s in Rudin's construction by the sequence of all finite successors, \(\mu^{+n}\) for some positive natural number \(n\), of an arbitrary
+cardinal \(\mu\), can be proved in \(\zfc\) to always yields a Dowker space. 
+
+Below we answer Rinot's questions positively, and more. A pcf-thoretic condition on an
+arbitrary increasing sequence \(\overline \kappa=\langle \kappa_n\mid n\in \omega\rangle\) 
+of regular cardinals
+above a cardinal \(\mu\)
+is given and shown to imply that a generalization of Rudin's construction 
+on the sequence \(\overline \kappa\) produces a Dowker space. This condition 
+holds in \(\zfc\) for 
+all sequences \(\langle \mu^{+n}\mid n\in \omega\rangle\) of all finite 
+sucessors of every cardinal \(\mu\) and many more, arbitrarily sparse, sequences
+of regular cardinals. In addition, with the additional (consistent) 
+axiom
+\(\ssh\), Shelah's Strong Hypothesis, it holds that \emph{all} increasing 
+sequences \(\overline \kappa\) of regular cardinals satisfy this condition. 
+Consequently,
+it is consistent with \(\zfc\) that Rudin's construction produces a Dowker space with every substitution of \(\aleph_0\) by an arbirary cardinal \(\mu\) and of the sequence of \(\aleph_n\)-s by an increasig sequence of regular cardinals \(\overline \kappa\) above 
+\(\mu\). 
+
+  The question remains if \(\ssh\), or, for that matter, any additional 
+  axiom beyond \(\zfc\),  is needed. A forcing construction for producing 
+  a sequence \(\overline\kappa\)
+  for which the resulting Rudin-type space is not Dowker will have to produce sophisticated violations of the Singular Cardinals Hypothesis in the spirit of \cite{gitik-shelah} and will necessarily use large cardinal axioms. 
+
+
+  \medskip
+  
+  
+  Rudin's space was shown with PCF theory to contain a closed Dowker space of cardinality \(\aleph_{\omega+1}\) in \(\zfc\) \cite{kojsh}, and Rudin-like subspaces of the Rudin space emerged in the analysis of Baire measures on this space (and their extensions to Borel measures) \cite{kojmich}. Finally, further developments of the linearly Lindeloef, not Lindeloef property of Miscenko's space \cite{miscenko}, which was the direct inspiration for Rudin's construction, with PCF techniques, was done in \cite{kojlub}. An alternative example of a linearly Lindeloef non-Lindeloef space, which is also a topological group, was discovered independently by G. Gruenhage and R. Buzyakova, see \cite{open2}, p. 225.
+
+\section{The spaces}
+Suppose that \(\overline \kappa=\langle \kappa_{n}\mid n\in \omega\rangle\) is a
+sequence of regular, uncountable cardinals,
+and consider the partially ordered product \((\prod_n \kappa_{n},<)\), where \(f<g\) iff
+\(f(n)<g(n)\) for all \(n\in \omega\). 
+Let \(A=\ran(\overline \kappa)\). So \(A\) is a countable, perhaps finite, set of regular
+cardinals (that is, without repetitions). A very simple and useful fact in PCF
+theory is the fact that \((\prod_{m}\kappa_{n},<)\) and \((\prod A,<)\) have the same
+cofinality.  Rudin herself used this fact in her nornality proof in \cite{rudin}.
+This can easily be remembered as ``one regular uncountale cardinal or the
+product of countably many copies of it have the same cofinality''.
+
+
+For two functions \(f,g\) from \(\omega\) to the ordinals  let us denote by \((f,g]\) the set of all functions \(h\) from \(\omega\) to the ordinals for which \(f<h\le g\).
+
+
+\begin{definition}\label{def}
+Let \(\mu\) be an infinite cardinal and let \(\overline \kappa=\langle \kappa_{n}\mid n \in \omega\rangle\) be an increasing 
+sequence of regular cardinals, all of whose terms  are greater than  \(\mu\). Let
+\[X(\mu,\overline \kappa)=\{f\in \prod_{n\in \omega}(\kappa_{n}+1)\mid(\exists_{m\in \omega})(\forall_{n\in \omega}) \min (\mu< \cf(f(n))\le \kappa_{n}\}.\]
+
+The topology on \(X(\overline \kappa)\) is inherited from the box topology on \(\prod_{n}(\kappa_{n}+1)\), the topology which is generated by all sets of the form \((f,g]\).
+\end{definition}
+
+It is readily seen that Rudin's Dowker space is the space \(X(\aleph_{0},\langle \aleph_{{n+1}}\mid n\in \omega\rangle)\).
+
+Suppose that \(\mu,\overline \kappa\)
+ are given as above and denote by \(D_n\), for a natural number \(n\), the set 
+ \(\{f\in X(\mu,\overline D)\mid (\exists _{m\ge n})\, f(m)=\kappa_m\}\). 
+ Clearly, \(\langle D_n\mid n\in \omega\rangle\) is a decreasing and vanishing 
+ sequence of closed subsets of \(X(\mu,\overline D)\). From either Rudin's original
+ proof or from the Fodor-type argument in \cite{kojsh}, it follows that for every sequence \(\langle U_n\mid n\in \omega\rangle\)
+ of open sets with \(D_n\subseteq U_n\) it holds that \(\bigcap_n U_n\not=\emptyset\). 
+
+
+ Thus, \(X(\mu,\overline \kappa)\) is Dowker if an only if \(X(\mu,\overline \kappa)\) is normal. 
+ 
+ 
+ 
+ \begin{theorem}[Main Theorem]
+  Suppose \(\mu\) is an infinite cardinal and that \(\overline \kappa=\langle \kappa_{n}\mid n\in \omega\rangle\) is an increasing  sequence of regular
+  cardinals and  \(\kappa_{n}>\mu\) for all \(n\).  Assume that for every \(n\) and for every countable set \(A\subseteq \Reg\cap (\mu,\kappa_{n})\) it holds that
+  \[\cf(\prod A,<)\le \kappa_{n}.\]
+  Then \(X(\mu,\overline \kappa)\) is a collectionwise normal space.
+\end{theorem}
+
+\begin{proof} We begin with:
+\begin{claim}
+    The intersection of \(\le \mu\) open subsets of $X$ is open.
+\end{claim}
+
+\begin{proof}
+    Suppose \(\{U_\alpha\mid \alpha<\mu \}\subseteq \tau\) and let \(f\in \bigcap_{\alpha<\mu}U_\alpha\) be arbitrary.
+    As each \(U_\alpha\) is open, we can fix some \(h_\alpha<f\) such that \((h_\alpha,f]\subseteq U_\alpha\). Define
+    \(h=\sup\{h_\alpha\mid \alpha<\mu\}\). Given  any \(n\in \mathbb N\), since \(\cf(f(n))>\mu\) it holds that
+    \(h(n)<f\), thus \(h<f\) and as \(h_\alpha\le h\) for every \(\alpha<\mu\) it follows that \((h,f]\subseteq U_\alpha\) for every \(\alpha<\mu\), hence \(\bigcap_{\alpha<\mu}U_\alpha\) is open.
+\end{proof}
+
+    We proceed to prove that \(X(\mu,\overline \kappa)\) is collectionwise normal.
+   Suppose \(\mathcal H\) is a nonempty collection of pairwise disjoint (closed) subsets of \(X\)
+   and for every $\mathcal J\subseteq \mathcal H$ the union \(\bigcup \mathcal J\) is closed.
+   We need to produce a family of pairwise disjoint open sets
+   \(\{U_D\mid D\in \mathcal H\}\) which separates \(\mathcal H\), that is,
+   \(D\subseteq U_{D}\) for all \(D\in \mathcal H\).
+   Let \(H=\bigcup \mathcal H\).
+
+   We define  a tree \((T,\supseteq)\) of height \(\omega_{1}\). The nodes of the tree are
+   open subsets of \(X\) and the tree order is reverse inclusion.
+   % and for every node
+   % $U\in T$ the set of immediate successors of $U$ is a pairwise disjoind open cover
+   % of \(H\cap U\).
+
+   For every open set \(U\subseteq X\) let \(t_{U}\) be the supremum of \(U\). Clearly, if
+   \(V\subseteq U\subseteq X\) then \(t_{V}\le t_{U}\).
+
+   \begin{claim}
+There exists a tree \((T,\supseteq)\) of height \(\omega_{1}\)  with \(T\subseteq\tau\) whose tree order is reverse inclusion such that:
+   \begin{enumerate}
+          % \item The root of \(T\) is \(X\).
+           \item For every \(\alpha <\omega_{1}\) the \(\alpha\)-th level of the tree,
+           \(T_{\alpha}\), is a pairwise disjoint open cover of \(H\).
+     \item If \(U,V\in T\) and \(U\supseteq V\) then
+           \begin{enumerate}
+                   \item If \(U\) meets at most one closed set from
+                   \(\mathcal H\) then \(V=U\).
+                   \item If \(V\) meets more than one closed set from                   \(\mathcal H\)
+                   then
+                   \(t_{V}\not=t_{U}\).
+           \end{enumerate}
+           \end{enumerate}
+\end{claim}
+
+Suppose first that\((T,\supseteq)\) is a tree that satisfies the conditions above.
+For every \(h\in H\) and \(\alpha<\omega_{1}\), as \(T_{\alpha}\) is a pairwise disjoint cover of
+\(H\), there is a unique node \(U_{h,\alpha}\in T_{\alpha}\) to which \(h\) belongs, and
+\(\{u_{h,\alpha}\mid \alpha<\omega_{1}\}\) is a branch of \(T\) all of whose members are nonempty
+open sets. If \(\alpha<\beta<\omega_{1}\) then \(U_{h,\alpha}\supseteq U_{h,\beta}\) and hence
+\(t_{U_{h,\beta}}\le t_{U_{h,\alpha}}\).  There are no \(\lneqq\)-sequences of length \(\omega_{1}\) of functions from \(\mathbb N\) to the ordinals,
+   thus, by condition (2), there is some ordinal \(\alpha(h)<\omega_{1}\) such that
+   \(t_{U_{h,\alpha(h)}}=t_{U_{h,\beta}}\) for all \(\alpha(h)\le \beta<\omega_{1}\). But now, by (2),
+   \(U_{h,\alpha(h)}\) meets exactly one member of \(\mathcal H\) --- namely, the
+   member to which \(h\) belongs.
+
+   For every \(D\in \mathcal H\) let \(U(D)=\bigcup\{U_{h,\alpha(h)}\mid h\in D\}\). This set is
+   open as a union of open sets and covers \(D\). Let \(D_{0},D_{1}\in \mathcal H\)
+   be distinct, hence disjoint, and let \(h_{0}\in D_{0}\) and \(h_1\in D_{1}\) be arbitrary. Let
+   \(\beta=\max\{\alpha(h_{0}),\alpha(h_{1})\}\). It holds that
+   \(U_{h_{0},\alpha(h_{0})}=U_{h_{0},\beta}\) and \(U_{h_{1},\alpha(h_{1})}=U_{h_{1},\beta}\). As
+   \(h_{0}\in U_{h_{0},\beta}\setminus U_{h_{1},\beta}\) these set are different, and because
+   \(T_{\beta}\)
+   is pairwise disjoint, are also disjoint. So
+   \(U_{h_0,\alpha(h_{0})}\cap U_{h_1,\alpha(h_{1})}=\emptyset\). This shows that
+   \(\{U(D)\mid D\in \mathcal H \}\) is a family of pairwise disjoint open sets which
+   separates \(\mathcal H\), and establishes the collectionwise normality of \(X\).
+
+   We prove now the claim by constructing  the levels \(T_{\alpha}\) of \(T\) by
+   induction on \(\alpha<\omega_{1}\). \(T_{0}=\{X\}\).
+Suppose now \(0<\alpha<\omega_{1}\) and that \(T_{\beta}\) is defined for all \(\beta<\alpha\) such
+that conditions (1)--(2) hold for \(\bigcup_{\beta<\alpha}T_{\beta}\).
+
+Suppose  \(\alpha\) is a nonzero limit ordinal. For every \(h\in H\) and \(\beta<\alpha\) there is a
+unique \(U_{h,\beta}\in T_{\beta}\) to which \(h\) belongs. Let
+\(T_{\alpha}=\{\bigcap_{\beta<\alpha}U_{h,\beta}\mid h\in H\}\). Every member of \(T_{\alpha}\) is open as a
+countable intersection of open sets. \(T_{\alpha}\) covers \(H\). Finally, if
+\(\bigcap_{\beta<\alpha}U_{h_{0},\beta}\) and \(\bigcap_{\beta<\alpha}U_{h_{1},\beta}\) are different there is
+    some \(\gamma<\alpha\) for which \(U_{h_{0},\gamma}\not=U_{h_{1},\gamma}\) and as \(T_{\gamma}\)
+    is pairwise disjoint, these sets are disjoint and so are
+     \(\bigcap_{\beta<\alpha}U_{h_{0},\beta}\) and \(\bigcap_{\beta<\alpha}U_{h_{1},\beta}\). Conditions (1)-(2) hold
+     easily in this case.
+
+        Assume now that \(\alpha=\beta+1\). Let \(U\in T_\beta\) be given. We define the set of
+        immediate successors of \(U\) in \(T_{\alpha}\) to be a pairwise disjoint
+        family \(J_{u}\) of open subsets of \(U\) which forms a cover of \(H\cap U\) and such
+        that every \(V\in J_{u}\) either meets at most one element of \(H\)
+        or else \(t_{V}\not=t_{U}\). Then let \(T_{\alpha}=\bigcup_{U\in T_{\beta}}J_{U}\)
+        and all conditions hold easily.
+
+        If \(U\) meets at most one  member of \(\mathcal H\) let
+        \(J_{U}=\{U\}\).
+
+        Suppose that \(U\) meets more than one member of \(\mathcal H\).
+        In particular, \(U\not=\emptyset\).
+       This implies that for every
+        \(i\in \mathbb N\) the ordinal \(t_{U}(i)\) is a supremum of a nonempty set of
+        limit ordinals, so is itself a non-zero limit ordinal.
+
+
+        Now divide the proof to two cases.
+
+        \medskip\noindent
+        \textbf{Case 1}: there is some \(i\in \mathbb N\) for which
+        \(\cf(t_{U}(i))\le \mu\). Fix such
+        an \(i\). Fix an increasing and continuous
+        sequence \(\langle \gamma_{\delta}\mid\delta<\cf(t_{U}(i)\rangle\) with \(\gamma_{0}=0\)  which is cofinal
+        in \(t_{U}(i)\).
+        %\marginpar{do you want for every $\delta<\cf(t_U(i))$, $\cf(\gamma_\delta) < \mu$? It
+        %does not hurt, but not needed.}.
+        Let
+        \(U_{\delta}=\{h\in U\mid \gamma_{\delta}<h(i)\le \gamma_{\delta+1}\}\). There is no \(h\in X\) for which
+        \(h(i)=t_{U}(i)\) and as \(\cf(\gamma_{\delta})< \mu\) for every limit
+        \(\delta<\cf(t_{U}(i))\), there is no \(h\in X\) for which \(h(i)=\gamma_{\delta}\) for
+        some
+        limit \(\delta<\cf(t_{U}(i))\). Thus for every \(h\in U\) we have that
+        \(\sup\{\gamma_{\delta}\mid \delta<\cf(t_{U}(i)\,\&\,\gamma_{\delta}<h(i))\}<h(i)\) so for every
+        \(h\in U\) there is some \(\delta<\cf(t_{U}(i))\) such that
+        \(\gamma_{\delta}<h(i)\le \gamma_{\delta+1}\).
+
+        Let \(V_{\delta}=\{h\in U\mid \gamma_{\delta}<h(i)\le \gamma_{\delta+1}\}\).
+        The family of sets \(J_{U}=\{V_{\delta}\mid \delta<\cf(t_{U}(i))\}\) is pairwise
+        disjoint, its union is \(U\) and also each \(U_{\delta}\) is open.
+          Finally, \(\sup \{h(i)\mid h\in V_{\delta}\}\le \gamma_{\delta+1}<t_{U}(i)\), hence \(t_{V_{\delta}}\not=t_{u}\), for every
+          \(\delta<\cf(T_{U}(i))\). Thus \(J_{U}\) is as required.
+
+
+\medskip
+
+          \noindent
+          \textbf{Case 2}: \(\cf(t_{U}(i))>\mu \) for all \(i\in \mathbb N\).
+
+   \begin{claim}\label{aux}
+There exists some \(h<t_{U}\) such that \((h,t_{U}]\) meets at most one member of \(\mathcal H\).
+     \end{claim}
+
+     Suppose first that  the claim holds. For every \(M\subseteq \mathbb N\) let
+            \[V_{M}=\{f\in U\mid \mathord{\le}
+       (f,h)=M\}.\]
+
+     Each \(V_{M}\) is an open subset of \(U\) and \(M_{0}\not=M_{1}\) implies
+     \(V_{M_{0}}\cap V_{M_{1}}=\emptyset\). Also,
+     \(U=\bigcup \{V_M\mid M\subseteq \mathbb N\}\).
+
+If \(M\not=\emptyset\) fix some \(i\in M\) and then
+\(f(i)\le h(i)<t_U(i)\) for all \(f\in V_{M}\), so \(t_{V_M}(i)<t_{U}(i)\) and therefore \(t_{V_{M}}\not=t_{U}\).
+
+     Thus, if \(t_{{V_{M}}}=t_{U}\) then necessarily \(M=\emptyset\) and then
+     \(V_{\emptyset}=U\cap  (h,t_{U}]\), (and  also \(V_{\emptyset}\not=\emptyset\)),
+     which by the claim meets at most one member of
+     \(\mathcal H\).
+     So letting
+     \(J_{U}=\{V_{M}\mid M\subseteq \mathbb N\}\) we are done.
+
+     So we turn to the proof of the Claim \ref{aux}.
+
+
+     For each \(n\in \mathbb N\) let
+     \(U_{n}=\{f\in U\mid (\forall_{i\in \mathbb N})\,\cf(f(i))\le \kappa_{n}\}\). By the definition of
+     \(X\) it follows that \(m<n\Rightarrow U_m\subseteq U_n\) and that 
+     \(U=\bigcup_{n}U_{n}\).
+
+     It will suffice, then,  to find, for each \(n\in \mathbb N\), a function \(h_{n}<t_{U}\) such that \(U_{n}\cap (h_{n},t_{U}]\) meets at most one member of \(\mathcal H\), for then \(h=\sup\{h_{n}\mid n\in \mathbb N\}<t_{U}\) is as required.
+
+     Let \(n\) be fixed, then, and we proceed to find \(h_{n}\), after     some preparation.
+
+     Let
+     \[A=\{i\in \mathbb N\mid\cf(t_{U}(i))\le \kappa_{n}\},\;\;\;
+       B=\mathbb N\setminus A=\{i\in \mathbb N\mid \cf(t_{U}(i))>\kappa_{n}\}.\]
+
+  Let \(k\in U_{n}\) be arbitrary and let \(i\in B\) be given.
+As \(U_{n}\subseteq U\) and \(t_{U}=\sup(U)\) it holds that
+\(k\le t_{U}\), so in particular \(k(i)\le t_{U}(i)\). But as
+\(\cf(k(i))\le\kappa_{n}<\cf(t_{U}(i))\),
+it necessarily holds that   \(k(i)<t_{U(i)}\).
+Thus:
+\begin{equation}\label{lessless}
+  (\forall_{k\in U_{n}})\big[(k\restriction B)<(t_{U}\restriction B)\big].\tag{\(*\)}
+  \end{equation}
+
+  Let us turn to \(A\). The sequence \(\langle \cf(t_{U}(i))\mid i\in A\rangle\) is a countable sequence of regular uncountable cardinals. Therefore,
+  \[\cf(\prod_{i\in A}t_U(i),<)=\cf(\prod R,<),\]
+  where \(R=\ran(\langle t_{U}(i)\mid i\in A\rangle)\). By our assumption, then,
+ \(\cf(\prod_{i\in A}t_{U}(i),<)\le\kappa_{n}\).
+  % \marginpar{Should be \((\prod_{{i\in A}}t_U(i),<)\).}.
+
+ Fix a cofinal
+subset \(C\subseteq (\prod_{i\in A}t_{U}(i),<)\) of cardinality 
+\(|C|\le \kappa_n\) and fix an enumeration
+\(\langle q_\alpha\mid\alpha<\kappa_n\rangle\) of \(C\) 
+in which eery member of $C$
+occurs $\kappa_n$ times. 
+
+
+Assume, contrary to the claim, that
+\begin{multline}(\forall_{h<t_{U}})(\exists_{k,k'})\,k,k'\in (H\cap U_{n}\cap (h,t_{u}])
+  \text{
+    and }
+  k,k' \text{
+    belong to two different}\\
+  \text{members of } \mathcal H.\label{negn}\tag{\(**\)}
+  \end{multline}
+
+\textbf{The models proof for Todd.}
+
+Fix an elementary  sequence $\langle M_\alpha\mid \alpha\le \kappa_n\rangle$
+ of elementary submodeld of $\langle H(\Omega),\in,\dots\rangle$ for a sufficiently large regular 
+ cardinal $\Omega$, enriched with the constants 
+ $X(\mu,\overline \kappa)$, $\mathcal H$, $U$ and whatever
+ else we had forgotten, such that: 
+
+ \begin{enumerate}
+\item $\kappa_n\subseteq M_\alpha$ for all $\alpha$ and $||M_\alpha||=\kappa_n$
+\item $\langle M_\beta\mid \beta\le \alpha\rangle\in M_{\alpha+1}$ for every $\alpha<\kappa_n$
+ \end{enumerate}
+
+For each $\alpha\le \kappa_n$ let $\chi_\alpha(i)=\sup(M_\alpha\cap t(i))$. 
+
+Let $A_0=\{i\in \omega\mid \cf(t(i))\le \kappa_n\}$ and let $A_1=\omega\setminus A_0$. 
+Let $\alpha\le\kappa_n$ be given. As $t\in M_\alpha$  if follows that $\chi_\alpha(i)=t(i)$ for all $i\in A_0$. Similarly, $\chi_\alpha(j)<t(j)$ for all $j\in A_1$. 
+
+Let $\chi=\chi_{\kappa_n}$. As $\cf(\chi(j))=\kappa_n$ and $\chi(j)<t(j)\le \kappa_j$ for all $j\in A_1$, and $\chi(i)=t(i)$ for all $i\in A_0$, it follows that $\chi\in X(\mu,\overline \kappa)$.
+
+Suppose that $h<\chi$ is given. Fix some $\alpha<\kappa_n$ such that $h\restriction A_1 < \chi_\alpha\restriction A_1$. Work in $M_{\alpha+1}$ in which there is some (canonical) cofinal set $C\subseteq (\prod t\restriction A_0,<)$ of cardinality $|C|\le \kappa_n$. So as
+$\kappa_n\subseteq M_{\alpha+1}$ we have that $C\subseteq M_{\alpha+1}$. Pick some $g\in C$ such that $h\restriction A_0<g$ and put $h'=g\cup \chi_\alpha\restriction A_1$. As both objects belong to $M_{\alpha+1}$ we have that $h'\in M_{\alpha+1}$.
+
+By the negation hypothesis and elementarity, fix $k_0,k_1\in H\cap M_{\alpha+1}$ which belong
+to different members of $\mathcal H$, such that $k_0,k_1\in (h',t]$. Since both are contained in $M_{\alpha+1}$ it follows that $k_0,k_1\in (h',\chi_{\alpha+1}]$, 
+but $(h',\chi_{\alpha+1}]\subseteq (h,\chi]$, so $k_0,k_1$ are seen to belong to the arbitrary
+open neighborhood $(h,\chi]$ of $\chi$. This is enough. 
+**********************************************
+
+Define by induction on \(\alpha<\kappa_{n}\) a sequence \(\langle \langle k_{\alpha}^0,k_\alpha^1\rangle\mid \alpha<\kappa_n\rangle\)  such that:
+
+\begin{enumerate}
+  \item \(k_{\alpha}^i\in (U_{n}\cap H)\) for $i\in\{0,1\}$. 
+  \item $k_\alpha^0$ and $k_\alpha^1$ belong to two \emph{different} members of $\mathcal H$.
+  \item $q_\alpha<\min\{k_\alpha^0,k_\alpha^1\}\restriction A$.
+        \item \(\beta<\alpha\) implies
+        \((k_{\beta}^i\restriction B)<(k_{\alpha}\restriction B)<(t_{U}\restriction B)\)
+        \item If \(\alpha=\beta+1\) is a successor ordinal then \(k_{\beta}\) and \(k_{\alpha}\) belong to different
+        members of \(\mathcal H\).
+\end{enumerate}
+
+
+Suppose that \(\alpha<\kappa_{n}\) and that \(k_{\beta}\) has been defined for all \(\beta<\alpha\).
+Let \(r_{\alpha}=\sup\{(k_{\beta}\restriction B)\mid \beta<\alpha\}\) (so \(r=0_{B}\) if \(\alpha=0\) and
+\(r=(k_{\beta}\restriction B)\) if \(\alpha=\beta+1\)). By \((*)\), the induction hypothesis
+(1)  and \(\alpha<\kappa_{n}=\cf(\kappa_n)\) we know
+that \(r_{\alpha}<(t_{U}\restriction B)\), also in the case \(\alpha\) is limit.
+
+Let \(r'_{\alpha}=q_{\alpha} \cup r\). As \(q_{\alpha}<(t_{U}\restriction A)\) and
+\(r_{\alpha}<(t_{U}\restriction B)\), we have \(r'_{\alpha}<t_{U}\).
+Now use \((**)\) to find \(k,k'\in (r'_{\alpha},t_{U}]\cap U_{n}\cap H\) which belong to two
+different members of \(\mathcal H\). In case \(\alpha=\beta+1\) let \(k_{\alpha}\) be an
+element of \(\{k,k'\}\) which does not belong to the same elenent of
+\(\mathcal H\) to which \(k_{\beta}\) belongs. As \(k\) and \(k'\) are from different
+elements of \(\mathcal H\), at least one of them  is not  in the same \(D\in \mathcal H\) as
+\(k_{\beta}\) is. If \(\alpha\) is limit or \(0\), let \(k_{\alpha}=k\). Thus conditions (1)--(4)
+of the induction are satisfied.
+
+
+        Now that the induction is done, put
+        \(k=(t_{U}\restriction A)\cup (\sup\{k_{\alpha}\mid \alpha<\kappa_{n}\}\restriction B)\).
+By (3), for every \(i\in B\) the value \(k(i)\) is a limit of a strictly increasing
+sequence of ordinals of length \(\kappa_{n}\), so \(\cf(k(i))=\kappa_{n}\) for all
+\(i\in B\) (and therefore \(k<(t_{U}\restriction B)\)). Furthermore, for every \(\ell\in \prod_{{i\in B}}k(i)\) there is some \
+\(\alpha<\kappa_n\) such that \(\ell<k_\beta\) for all
+\(\alpha\le \beta<\kappa_n\) by the standard ``rectangle argument".
+
+For \(i\in A\) it holds that \(k(i)=t_U(i)\), so by the assumptions on
+\(t_{U}\) and the definition of \(A\) it holds that \(\mu<\cf(k(i))\le \kappa_{n}\).
+So \(\mu<\cf(k(i))\le \kappa_{n}\) for all \(i\in \mathbb N\). This confirms that \(k\in X\).
+ Suppose that \(\ell <k\) is given, namely, that \((\ell,k]\) is some basic open
+ neighborhood of \(k\).
+ There is some \(\alpha<\kappa_n\) such that \((\ell\restriction B)<k_{\beta}\) for all
+   \(\alpha<\beta<\kappa_n\). For a cofinal set of indices \(\beta<\kappa_n\) it holds
+   that
+   \((\ell\restriction A)<q_{\beta+n}\) for all \(n\in \omega\)  by our choice of
+   \(\langle q_{\alpha}\mid \alpha<\kappa_n\rangle\) and condition (2) of the induction. If \(\beta>\alpha_{0}\) is
+   any one of these indices it holds that \(k_{\beta+n}\in (\ell,k]\) for all \(n\). As
+   \((\ell,k]\) is an arbitrary basic open neighborhood of \(k\) and \(k_{\alpha}\in H\)
+   for all \(\alpha\), it follows that \(k\in \cl (\{k_{\alpha}\mid\alpha<\kappa_n\})\), in fact, that \(k\) is
+       in the closure of every final segment of \(\langle k_{\alpha}\mid\alpha<\kappa_n\rangle\). As
+       \(k_{\alpha}\in H\) for all \(\alpha\) and \(H\) is closed,  \(k\in H\). Let
+        \(D\in \mathcal H\) be the unique member of \(\mathcal H\) to which \(k\)
+        belongs. Now for every open neighborhood of \(k\) there is some
+        \(\beta<\kappa_n\) such that both \(k_{\beta}\) and \(k_{\beta+1}\) are in this
+        neighborhood. Since these elements belong to different members of
+        \(\mathcal H\), at least one of them is not a member of \(D\). This
+        shows that \(k\) belongs to \(\cl(H\setminus D)\) which is a contradiction, as
+        \(H\setminus D\) is closed and disjoint of \(D\).
+      \end{proof}
+
+
+Examples of parameters \(\mu\) and \(\overline \kappa\) which satisfy the condition 
+the main theorem in \(\zfc\) are ample. For every cardinal \(\mu\), the sequence of 
+\(\langle \mu^{n+1}\mid n\in \omega\rangle\)  satisfies the condition, because in 
+the interval \((\mu,\mu^{n+1}\) there are just finitely many cardinals. 
+Also, if \(\overline \kappa\) is taken to be an increasing sequence of 
+successors of strong limit singulars of uncountable cofinality, then 
+condition holds again, but this time the sequences can be taken to be arbitrarily sparce, that is, with arbitrarily large gaps between consecutive members of the sequence. 
+
+It is natural to ask if it is possible that \emph{all} sequences of regular cardinals above some \(\mu\) satisfy the condition, and hence \(X(\mu,\overline \kappa\) is Dowker. Mild restrictions on cardinal arithmetic give this. Certainly the \(\gch\), or the weaker \(\sch\) or even a weaker axiom, imply this:
+\
+\begin{theorem}
+Assume \(\ssh\). Then for every cardinal \(\mu\) and an increasing  sequence
+\(\overline \kappa=\langle \kappa_{n}\mid n\in \omega\rangle\) of regular cardinals above \(\mu\) the space  \(X(\mu,\overline \kappa)\) is a collectionwise normal, 
+Dowker and \(P_{\mu}\)  space.
+\end{theorem}
+
+\begin{proof}
+  Suppose \(\mu\) and \(\overline \kappa\) are given. It suffices to prove that for every \(n\in \omega\) and every countable  \(A\subseteq\Reg\cap (\mu,\kappa_{n}]\) it holds that \(\cf(\prod A,<)\le \kappa_{n}\). By removing a final end-segment of \(A\), if necessary, we can assume that \(A\) has no last element. If \(A\) is empty there is little to prove, so assume that \(A\) is an infinite, countable set of regular cardinals. Let \(\lambda=\sup A\). So \(\lambda \) is a singular cardinal of cofinality \(\omega\) and necessarily \(\lambda<\kappa_{n}\).  As we have assumed
+  \(\ssh\), we know that \(pp \lambda=\lambda^{+}\le\kappa_{n}\) and as by a basic PCF theorem, \(\cf(\prod A,<)=\max(\pcf(A))\), we conclude that \(\cf(\prod A,<)\le \kappa_{n}\), as required.
+  \end{proof}
+
+In Rudin's space the local weight at each point of the space is one of the
+\(\aleph_{n}\)-s for \(n>0\). In the generalized \(X(\mu,\overline \kappa)\) is is
+possible to get as many different local weights as one wants by a suitable
+choice of the parameters. Suppose that \(\overline \kappa\) is an increasing sequence
+of regular cardinals, each closed under the \(pp\) function at singularls of
+countable cofinality. Such a sequence can be choses as sparse as one wants. In
+the resulting space there will be points of local weight \(\theta\) for every
+regular \(\theta\) in the interval \((\mu,\sup(\overline \kappa))\).
+
+
+Let us finally remark that in Definition \ref{def} it is not necessary to 
+assume that \(\overline \kappa\) is 
+increasing. It suffices to that it does not have a largest term. That is, the sequence 
+contain repetitions. The same results hold also in this slighly more general setting. 
+
+
+\section{Start over}
+
+Assume that $2^{\aleph_0}\le \mu$ and $\mu<\ov\kappa$, an increasing sequence of regulars.
+or, just a sequence with an infinite range. 
+
+ $\mathcal H\subseteq \mathcal P(X(\mu,\overline \kappa))$ is a pairwise disjoint family of 
+ sets such that the union of each subcollection of $\mathcal H$ is closed. 
+ Denote
+ $H=\bigcup \mahtcal H$. 
+ For $h\in H$ let $D(h)$ be the unique element of $\mathcal H$ to which $h$ belongs. 
+
+$t=\sup(U)$. Case: $\forall_{i\in \omega} \cf(t(i))>\mu$ and $t\notin X$. 
+
+Let $U_n=\{h\in U\mid (\forall){i}(\cf(h(i))\le \kappa_n)$.
+
+\begin{claim} For a given $n\in \omega$ there is some $h_n<t$ such that $(h_n,t]\cap U_n$ 
+meets at most one member of $\mathcal H$. 
+\end{claim}
+
+\begin{proof}
+Assume: $(*)$ for all $h<t$ there are $k^h_0,k^h_1\in H\cap U_n \cap (h,t]$ such that $D(k^h_0)\not=D(k^h_1)$.
+
+Notation: $A_0=\{i\in \omega\mid \cf(t(i))\le \kappa_n\}$. $A_1=\omega\setminus A_0$.  
+$t_0=t\restriction A_0$ and $t_1=t\setminus t_0$. 
+
+First let us state
+\begin{enumerate}
+\item[(1)]For all $h\in U_n$ it holds that $h\restriction A_1 < t_1$.
+\end{enumerate}
+
+Consequently, $(H\cap U_n)\restriction A_1\subseteq \prod t_1$ and 
+is cofinal in $(\prod t_1,<)$ by $(*)$. Also, if $h\in U_n$ then $\mathord{=}(h,t)\subseteq A_0$.
+
+
+
+Case 1: $\cf(\prod t_0,<)\le \kappa_n$. Done. 
+
+Case 2: $\cf(\prod t_p,<)> \kappa_n$. 
+
+
+\begin{claim}
+There are some $B_0,B_1\subseteq A_0$ such that for all $g<t$ there is are $k_0,k_1\in H$ such 
+that $\mathord{=}(k_0,t)=B_0$ and $g < h$. 
+\end{claim}
+
+Suppose this is not the case and for every $B_0,B_1\subseteq A_0$ find some $g_{B_0,B_1}<t$ such that 
+for all $k_0,k_1\in H$, if $\nathord{=}(k_j,t)=B_j$ for $j<2$ then $k_j\not\le g_B$ for some $j<2$.
+
+Let $g=\sup\{g_B\mid B\subseteq A_0\}$. As $2^{\aleph_0}\le \mu <\min\{\cf(t(i))\mid i\in \omega\}$,
+it holds that $g<t$. By out assumption there is $k\in H\cap U_n\cap (g,t]$. But then 
+$\mathord{=}(g,t)\subseteq A_0$. Denote it by $B$. So $g_B\le g<k$, contradiction. 
+
+Let $B_0$ be as stated. So for all $g<t$ we can choose $k$
+
+
+
+
+ \begin{thebibliography}{}
+ \bibliographystyle{plain}
+
+%\begin{enumerate}
+
+\bibitem{balogh1} Z. T. Balogh. {\sl A small Dowker space in ZFC},
+Proc. Amer. Math. Soc. 124 (1996), no. 8, 2555–2560
+
+\bibitem{gitik-shelah}. 
+M. Gitik and S. Shelah.
+{\sl On certain indestructibility of strong cardinals and a question of Hajnal},
+Arch. Math. Logic 28 (1989), no. 1, 35–42.
+
+
+
+\bibitem{good} C. Good. {\sl Large cardinals and small Dowker spaces},Proc. Amer. Math. Soc.123 (1995), no.1, 263–272.
+
+\bibitem{kojmich} M. Kojman and H.  Michalewski.
+{\sl Borel extensions of Baire measures in ZFC}, Fund. Math. 211 (2011), no.3, 197–223.
+
+\bibitem{kojlub} M. Kojman and V.  Lubitch.
+{\sl Sequentially linearly Lindelöf spaces}, Topology Appl. 128 (2003), no.2-3, 135–144.
+
+
+\bibitem{kojsh} M. Kojman and S. Shelah. {\sl A ZFC Dowker space in  \(\aleph_{\omega+1}\): an application of PCF theory to topology},
+Proc. Amer. Math. Soc. 126 (1998), no. 8, 2459–2465.
+
+\bibitem{miscenko} A. Mi\v s\v cenko.
+{\sl On finally compact spaces}, Dokl. Akad. Nauk SSSR 145 (1962), 1224–1227.
+
+ 
+\bibitem{RST} A. Rinot, R. Shalev, and S.Todorcevic.
+{\sl A new small Dowker space}, Period. Math. Hungar. 88 (2024), no.1, 102–117.
+
+
+
+\bibitem{open2} E. Pearl, ed.
+{\sl Open problems in topology. II},
+Elsevier B. V., Amsterdam, 2007. xii+763 pp.
+
+
+
+\bibitem{rudin} M. E. Rudin.
+{\sl A normal space X for which \(X\times I\) is not normal}, Fund. Math.73 (1971/72), no.2, 179–186.
+
+
+\bibitem{simon} P. Simon.
+{\sl A note on Rudin's example of Dowker space}. Comment. Math. Univ. Carolinae 12 (1971), 825–834.
+
+
+\end{thebibliography}
+
+  \end{document}
+
+
+
+
+\begin{document}
+
+$\overline \kappa$ is a sequence of regulars with no maximum 
+and for cofinally many $\kappa$ in the range of $\overline \kappa$
+it holds that for every countable set $A\subseteq \reg\cap (\mu,\kappa)$ it holds that $\cf(\prod A,<)\le \kappa$.
+
+\begin{lemma}[Main Lemma]
+Suppose $n$ is fixed, $t=\sup U\notin X$ and $U$
+ meets more than one member of $\mathcal H$.
+ There exists some $h<t$ such that $(h,t]\cap U$
+ meets at most one member of $\mathcal H$  
+ \end{lemma}
+
+
+\begin{proof}
+Let $\Omega$ be a sufficiently large regular cardinal and let 
+us fix a chain $\langle M_\alpha\mid \alpha\le\kappa_n\rangle$ of elelmentary submodels of $(H(\omega),\in,\dots)$
+such that:
+
+\begin{enumerate}
+    \item $\kappa_n\subseteq M_0$
+    \item $||M_\alpha||=\kappa_n$ for every $\alpha<\kappa_n$
+    \item $X,t\in M_0$
+    \item $M_\alpha=\bigcup_{\beta<\alpha}M_\beta$ for every limit
+    $\alpha\le\kappa_n$
+    \item $\langle M_\beta\mid\beta\le\alpha\rangle\in M_{\alpha+1}$ for every $\alpha<\kappa_n$.
+\end{enumerate}
+
+
+ For every $\alpha\le \kappa_n$ and $i\in \omega$ let $\chi_\alpha(i)=\sup(M_\alpha\cap t(i)$. So for every $i\in A=\{\cf(t(i))\le \kappa_n$ it holds for all $\alpha\le \kappa_n$ that 
+ $\chi_\alpha(i)=t(i)$
+\end{proof}
+
+
+what if $t\restriction (\mu,\kappa)$ has cofinality
+$\lambda$ which is larger than $\sup \overline \kappa$.
+
+then $M\cap \prod (t\restriction A)$ is not cofinal in the product. 
+Suppose $g<t$ on $A$  is such that no function from $M$ is above it. 
+
+Does $M\cap \prod(t\restriction A)$ have an eub? $M$ thinks there 
+is a good sequence?
+
+\end{document}

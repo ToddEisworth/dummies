@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+	<section xml:id="sec-3-1-density">
+		<title>Density of Exact Sequences</title>
+
+		<p>
+			We now prove that for every small set of regular cardinals <m>A</m>, for every proper ideal <m>I</m> over <m>A</m> and every regular cardinal <m>\lambda\le \mathfrak b_I(\prod A)</m>, the <em>exact</em> <m>&lt;_I</m>-increasing sequences in <m>\prod A</m> are <em>dense</em> in the following sense: For every set of functions <m>\{h_\alpha\mid \alpha&lt;\lambda\}\su \prod A</m> there is a <m>&lt;_I</m>-increasing sequence <m>\ov f=\langle f_\alpha\mid \alpha&lt;\lambda\rangle</m> such that
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+						<m>\ov f</m> is <m>&lt;_I</m>-increasing and has an eub.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>h_\alpha&lt;f_\alpha</m> for all <m>\alpha&lt;\lambda</m>.
+					</p>
+			</li>
+
+		</ul></p>
+
+		<p>
+			Put less formally, a sequence of functions whose length does not exceed the bounding number can be <q>shifted</q> upwards to obtain <m>&lt;_I</m>-increasing sequence with an exact upper bound. The crucial case is when <m>\lambda=\mathfrak b_I(\prod(A))</m>. Rather than provide a uniform proof for all cases, we divide this theorem to three different cases, with three different conclusions.
+		</p>
+
+		<p>
+			Suppose <m>\lambda&lt;\sigma(\prod A,I)</m> and supose .
+		</p>
+
+		<p>
+			So, assume that <m>\lambda\ge \sigma(\prod A,I)</m>. If <m>\lambda&lt;\mathfrak b_I(\prod A)</m> then use Silly Square and get a sequence with all initial segments of cofinality <m>&gt;|A|</m>, flat, and more (see Section ??).
+		</p>
+
+		<p>
+			So, the important case is <m>\lambda=\mathfrak b_I(\prod A)</m>. If <m>\lambda=\sigma(\prod A,I)</m> then can get flat?
+		</p>
+
+<!-- div attr= class="theorem"-->
+		<p>
+			 Suppose <m>A</m> is a small set of regular cardinals and <m>I</m> is a proper ideal over <m>A</m>. Let <m>\lambda'=\liminf_I A=\sigma(\prod A,I)</m>. Then: For every regular cardinal <m>\lambda\le\mathfrak b(I)</m>, for every sequence <m>\ov h=\lng
+  h_\alpha:\alpha&lt;\lambda\rng\su \prod A</m> there exists a <m>&lt;_I</m>-increasing sequence <m>\ov f=\lng f_\alpha:
+  \alpha&lt;\lambda\rng</m> so that
+		</p>
+
+		<p><ul>
+			<li>
+					<p>
+						<m>h_\alpha\le f_\alpha</m> (everywhere) for all <m>\alpha&lt;\lambda</m>
+					</p>
+			</li>
+
+			<li>
+					<p>
+						<m>\ov f</m> has an eub <m>g\le \id_A</m>
+					</p>
+			</li>
+
+			<li>
+					<p>
+						For every <m>\theta=\cf(\theta)\in
+			    (|A|,\min\{\lambda',\lambda\})</m> it holds that <m>SF(\theta,\ov
+			    f)</m>.
+					</p>
+			</li>
+
+		</ul></p><!--</div attr= class="theorem">-->
+
+<!-- div attr= class="proof"-->
+		<p>
+			<em>Proof.</em> <term>Case 1</term>: <m>\lambda\le \lambda'</m>.
+		</p>
+
+		<p>
+			Suppose <m>\ov h=\langle  h_\alpha\mid
+\alpha&lt;\lambda\rangle \su \prod A</m> is given. Define <m>f_\alpha</m> by induction on <m>\alpha&lt;\lambda</m> as follows: Let <m>g_\alpha=\sup\{f_\beta\mid \beta&lt;\alpha\}</m> and let <m>f_\alpha\in \prod A</m> be found such that <m>g_\alpha&lt;_I
+g_\alpha</m> and <m>h_\alpha&lt;f_\alpha</m>. As <m>g_\alpha</m> is a supremum of a subset of <m>\prod A</m> whose cardinality is strictly smaller than <m>\lambda'</m>, and <m>\prod A</m> is directed, <m>f_\alpha</m> can be found. Now the <m>&lt;_I</m>-increasing <m>\ov f=\langle  f_\alpha\mid
+\alpha&lt;\lambda \rangle</m> is actually flat, hence for every <m>\alpha&lt;\lambda</m> with <m>\cf(\alpha)&gt;|A|</m> the initial segment <m>\ov
+f\restriction \alpha</m> is also flat. Thus, for all <m>\theta\in
+(|A|,\lambda')</m> all points of cofinality <m>\theta</m> in <m>\ov f</m> are flat.
+		</p>
+
+		<p>
+			<term>Case 2</term>: <m>\lambda'&lt;\lambda&lt;\mathfrak
+b_I(\prod A)</m>. In this case let us fix for every limit <m>\delta&lt;\lambda</m> a club <m>c_\delta\su \delta</m> with <m>\otp(c_\delta)=\cf(\delta)</m> and for every <m>\alpha&lt;\lambda</m> let <m>P_\alpha=\{c_\delta\cap \alpha\mid \delta\in \Lim(\lambda)\}</m>. So <m>P_\alpha\su \mathcal P(\alpha)</m> and <m>|P_\alpha|\le \lambda</m> for every <m>\alpha&lt;\lambda</m>, and also for all <m>\beta&lt;\alpha&lt;\lambda</m> and <m>c\in P_\alpha</m> it holds that <m>(c\cap
+\beta)\in P_\beta</m>. Shelah called the sequence <m>\langle
+P_\alpha\mid \alpha&lt;\lambda \rangle</m> we have just defined a <em>Silly Square</em> sequence. The name <q>square</q> is justified since indeed <m>P_\delta</m> contains a witness <m>c_\delta</m> to the cofinality of <m>\delta</m> and the coherence property holds: if <m>\alpha\in \Lim(c_\delta)</m> then <m>(c_\delta\cap\alpha)\in
+P_\alpha</m>. The attribution <q>silly</q> stems from the fact that there is no stricter limilation than <m>\lambda</m> on the cardinality of <m>P_\alpha</m>.
+		</p>
+
+		<p>
+			Suppose <m>\ov h=\langle  h_\alpha\mid \alpha&lt;\lambda \rangle\su
+\prod A</m> is given and let us define <m>\ov f</m> as follows:
+		</p>
+
+		<p>
+			Case 3: <m>\lambda=\mathfrak b_I(\prod A)&gt;\lambda'</m>. This is the most interesting case, in which we shall not be able to obtain, as we did in the previous two cases, that all points of cofinality <m>\theta\in (|A|,\lambda')</m> are flat.
+		</p>
+
+		<p>
+			In this case we know by <xref ref="liminfvsb" /> that <m>\lambda'</m> is singular of cofinality <m>\le
+|A|</m>, so for every regular <m>\theta&lt;\lambda'</m> it holds that <m>\theta^{++}&lt;\lambda'&lt;\lambda</m>. By Theorem <xref ref="ilambda" /> we may fix, for every regular <m>\theta\in (|A|,\lambda')</m> a stationary set <m>S_\theta\su S^\lambda_\theta</m> in <m>I[\lambda]</m>. As <m>I[\lambda]</m> is a normal ideal, <m>S=\bigcup\{S_\theta\mid \theta=\cf(\theta)\in
+(|A|,\lambda')\}\in I[\lambda]</m>. Let us fix a sequence <m>\langle
+P_\alpha\mid \alpha&lt;\lambda</m> and a club <m>C\su \lambda</m> which witness this, namely:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						<m>P_\alpha\su \mathcal P(\alpha)</m> and <m>|P_\alpha|&lt;\lambda</m> for all <m>\alpha&lt;\lambda</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						For every <m>\delta\in S\cap C</m> there exists a club <m>c_\delta\su \delta</m> with <m>\otp(c_\delta)=\cf(\delta)</m> such that for all <m>\alpha\in c_\delta</m> it hols that <m>(c_\delta\cap
+			    \alpha)\in \bigcup_{\gamma&lt;\delta} P_\gamma</m>.
+					</p>
+			</li>
+
+		</ol></p>
+
+		<p>
+			Define <m>f_\alpha\ge h_\alpha</m> by induction on <m>\alpha&lt;\lambda</m> as follows. At step <m>\alpha&lt;\lambda</m> define, for each <m>c\in
+  P_\alpha</m> with <m>\otp (c)&lt;\lambda'</m> a function <m>g'_c</m> by <m>g_c(a)=\sup\{ f_\beta(a): \beta\in c\}</m>. As <m>\lambda'=\sigma(\prod A,I)</m>, we may fix <m>g_c\in \prod A</m> such that <m>g'_c&lt;_I g_c</m>.
+		</p>
+
+		<p>
+			The set <m>\{g_c: c\in P_\alpha\wedge \otp c&lt;\lambda'\}\cup
+  \{f_\beta:\beta&lt;\alpha\}</m> has cardinality <m>&lt;\lambda</m> and is therefore bounded in <m>(\prod A,&lt;_I)</m>. Let <m>f'_\alpha\in \prod
+  A</m> be a bound modulo <m>I</m> of this set and now set <m>f_\alpha=\max\{f'_\alpha,h_\alpha+\omega\}</m>.
+		</p>
+
+		<p>
+			Clearly, <m>h_\alpha&lt;f_\alpha</m> for all <m>\alpha&lt;\lambda</m> and <m>\ov f</m> is <m>&lt;_I</m>-increasing.
+		</p>
+
+		<p>
+			Suppose <m>\delta\in S\cap C</m> and fix <m>c_\delta\su \delta=\sup c</m> with <m>\otp (c_\delta)=\cf(\delta)</m> so that <m>(\forall \beta\in c)\; c\cap \beta\in
+\bigcup _{\gamma&lt;\delta} P_\gamma</m>.
+		</p>
+
+		<p>
+			For each <m>\beta\in c_\delta</m> let <m>g_\beta=\sup\{f_\xi:\xi\in
+c_\delta\cap \beta\}</m>. Clearly, <m>\ov g=\lng g_\beta:\beta\in
+c_\delta\rng</m> is <m>\le</m>-increasing of length <m>\kappa</m> and <m>\ov
+f\restriction \delta\le_I \ov g</m>.
+		</p>
+
+		<p>
+			For every <m>\beta\in c_\delta</m> there is <m>\gamma\in c_\delta</m> such that <m>c\delta\cap \beta\in P_\gamma</m>, so by the construction of <m>\ov f</m> it holds that <m>g_\beta&lt;_I f_\gamma</m>. This shows that also <m>\ov f\le_I \ov g</m> holds, and thus <m>\ov f\restriction
+\delta\equiv_I \ov g</m>, that is, <m>\ov f\restriction \alpha</m> is equivalent to a <m>\le</m>-increasing sequence of length <m>\cf(\delta)</m>, and is therefore flat.
+		</p>
+
+		<p>
+			We have thus shown that <m>\ov f</m> has a stationary set <m>S_\theta\su
+S^\lambda_\theta</m> of flat points for every regular <m>\theta\in (|A|,\lambda')</m>. By Theorem <xref ref="eub" />, <m>\ov f</m> has an eub <m>g</m> with <m>\cf g(a)&gt;|A|</m> for all <m>a\in A</m>, as required. ◻
+		</p><!--</div attr= class="proof">-->
+	</section>
